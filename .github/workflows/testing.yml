@@ -18,6 +18,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node }}
+    - name: Install Angular CLI
+      run: npm install -g @angular/cli
     - name: Run unit tests
       run: ng test
     - name: Run end to end tests
@@ -37,6 +39,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node }}
+    - name: Install Angular CLI
+      run: npm install -g @angular/cli
     - name: Build
       run: ng build
 
@@ -54,5 +58,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node }}
+    - name: Install Angular CLI
+      run: npm install -g @angular/cli
     - name: Build
       run: ng build --prod
