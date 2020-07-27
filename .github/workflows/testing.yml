@@ -1,0 +1,58 @@
+name: Testing and validation
+
+on: [push, pull_request]
+
+jobs:
+
+  test:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ 10.x, 12.x, 14.x ]
+
+    steps:
+    - name: Check-out
+      uses: actions/checkout@v2
+    - name: Set up Node.js ${{ matrix.node }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node }}
+    - name: Run unit tests
+      run: ng test
+    - name: Run end to end tests
+      run: ng e2e
+
+  test_build_develop:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ 10.x, 12.x, 14.x ]
+  
+    steps:
+    - name: Check-out
+      uses: actions/checkout@v2
+    - name: Set up Node.js ${{ matrix.node }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node }}
+    - name: Build
+      run: ng build
+
+  test_build_release:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ 10.x, 12.x, 14.x ]
+  
+    steps:
+    - name: Check-out
+      uses: actions/checkout@v2
+    - name: Set up Node.js ${{ matrix.node }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node }}
+    - name: Build
+      run: ng build --prod
