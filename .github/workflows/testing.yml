@@ -27,7 +27,7 @@ jobs:
     - name: Run unit tests
       run: ng test --watch=false --browsers=ChromeHeadlessCI
     - name: Run end to end tests
-      run: ng e2e -- --configuration=ci
+      run: npm run e2e -- --configuration=ci
 
   test_build_develop:
 
