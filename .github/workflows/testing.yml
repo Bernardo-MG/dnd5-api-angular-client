@@ -23,7 +23,7 @@ jobs:
     - name: Install Angular CLI
       run: npm install -g @angular/cli
     - name: Run unit tests
-      run: ng test --watch=false --browsers=ChromeHeadlessCustom
+      run: ng test --watch=false --browsers=ChromeHeadlessCI
     - name: Run end to end tests
       run: ng e2e
 
