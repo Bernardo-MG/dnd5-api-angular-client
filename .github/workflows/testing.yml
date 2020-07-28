@@ -22,8 +22,6 @@ jobs:
       run: npm ci
     - name: Install Angular CLI
       run: npm install -g @angular/cli
-    - name: Install Chrome
-      run: sudo apt-get install chromium-chromedriver
     - name: Run unit tests
       run: npm test -- --configuration=ci
     - name: Run end to end tests
