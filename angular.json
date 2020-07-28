@@ -91,20 +91,20 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "configurations": {
-              "production": {
-                "devServerTarget": "dnd5-api-angular-client:serve:production"
-              },
-              "ci": {
-                "watch": false,
-                "progress": false,
-                "browsers": "ChromeHeadlessCI"
-              }
-            },
             "styles": [
               "src/styles.sass"
             ],
             "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "dnd5-api-angular-client:serve:production"
+            },
+            "ci": {
+              "watch": false,
+              "progress": false,
+              "browsers": "ChromeHeadlessCI"
+            }
           }
         },
         "lint": {
