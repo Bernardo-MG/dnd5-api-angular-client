@@ -119,6 +119,11 @@
           "configurations": {
             "production": {
               "devServerTarget": "dnd5-api-angular-client:serve:production"
+            },
+            "ci": {
+              "watch": false,
+              "progress": false,
+              "browsers": "ChromeHeadlessCI"
             }
           }
         }
