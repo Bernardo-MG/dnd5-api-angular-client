@@ -7,6 +7,7 @@ import { CharclassComponent } from './charclass/charclass.component';
 import { CharclassDetailComponent } from './charclass-detail/charclass-detail.component';
 import { HttpClientModule }    from '@angular/common/http';
 import { MessagesComponent } from './messages/messages.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MessagesComponent } from './messages/messages.component';
   imports: [
     AppRoutingModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
