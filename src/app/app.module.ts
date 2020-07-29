@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CharclassComponent } from './charclass/charclass.component';
+import { CharclassDetailComponent } from './charclass-detail/charclass-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CharclassComponent
+    CharclassComponent,
+    CharclassDetailComponent
   ],
   imports: [
     BrowserModule,

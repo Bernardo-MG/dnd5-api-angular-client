@@ -4,13 +4,4 @@
     <span class="badge">{{charclass.index}}</span> {{charclass.name}}
   </li>
 </ul>
-
-<div *ngIf="selectedCharClass">
-  <h2>{{selectedCharClass.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedCharClass.index}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="selectedCharClass.name" placeholder="name" />
-    </label>
-  </div>
-</div>
+<app-charclass-detail [charclass]="selectedCharClass"></app-charclass-detail>
