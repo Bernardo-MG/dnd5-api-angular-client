@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CharclassComponent } from './charclass/charclass.component';
 import { CharclassDetailComponent } from './charclass-detail/charclass-detail.component';
+import { HttpClientModule }    from '@angular/common/http';
 import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
@@ -15,8 +16,9 @@ import { MessagesComponent } from './messages/messages.component';
     MessagesComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
