@@ -52,7 +52,7 @@ ng e2e
 The project can be deployed locally for testing:
 
 ```
-ng serve
+ng serve --open
 ```
 
 It will be available on `http://localhost:4200/`. Changes will be reloaded automatically.
