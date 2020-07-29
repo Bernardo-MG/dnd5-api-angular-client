@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Charclass } from '../charclass';
+import { CHARCLASSES } from '../mock-charclasses';
 
 @Component({
   selector: 'app-charclass',
@@ -8,10 +9,7 @@ import { Charclass } from '../charclass';
 })
 export class CharclassComponent implements OnInit {
 
-  charclass: Charclass = {
-    id: 1,
-    name: 'Name'
-  };
+  charclasses = CHARCLASSES;
 
   constructor() { }
 
