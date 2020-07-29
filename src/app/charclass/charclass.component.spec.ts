@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { CharclassComponent } from './charclass.component';
 
 describe('CharclassComponent', () => {
@@ -8,6 +10,7 @@ describe('CharclassComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientModule],
       declarations: [ CharclassComponent ]
     })
     .compileComponents();
