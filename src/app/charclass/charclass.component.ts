@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Charclass } from '../charclass';
-import { CHARCLASSES } from '../mock-charclasses';
+import { CharclassService } from '../charclass.service';
 
 @Component({
   selector: 'app-charclass',
@@ -9,17 +9,22 @@ import { CHARCLASSES } from '../mock-charclasses';
 })
 export class CharclassComponent implements OnInit {
 
-  charclasses = CHARCLASSES;
+  charclasses: Charclass[];
 
   selectedCharClass: Charclass;
 
-  constructor() { }
+  constructor(private charclassService: CharclassService) { }
 
   ngOnInit(): void {
+    this.getCharClasses();
   }
 
   onSelect(charclass: Charclass): void {
     this.selectedCharClass = charclass;
+  }
+
+  getCharClasses(): void {
+    this.charclassService.getCharClasses().subscribe(charclasses => this.charclasses = charclasses);
   }
 
 }
