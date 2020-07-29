@@ -1,7 +1,8 @@
 <h2>Classes</h2>
 <ul class="charclasses">
-  <li *ngFor="let charclass of charclasses" (click)="onSelect(charclass)">
-    <span class="badge">{{charclass.index}}</span> {{charclass.name}}
+  <li *ngFor="let charclass of charclasses">
+    <a routerLink="/classes/{{charclass.index}}">
+      <span class="badge">{{charclass.index}}</span> {{charclass.name}}
+    </a>
   </li>
 </ul>
-<app-charclass-detail [charclass]="selectedCharClass"></app-charclass-detail>
