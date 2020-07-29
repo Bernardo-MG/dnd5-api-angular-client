@@ -1,6 +1,16 @@
 <h2>Classes</h2>
 <ul class="charclasses">
-    <li *ngFor="let charclass of charclasses">
-      <span class="badge">{{charclass.index}}</span> {{charclass.name}}
-    </li>
-  </ul>
+  <li *ngFor="let charclass of charclasses" (click)="onSelect(charclass)">
+    <span class="badge">{{charclass.index}}</span> {{charclass.name}}
+  </li>
+</ul>
+
+<div *ngIf="selectedCharClass">
+  <h2>{{selectedCharClass.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedCharClass.index}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedCharClass.name" placeholder="name" />
+    </label>
+  </div>
+</div>
