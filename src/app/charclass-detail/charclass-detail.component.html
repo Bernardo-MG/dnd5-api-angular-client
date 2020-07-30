@@ -1,0 +1,6 @@
+<div *ngIf="charclass">
+  <h2>{{charclass.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{charclass.index}}</div>
+  <div><span>name: </span>{{charclass.name}}</div>
+</div>
+<button mat-button (click)="goBack()">go back</button>
