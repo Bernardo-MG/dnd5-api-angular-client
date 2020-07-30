@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Charclass } from './charclass';
 import { ApiResponse } from './api-response';
-import { CHARCLASSES } from './mock-charclasses';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { MessageService } from './message.service';
