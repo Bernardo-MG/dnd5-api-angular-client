@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { CharclassComponent } from './charclass/charclass.component';
 import { CharclassDetailComponent } from './charclass-detail/charclass-detail.component';
 import { HttpClientModule }    from '@angular/common/http';
-import { MessagesComponent } from './messages/messages.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavigationComponent } from './navigation/navigation.component';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -21,7 +20,6 @@ import { MatListModule } from '@angular/material/list';
     AppComponent,
     CharclassComponent,
     CharclassDetailComponent,
-    MessagesComponent,
     NavigationComponent
   ],
   imports: [
