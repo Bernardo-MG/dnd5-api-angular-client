@@ -28,7 +28,7 @@ jobs:
       run: npm install -g @angular/cli
     - name: Build development project
       if: steps.extract_branch.outputs.branch == 'develop'
-      run: ng build
+      run: ng build --deploy-url=${{ secrets.DEPLOY_DOCS_URL_DEVELOP }}
     - name: Deploy development version
       if: steps.extract_branch.outputs.branch == 'develop'
       run: |
@@ -36,7 +36,7 @@ jobs:
         sshpass -p ${{ secrets.DEPLOY_DOCS_PASSWORD }} scp -o 'StrictHostKeyChecking no' -P ${{ secrets.DEPLOY_DOCS_PORT }} -r ./* ${{ secrets.DEPLOY_DOCS_USERNAME }}'@'${{ secrets.DEPLOY_DOCS_HOST }}':'${{ secrets.DEPLOY_DOCS_PATH_DEVELOP }};
     - name: Build final project
       if: steps.extract_branch.outputs.branch == 'master'
-      run: ng build --prod
+      run: ng build --prod --deploy-url=${{ secrets.DEPLOY_DOCS_URL_RELEASE }}
     - name: Deploy final version
       if: steps.extract_branch.outputs.branch == 'master'
       run: |
