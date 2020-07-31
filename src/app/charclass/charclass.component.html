@@ -1,8 +1,11 @@
-<h2>Classes</h2>
-<mat-list>
-  <mat-list-item *ngFor="let charclass of charclasses">
-    <a routerLink="/classes/{{charclass.index}}">
-      {{charclass.name}}
+<div fxLayout="column" fxLayoutAlign="space-between center">
+  <h2>Classes</h2>
+  <mat-list class="mat-elevation-z8">
+    <a *ngFor="let charclass of charclasses;let index=index" routerLink="/classes/{{charclass.index}}">
+      <mat-list-item class="selection-item">
+        {{charclass.name}}
+        <mat-divider *ngIf="index < (charclasses.length-1)"></mat-divider>
+      </mat-list-item>
     </a>
-  </mat-list-item>
-</mat-list>
+  </mat-list>
+</div>
