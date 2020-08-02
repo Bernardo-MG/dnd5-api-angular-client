@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CharclassComponent } from './charclass-view/charclass/charclass.component';
-import { CharclassDetailComponent } from './charclass-view/charclass-detail/charclass-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/classes', pathMatch: 'full' },
   { path: 'classes', component: CharclassComponent },
-  { path: 'classes/:id', component: CharclassDetailComponent }
+  { path: 'classes/:id', component: CharclassComponent }
 ];
 
 @NgModule({

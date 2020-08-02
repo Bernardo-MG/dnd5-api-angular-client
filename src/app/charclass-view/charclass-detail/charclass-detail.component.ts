@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Charclass } from '../../charclass';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
 import { CharclassService } from '../../charclass.service';
 
 @Component({
@@ -15,8 +14,7 @@ export class CharclassDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private charclassService: CharclassService,
-    private location: Location
+    private charclassService: CharclassService
   ) { }
 
   ngOnInit(): void {
@@ -27,10 +25,6 @@ export class CharclassDetailComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     this.charclassService.getCharClass(id)
       .subscribe(charclass => this.charclass = charclass);
-  }
-
-  goBack(): void {
-    this.location.back();
   }
 
 }
