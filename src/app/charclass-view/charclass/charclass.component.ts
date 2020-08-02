@@ -7,18 +7,6 @@ import { CharclassService } from '../../charclass.service';
   templateUrl: './charclass.component.html',
   styleUrls: ['./charclass.component.sass']
 })
-export class CharclassComponent implements OnInit {
-
-  charclasses: Charclass[];
-
-  constructor(private charclassService: CharclassService) { }
-
-  ngOnInit(): void {
-    this.getCharClasses();
-  }
-
-  getCharClasses(): void {
-    this.charclassService.getCharClasses().subscribe(charclasses => this.charclasses = charclasses);
-  }
+export class CharclassComponent {
 
 }
