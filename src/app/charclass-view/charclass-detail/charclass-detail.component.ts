@@ -39,10 +39,6 @@ export class CharclassDetailComponent implements OnInit {
   }
 
   getProficienciesNames(): string[] {
-    return this.charclass.subclasses.map(obj => obj.name);
-  }
-
-  getProficiencyNames(): string[] {
     return this.charclass.proficiencies.map(obj => obj.name);
   }
 
