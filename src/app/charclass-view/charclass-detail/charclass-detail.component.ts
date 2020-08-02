@@ -18,11 +18,12 @@ export class CharclassDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getCharClass();
+    this.route.params.subscribe(params => {
+      this.getCharClass(params['id']);
+    });
   }
 
-  getCharClass(): void {
-    const id = this.route.snapshot.paramMap.get('id');
+  getCharClass(id: string): void {
     if (id) {
       this.charclassService.getCharClass(id)
         .subscribe(charclass => this.charclass = charclass);
