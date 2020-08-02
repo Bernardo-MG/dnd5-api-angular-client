@@ -4,7 +4,7 @@ import { CharclassComponent } from './charclass-view/charclass/charclass.compone
 
 const routes: Routes = [
   { path: '', redirectTo: '/classes', pathMatch: 'full' },
-  { path: 'classes', component: CharclassComponent },
+  { path: 'classes', redirectTo: 'classes/', pathMatch: 'full' },
   { path: 'classes/:id', component: CharclassComponent }
 ];
 
