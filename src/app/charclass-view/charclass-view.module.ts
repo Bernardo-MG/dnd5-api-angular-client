@@ -25,6 +25,11 @@ import { CharclassDetailComponent } from './charclass-detail/charclass-detail.co
     MatGridListModule
   ],
   exports: [
+    CommonModule,
+    RouterModule,
+    FlexLayoutModule,
+    MatListModule,
+    MatGridListModule,
     CharclassListComponent,
     CharclassComponent,
     CharclassDetailComponent
