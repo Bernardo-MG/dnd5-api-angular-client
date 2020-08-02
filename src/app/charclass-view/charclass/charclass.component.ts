@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Charclass } from '../charclass';
-import { CharclassService } from '../charclass.service';
-import { MessageService } from '../message.service';
+import { Charclass } from '../../charclass';
+import { CharclassService } from '../../charclass.service';
 
 @Component({
   selector: 'app-charclass',
@@ -12,7 +11,7 @@ export class CharclassComponent implements OnInit {
 
   charclasses: Charclass[];
 
-  constructor(private charclassService: CharclassService, private messageService: MessageService) { }
+  constructor(private charclassService: CharclassService) { }
 
   ngOnInit(): void {
     this.getCharClasses();
