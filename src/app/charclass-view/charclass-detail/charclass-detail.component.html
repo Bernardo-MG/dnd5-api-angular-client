@@ -1,38 +1,9 @@
 <div *ngIf="charclass">
   <h2>{{charclass.name}}</h2>
   <div>hit_die: {{charclass.hit_die}}</div>
-  <mat-grid-list cols="2" rowHeight="2:1">
-    <mat-grid-tile>
-      <mat-grid-tile-header>
-        <h3>saving_throws</h3>
-      </mat-grid-tile-header>
-      <mat-list>
-        <mat-list-item *ngFor="let saving_throw of charclass.saving_throws">{{saving_throw.name}}</mat-list-item>
-      </mat-list>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-grid-tile-header>
-        <h3>sub_classes</h3>
-      </mat-grid-tile-header>
-      <mat-list>
-        <mat-list-item *ngFor="let subclass of charclass.subclasses">{{subclass.name}}</mat-list-item>
-      </mat-list>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-grid-tile-header>
-        <h3>proficiencies</h3>
-      </mat-grid-tile-header>
-      <mat-list>
-        <mat-list-item *ngFor="let proficiency of charclass.proficiencies">{{proficiency.name}}</mat-list-item>
-      </mat-list>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-grid-tile-header>
-        <h3>proficiency_choices</h3>
-      </mat-grid-tile-header>
-      <mat-list>
-        <mat-list-item *ngFor="let choice of charclass.proficiency_choices">{{choice.type}}</mat-list-item>
-      </mat-list>
-    </mat-grid-tile>
-  </mat-grid-list>
+  <div>sub_classes: {{getSubclassesNames().join(', ')}}</div>
+  <h2>proficiencies</h2>
+  <div>saving_throws: {{getSavingThrowNames().join(', ')}}</div>
+  <div>proficiencies: {{getProficienciesNames().join(', ')}}</div>
+  <div>proficiency_choices: {{getProficiencyChoiceNames().join(', ')}}</div>
 </div>
