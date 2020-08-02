@@ -23,8 +23,10 @@ export class CharclassDetailComponent implements OnInit {
 
   getCharClass(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.charclassService.getCharClass(id)
-      .subscribe(charclass => this.charclass = charclass);
+    if (id) {
+      this.charclassService.getCharClass(id)
+        .subscribe(charclass => this.charclass = charclass);
+    }
   }
 
 }
