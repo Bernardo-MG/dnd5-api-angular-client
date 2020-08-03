@@ -1,10 +1,14 @@
 <div *ngIf="charclass">
   <h2>{{charclass.name}}</h2>
   <div>hit_die: {{charclass.hit_die}}</div>
-  <div>sub_classes: {{getSubclassesNames().join(', ')}}</div>
+  <div>sub_classes: {{asList(charclass.subclasses).join(', ')}}</div>
   <h2>proficiencies</h2>
-  <div>saving_throws: {{getSavingThrowNames().join(', ')}}</div>
-  <div>proficiencies: {{getProficienciesNames().join(', ')}}</div>
-  <div>proficiency_choices: {{getProficiencyChoiceNames().join(', ')}}</div>
+  <div>saving_throws: {{asList(charclass.saving_throws).join(', ')}}</div>
+  <div>proficiencies: {{asList(charclass.proficiencies).join(', ')}}</div>
+  <h3>picks</h3>
+  <div *ngFor="let choice of charclass.proficiency_choices;let index=index">
+    <div>pick {{choice.choose}} of {{asList(choice.from).join(', ')}}</div>
+    <mat-divider *ngIf="index < (charclass.proficiency_choices.length-1)"></mat-divider>
+  </div>
   <h2>starting_equipment</h2>
 </div>

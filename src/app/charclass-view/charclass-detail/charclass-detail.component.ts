@@ -30,20 +30,8 @@ export class CharclassDetailComponent implements OnInit {
     }
   }
 
-  getSavingThrowNames(): string[] {
-    return this.charclass.saving_throws.map(obj => obj.name);
-  }
-
-  getSubclassesNames(): string[] {
-    return this.charclass.subclasses.map(obj => obj.name);
-  }
-
-  getProficienciesNames(): string[] {
-    return this.charclass.proficiencies.map(obj => obj.name);
-  }
-
-  getProficiencyChoiceNames(): string[] {
-    return this.charclass.proficiency_choices.map(obj => obj.type);
+  asList(data: any[]) {
+    return data.map(obj => obj.name);
   }
 
 }
