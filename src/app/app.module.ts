@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 
+import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -25,6 +26,7 @@ import { NavigationComponent } from './navigation/navigation.component';
     BrowserAnimationsModule,
     LayoutModule,
     CharclassViewModule,
+    MatButtonModule,
     MatIconModule,
     MatSidenavModule,
     MatToolbarModule
