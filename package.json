@@ -1,6 +1,22 @@
 {
   "name": "dnd5-api-angular-client",
   "version": "1.0.0",
+  "description": "An example for a REST client using Angular",
+  "author": "Bernardo Mart�nez Garrido",
+  "homepage": "https://github.com/Bernardo-MG/dnd5-api-angular-client",
+  "license": "MIT",
+  "keywords": [
+     "REST",
+     "client",
+     "example"
+  ],
+  "repository": {
+     "type": "git",
+     "url": "git@github.com:bernardo-mg/dnd5-api-angular-client.git"
+  },
+  "bugs": {
+     "url": "https://github.com/Bernardo-MG/dnd5-api-angular-client/issues"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
