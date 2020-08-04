@@ -6,16 +6,16 @@
   "homepage": "https://github.com/Bernardo-MG/dnd5-api-angular-client",
   "license": "MIT",
   "keywords": [
-     "REST",
-     "client",
-     "example"
+    "REST",
+    "client",
+    "example"
   ],
   "repository": {
-     "type": "git",
-     "url": "git@github.com:bernardo-mg/dnd5-api-angular-client.git"
+    "type": "git",
+    "url": "git@github.com:bernardo-mg/dnd5-api-angular-client.git"
   },
   "bugs": {
-     "url": "https://github.com/Bernardo-MG/dnd5-api-angular-client/issues"
+    "url": "https://github.com/Bernardo-MG/dnd5-api-angular-client/issues"
   },
   "scripts": {
     "ng": "ng",
