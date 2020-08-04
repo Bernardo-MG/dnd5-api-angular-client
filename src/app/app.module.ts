@@ -1,27 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LayoutModule } from '@angular/cdk/layout';
+
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CharclassComponent } from './charclass/charclass.component';
-import { CharclassDetailComponent } from './charclass-detail/charclass-detail.component';
-import { HttpClientModule }    from '@angular/common/http';
-import { MessagesComponent } from './messages/messages.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CharclassViewModule } from './charclass-view/charclass-view.module';
 import { NavigationComponent } from './navigation/navigation.component';
-import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CharclassComponent,
-    CharclassDetailComponent,
-    MessagesComponent,
     NavigationComponent
   ],
   imports: [
@@ -30,11 +25,11 @@ import { MatListModule } from '@angular/material/list';
     HttpClientModule,
     BrowserAnimationsModule,
     LayoutModule,
-    MatToolbarModule,
+    CharclassViewModule,
     MatButtonModule,
-    MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatSidenavModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
