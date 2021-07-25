@@ -24,8 +24,6 @@ jobs:
       run: npm install -g @angular/cli
     - name: Run unit tests
       run: npm test -- --configuration=ci
-    - name: Run end to end tests
-      run: npm run e2e -- --configuration=ci
 
   test_build_develop:
 
