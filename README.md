@@ -41,12 +41,6 @@ To run the unit tests:
 ng test
 ```
 
-For the end to end tests:
-
-```
-ng e2e
-```
-
 ## Deploying locally
 
 The project can be deployed locally for testing:
