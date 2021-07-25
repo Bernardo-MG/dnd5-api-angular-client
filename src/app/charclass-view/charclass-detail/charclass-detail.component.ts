@@ -10,7 +10,7 @@ import { CharclassService } from '../../charclass.service';
 })
 export class CharclassDetailComponent implements OnInit {
 
-  @Input() charclass: Charclass;
+  @Input() charclass!: Charclass;
 
   constructor(
     private route: ActivatedRoute,

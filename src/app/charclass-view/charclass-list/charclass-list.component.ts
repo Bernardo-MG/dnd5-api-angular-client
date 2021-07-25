@@ -9,7 +9,7 @@ import { CharclassService } from '../../charclass.service';
 })
 export class CharclassListComponent implements OnInit {
 
-  charclasses: Charclass[];
+  charclasses: Charclass[] = [];
 
   constructor(private charclassService: CharclassService) { }
 
