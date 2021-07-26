@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Charclass } from '@app/models/charclass';
 
 @Component({
-  selector: 'app-charclass-detail',
+  selector: 'charclass-detail',
   templateUrl: './charclass-detail.component.html',
   styleUrls: ['./charclass-detail.component.sass']
 })

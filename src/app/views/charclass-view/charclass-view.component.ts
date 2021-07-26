@@ -4,11 +4,11 @@ import { Charclass } from '@app/models/charclass';
 import { CharclassService } from '@app/services/charclass.service';
 
 @Component({
-  selector: 'app-charclass',
-  templateUrl: './charclass.component.html',
-  styleUrls: ['./charclass.component.sass']
+  selector: 'charclass-view',
+  templateUrl: './charclass-view.component.html',
+  styleUrls: ['./charclass-view.component.sass']
 })
-export class CharclassComponent implements OnInit {
+export class CharclassViewComponent implements OnInit {
 
   charclasses: Charclass[] = [];
   
