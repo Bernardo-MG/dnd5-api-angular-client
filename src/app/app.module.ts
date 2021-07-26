@@ -14,6 +14,7 @@ import { AppRoutingModule } from '@app/app-routing.module';
 import { AppComponent } from '@app/app.component';
 import { CharclassModule } from '@app/charclass/charclass.module';
 import { NavigationComponent } from '@app/navigation/navigation.component';
+import { ViewsModule } from '@app/views/views.module';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { NavigationComponent } from '@app/navigation/navigation.component';
     BrowserAnimationsModule,
     LayoutModule,
     CharclassModule,
+    ViewsModule,
     MatButtonModule,
     MatIconModule,
     MatListModule,

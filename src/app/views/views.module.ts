@@ -12,6 +12,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CommonModule,
     CharclassModule,
     FlexLayoutModule
+  ],
+  exports: [
+    CharclassViewComponent
   ]
 })
 export class ViewsModule { }
