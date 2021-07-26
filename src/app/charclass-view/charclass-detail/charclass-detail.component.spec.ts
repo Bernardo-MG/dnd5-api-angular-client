@@ -10,7 +10,7 @@ describe('CharclassDetailComponent', () => {
   let fixture: ComponentFixture<CharclassDetailComponent>;
 
   beforeEach(async () => {
-    TestBed.configureTestingModule({
+    await TestBed.configureTestingModule({
       imports: [AppRoutingModule, HttpClientTestingModule],
       declarations: [ CharclassDetailComponent ]
     })
