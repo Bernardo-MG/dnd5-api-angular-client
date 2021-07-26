@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Charclass } from '../../models/charclass';
-import { CharclassService } from '../../charclass.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-charclass',

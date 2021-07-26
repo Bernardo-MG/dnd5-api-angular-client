@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Charclass } from '../../models/charclass';
 import { ActivatedRoute } from '@angular/router';
-import { CharclassService } from '../../charclass.service';
+import { CharclassService } from '../../services/charclass.service';
 
 @Component({
   selector: 'app-charclass-detail',
