@@ -9,7 +9,8 @@ describe('CharclassListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [RouterTestingModule, CharclassListComponent ]
+      declarations: [CharclassListComponent ],
+      imports: [RouterTestingModule]
     })
     .compileComponents();
   });
