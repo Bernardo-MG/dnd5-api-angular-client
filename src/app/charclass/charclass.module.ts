@@ -29,4 +29,4 @@ import { CharclassDetailComponent } from './charclass-detail/charclass-detail.co
     CharclassDetailComponent
   ]
 })
-export class CharclassViewModule { }
+export class CharclassModule { }

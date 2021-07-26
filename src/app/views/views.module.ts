@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CharclassViewModule } from '@app/charclass-view/charclass-view.module';
+import { CharclassModule } from '@app/charclass/charclass.module';
 import { CharclassViewComponent } from './charclass-view/charclass-view.component';
 
 @NgModule({
@@ -9,7 +9,7 @@ import { CharclassViewComponent } from './charclass-view/charclass-view.componen
   ],
   imports: [
     CommonModule,
-    CharclassViewModule
+    CharclassModule
   ]
 })
 export class ViewsModule { }

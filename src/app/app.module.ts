@@ -11,7 +11,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AppRoutingModule } from '@app/app-routing.module';
 import { AppComponent } from '@app/app.component';
-import { CharclassViewModule } from '@app/charclass-view/charclass-view.module';
+import { CharclassModule } from '@app/charclass/charclass.module';
 import { NavigationComponent } from '@app/navigation/navigation.component';
 
 @NgModule({
@@ -25,7 +25,7 @@ import { NavigationComponent } from '@app/navigation/navigation.component';
     HttpClientModule,
     BrowserAnimationsModule,
     LayoutModule,
-    CharclassViewModule,
+    CharclassModule,
     MatButtonModule,
     MatIconModule,
     MatSidenavModule,
