@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CharclassModule } from '@app/charclass/charclass.module';
 import { CharclassViewComponent } from './charclass-view/charclass-view.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -9,7 +10,8 @@ import { CharclassViewComponent } from './charclass-view/charclass-view.componen
   ],
   imports: [
     CommonModule,
-    CharclassModule
+    CharclassModule,
+    FlexLayoutModule
   ]
 })
 export class ViewsModule { }
