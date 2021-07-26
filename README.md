@@ -27,12 +27,6 @@ This builds the development version:
 ng build
 ```
 
-And this the production version:
-
-```
-ng build --prod
-```
-
 ### Running tests
 
 To run the unit tests:

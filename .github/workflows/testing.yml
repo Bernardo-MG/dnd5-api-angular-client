@@ -25,7 +25,7 @@ jobs:
     - name: Run unit tests
       run: npm test -- --configuration=ci
 
-  test_build_develop:
+  test_build:
 
     runs-on: ubuntu-latest
     strategy:
@@ -44,25 +44,4 @@ jobs:
     - name: Install Angular CLI
       run: npm install -g @angular/cli
     - name: Build
-      run: ng build
-
-  test_build_release:
-
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node: [ 12.x, 14.x ]
-  
-    steps:
-    - name: Check-out
-      uses: actions/checkout@v2
-    - name: Set up Node.js ${{ matrix.node }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node }}
-    - name: Install dependencies
-      run: npm ci
-    - name: Install Angular CLI
-      run: npm install -g @angular/cli
-    - name: Build
-      run: ng build --prod
+      run: npm run build
