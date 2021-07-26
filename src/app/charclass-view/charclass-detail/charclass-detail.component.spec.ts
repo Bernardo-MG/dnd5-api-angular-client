@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AppRoutingModule } from '../../app-routing.module';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
@@ -9,13 +9,13 @@ describe('CharclassDetailComponent', () => {
   let component: CharclassDetailComponent;
   let fixture: ComponentFixture<CharclassDetailComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
       imports: [AppRoutingModule, HttpClientTestingModule],
       declarations: [ CharclassDetailComponent ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CharclassDetailComponent);
