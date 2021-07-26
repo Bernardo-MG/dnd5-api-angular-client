@@ -1,12 +1,39 @@
 import { Component, OnInit } from '@angular/core';
-import { Charclass } from '../../charclass';
-import { CharclassService } from '../../charclass.service';
+import { ActivatedRoute } from '@angular/router';
+import { Charclass } from '@app/models/charclass';
+import { CharclassService } from '@app/services/charclass.service';
 
 @Component({
   selector: 'app-charclass',
   templateUrl: './charclass.component.html',
   styleUrls: ['./charclass.component.sass']
 })
-export class CharclassComponent {
+export class CharclassComponent implements OnInit {
+
+  charclasses: Charclass[] = [];
+  
+  charclass!: Charclass;
+
+  constructor(
+    private route: ActivatedRoute,
+    private charclassService: CharclassService
+  ) { }
+
+  ngOnInit(): void {
+    // Loads character classes
+    this.charclassService.getCharClasses().subscribe(charclasses => this.charclasses = charclasses);
+
+    // Loads selected character class
+    this.route.params.subscribe(params => {
+      this.getCharClass(params['id']);
+    });
+  }
+
+  getCharClass(id: string): void {
+    if (id) {
+      this.charclassService.getCharClass(id)
+        .subscribe(charclass => this.charclass = charclass);
+    }
+  }
 
 }

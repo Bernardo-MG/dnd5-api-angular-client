@@ -1,6 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from '@app/app-routing.module';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { CharclassComponent } from './charclass.component';
 
@@ -8,13 +9,13 @@ describe('CharclassComponent', () => {
   let component: CharclassComponent;
   let fixture: ComponentFixture<CharclassComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [HttpClientModule],
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [AppRoutingModule, HttpClientTestingModule],
       declarations: [ CharclassComponent ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CharclassComponent);

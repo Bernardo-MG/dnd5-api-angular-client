@@ -24,13 +24,7 @@ And a [development demo site][demo-site-development], taken from the development
 This builds the development version:
 
 ```
-ng build
-```
-
-And this the production version:
-
-```
-ng build --prod
+npm run build
 ```
 
 ### Running tests
@@ -38,13 +32,7 @@ ng build --prod
 To run the unit tests:
 
 ```
-ng test
-```
-
-For the end to end tests:
-
-```
-ng e2e
+npm run test
 ```
 
 ## Deploying locally
@@ -52,7 +40,7 @@ ng e2e
 The project can be deployed locally for testing:
 
 ```
-ng serve --open
+npm run start
 ```
 
 It will be available on `http://localhost:4200/`. Changes will be reloaded automatically.

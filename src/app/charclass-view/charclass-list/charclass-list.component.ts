@@ -1,24 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { Charclass } from '../../charclass';
-import { CharclassService } from '../../charclass.service';
+import { Component, Input } from '@angular/core';
+import { Charclass } from '@app/models/charclass';
 
 @Component({
   selector: 'app-charclass-list',
   templateUrl: './charclass-list.component.html',
   styleUrls: ['./charclass-list.component.sass']
 })
-export class CharclassListComponent implements OnInit {
+export class CharclassListComponent {
 
-  charclasses: Charclass[];
-
-  constructor(private charclassService: CharclassService) { }
-
-  ngOnInit(): void {
-    this.getCharClasses();
-  }
-
-  getCharClasses(): void {
-    this.charclassService.getCharClasses().subscribe(charclasses => this.charclasses = charclasses);
-  }
+  @Input() charclasses: Charclass[] = [];
 
 }

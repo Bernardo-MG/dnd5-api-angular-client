@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [ 10.x, 12.x, 14.x ]
+        node: [ 12.x, 14.x ]
 
     steps:
     - name: Check-out
@@ -24,15 +24,13 @@ jobs:
       run: npm install -g @angular/cli
     - name: Run unit tests
       run: npm test -- --configuration=ci
-    - name: Run end to end tests
-      run: npm run e2e -- --configuration=ci
 
-  test_build_develop:
+  test_build:
 
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [ 10.x, 12.x, 14.x ]
+        node: [ 12.x, 14.x ]
   
     steps:
     - name: Check-out
@@ -46,25 +44,4 @@ jobs:
     - name: Install Angular CLI
       run: npm install -g @angular/cli
     - name: Build
-      run: ng build
-
-  test_build_release:
-
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node: [ 10.x, 12.x, 14.x ]
-  
-    steps:
-    - name: Check-out
-      uses: actions/checkout@v2
-    - name: Set up Node.js ${{ matrix.node }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node }}
-    - name: Install dependencies
-      run: npm ci
-    - name: Install Angular CLI
-      run: npm install -g @angular/cli
-    - name: Build
-      run: ng build --prod
+      run: npm run build
