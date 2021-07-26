@@ -1,7 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-
 import { CharclassDetailComponent } from './charclass-detail.component';
 
 describe('CharclassDetailComponent', () => {
@@ -10,7 +8,6 @@ describe('CharclassDetailComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
       declarations: [ CharclassDetailComponent ]
     })
     .compileComponents();

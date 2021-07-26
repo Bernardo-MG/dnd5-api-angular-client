@@ -3,22 +3,22 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppRoutingModule } from '@app/app-routing.module';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-import { CharclassComponent } from './charclass.component';
+import { CharclassViewComponent } from './charclass-view.component';
 
-describe('CharclassComponent', () => {
-  let component: CharclassComponent;
-  let fixture: ComponentFixture<CharclassComponent>;
+describe('CharclassViewComponent', () => {
+  let component: CharclassViewComponent;
+  let fixture: ComponentFixture<CharclassViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AppRoutingModule, HttpClientTestingModule],
-      declarations: [ CharclassComponent ]
+      declarations: [CharclassViewComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CharclassComponent);
+    fixture = TestBed.createComponent(CharclassViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

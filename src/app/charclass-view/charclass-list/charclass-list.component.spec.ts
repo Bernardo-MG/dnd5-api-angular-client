@@ -1,16 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-
 import { CharclassListComponent } from './charclass-list.component';
 
-describe('CharclassComponent', () => {
+describe('CharclassListComponent', () => {
   let component: CharclassListComponent;
   let fixture: ComponentFixture<CharclassListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
       declarations: [ CharclassListComponent ]
     })
     .compileComponents();
