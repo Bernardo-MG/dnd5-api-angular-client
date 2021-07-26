@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Charclass } from '../../charclass';
+import { Charclass } from '../../models/charclass';
 import { ActivatedRoute } from '@angular/router';
 import { CharclassService } from '../../charclass.service';
 

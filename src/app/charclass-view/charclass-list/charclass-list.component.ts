@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Charclass } from '../../charclass';
+import { Charclass } from '../../models/charclass';
 import { CharclassService } from '../../charclass.service';
 
 @Component({
