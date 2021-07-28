@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { FlexLayoutModule } from '@angular/flex-layout';
-
 import { MatListModule } from '@angular/material/list';
 
 import { CharclassListComponent } from './charclass-list/charclass-list.component';
@@ -19,7 +17,6 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     RouterTestingModule,
     RouterModule,
-    FlexLayoutModule,
     MatListModule
   ],
   exports: [
