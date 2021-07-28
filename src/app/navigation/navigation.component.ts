@@ -12,12 +12,6 @@ export class NavigationComponent {
 
   @Input() title: string = '';
 
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-    .pipe(
-      map(result => result.matches),
-      shareReplay()
-    );
-
   constructor(private breakpointObserver: BreakpointObserver) {}
 
 }
