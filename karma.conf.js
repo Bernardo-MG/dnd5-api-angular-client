@@ -25,13 +25,14 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/angular-test'),
+      dir: require('path').join(__dirname, './coverage/dnd5-api-angular-client'),
       subdir: '.',
       reporters: [
         { type: 'html' },
         { type: 'text-summary' }
       ]
     },
+    reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,

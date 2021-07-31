@@ -4,6 +4,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { CharclassViewComponent } from './charclass-view.component';
 import { RouterTestingModule } from '@angular/router/testing';
+import { CharclassModule } from '@app/charclass/charclass.module';
 
 describe('CharclassViewComponent', () => {
   let component: CharclassViewComponent;
@@ -11,10 +12,14 @@ describe('CharclassViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule, HttpClientTestingModule],
-      declarations: [CharclassViewComponent ]
+      declarations: [CharclassViewComponent],
+      imports: [
+        RouterTestingModule,
+        HttpClientTestingModule,
+        CharclassModule
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

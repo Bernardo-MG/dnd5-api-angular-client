@@ -32,7 +32,7 @@ npm run build
 To run the unit tests:
 
 ```
-npm run test
+npm test
 ```
 
 ## Deploying locally
@@ -40,7 +40,7 @@ npm run test
 The project can be deployed locally for testing:
 
 ```
-npm run start
+npm start
 ```
 
 It will be available on `http://localhost:4200/`. Changes will be reloaded automatically.
