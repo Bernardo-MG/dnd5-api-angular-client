@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CharclassViewComponent } from './charclass-view.component';
-import { RouterTestingModule } from '@angular/router/testing';
 import { CharclassModule } from '@app/charclass/charclass.module';
 import { CharclassService } from '@app/services/charclass.service';
 import { of } from 'rxjs';
@@ -22,7 +21,6 @@ describe('CharclassViewComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [CharclassViewComponent],
       imports: [
-        RouterTestingModule,
         CharclassModule
       ],
       providers: [
