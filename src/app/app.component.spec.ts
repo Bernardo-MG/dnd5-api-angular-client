@@ -7,7 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { NavigationMenuComponent } from './navigation/navigation-menu/navigation-menu.component';
+import { NavigationModule } from './navigation/navigation.module';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -23,7 +23,7 @@ describe('AppComponent', () => {
         MatListModule,
         MatSidenavModule,
         MatToolbarModule,
-        NavigationMenuComponent
+        NavigationModule
       ]
     }).compileComponents();
   });
