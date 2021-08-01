@@ -36,7 +36,7 @@ describe('CharclassViewComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('loads data on start', () => {
+    expect(serviceSpy.getCharClasses).toHaveBeenCalledTimes(1);
   });
 });
