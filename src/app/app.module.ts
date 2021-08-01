@@ -12,13 +12,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AppRoutingModule } from '@app/app-routing.module';
 import { AppComponent } from '@app/app.component';
-import { NavigationComponent } from '@app/navigation/navigation.component';
 import { ViewsModule } from '@app/views/views.module';
+import { NavigationModule } from './navigation/navigation.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavigationComponent
+    AppComponent
   ],
   imports: [
     AppRoutingModule,
@@ -26,6 +25,7 @@ import { ViewsModule } from '@app/views/views.module';
     HttpClientModule,
     BrowserAnimationsModule,
     LayoutModule,
+    NavigationModule,
     ViewsModule,
     MatButtonModule,
     MatIconModule,
