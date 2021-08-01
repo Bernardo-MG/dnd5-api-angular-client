@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Charclass } from '@app/models/charclass';
 import { ApiResponse } from '@app/models/api-response';
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({

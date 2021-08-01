@@ -24,12 +24,12 @@ export class CharclassViewComponent implements OnInit {
     this.charclassService.getCharClasses().subscribe(charclasses => this.charclasses = charclasses);
 
     // Loads selected character class
-    this.route.params.subscribe(params => {
-      this.getCharClass(params['id']);
+    this.route.paramMap.subscribe(params => {
+      this.getCharClass(params.get('id'));
     });
   }
 
-  getCharClass(id: string): void {
+  getCharClass(id: string | null): void {
     if (id) {
       this.charclassService.getCharClass(id)
         .subscribe(charclass => this.charclass = charclass);
