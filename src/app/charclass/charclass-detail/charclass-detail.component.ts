@@ -8,7 +8,7 @@ import { Charclass } from '@app/models/charclass';
 })
 export class CharclassDetailComponent {
 
-  @Input() charclass!: Charclass;
+  @Input() charclass: Charclass = { index: '', name: '', hit_die: 0, proficiency_choices: [], proficiencies: [], saving_throws: [], starting_equipment: '', class_levels: '', subclasses: [], url: '' };
 
   constructor() { }
 
