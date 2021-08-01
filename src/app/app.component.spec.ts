@@ -7,14 +7,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { NavigationComponent } from './navigation/navigation.component';
+import { NavigationMenuComponent } from './navigation/navigation-menu/navigation-menu.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        AppComponent,
-        NavigationComponent
+        AppComponent
       ],
       imports: [
         NoopAnimationsModule,
@@ -23,7 +22,8 @@ describe('AppComponent', () => {
         MatIconModule,
         MatListModule,
         MatSidenavModule,
-        MatToolbarModule
+        MatToolbarModule,
+        NavigationMenuComponent
       ]
     }).compileComponents();
   });

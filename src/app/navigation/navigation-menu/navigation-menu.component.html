@@ -4,7 +4,7 @@
         <mat-toolbar-row>Menu</mat-toolbar-row>
         <mat-toolbar-row>
           <mat-action-list>
-            <button mat-button [routerLink]="'/classes'">Classes</button>
+            <button *ngFor="let link of links" mat-button routerLink="{{link.path}}">{{link.name}}</button>
           </mat-action-list>
         </mat-toolbar-row>
       </mat-toolbar>
