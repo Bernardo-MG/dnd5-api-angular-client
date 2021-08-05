@@ -12,7 +12,7 @@ export class CharclassDetailComponent {
 
   constructor() { }
 
-  asList(data: any[]) {
+  asNameList(data: any[]) {
     return data.map(obj => obj.name);
   }
 
