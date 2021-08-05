@@ -5,6 +5,7 @@ import { CharclassModule } from '@app/charclass/charclass.module';
 import { CharclassService } from '@app/services/charclass.service';
 import { of } from 'rxjs';
 import { Charclass } from '@app/models/charclass';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('CharclassViewComponent', () => {
   let component: CharclassViewComponent;
@@ -21,7 +22,8 @@ describe('CharclassViewComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [CharclassViewComponent],
       imports: [
-        CharclassModule
+        CharclassModule,
+        RouterTestingModule
       ],
       providers: [
         { provide: CharclassService, useValue: serviceSpy }
