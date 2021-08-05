@@ -5,7 +5,6 @@ import { MatListModule } from '@angular/material/list';
 
 import { CharclassListComponent } from './charclass-list/charclass-list.component';
 import { CharclassDetailComponent } from './charclass-detail/charclass-detail.component';
-import { RouterTestingModule } from '@angular/router/testing';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -15,7 +14,6 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterTestingModule,
     RouterModule,
     MatListModule
   ],
