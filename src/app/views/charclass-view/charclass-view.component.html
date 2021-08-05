@@ -1,8 +1,12 @@
-<div fxLayout="row" fxLayoutAlign="space-between">
-    <div fxFlex="80">
-      <charclass-detail *ngIf="charclass" [charclass]="charclass"></charclass-detail>
-    </div>
-    <div fxFlex="20">
-      <charclass-list [charclasses]="charclasses"></charclass-list>
-    </div>
+<div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="1em">
+  <div fxFlex="80">
+    <mat-card *ngIf="charclass">
+      <charclass-detail [charclass]="charclass"></charclass-detail>
+    </mat-card>
   </div>
+  <div fxFlex="20">
+    <mat-card>
+      <charclass-list [charclasses]="charclasses"></charclass-list>
+    </mat-card>
+  </div>
+</div>

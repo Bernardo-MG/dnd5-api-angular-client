@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CharclassModule } from '@app/charclass/charclass.module';
 import { CharclassViewComponent } from './charclass-view/charclass-view.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   imports: [
     CommonModule,
     CharclassModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatCardModule
   ],
   exports: [
     CharclassViewComponent
