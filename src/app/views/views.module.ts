@@ -4,10 +4,12 @@ import { CharclassModule } from '@app/charclass/charclass.module';
 import { CharclassViewComponent } from './charclass-view/charclass-view.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    CharclassViewComponent
+    CharclassViewComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
