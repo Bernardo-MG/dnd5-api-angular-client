@@ -8,6 +8,7 @@ const routes: Routes = [
   {
     path: '',
     children: [
+      { path: '', component: HomeComponent },
       { path: 'classes', loadChildren: charsModule }
     ]
   },
