@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Charclass } from '@app/models/charclass';
+import { Charclass } from '@app/charclass/models/charclass';
 import { CharclassService } from '@app/charclass/services/charclass.service';
 
 @Component({

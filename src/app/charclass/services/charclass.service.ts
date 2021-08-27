@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Charclass } from '@app/models/charclass';
-import { ApiResponse } from '@app/models/api-response';
+import { Charclass } from '@app/charclass/models/charclass';
+import { ApiResponse } from '@app/charclass/models/api-response';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
