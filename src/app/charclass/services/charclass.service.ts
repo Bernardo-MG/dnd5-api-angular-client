@@ -5,9 +5,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class CharclassService {
 
   private charclassesUrl = 'https://www.dnd5eapi.co/api/classes';  // URL to web api

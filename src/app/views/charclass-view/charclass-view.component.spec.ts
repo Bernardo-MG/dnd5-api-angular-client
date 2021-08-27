@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CharclassViewComponent } from './charclass-view.component';
 import { CharclassModule } from '@app/charclass/charclass.module';
-import { CharclassService } from '@app/services/charclass.service';
+import { CharclassService } from '@app/charclass/services/charclass.service';
 import { of } from 'rxjs';
 import { Charclass } from '@app/models/charclass';
 import { RouterTestingModule } from '@angular/router/testing';

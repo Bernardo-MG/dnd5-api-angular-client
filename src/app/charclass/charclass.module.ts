@@ -7,11 +7,15 @@ import { CharclassListComponent } from './charclass-list/charclass-list.componen
 import { CharclassDetailComponent } from './charclass-detail/charclass-detail.component';
 import { RouterModule } from '@angular/router';
 import { CharclassRoutingModule } from './charclass-routing.module';
+import { CharclassService } from './services/charclass.service';
 
 @NgModule({
   declarations: [
     CharclassDetailComponent,
     CharclassListComponent
+  ],
+  providers: [
+    CharclassService
   ],
   imports: [
     CharclassRoutingModule,
