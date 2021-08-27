@@ -6,13 +6,19 @@ import { MatListModule } from '@angular/material/list';
 import { CharclassListComponent } from './charclass-list/charclass-list.component';
 import { CharclassDetailComponent } from './charclass-detail/charclass-detail.component';
 import { RouterModule } from '@angular/router';
+import { CharclassRoutingModule } from './charclass-routing.module';
+import { CharclassService } from './services/charclass.service';
 
 @NgModule({
   declarations: [
     CharclassDetailComponent,
     CharclassListComponent
   ],
+  providers: [
+    CharclassService
+  ],
   imports: [
+    CharclassRoutingModule,
     CommonModule,
     RouterModule,
     MatListModule

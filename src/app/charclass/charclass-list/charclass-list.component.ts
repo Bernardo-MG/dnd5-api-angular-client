@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Charclass } from '@app/models/charclass';
+import { Charclass } from '@app/charclass/models/charclass';
 
 @Component({
   selector: 'charclass-list',
