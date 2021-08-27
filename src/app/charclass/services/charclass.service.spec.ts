@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { CharclassService } from './charclass.service';
 import { of } from 'rxjs';
 import { Charclass } from '@app/charclass/models/charclass';
+import { CharclassModule } from '../charclass.module';
 
 describe('CharclassService', () => {
   let service: CharclassService;
@@ -14,6 +15,9 @@ describe('CharclassService', () => {
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
 
     TestBed.configureTestingModule({
+      imports:[
+        CharclassModule
+      ],
       providers: [
         { provide: HttpClient, useValue: httpClientSpy }
       ]
