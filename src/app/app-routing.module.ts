@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CharclassViewComponent } from '@app/views/charclass-view/charclass-view.component';
 import { HomeComponent } from './views/home/home.component';
 
+const charsModule = () => import('@app/charclass/charclass.module').then(x => x.CharclassModule);
+
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'classes', component: CharclassViewComponent },
-  { path: 'classes/:id', component: CharclassViewComponent }
+  {
+    path: '',
+    children: [
+      { path: 'classes', loadChildren: charsModule }
+    ]
+  },
+  { path: '**', redirectTo: '/' }
 ];
 
 @NgModule({
