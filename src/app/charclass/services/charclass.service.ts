@@ -4,11 +4,12 @@ import { ApiResponse } from '@app/charclass/models/api-response';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'environments/environment';
 
 @Injectable()
 export class CharclassService {
 
-  private charclassesUrl = 'https://www.dnd5eapi.co/api/classes';  // URL to web api
+  private charclassesUrl = environment.apiUrl;  // URL to web api
 
   constructor(
     private http: HttpClient
