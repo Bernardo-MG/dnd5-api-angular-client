@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-home',
+  selector: 'dnd5-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.sass']
 })
