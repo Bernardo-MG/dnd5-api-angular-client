@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MenuLink } from './navigation/model/menu-link';
 
 @Component({
-  selector: 'app-root',
+  selector: 'dnd5-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })

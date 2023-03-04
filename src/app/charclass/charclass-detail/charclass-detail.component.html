@@ -7,5 +7,4 @@
 <h3>picks</h3>
 <div *ngFor="let choice of charclass.proficiency_choices;let index=index">
   <div>pick {{choice.choose}} of {{asNameList(choice.from).join(', ')}}</div>
-  <mat-divider *ngIf="index < (charclass.proficiency_choices.length-1)"></mat-divider>
 </div>

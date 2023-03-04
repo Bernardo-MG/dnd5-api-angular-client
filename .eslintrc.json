@@ -23,15 +23,15 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "app",
+            "prefix": "dnd5",
             "style": "camelCase"
           }
         ],
         "@angular-eslint/component-selector": [
-          "warn",
+          "error",
           {
             "type": "element",
-            "prefix": "app",
+            "prefix": "dnd5",
             "style": "kebab-case"
           }
         ]

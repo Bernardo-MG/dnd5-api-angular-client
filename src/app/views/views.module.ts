@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CharclassModule } from '@app/charclass/charclass.module';
 import { CharclassViewComponent } from './charclass-view/charclass-view.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatCardModule } from '@angular/material/card';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
@@ -13,9 +11,7 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     CommonModule,
-    CharclassModule,
-    FlexLayoutModule,
-    MatCardModule
+    CharclassModule
   ],
   exports: [
     CharclassViewComponent
