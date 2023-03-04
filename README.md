@@ -6,6 +6,7 @@ An example REST client made with Angular. Using the [DnD5e API][dnd5api].
 
 - Angular
 - REST queries
+- Bootstrap 5
 
 ## Check it
 
