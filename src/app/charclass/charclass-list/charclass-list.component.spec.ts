@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatListModule } from '@angular/material/list';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 
@@ -13,8 +12,7 @@ describe('CharclassListComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [CharclassListComponent],
       imports: [
-        RouterTestingModule,
-        MatListModule
+        RouterTestingModule
       ]
     })
       .compileComponents();
@@ -27,7 +25,7 @@ describe('CharclassListComponent', () => {
   });
 
   it('by default has no items', () => {
-    const count = fixture.debugElement.queryAll(By.css('mat-list-item')).length;
+    const count = fixture.debugElement.queryAll(By.css('.list-group-item')).length;
 
     expect(count).toBe(0);
   });
@@ -37,7 +35,7 @@ describe('CharclassListComponent', () => {
     comp.charclasses = [{ index: '1', name: 'A', hit_die: 1, proficiency_choices: [], proficiencies: [], saving_throws: [], starting_equipment: '', class_levels: '', subclasses: [], url: '' }];
     fixture.detectChanges();
     
-    const count = fixture.debugElement.queryAll(By.css('mat-list-item')).length;
+    const count = fixture.debugElement.queryAll(By.css('.list-group-item')).length;
 
     expect(count).toBe(1);
   });
