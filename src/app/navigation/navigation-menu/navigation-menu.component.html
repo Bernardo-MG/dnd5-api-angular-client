@@ -1,21 +1,22 @@
-<mat-sidenav-container>
-  <mat-sidenav #drawer fixedInViewport>
-    <mat-toolbar>
-      <mat-toolbar-row>Menu</mat-toolbar-row>
-      <mat-toolbar-row>
-        <mat-action-list>
-          <button *ngFor="let link of links" mat-button routerLink="{{link.path}}">{{link.name}}</button>
-        </mat-action-list>
-      </mat-toolbar-row>
-    </mat-toolbar>
-  </mat-sidenav>
-  <mat-toolbar color="primary">
-    <button aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
-      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-    </button>
-    <span>{{title}}</span>
-  </mat-toolbar>
-  <main>
-    <ng-content></ng-content>
-  </main>
-</mat-sidenav-container>
+<nav id="navbar-main" class="navbar navbar-expand-md navbar-light sticky-top bg-light flex-md-nowrap p-0 shadow">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">{{title}}</a>
+    <div class="collapse navbar-collapse" id="navbar-main-menu">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id="menuDropdown" data-bs-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false">
+             Sections
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="menuDropdown">
+            <li *ngFor="let link of links">
+              <div class="d-flex justify-content-center">
+                <a routerLink="{{link.path}}" class="btn btn-default" title="{{link.name}}">{{link.name}}</a>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
