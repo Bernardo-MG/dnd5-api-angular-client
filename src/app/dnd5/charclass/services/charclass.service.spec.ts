@@ -26,8 +26,7 @@ describe('CharclassService', () => {
   });
 
   it('returns value from request', () => {
-    const expectedData: Charclass[] =
-      [{ index: '1', name: 'A', hit_die: 1, proficiency_choices: [], proficiencies: [], saving_throws: [], starting_equipment: '', class_levels: '', subclasses: [], url: '' }];
+    const expectedData: Charclass[] = [new Charclass()];
 
     httpClientSpy.get.and.returnValue(of(expectedData));
 
