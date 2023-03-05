@@ -1,20 +1,22 @@
+import { Choice } from './choice';
+import { Multiclassing } from './multiclassing';
 import { Reference } from './reference';
-import { MultiClassing } from './multiclassing';
-import { ProficiencyChoice } from './proficiency-choice';
+import { Spellcasting } from './spellcasting';
 import { StartingEquipment } from './starting-equipment';
-import { StartingEquipmentOption } from './starting-equipment-option';
 
 export class Charclass {
     index: string = '';
     name: string = '';
+    url: string = '';
     hit_die: number = 0;
-    multi_classing: MultiClassing = new MultiClassing();
-    proficiency_choices: ProficiencyChoice[] = [];
+    class_levels: string = '';
+    multi_classing: Multiclassing = new Multiclassing();
+    spellcasting: Spellcasting = new Spellcasting();
+    spells: string = '';
+    starting_equipment: StartingEquipment[] = [];
+    starting_equipment_options: Choice[] = [];
+    proficiency_choices: Choice[] = [];
     proficiencies: Reference[] = [];
     saving_throws: Reference[] = [];
-    starting_equipment: StartingEquipment[] = [];
-    starting_equipment_options: StartingEquipmentOption[] = [];
-    class_levels: string = '';
     subclasses: Reference[] = [];
-    url: string = '';
 }

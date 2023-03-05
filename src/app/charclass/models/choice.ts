@@ -1,8 +1,8 @@
 import { OptionSet } from "./option-set";
 
-export class StartingEquipmentOption {
-    choose: number = 0;
+export class Choice {
     desc: string = '';
+    choose: number = 0;
     type: string = '';
     from: OptionSet = new OptionSet();
 }
