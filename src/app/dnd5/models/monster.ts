@@ -1,0 +1,47 @@
+import { AlignmentValues } from "./alignment-values";
+import { ArmorClassArmor } from "./armor-class-armor";
+import { ArmorConditionSpell } from "./armor-class-condition";
+import { ArmorClassSimple } from "./armor-class-simple";
+import { ArmorClassSpell } from "./armor-class-spell";
+import { MonsterProficiency } from "./monster-proficiency";
+import { Reference } from "./reference";
+import { Senses } from "./senses";
+import { Size } from "./size";
+import { Speed } from "./speed";
+
+export class Monster {
+    index: string = '';
+    name: string = '';
+    url: string = '';
+    desc: string[] = [];
+    charisma: number = 0;
+    constitution: number = 0;
+    dexterity: number = 0;
+    intelligence: number = 0;
+    strength: number = 0;
+    wisdom: number = 0;
+    image: string = '';
+    size: Size = Size.Medium;
+    type: string = '';
+    subtype: string = '';
+    alignments: AlignmentValues = AlignmentValues.neutral;
+    armor_class: (ArmorClassArmor | ArmorConditionSpell | ArmorClassSimple | ArmorClassSpell)[] = [];
+    hit_points: number = 0;
+    hit_dice: string = '';
+    hit_points_roll: string = '';
+    actions: any[] = [];
+    legendary_actions: any[] = [];
+    challenge_rating: number = 0;
+    condition_immunities: Reference[] = [];
+    damage_immunities: string[] = [];
+    damage_resistances: string[] = [];
+    damage_vulnerabilities: string[] = [];
+    forms: Reference[] = [];
+    languages: string = '';
+    proficiency: MonsterProficiency = new MonsterProficiency();
+    reactions: any[] = [];
+    senses: Senses = new Senses();
+    special_abilities: any[] = [];
+    speed: Speed = new Speed();
+    xp: number = 0;
+}

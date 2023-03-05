@@ -1,11 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ApiResponse } from '@app/charclass/models/api-response';
-import { Charclass } from '@app/charclass/models/charclass';
+import { ApiResponse } from '@app/dnd5/models/api-response';
+import { Charclass } from '@app/dnd5/models/charclass';
 import { environment } from 'environments/environment';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-import { Reference } from '../models/reference';
+import { Reference } from '../../dnd5/models/reference';
 
 @Injectable()
 export class CharclassService {

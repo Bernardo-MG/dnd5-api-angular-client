@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Charclass } from '@app/charclass/models/charclass';
-import { Reference } from '@app/charclass/models/reference';
+import { Charclass } from '@app/dnd5/models/charclass';
+import { Reference } from '@app/dnd5/models/reference';
 import { CharclassService } from '@app/charclass/services/charclass.service';
 
 @Component({
