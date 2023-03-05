@@ -1,6 +1,6 @@
-import { OptionSet } from './option-set';
+import { OptionSet } from "./option-set";
 
-export class ProficiencyChoice {
+export class StartingEquipmentOption {
     choose: number = 0;
     desc: string = '';
     type: string = '';

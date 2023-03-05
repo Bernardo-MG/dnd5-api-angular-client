@@ -1,10 +1,11 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Charclass } from '@app/charclass/models/charclass';
 import { ApiResponse } from '@app/charclass/models/api-response';
+import { Charclass } from '@app/charclass/models/charclass';
+import { environment } from 'environments/environment';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
-import { environment } from 'environments/environment';
+import { Link } from '../models/link';
 
 @Injectable()
 export class CharclassService {
@@ -15,12 +16,12 @@ export class CharclassService {
     private http: HttpClient
   ) { }
 
-  getCharClasses(): Observable<Charclass[]> {
-    return this.http.get<ApiResponse<Charclass[]>>(this.charclassesUrl).pipe(
-      map((response: ApiResponse<Charclass[]>) => { return response.results }),
-      catchError(this.handleError<Charclass[]>('getCharClasses', []))
+  getCharClasses(): Observable<Link[]> {
+    return this.http.get<ApiResponse<Link[]>>(this.charclassesUrl).pipe(
+      map((response: ApiResponse<Link[]>) => { return response.results }),
+      catchError(this.handleError<Link[]>('getCharClasses', []))
     ).pipe(
-      catchError(this.handleError<Charclass[]>('getCharClasses', []))
+      catchError(this.handleError<Link[]>('getCharClasses', []))
     );
   }
 

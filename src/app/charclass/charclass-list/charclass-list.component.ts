@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Charclass } from '@app/charclass/models/charclass';
+import { Link } from '../models/link';
 
 @Component({
   selector: 'dnd5-charclass-list',
@@ -8,6 +8,6 @@ import { Charclass } from '@app/charclass/models/charclass';
 })
 export class CharclassListComponent {
 
-  @Input() charclasses: Charclass[] = [];
+  @Input() charclasses: Link[] = [];
 
 }

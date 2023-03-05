@@ -8,12 +8,20 @@ import { Charclass } from '@app/charclass/models/charclass';
 })
 export class CharclassDetailComponent {
 
-  @Input() charclass: Charclass = { index: '', name: '', hit_die: 0, proficiency_choices: [], proficiencies: [], saving_throws: [], starting_equipment: '', class_levels: '', subclasses: [], url: '' };
+  @Input() charclass: Charclass = new Charclass();
 
   constructor() { }
 
-  asNameList(data: any[]) {
-    return data.map(obj => obj.name);
+  asNameList(data: any[]): string {
+    let result;
+
+    if (data) {
+      result = data.map(obj => obj.name).join(', ');
+    } else {
+      result = '';
+    }
+
+    return result;
   }
 
 }
