@@ -1,16 +1,17 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { CharclassListComponent } from './charclass-list/charclass-list.component';
-import { CharclassDetailComponent } from './charclass-detail/charclass-detail.component';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CharclassRoutingModule } from './charclass-routing.module';
+import { CharclassDetailComponent } from './components/charclass-detail/charclass-detail.component';
+import { CharclassListComponent } from './components/charclass-list/charclass-list.component';
 import { CharclassService } from './services/charclass.service';
+import { CharclassViewComponent } from './views/charclass-view/charclass-view.component';
 
 @NgModule({
   declarations: [
     CharclassDetailComponent,
-    CharclassListComponent
+    CharclassListComponent,
+    CharclassViewComponent
   ],
   providers: [
     CharclassService
@@ -21,8 +22,7 @@ import { CharclassService } from './services/charclass.service';
     RouterModule
   ],
   exports: [
-    CharclassDetailComponent,
-    CharclassListComponent
+    CharclassViewComponent
   ]
 })
 export class CharclassModule { }

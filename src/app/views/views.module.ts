@@ -1,20 +1,15 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CharclassModule } from '@app/charclass/charclass.module';
-import { CharclassViewComponent } from './charclass-view/charclass-view.component';
+import { NgModule } from '@angular/core';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    CharclassViewComponent,
     HomeComponent
   ],
   imports: [
-    CommonModule,
-    CharclassModule
+    CommonModule
   ],
   exports: [
-    CharclassViewComponent
   ]
 })
 export class ViewsModule { }

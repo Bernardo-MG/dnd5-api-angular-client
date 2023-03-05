@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CharclassViewComponent } from '@app/views/charclass-view/charclass-view.component';
+import { CharclassViewComponent } from '@app/dnd5/charclass/views/charclass-view/charclass-view.component';
 
 
 const routes: Routes = [
