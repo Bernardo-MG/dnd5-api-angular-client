@@ -1,6 +1,6 @@
-import { Link } from "./link";
+import { Reference } from "./reference";
 
 export class StartingEquipment {
     quantity: number = 0;
-    equipment: Link = new Link();
+    equipment: Reference = new Reference();
 }

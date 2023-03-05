@@ -1,6 +1,6 @@
-import { Link } from "./link";
+import { Reference } from "./reference";
 
 export class Option {
     option_type: string = '';
-    item: Link = new Link();
+    item: Reference = new Reference();
 }

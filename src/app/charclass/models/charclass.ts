@@ -1,4 +1,4 @@
-import { Link } from './link';
+import { Reference } from './reference';
 import { MultiClassing } from './multiclassing';
 import { ProficiencyChoice } from './proficiency-choice';
 import { StartingEquipment } from './starting-equipment';
@@ -10,11 +10,11 @@ export class Charclass {
     hit_die: number = 0;
     multi_classing: MultiClassing = new MultiClassing();
     proficiency_choices: ProficiencyChoice[] = [];
-    proficiencies: Link[] = [];
-    saving_throws: Link[] = [];
+    proficiencies: Reference[] = [];
+    saving_throws: Reference[] = [];
     starting_equipment: StartingEquipment[] = [];
     starting_equipment_options: StartingEquipmentOption[] = [];
     class_levels: string = '';
-    subclasses: Link[] = [];
+    subclasses: Reference[] = [];
     url: string = '';
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Charclass } from '@app/charclass/models/charclass';
-import { Link } from '@app/charclass/models/link';
+import { Reference } from '@app/charclass/models/reference';
 import { CharclassService } from '@app/charclass/services/charclass.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { CharclassService } from '@app/charclass/services/charclass.service';
 })
 export class CharclassViewComponent implements OnInit {
 
-  charclasses: Link[] = [];
+  charclasses: Reference[] = [];
   
   charclass!: Charclass;
 

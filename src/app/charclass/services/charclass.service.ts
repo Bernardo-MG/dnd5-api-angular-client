@@ -5,7 +5,7 @@ import { Charclass } from '@app/charclass/models/charclass';
 import { environment } from 'environments/environment';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-import { Link } from '../models/link';
+import { Reference } from '../models/reference';
 
 @Injectable()
 export class CharclassService {
@@ -16,12 +16,12 @@ export class CharclassService {
     private http: HttpClient
   ) { }
 
-  getCharClasses(): Observable<Link[]> {
-    return this.http.get<ApiResponse<Link[]>>(this.charclassesUrl).pipe(
-      map((response: ApiResponse<Link[]>) => { return response.results }),
-      catchError(this.handleError<Link[]>('getCharClasses', []))
+  getCharClasses(): Observable<Reference[]> {
+    return this.http.get<ApiResponse<Reference[]>>(this.charclassesUrl).pipe(
+      map((response: ApiResponse<Reference[]>) => { return response.results }),
+      catchError(this.handleError<Reference[]>('getCharClasses', []))
     ).pipe(
-      catchError(this.handleError<Link[]>('getCharClasses', []))
+      catchError(this.handleError<Reference[]>('getCharClasses', []))
     );
   }
 

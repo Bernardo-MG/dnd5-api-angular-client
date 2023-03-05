@@ -1,6 +1,6 @@
-import { Link } from "./link";
+import { Reference } from "./reference";
 
 export class Prerequisite {
-    ability_score: Link[] = [];
+    ability_score: Reference[] = [];
     minimum_score: number = 0;
 }
