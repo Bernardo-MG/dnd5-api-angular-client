@@ -1,4 +1,4 @@
-import { Actions } from './actions';
+import { Actions } from "../enums/actions";
 
 export class OptionSetAction {
     option_type: string = '';

@@ -1,4 +1,4 @@
-import { Choice } from './choice';
+import { Choice } from './options/choice';
 import { Multiclassing } from './multiclassing';
 import { Reference } from './reference';
 import { Spellcasting } from './spellcasting';

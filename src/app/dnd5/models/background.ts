@@ -1,4 +1,4 @@
-import { Choice } from "./choice";
+import { Choice } from "./options/choice";
 import { Info } from "./info";
 import { PersonalityTrait } from "./personality-trait";
 import { Reference } from "./reference";

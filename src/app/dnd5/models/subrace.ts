@@ -1,5 +1,5 @@
 import { AbilityBonus } from "./ability-bonus";
-import { Choice } from "./choice";
+import { Choice } from "./options/choice";
 import { Reference } from "./reference";
 
 export class Subrace {

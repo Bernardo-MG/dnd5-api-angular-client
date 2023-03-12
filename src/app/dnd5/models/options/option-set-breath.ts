@@ -1,5 +1,5 @@
-import { Damage } from './damage';
-import { Dc } from './dc';
+import { Damage } from '../damage';
+import { Dc } from '../dc';
 
 export class OptionSetBreath {
     option_type: string = '';

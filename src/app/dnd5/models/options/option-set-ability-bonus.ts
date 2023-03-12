@@ -1,4 +1,4 @@
-import { Reference } from './reference';
+import { Reference } from '../reference';
 
 export class OptionSetAbilityBonus {
     option_type: string = '';
