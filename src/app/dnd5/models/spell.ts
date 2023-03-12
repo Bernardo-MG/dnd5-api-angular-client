@@ -2,7 +2,7 @@ import { AreaOfEffect } from "./area-of-effect";
 import { DamageAtLevel } from "./damage-at-level";
 import { DamageAtSlot } from "./damage-at-slot";
 import { Reference } from "./reference";
-import { SpellComponent } from "./spell-component";
+import { SpellComponents } from "./enums/spell-components";
 
 export class Spell {
     index: string = '';
@@ -11,7 +11,7 @@ export class Spell {
     desc: string[] = [];
     higher_level: string[] = [];
     range: string = '';
-    components: SpellComponent[] = [];
+    components: SpellComponents[] = [];
     material: string = '';
     area_of_effect: AreaOfEffect = new AreaOfEffect();
     ritual: boolean = false;

@@ -1,5 +1,5 @@
 
-export enum AreaOfEffectType {
+export enum AreaOfEffectTypes {
     cone,
     cube,
     cylinder,

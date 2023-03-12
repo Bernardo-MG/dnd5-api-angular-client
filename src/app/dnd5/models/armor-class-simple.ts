@@ -1,7 +1,7 @@
-import { ArmorClassSimpleType } from "./armor-class-simple-type";
+import { ArmorTypes } from "./enums/armor-types";
 
 export class ArmorClassSimple {
-    type: ArmorClassSimpleType = ArmorClassSimpleType.dex;
+    type: ArmorTypes = ArmorTypes.dex;
     value: number = 0;
     desc: string = '';
 }

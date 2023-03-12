@@ -1,4 +1,4 @@
-import { AlignmentValues } from "./alignment-values";
+import { Alignments } from "./enums/alignment";
 import { ArmorClassArmor } from "./armor-class-armor";
 import { ArmorConditionSpell } from "./armor-class-condition";
 import { ArmorClassSimple } from "./armor-class-simple";
@@ -8,7 +8,7 @@ import { MonsterProficiency } from "./monster-proficiency";
 import { MonsterSpecialAbility } from "./monster-special-ability";
 import { Reference } from "./reference";
 import { Senses } from "./senses";
-import { Size } from "./size";
+import { Sizes } from "./enums/sizes";
 import { Speed } from "./speed";
 
 export class Monster {
@@ -23,10 +23,10 @@ export class Monster {
     strength: number = 0;
     wisdom: number = 0;
     image: string = '';
-    size: Size = Size.Medium;
+    size: Sizes = Sizes.Medium;
     type: string = '';
     subtype: string = '';
-    alignments: AlignmentValues = AlignmentValues.neutral;
+    alignments: Alignments = Alignments.neutral;
     armor_class: (ArmorClassArmor | ArmorConditionSpell | ArmorClassSimple | ArmorClassSpell)[] = [];
     hit_points: number = 0;
     hit_dice: string = '';

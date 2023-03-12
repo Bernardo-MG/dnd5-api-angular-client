@@ -1,5 +1,5 @@
 
-export enum Size {
+export enum Sizes {
     Gargantuan,
     Huge,
     Large,

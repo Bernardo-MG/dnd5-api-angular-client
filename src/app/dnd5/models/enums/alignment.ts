@@ -1,5 +1,5 @@
 
-export enum AlignmentValues {
+export enum Alignments {
     any_alignment,
     chaotic_neutral,
     chaotic_evil,
