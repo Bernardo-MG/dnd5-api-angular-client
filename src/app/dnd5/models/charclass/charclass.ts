@@ -1,7 +1,7 @@
 import { Choice } from '../options/choice';
-import { Multiclassing } from '../multiclassing';
+import { Multiclassing } from './multiclassing';
 import { Reference } from '../info/reference';
-import { Spellcasting } from '../spellcasting';
+import { Spellcasting } from './spellcasting';
 import { StartingEquipment } from '../equipment/starting-equipment';
 
 export class Charclass {
