@@ -1,5 +1,5 @@
-import { ArmorTypes } from "./enums/armor-types";
-import { Reference } from "./reference";
+import { ArmorTypes } from "../enums/armor-types";
+import { Reference } from "../reference";
 
 export class ArmorClassArmor {
     type: ArmorTypes = ArmorTypes.armor;

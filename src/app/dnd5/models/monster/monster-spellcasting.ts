@@ -1,5 +1,5 @@
-import { AbilityUsage } from "./monster-spell-usage";
-import { Reference } from "./reference";
+import { AbilityUsage } from "./ability-usage";
+import { Reference } from "../reference";
 
 export class MonsterSpellcasting {
     ability: Reference = new Reference();

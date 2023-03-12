@@ -1,15 +1,15 @@
-import { Alignments } from "./enums/alignment";
+import { Alignments } from "../enums/alignment";
 import { ArmorClassArmor } from "./armor-class-armor";
-import { ArmorConditionSpell } from "./armor-class-condition";
-import { ArmorClassSimple } from "./armor-class-simple";
-import { ArmorClassSpell } from "./armor-class-spell";
+import { ArmorConditionSpell } from "../armor-class-condition";
+import { ArmorClassSimple } from "../armor-class-simple";
+import { ArmorClassSpell } from "../armor-class-spell";
 import { MonsterAction } from "./monster-action";
 import { MonsterProficiency } from "./monster-proficiency";
 import { MonsterSpecialAbility } from "./monster-special-ability";
-import { Reference } from "./reference";
-import { Senses } from "./senses";
-import { Sizes } from "./enums/sizes";
-import { Speed } from "./speed";
+import { Reference } from "../reference";
+import { Senses } from "../senses";
+import { Sizes } from "../enums/sizes";
+import { Speed } from "../speed";
 
 export class Monster {
     index: string = '';

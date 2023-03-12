@@ -1,6 +1,6 @@
-import { Damage } from "./damage";
-import { Dc } from "./dc";
-import { AbilityUsage } from "./monster-spell-usage";
+import { Damage } from "../damage";
+import { Dc } from "../dc";
+import { AbilityUsage } from "./ability-usage";
 import { MonsterSpellcasting } from "./monster-spellcasting";
 
 export class MonsterSpecialAbility {

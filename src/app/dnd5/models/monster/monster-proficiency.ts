@@ -1,4 +1,4 @@
-import { Reference } from "./reference";
+import { Reference } from "../reference";
 
 export class MonsterProficiency {
     value: number = 0;
