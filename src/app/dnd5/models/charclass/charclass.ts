@@ -2,7 +2,7 @@ import { Choice } from '../options/choice';
 import { Multiclassing } from '../multiclassing';
 import { Reference } from '../info/reference';
 import { Spellcasting } from '../spellcasting';
-import { StartingEquipment } from '../starting-equipment';
+import { StartingEquipment } from '../equipment/starting-equipment';
 
 export class Charclass {
     index: string = '';

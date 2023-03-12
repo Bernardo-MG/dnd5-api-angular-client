@@ -1,5 +1,5 @@
 
-export class Condition {
+export class DescriptionReference {
     index: string = '';
     name: string = '';
     url: string = '';

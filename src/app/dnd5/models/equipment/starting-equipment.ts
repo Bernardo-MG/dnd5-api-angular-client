@@ -1,4 +1,4 @@
-import { Reference } from "./info/reference";
+import { Reference } from "../info/reference";
 
 export class StartingEquipment {
     quantity: number = 0;
