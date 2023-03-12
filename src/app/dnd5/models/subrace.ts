@@ -1,4 +1,4 @@
-import { AbilityBonus } from "./ability-bonus";
+import { AbilityBonus } from "./stats/ability-bonus";
 import { Choice } from "./options/choice";
 import { Reference } from "./info/reference";
 
