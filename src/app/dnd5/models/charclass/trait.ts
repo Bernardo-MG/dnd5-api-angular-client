@@ -1,5 +1,5 @@
-import { Choice } from "./options/choice";
-import { Reference } from "./info/reference";
+import { Choice } from "../options/choice";
+import { Reference } from "../info/reference";
 
 export class Trait {
     index: string = '';

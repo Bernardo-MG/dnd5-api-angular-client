@@ -1,4 +1,4 @@
-import { Reference } from "./info/reference";
+import { Reference } from "../info/reference";
 
 export class Skill {
     index: string = '';

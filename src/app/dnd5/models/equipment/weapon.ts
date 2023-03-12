@@ -1,6 +1,6 @@
 import { Cost } from "../cost";
 import { Damage } from "../stats/damage";
-import { Range } from "../range";
+import { Range } from "./range";
 import { Reference } from "../info/reference";
 
 export class Weapon {

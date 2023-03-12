@@ -4,7 +4,7 @@ import { MonsterAction } from "./monster-action";
 import { MonsterProficiency } from "./monster-proficiency";
 import { MonsterSpecialAbility } from "./monster-special-ability";
 import { Reference } from "../info/reference";
-import { Senses } from "../senses";
+import { Senses } from "./senses";
 import { Sizes } from "../enums/sizes";
 import { Speed } from "./speed";
 import { ArmorConditionSpell } from "./armor-class-condition";

@@ -1,5 +1,5 @@
 
-export class Condition {
+export class MagicSchool {
     index: string = '';
     name: string = '';
     url: string = '';
