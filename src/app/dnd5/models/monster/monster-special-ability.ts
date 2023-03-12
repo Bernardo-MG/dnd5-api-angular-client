@@ -1,5 +1,5 @@
-import { Damage } from "../damage";
-import { Dc } from "../dc";
+import { Damage } from "../stats/damage";
+import { Dc } from "../stats/dc";
 import { AbilityUsage } from "./ability-usage";
 import { MonsterSpellcasting } from "./monster-spellcasting";
 

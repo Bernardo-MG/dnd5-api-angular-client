@@ -1,7 +1,7 @@
-import { Attack } from "../attack";
+import { Attack } from "../stats/attack";
 import { Choice } from "../options/choice";
-import { Damage } from "../damage";
-import { Dc } from "../dc";
+import { Damage } from "../stats/damage";
+import { Dc } from "../stats/dc";
 import { MonsterActionOptions } from "./monster-action-options";
 import { MonsterActionType } from "./monster-action-type";
 

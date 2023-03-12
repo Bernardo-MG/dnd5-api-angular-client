@@ -1,7 +1,7 @@
-import { Cost } from "./cost";
-import { Damage } from "./damage";
-import { Range } from "./range";
-import { Reference } from "./info/reference";
+import { Cost } from "../cost";
+import { Damage } from "../stats/damage";
+import { Range } from "../range";
+import { Reference } from "../info/reference";
 
 export class Weapon {
     index: string = '';
