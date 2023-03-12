@@ -1,4 +1,4 @@
-import { AreaOfEffectTypes } from "./enums/area-of-effect-types";
+import { AreaOfEffectTypes } from "../enums/area-of-effect-types";
 
 export class AreaOfEffect {
     size: number = 0;
