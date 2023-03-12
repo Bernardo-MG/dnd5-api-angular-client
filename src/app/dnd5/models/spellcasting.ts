@@ -1,4 +1,4 @@
-import { Info } from "./info";
+import { Info } from "./info/info";
 import { Reference } from "./info/reference";
 
 export class Spellcasting {

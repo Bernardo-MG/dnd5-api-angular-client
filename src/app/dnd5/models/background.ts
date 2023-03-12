@@ -1,5 +1,5 @@
 import { Choice } from "./options/choice";
-import { Info } from "./info";
+import { Info } from "./info/info";
 import { PersonalityTrait } from "./personality-trait";
 import { Reference } from "./info/reference";
 
