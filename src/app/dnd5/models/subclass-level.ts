@@ -10,7 +10,7 @@ import { ClassSpecificLevelRogue } from "./class-specific-level-rogue";
 import { ClassSpecificLevelsSorcerer } from "./class-specific-level-sorcerer";
 import { ClassSpecificLevelWarlock } from "./class-specific-level-warlock";
 import { ClassSpecificLevelWizard } from "./class-specific-level-wizard";
-import { Reference } from "./reference";
+import { Reference } from "./info/reference";
 import { SpellcastingLevels } from "./spellcasting-levels";
 
 export class SubclassLevel {

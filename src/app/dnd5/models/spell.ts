@@ -1,7 +1,7 @@
 import { AreaOfEffect } from "./area-of-effect";
 import { DamageAtLevel } from "./damage-at-level";
 import { DamageAtSlot } from "./damage-at-slot";
-import { Reference } from "./reference";
+import { Reference } from "./info/reference";
 import { SpellComponents } from "./enums/spell-components";
 
 export class Spell {

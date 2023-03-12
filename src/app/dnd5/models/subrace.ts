@@ -1,6 +1,6 @@
 import { AbilityBonus } from "./ability-bonus";
 import { Choice } from "./options/choice";
-import { Reference } from "./reference";
+import { Reference } from "./info/reference";
 
 export class Subrace {
     index: string = '';

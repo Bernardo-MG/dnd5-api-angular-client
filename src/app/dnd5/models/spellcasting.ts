@@ -1,5 +1,5 @@
 import { Info } from "./info";
-import { Reference } from "./reference";
+import { Reference } from "./info/reference";
 
 export class Spellcasting {
     level: number = 0;

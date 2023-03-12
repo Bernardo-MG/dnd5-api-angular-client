@@ -6,7 +6,7 @@ import { ArmorClassSpell } from "../armor-class-spell";
 import { MonsterAction } from "./monster-action";
 import { MonsterProficiency } from "./monster-proficiency";
 import { MonsterSpecialAbility } from "./monster-special-ability";
-import { Reference } from "../reference";
+import { Reference } from "../info/reference";
 import { Senses } from "../senses";
 import { Sizes } from "../enums/sizes";
 import { Speed } from "../speed";

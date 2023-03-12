@@ -1,7 +1,7 @@
 import { Choice } from "./options/choice";
 import { Info } from "./info";
 import { PersonalityTrait } from "./personality-trait";
-import { Reference } from "./reference";
+import { Reference } from "./info/reference";
 
 export class Background {
     index: string = '';

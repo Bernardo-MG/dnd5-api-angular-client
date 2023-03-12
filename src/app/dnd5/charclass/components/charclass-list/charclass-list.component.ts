@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Reference } from '@app/dnd5/models/reference';
+import { Reference } from '@app/dnd5/models/info/reference';
 
 @Component({
   selector: 'dnd5-charclass-list',

@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
-import { Reference } from '@app/dnd5/models/reference';
+import { Reference } from '@app/dnd5/models/info/reference';
 
 import { CharclassListComponent } from './charclass-list.component';
 

@@ -1,5 +1,5 @@
 import { Rarity } from "./rarity";
-import { Reference } from "./reference";
+import { Reference } from "./info/reference";
 
 export class MagicItem {
     index: string = '';

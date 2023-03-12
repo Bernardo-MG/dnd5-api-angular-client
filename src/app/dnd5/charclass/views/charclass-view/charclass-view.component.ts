@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CharclassService } from '@app/dnd5/charclass/services/charclass.service';
 import { Charclass } from '@app/dnd5/models/charclass/charclass';
-import { Reference } from '@app/dnd5/models/reference';
+import { Reference } from '@app/dnd5/models/info/reference';
 
 @Component({
   selector: 'dnd5-charclass-view',

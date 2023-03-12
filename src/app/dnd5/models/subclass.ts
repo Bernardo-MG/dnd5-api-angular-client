@@ -1,4 +1,4 @@
-import { Reference } from "./reference";
+import { Reference } from "./info/reference";
 import { SubclassSpell } from "./subclass-spell";
 
 export class Subclass {

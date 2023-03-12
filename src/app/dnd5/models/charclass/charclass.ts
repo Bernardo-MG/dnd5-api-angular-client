@@ -1,6 +1,6 @@
 import { Choice } from '../options/choice';
 import { Multiclassing } from '../multiclassing';
-import { Reference } from '../reference';
+import { Reference } from '../info/reference';
 import { Spellcasting } from '../spellcasting';
 import { StartingEquipment } from '../starting-equipment';
 

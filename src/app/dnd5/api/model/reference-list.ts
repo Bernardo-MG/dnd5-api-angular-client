@@ -1,4 +1,4 @@
-import { Reference } from "./reference";
+import { Reference } from "../../models/info/reference";
 
 export class ReferenceList {
     count: number = 0;

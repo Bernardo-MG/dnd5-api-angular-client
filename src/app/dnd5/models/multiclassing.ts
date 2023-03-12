@@ -1,6 +1,6 @@
 import { Prerequisite } from "./prerequisite";
 import { Choice } from "./options/choice";
-import { Reference } from "./reference";
+import { Reference } from "./info/reference";
 
 export class Multiclassing {
     prerequisites: Prerequisite[] = [];

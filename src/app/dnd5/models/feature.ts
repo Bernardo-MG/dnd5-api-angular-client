@@ -1,7 +1,7 @@
 import { FeaturePrerequisiteFeature } from "./feature-prerequisite-feature";
 import { FeaturePrerequisiteLevel } from "./feature-prerequisite-level";
 import { FeaturePrerequisiteSpell } from "./feature-prerequisite-spell";
-import { Reference } from "./reference";
+import { Reference } from "./info/reference";
 
 export class Feature {
     index: string = '';

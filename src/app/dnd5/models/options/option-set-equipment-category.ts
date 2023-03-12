@@ -1,4 +1,4 @@
-import { Reference } from "../reference";
+import { Reference } from "../info/reference";
 
 export class OptionSetEquipmentCategory {
     option_set_type: string = '';

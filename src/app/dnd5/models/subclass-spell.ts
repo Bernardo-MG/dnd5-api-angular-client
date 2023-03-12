@@ -1,4 +1,4 @@
-import { Reference } from "./reference";
+import { Reference } from "./info/reference";
 import { SpellPrerequisite } from "./spell-prerequisite";
 
 export class SubclassSpell {

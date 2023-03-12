@@ -1,4 +1,4 @@
-import { Reference } from "./reference";
+import { Reference } from "./info/reference";
 
 export class DamageAtSlot {
     damage_at_slot_level: any;

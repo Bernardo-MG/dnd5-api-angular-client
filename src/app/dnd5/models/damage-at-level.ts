@@ -1,4 +1,4 @@
-import { Reference } from "./reference";
+import { Reference } from "./info/reference";
 
 export class DamageAtLevel {
     damage_at_character_level: any;
