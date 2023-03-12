@@ -1,7 +1,7 @@
 
-export class DamageType {
+export class SpellPrerequisite {
     index: string = '';
     name: string = '';
     url: string = '';
-    desc: string[] = [];
+    type: string = '';
 }

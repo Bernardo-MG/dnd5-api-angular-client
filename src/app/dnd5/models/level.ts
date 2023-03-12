@@ -13,7 +13,7 @@ import { ClassSpecificLevelWizard } from "./class-specific-level-wizard";
 import { Reference } from "./reference";
 import { SpellcastingLevels } from "./spellcasting-levels";
 
-export class Level {
+export class ClassLevel {
     index: string = '';
     url: string = '';
     level: number = 0;

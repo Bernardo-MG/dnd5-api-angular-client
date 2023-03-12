@@ -1,12 +1,13 @@
-import { ItemRarity } from "./item-rarity";
+import { Rarity } from "./rarity";
 import { Reference } from "./reference";
 
 export class MagicItem {
     index: string = '';
     name: string = '';
     url: string = '';
+    desc: string[] = [];
     equipment_category: Reference = new Reference();
-    rarity: ItemRarity = ItemRarity.Common;
+    rarity: Rarity = new Rarity();
     variants: Reference[] = [];
     variant: boolean = false;
 }

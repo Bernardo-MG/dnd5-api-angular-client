@@ -1,4 +1,5 @@
 import { AbilityBonus } from "./ability-bonus";
+import { Choice } from "./choice";
 import { Reference } from "./reference";
 
 export class Subrace {
@@ -7,9 +8,9 @@ export class Subrace {
     url: string = '';
     desc: string = '';
     race: Reference = new Reference();
-    ability_bonuses: AbilityBonus = new AbilityBonus();
+    ability_bonuses: AbilityBonus[] = [];
     starting_proficiencies: Reference[] = [];
     languages: Reference[] = [];
-    language_options: any;
+    language_options: Choice = new Choice();
     racial_traits: Reference[] = [];
 }

@@ -1,5 +1,5 @@
 
 export enum LanguageType {
-    Standard,
-    Exotic
+    Exotic,
+    Standard
 }

@@ -1,6 +1,6 @@
-import { Option } from './option';
+import { Choice } from './choice';
 
 export class OptionSetChoice {
     option_type: string = '';
-    choice: Option = new Option();
+    choice: Choice = new Choice();
 }

@@ -1,4 +1,5 @@
 import { AbilityBonus } from "./ability-bonus";
+import { Choice } from "./choice";
 import { Reference } from "./reference";
 
 export class Race {
@@ -12,7 +13,7 @@ export class Race {
     size: string = '';
     size_description: string = '';
     starting_proficiencies: Reference[] = [];
-    starting_proficiency_options: any;
+    starting_proficiency_options: Choice = new Choice();
     languages: Reference[] = [];
     language_desc: string = '';
     traits: Reference[] = [];

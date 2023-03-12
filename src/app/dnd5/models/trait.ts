@@ -1,3 +1,4 @@
+import { Choice } from "./choice";
 import { Reference } from "./reference";
 
 export class Trait {
@@ -8,7 +9,7 @@ export class Trait {
     races: Reference[] = [];
     subraces: Reference[] = [];
     proficiencies: Reference[] = [];
-    proficiency_choices: any;
-    language_options: any;
-    trait_specific: any;
+    proficiency_choices: Choice = new Choice();
+    language_options: Choice = new Choice();
+    trait_specific: Choice = new Choice();
 }

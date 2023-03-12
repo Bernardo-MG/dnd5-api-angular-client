@@ -3,7 +3,9 @@ import { ArmorClassArmor } from "./armor-class-armor";
 import { ArmorConditionSpell } from "./armor-class-condition";
 import { ArmorClassSimple } from "./armor-class-simple";
 import { ArmorClassSpell } from "./armor-class-spell";
+import { MonsterAction } from "./monster-action";
 import { MonsterProficiency } from "./monster-proficiency";
+import { MonsterSpecialAbility } from "./monster-special-ability";
 import { Reference } from "./reference";
 import { Senses } from "./senses";
 import { Size } from "./size";
@@ -29,8 +31,8 @@ export class Monster {
     hit_points: number = 0;
     hit_dice: string = '';
     hit_points_roll: string = '';
-    actions: any[] = [];
-    legendary_actions: any[] = [];
+    actions: MonsterAction[] = [];
+    legendary_actions: MonsterAction[] = [];
     challenge_rating: number = 0;
     condition_immunities: Reference[] = [];
     damage_immunities: string[] = [];
@@ -39,9 +41,9 @@ export class Monster {
     forms: Reference[] = [];
     languages: string = '';
     proficiency: MonsterProficiency = new MonsterProficiency();
-    reactions: any[] = [];
+    reactions: MonsterAction[] = [];
     senses: Senses = new Senses();
-    special_abilities: any[] = [];
+    special_abilities: MonsterSpecialAbility[] = [];
     speed: Speed = new Speed();
     xp: number = 0;
 }

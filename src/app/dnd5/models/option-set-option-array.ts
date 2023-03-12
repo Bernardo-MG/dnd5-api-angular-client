@@ -12,5 +12,5 @@ import { OptionSetString } from './option-set-string';
 
 export class OptionSetOptionArray {
     option_set_type: string = '';
-    options_array: OptionSetItem | OptionSetAction | OptionSetItems | OptionSetChoice | OptionSetString | OptionSetAlignment | OptionSetOf | OptionSetAbility | OptionSetAbilityBonus | OptionSetBreath | OptionSetDamage = new OptionSetItem();
+    options: OptionSetItem | OptionSetAction | OptionSetItems | OptionSetChoice | OptionSetString | OptionSetAlignment | OptionSetOf | OptionSetAbility | OptionSetAbilityBonus | OptionSetBreath | OptionSetDamage = new OptionSetItem();
 }

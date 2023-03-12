@@ -1,4 +1,6 @@
 import { AreaOfEffect } from "./area-of-effect";
+import { DamageAtLevel } from "./damage-at-level";
+import { DamageAtSlot } from "./damage-at-slot";
 import { Reference } from "./reference";
 import { SpellComponent } from "./spell-component";
 
@@ -18,7 +20,7 @@ export class Spell {
     casting_time: string = '';
     level: number = 0;
     attack_type: string = '';
-    damage: any;
+    damage: DamageAtLevel | DamageAtSlot = new DamageAtLevel();
     school: Reference = new Reference();
     classes: Reference[] = [];
     subclasses: Reference[] = [];

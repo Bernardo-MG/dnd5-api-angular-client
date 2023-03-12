@@ -1,4 +1,5 @@
 import { Reference } from "./reference";
+import { SubclassSpell } from "./subclass-spell";
 
 export class Subclass {
     index: string = '';
@@ -8,5 +9,5 @@ export class Subclass {
     class: Reference = new Reference();
     subclass_flavor: string = '';
     subclass_levels: string = '';
-    spells: any[] = [];
+    spells: SubclassSpell[] = [];
 }

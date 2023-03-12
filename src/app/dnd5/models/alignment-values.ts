@@ -1,5 +1,6 @@
 
 export enum AlignmentValues {
+    any_alignment,
     chaotic_neutral,
     chaotic_evil,
     chaotic_good,
@@ -9,6 +10,5 @@ export enum AlignmentValues {
     neutral,
     neutral_evil,
     neutral_good,
-    any_alignment,
     unaligned
 }
