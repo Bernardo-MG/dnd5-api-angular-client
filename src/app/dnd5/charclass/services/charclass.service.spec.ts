@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { CharclassService } from './charclass.service';
 import { of } from 'rxjs';
-import { Charclass } from '@app/dnd5/models/charclass';
+import { Charclass } from '@app/dnd5/models/charclass/charclass';
 import { CharclassModule } from '../charclass.module';
 
 describe('CharclassService', () => {

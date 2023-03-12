@@ -1,8 +1,8 @@
-import { Choice } from './options/choice';
-import { Multiclassing } from './multiclassing';
-import { Reference } from './reference';
-import { Spellcasting } from './spellcasting';
-import { StartingEquipment } from './starting-equipment';
+import { Choice } from '../options/choice';
+import { Multiclassing } from '../multiclassing';
+import { Reference } from '../reference';
+import { Spellcasting } from '../spellcasting';
+import { StartingEquipment } from '../starting-equipment';
 
 export class Charclass {
     index: string = '';
