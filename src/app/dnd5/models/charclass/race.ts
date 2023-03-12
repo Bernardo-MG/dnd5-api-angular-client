@@ -1,6 +1,6 @@
-import { AbilityBonus } from "./stats/ability-bonus";
-import { Choice } from "./options/choice";
-import { Reference } from "./info/reference";
+import { AbilityBonus } from "../stats/ability-bonus";
+import { Choice } from "../options/choice";
+import { Reference } from "../info/reference";
 
 export class Race {
     index: string = '';

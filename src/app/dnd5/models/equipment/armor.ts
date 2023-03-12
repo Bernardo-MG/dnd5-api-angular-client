@@ -1,5 +1,5 @@
 import { Cost } from "./cost";
-import { Reference } from "./info/reference";
+import { Reference } from "../info/reference";
 
 export class Armor {
     index: string = '';

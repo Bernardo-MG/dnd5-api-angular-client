@@ -1,4 +1,4 @@
-import { Reference } from "./info/reference";
+import { Reference } from "../info/reference";
 
 export class Rule {
     index: string = '';
