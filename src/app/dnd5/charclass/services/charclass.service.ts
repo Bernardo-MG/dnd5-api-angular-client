@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ApiResponse } from '@app/dnd5/api/model/api-response';
+import { ApiResponse } from '@app/api/models/api-response';
 import { Charclass } from '@app/dnd5/models/charclass/charclass';
 import { Reference } from '@app/dnd5/models/info/reference';
 import { environment } from 'environments/environment';
