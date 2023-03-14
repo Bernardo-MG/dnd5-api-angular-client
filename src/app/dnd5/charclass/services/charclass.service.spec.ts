@@ -30,7 +30,7 @@ describe('CharclassService', () => {
 
     httpClientSpy.get.and.returnValue(of(expectedData));
 
-    service.getCharClasses();
+    service.getCharacterClasses();
 
     expect(httpClientSpy.get).toHaveBeenCalled();
   });

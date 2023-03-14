@@ -1,12 +1,10 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AngularDnd5ApiClient } from '@app/api/client/angular/angular-dnd5-api-client';
 import { ApiResponse } from '@app/api/models/api-response';
 import { Charclass } from '@app/dnd5/models/charclass/charclass';
 import { Reference } from '@app/dnd5/models/info/reference';
-import { environment } from 'environments/environment';
 import { Observable, of } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class CharclassService {
@@ -15,17 +13,14 @@ export class CharclassService {
     private client: AngularDnd5ApiClient
   ) { }
 
-  getCharClasses(): Observable<Reference[]> {
-    return this.client.getCharacterClass().getAll().pipe(
-      map((response: ApiResponse<Reference[]>) => { return response.results }),
-      catchError(this.handleError<Reference[]>('getCharClasses', []))
-    ).pipe(
-      catchError(this.handleError<Reference[]>('getCharClasses', []))
+  getCharacterClasses(): Observable<Reference[]> {
+    return this.client.characterClass().getAll().pipe(
+      map((response: ApiResponse<Reference[]>) => { return response.results })
     );
   }
 
-  getCharClass(id: string): Observable<Charclass> {
-    return this.client.getCharacterClass().getOne(id);
+  getCharacterClass(id: string): Observable<Charclass> {
+    return this.client.characterClass().getOne(id);
   }
 
   /**
