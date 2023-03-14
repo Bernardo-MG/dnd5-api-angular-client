@@ -4,7 +4,7 @@ export interface ReadOperations {
 
   fetch<T>(): Observable<T>;
 
-  url(url: string): ReadOperations;
+  route(url: string): ReadOperations;
 
   parameter(name: string, value: any): ReadOperations;
 

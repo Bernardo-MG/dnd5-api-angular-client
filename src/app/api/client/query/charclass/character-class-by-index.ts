@@ -8,66 +8,69 @@ import { CharacterClassLevel } from "./character-class-level";
 
 export class CharacterClassByIndex {
 
-  private classUrl = '/classes';
+  private rootRoute: string;
 
-  private spellcastingUrl = '/spellcasting';
+  private spellcastingRoute = '/spellcasting';
 
-  private multiclassingUrl = '/multi-classing';
+  private multiclassingRoute = '/multi-classing';
 
-  private subclassesUrl = '/subclasses';
+  private subclassesRoute = '/subclasses';
 
-  private spellsUrl = '/spells';
+  private spellsRoute = '/spells';
 
-  private featuresUrl = '/features';
+  private featuresRoute = '/features';
 
-  private proficienciesUrl = '/proficiencies';
+  private proficienciesRoute = '/proficiencies';
 
   constructor(
     private getOperations: () => ReadOperations,
-    private index: string
-  ) { }
+    route: string,
+    index: string
+  ) {
+    this.rootRoute = `${route}/${index}`;
+  }
 
   public getOne(): Observable<Charclass> {
-    const url = this.getUrl();
-    return this.getOperations().url(url).fetch();
+    const route = this.rootRoute;
+    return this.getOperations().route(route).fetch();
   }
 
   public getSpellCasting(): Observable<Spellcasting> {
-    const url = `${this.getUrl()}/${this.spellcastingUrl}`;
-    return this.getOperations().url(url).fetch();
+    const route = this.getRoute(this.spellcastingRoute);
+    return this.getOperations().route(route).fetch();
   }
 
   public getMultiClassing(): Observable<Multiclassing> {
-    const url = `${this.getUrl()}/${this.multiclassingUrl}`;
-    return this.getOperations().url(url).fetch();
+    const route = this.getRoute(this.multiclassingRoute);
+    return this.getOperations().route(route).fetch();
   }
 
   public getSubclasses(): Observable<Reference[]> {
-    const url = `${this.getUrl()}/${this.subclassesUrl}`;
-    return this.getOperations().url(url).fetch();
+    const route = this.getRoute(this.subclassesRoute);
+    return this.getOperations().route(route).fetch();
   }
 
   public getSpells(): Observable<Reference[]> {
-    const url = `${this.getUrl()}/${this.spellsUrl}`;
-    return this.getOperations().url(url).fetch();
+    const route = this.getRoute(this.spellsRoute);
+    return this.getOperations().route(route).fetch();
   }
 
   public getFeatures(): Observable<Reference[]> {
-    const url = `${this.getUrl()}/${this.featuresUrl}`;
-    return this.getOperations().url(url).fetch();
+    const route = this.getRoute(this.featuresRoute);
+    return this.getOperations().route(route).fetch();
   }
 
   public getProficiencies(): Observable<Reference[]> {
-    const url = `${this.getUrl()}/${this.proficienciesUrl}`;
-    return this.getOperations().url(url).fetch();
+    const route = this.getRoute(this.proficienciesRoute);
+    return this.getOperations().route(route).fetch();
   }
 
   public levels(): CharacterClassLevel {
-    return new CharacterClassLevel(this.getOperations, this.index);
+    return new CharacterClassLevel(this.getOperations, this.rootRoute);
   }
 
-  private getUrl() {
-    return `${this.classUrl}/${this.index}`;
+  private getRoute(route: string) {
+    return `${this.rootRoute}/${route}`;
   }
 
 }

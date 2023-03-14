@@ -5,18 +5,18 @@ import { CharacterClassByIndex } from "./character-class-by-index";
 
 export class CharacterClass {
 
-  private classUrl = '/classes';
+  private classRoute = 'classes';
 
   constructor(
     private getOperations: () => ReadOperations
   ) { }
 
   public getAll(): Observable<ReferenceList> {
-    return this.getOperations().url(this.classUrl).fetch();
+    return this.getOperations().route(this.classRoute).fetch();
   }
 
   public index(index: string): CharacterClassByIndex {
-    return new CharacterClassByIndex(this.getOperations, index);
+    return new CharacterClassByIndex(this.getOperations, this.classRoute, index);
   }
 
 }

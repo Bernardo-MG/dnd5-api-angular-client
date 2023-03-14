@@ -5,7 +5,7 @@ import { ReadOperations } from '../../operations/read-operations';
 
 export class AngularReadOperations implements ReadOperations {
 
-  private _url: string = 'localhost';
+  private _route: string = '';
 
   protected options: {
     params?: HttpParams
@@ -17,15 +17,15 @@ export class AngularReadOperations implements ReadOperations {
   ) { }
 
   public fetch<T>(): Observable<T> {
-    const finalUrl = this.getFinalUrl(this._url);
+    const finalUrl = this.getFinalUrl(this._route);
     return this.http.get<T>(finalUrl, this.options)
       .pipe(
         catchError(this.handleError())
       );
   }
 
-  public url(url: string): ReadOperations {
-    this._url = url;
+  public route(route: string): ReadOperations {
+    this._route = route;
 
     return this;
   }
@@ -64,8 +64,8 @@ export class AngularReadOperations implements ReadOperations {
     };
   }
 
-  private getFinalUrl(url: string) {
-    return `${this.rootUrl}/${url}`;
+  private getFinalUrl(route: string) {
+    return `${this.rootUrl}/${route}`;
   }
 
 }
