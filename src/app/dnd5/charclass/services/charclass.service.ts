@@ -11,15 +11,12 @@ import { catchError, map } from 'rxjs/operators';
 @Injectable()
 export class CharclassService {
 
-  private charclassesUrl = environment.apiUrl;  // URL to web api
-
   constructor(
-    private http: HttpClient,
     private client: AngularDnd5ApiClient
   ) { }
 
   getCharClasses(): Observable<Reference[]> {
-    return this.http.get<ApiResponse<Reference[]>>(this.charclassesUrl).pipe(
+    return this.client.getCharacterClass().getAll().pipe(
       map((response: ApiResponse<Reference[]>) => { return response.results }),
       catchError(this.handleError<Reference[]>('getCharClasses', []))
     ).pipe(
@@ -28,7 +25,7 @@ export class CharclassService {
   }
 
   getCharClass(id: string): Observable<Charclass> {
-    return this.client.getCharacterClass(id).get();
+    return this.client.getCharacterClass().getOne(id);
   }
 
   /**

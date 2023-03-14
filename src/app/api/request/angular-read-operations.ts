@@ -6,6 +6,8 @@ import { ReadOperations } from './read-operations';
 
 export class AngularReadOperations implements ReadOperations {
 
+  private _url: string = 'localhost';
+
   protected options: {
     params?: HttpParams
   } = {};
@@ -15,20 +17,26 @@ export class AngularReadOperations implements ReadOperations {
     private rootUrl: string
   ) { }
 
-  public fetch<T>(url: string): Observable<ApiResponse<T[]>> {
-    const finalUrl = this.getFinalUrl(url);
+  public fetch<T>(): Observable<ApiResponse<T[]>> {
+    const finalUrl = this.getFinalUrl(this._url);
     return this.http.get<ApiResponse<T[]>>(finalUrl, this.options)
       .pipe(
         catchError(this.handleError())
       );
   }
 
-  public fetchOne<T>(url: string): Observable<T> {
-    const finalUrl = this.getFinalUrl(url);
+  public fetchOne<T>(): Observable<T> {
+    const finalUrl = this.getFinalUrl(this._url);
     return this.http.get<T>(finalUrl, this.options)
       .pipe(
         catchError(this.handleError())
       );
+  }
+
+  public url(url: string): ReadOperations {
+    this._url = url;
+
+    return this;
   }
 
   public parameter(name: string, value: any): ReadOperations {

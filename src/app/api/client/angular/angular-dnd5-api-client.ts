@@ -17,8 +17,8 @@ export class AngularDnd5ApiClient implements Dnd5ApiClient {
     private http: HttpClient
   ) { }
 
-  getCharacterClass(index: string): CharacterClassClient {
-    return new OperationsCharacterClassClient(this.getOperations.bind(this), index);
+  getCharacterClass(): CharacterClassClient {
+    return new OperationsCharacterClassClient(this.getOperations.bind(this));
   }
 
   private getOperations(): ReadOperations {

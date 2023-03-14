@@ -1,3 +1,4 @@
+import { ApiResponse } from "@app/api/models/api-response";
 import { ReadOperations } from "@app/api/request/read-operations";
 import { Charclass } from "@app/dnd5/models/charclass/charclass";
 import { Multiclassing } from "@app/dnd5/models/charclass/multiclassing";
@@ -14,27 +15,30 @@ export class OperationsCharacterClassClient implements CharacterClassClient {
   private multiclassingUrl = '/multi-classing';
 
   constructor(
-    private getOperations: () => ReadOperations,
-    private index: string
+    private getOperations: () => ReadOperations
   ) { }
 
-  public get(): Observable<Charclass> {
-    const url = this.getRootUrl();
-    return this.getOperations().fetchOne(url);
+  getAll(): Observable<ApiResponse<Charclass[]>> {
+    return this.getOperations().url(this.classUrl).fetch();
   }
 
-  public getSpellCasting(): Observable<Spellcasting> {
-    const url = `${this.getRootUrl()}/${this.spellcastingUrl}`;
-    return this.getOperations().fetchOne(url);
+  public getOne(index: string): Observable<Charclass> {
+    const url = this.getUrl(index);
+    return this.getOperations().url(url).fetchOne();
   }
 
-  public getMultiClassing(): Observable<Multiclassing> {
-    const url = `${this.getRootUrl()}/${this.multiclassingUrl}`;
-    return this.getOperations().fetchOne(url);
+  public getSpellCasting(index: string): Observable<Spellcasting> {
+    const url = `${this.getUrl(index)}/${this.spellcastingUrl}`;
+    return this.getOperations().url(url).fetchOne();
   }
 
-  private getRootUrl() {
-    return `${this.classUrl}/${this.index}`;
+  public getMultiClassing(index: string): Observable<Multiclassing> {
+    const url = `${this.getUrl(index)}/${this.multiclassingUrl}`;
+    return this.getOperations().url(url).fetchOne();
+  }
+
+  private getUrl(index: string) {
+    return `${this.classUrl}/${index}`;
   }
 
 }
