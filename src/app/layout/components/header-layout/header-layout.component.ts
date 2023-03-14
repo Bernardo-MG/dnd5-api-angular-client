@@ -2,9 +2,9 @@ import { Component, Input } from '@angular/core';
 import { MenuLink } from '@app/layout/models/menu-link';
 
 @Component({
-  selector: 'dnd5-layout',
-  templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.sass']
+  selector: 'dnd5-header-layout',
+  templateUrl: './header-layout.component.html',
+  styleUrls: ['./header-layout.component.sass']
 })
 export class LayoutComponent {
 

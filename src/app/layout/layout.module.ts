@@ -4,7 +4,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { DropdownMenuComponent } from './components/dropdown-menu/dropdown-menu.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { LayoutComponent } from './layout/layout/layout.component';
+import { LayoutComponent } from './components/header-layout/header-layout.component';
 
 @NgModule({
   declarations: [
