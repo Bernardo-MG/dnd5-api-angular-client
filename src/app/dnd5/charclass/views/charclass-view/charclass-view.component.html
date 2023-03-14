@@ -1,14 +1,12 @@
-<div class="container">
-  <div class="row">
-    <div class="col-10">
-      <div *ngIf="charclass" class="card">
-        <div class="card-body">
-          <dnd5-charclass-detail [charclass]="charclass"></dnd5-charclass-detail>
-        </div>
+<div class="row">
+  <div class="col-10">
+    <div *ngIf="charclass" class="card">
+      <div class="card-body">
+        <dnd5-charclass-detail [charclass]="charclass"></dnd5-charclass-detail>
       </div>
     </div>
-    <div class="col-2">
-      <dnd5-charclass-list [charclasses]="charclasses"></dnd5-charclass-list>
-    </div>
+  </div>
+  <div class="col-2">
+    <dnd5-charclass-list [charclasses]="charclasses"></dnd5-charclass-list>
   </div>
 </div>
