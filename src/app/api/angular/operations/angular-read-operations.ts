@@ -1,8 +1,7 @@
 import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { ApiResponse } from '../models/api-response';
-import { ReadOperations } from './read-operations';
+import { ReadOperations } from '../../operations/read-operations';
 
 export class AngularReadOperations implements ReadOperations {
 
@@ -17,15 +16,7 @@ export class AngularReadOperations implements ReadOperations {
     private rootUrl: string
   ) { }
 
-  public fetch<T>(): Observable<ApiResponse<T[]>> {
-    const finalUrl = this.getFinalUrl(this._url);
-    return this.http.get<ApiResponse<T[]>>(finalUrl, this.options)
-      .pipe(
-        catchError(this.handleError())
-      );
-  }
-
-  public fetchOne<T>(): Observable<T> {
+  public fetch<T>(): Observable<T> {
     const finalUrl = this.getFinalUrl(this._url);
     return this.http.get<T>(finalUrl, this.options)
       .pipe(

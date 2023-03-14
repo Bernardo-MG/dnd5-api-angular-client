@@ -1,10 +1,10 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { AngularReadOperations } from "@app/api/request/angular-read-operations";
-import { ReadOperations } from "@app/api/request/read-operations";
-import { CharacterClassClient } from "../character-class-client";
-import { Dnd5ApiClient } from "../dnd5-api-client";
-import { OperationsCharacterClassClient } from "../operations/operations-character-class-client";
+import { AngularReadOperations } from "@app/api/angular/operations/angular-read-operations";
+import { ReadOperations } from "@app/api/operations/read-operations";
+import { CharacterClassClient } from "../../client/character-class-client";
+import { Dnd5ApiClient } from "../../client/dnd5-api-client";
+import { OperationsCharacterClassClient } from "../../client/operations-character-class-client";
 
 @Injectable({
   providedIn: 'root'
