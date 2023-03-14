@@ -9,13 +9,13 @@ import { CharclassViewComponent } from './charclass-view.component';
 describe('CharclassViewComponent', () => {
   let component: CharclassViewComponent;
   let fixture: ComponentFixture<CharclassViewComponent>;
-  let serviceSpy: { getCharClasses: jasmine.Spy };
+  let serviceSpy: { getCharacterClasses: jasmine.Spy };
 
   beforeEach(async () => {
     const expectedData: Charclass[] = [new Charclass()];
 
-    serviceSpy = jasmine.createSpyObj('CharclassService', ['getCharClasses']);
-    serviceSpy.getCharClasses.and.returnValue(of(expectedData));
+    serviceSpy = jasmine.createSpyObj('CharclassService', ['getCharacterClasses']);
+    serviceSpy.getCharacterClasses.and.returnValue(of(expectedData));
 
     await TestBed.configureTestingModule({
       declarations: [
@@ -38,6 +38,6 @@ describe('CharclassViewComponent', () => {
   });
 
   it('loads data on start', () => {
-    expect(serviceSpy.getCharClasses).toHaveBeenCalledTimes(1);
+    expect(serviceSpy.getCharacterClasses).toHaveBeenCalledTimes(1);
   });
 });
