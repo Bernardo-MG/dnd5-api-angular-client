@@ -1,4 +1,4 @@
-import { ReadOperations } from "@app/api/operations/read-operations";
+import { ReadOperations } from "@app/dnd5/api/operations/read-operations";
 import { ReferenceList } from "@app/dnd5/api/models/reference-list";
 import { Observable } from "rxjs";
 import { CharacterClassDetails } from "./character-class-by-index";

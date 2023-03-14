@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularDnd5ApiClient } from '@app/api/angular/client/angular-dnd5-api-client';
+import { AngularDnd5ApiClient } from '@app/dnd5/api/angular/client/angular-dnd5-api-client';
 import { ReferenceList } from '@app/dnd5/api/models/reference-list';
 import { Charclass } from '@app/dnd5/models/charclass/charclass';
 import { Reference } from '@app/dnd5/models/info/reference';
