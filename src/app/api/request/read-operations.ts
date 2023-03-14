@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { ApiResponse } from '../models/api-response';
 
-export class ReadOperations<T> {
+export class ReadOperations {
 
   protected options: {
     params?: HttpParams
@@ -14,21 +14,21 @@ export class ReadOperations<T> {
     private queryUrl: string
   ) { }
 
-  public fetch(): Observable<ApiResponse<T[]>> {
+  public fetch<T>(): Observable<ApiResponse<T[]>> {
     return this.http.get<ApiResponse<T[]>>(this.queryUrl, this.options)
       .pipe(
         catchError(this.handleError())
       );
   }
 
-  public fetchOne(): Observable<T> {
+  public fetchOne<T>(): Observable<T> {
     return this.http.get<T>(this.queryUrl, this.options)
       .pipe(
         catchError(this.handleError())
       );
   }
 
-  public parameter(name: string, value: any): ReadOperations<T> {
+  public parameter(name: string, value: any): ReadOperations {
     let params: HttpParams;
 
     params = this.getHttpParams();

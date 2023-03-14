@@ -14,13 +14,13 @@ export class AngularCharacterClassClient implements CharacterClassClient {
 
   private multiclassingUrl = '/multi-classing';
 
-  private operations: ReadOperations<Charclass>;
+  private operations: ReadOperations;
 
   constructor(
     http: HttpClient,
     private index: string
     ) {
-    this.operations = new ReadOperations<Charclass>(http, this.getRootUrl());
+    this.operations = new ReadOperations(http, this.getRootUrl());
   }
 
   public get(): Observable<Charclass> {
