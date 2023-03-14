@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AngularDnd5ApiClient } from '@app/api/client/angular/angular-dnd5-api-client';
 import { ApiResponse } from '@app/api/models/api-response';
 import { Charclass } from '@app/dnd5/models/charclass/charclass';
 import { Reference } from '@app/dnd5/models/info/reference';
@@ -13,7 +14,8 @@ export class CharclassService {
   private charclassesUrl = environment.apiUrl;  // URL to web api
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private client: AngularDnd5ApiClient
   ) { }
 
   getCharClasses(): Observable<Reference[]> {
@@ -26,8 +28,7 @@ export class CharclassService {
   }
 
   getCharClass(id: string): Observable<Charclass> {
-    const url = `${this.charclassesUrl}/${id}`;
-    return this.http.get<Charclass>(url);
+    return this.client.getCharacterClass(id).get();
   }
 
   /**
