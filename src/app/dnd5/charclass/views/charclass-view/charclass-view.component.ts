@@ -22,7 +22,7 @@ export class CharclassViewComponent implements OnInit {
 
   ngOnInit(): void {
     // Loads character classes
-    this.charclassService.getCharClasses().subscribe(charclasses => this.charclasses = charclasses);
+    this.charclassService.getCharacterClasses().subscribe(charclasses => this.charclasses = charclasses);
 
     // Loads selected character class
     this.route.paramMap.subscribe(params => {
@@ -32,7 +32,7 @@ export class CharclassViewComponent implements OnInit {
 
   getCharClass(id: string | null): void {
     if (id) {
-      this.charclassService.getCharClass(id)
+      this.charclassService.getCharacterClass(id)
         .subscribe(charclass => this.charclass = charclass);
     }
   }

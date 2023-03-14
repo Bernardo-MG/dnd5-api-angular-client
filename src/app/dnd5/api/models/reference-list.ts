@@ -1,4 +1,5 @@
-import { Reference } from "../../models/info/reference";
+import { Reference } from "@app/dnd5/models/info/reference";
+
 
 export class ReferenceList {
     count: number = 0;
