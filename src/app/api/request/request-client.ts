@@ -1,10 +1,6 @@
 import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
 import { ReadOperations } from "./read-operations";
 
-@Injectable({
-  providedIn: 'root'
-})
 export class RequestClient {
 
   constructor(

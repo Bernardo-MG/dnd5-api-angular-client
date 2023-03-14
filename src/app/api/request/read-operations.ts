@@ -21,8 +21,8 @@ export class ReadOperations<T> {
       );
   }
 
-  public fetchOne(): Observable<ApiResponse<T>> {
-    return this.http.get<ApiResponse<T>>(this.queryUrl, this.options)
+  public fetchOne(): Observable<T> {
+    return this.http.get<T>(this.queryUrl, this.options)
       .pipe(
         catchError(this.handleError())
       );
