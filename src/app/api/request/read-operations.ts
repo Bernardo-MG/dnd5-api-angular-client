@@ -10,19 +10,18 @@ export class ReadOperations {
   } = {};
 
   constructor(
-    private http: HttpClient,
-    private queryUrl: string
+    private http: HttpClient
   ) { }
 
-  public fetch<T>(): Observable<ApiResponse<T[]>> {
-    return this.http.get<ApiResponse<T[]>>(this.queryUrl, this.options)
+  public fetch<T>(url: string): Observable<ApiResponse<T[]>> {
+    return this.http.get<ApiResponse<T[]>>(url, this.options)
       .pipe(
         catchError(this.handleError())
       );
   }
 
-  public fetchOne<T>(): Observable<T> {
-    return this.http.get<T>(this.queryUrl, this.options)
+  public fetchOne<T>(url: string): Observable<T> {
+    return this.http.get<T>(url, this.options)
       .pipe(
         catchError(this.handleError())
       );

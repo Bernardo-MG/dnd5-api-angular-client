@@ -20,22 +20,22 @@ export class AngularCharacterClassClient implements CharacterClassClient {
     http: HttpClient,
     private index: string
     ) {
-    this.operations = new ReadOperations(http, this.getRootUrl());
+    this.operations = new ReadOperations(http);
   }
 
   public get(): Observable<Charclass> {
     const url = this.getRootUrl();
-    return this.operations.fetchOne();
+    return this.operations.fetchOne(url);
   }
 
   public getSpellCasting(): Observable<Spellcasting> {
     const url = `${this.getRootUrl()}/${this.spellcastingUrl}`;
-    throw new Error("Method not implemented.");
+    return this.operations.fetchOne(url);
   }
 
   public getMultiClassing(): Observable<Multiclassing> {
     const url = `${this.getRootUrl()}/${this.multiclassingUrl}`;
-    throw new Error("Method not implemented.");
+    return this.operations.fetchOne(url);
   }
 
   private getRootUrl() {
