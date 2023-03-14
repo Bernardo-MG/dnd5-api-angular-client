@@ -1,12 +1,10 @@
 import { ReadOperations } from "@app/api/operations/read-operations";
-import { Feature } from "@app/dnd5/models/charclass/feature";
 import { Level } from "@app/dnd5/models/charclass/level";
-import { Spell } from "@app/dnd5/models/charclass/spell";
 import { Observable } from "rxjs";
+import { CharacterClassLevelByNumber } from "./character-class-level-by-number";
 
 export class CharacterClassLevel {
   
-
   private levelRoute = '/level';
 
   constructor(
@@ -16,19 +14,12 @@ export class CharacterClassLevel {
   }
 
   public getAll(): Observable<Level[]> {
-    throw new Error("Method not implemented.");
+    return this.operations.fetch();
   }
 
-  public getOne(level: number): Observable<Level> {
-    throw new Error("Method not implemented.");
-  }
-
-  public getFeatures(level: number): Observable<Feature> {
-    throw new Error("Method not implemented.");
-  }
-
-  public getSpells(level: number): Observable<Spell> {
-    throw new Error("Method not implemented.");
+  public level(level: number) {
+    this.operations.appendRoute(`/${level}`);
+    return new CharacterClassLevelByNumber(this.operations);
   }
 
 }

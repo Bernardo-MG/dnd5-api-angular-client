@@ -29,33 +29,27 @@ export class CharacterClassDetails {
   }
 
   public getSpellCasting(): Observable<Spellcasting> {
-    this.operations.appendRoute(this.spellcastingRoute);
-    return this.operations.fetch();
+    return this.operations.appendRoute(this.spellcastingRoute).fetch();
   }
 
   public getMultiClassing(): Observable<Multiclassing> {
-    this.operations.appendRoute(this.multiclassingRoute);
-    return this.operations.fetch();
+    return this.operations.appendRoute(this.multiclassingRoute).fetch();
   }
 
   public getSubclasses(): Observable<Reference[]> {
-    this.operations.appendRoute(this.subclassesRoute);
-    return this.operations.fetch();
+    return this.operations.appendRoute(this.subclassesRoute).fetch();
   }
 
   public getSpells(): Observable<Reference[]> {
-    this.operations.appendRoute(this.spellsRoute);
-    return this.operations.fetch();
+    return this.operations.appendRoute(this.spellsRoute).fetch();
   }
 
   public getFeatures(): Observable<Reference[]> {
-    this.operations.appendRoute(this.featuresRoute);
-    return this.operations.fetch();
+    return this.operations.appendRoute(this.featuresRoute).fetch();
   }
 
   public getProficiencies(): Observable<Reference[]> {
-    this.operations.appendRoute(this.proficienciesRoute);
-    return this.operations.fetch();
+    return this.operations.appendRoute(this.proficienciesRoute).fetch();
   }
 
   public levels(): CharacterClassLevel {
