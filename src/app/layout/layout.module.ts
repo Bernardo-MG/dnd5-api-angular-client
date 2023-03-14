@@ -3,20 +3,20 @@ import { NgModule } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
-import { LayoutRoutingModule } from './layout-routing.module';
+import { LayoutComponent } from './layout/layout/layout.component';
 
 @NgModule({
   declarations: [
-    NavigationMenuComponent
+    NavigationMenuComponent,
+    LayoutComponent
   ],
   imports: [
-    LayoutRoutingModule,
     CommonModule,
     NoopAnimationsModule,
     RouterModule,
   ],
   exports: [
-    NavigationMenuComponent
+    LayoutComponent
   ]
 })
 export class LayoutModule { }
