@@ -4,7 +4,7 @@ import { AngularReadOperations } from "@app/api/angular/operations/angular-read-
 import { ReadOperations } from "@app/api/operations/read-operations";
 import { CharacterClass } from "../../client/query/charclass/character-class";
 import { Dnd5ApiClient } from "../../client/dnd5-api-client";
-import { OperationsCharacterClassClient } from "../../client/query/charclass/operations-character-class-by-index";
+import { OperationsCharacterClassClient } from "../../client/query/charclass/character-class-by-index";
 
 @Injectable({
   providedIn: 'root'
