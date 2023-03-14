@@ -3,13 +3,11 @@ import { NgModule } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { LayoutComponent } from './components/layout/layout.component';
 import { DropdownMenuComponent } from './components/dropdown-menu/dropdown-menu.component';
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    LayoutComponent,
     DropdownMenuComponent
   ],
   imports: [
@@ -18,7 +16,7 @@ import { DropdownMenuComponent } from './components/dropdown-menu/dropdown-menu.
     RouterModule,
   ],
   exports: [
-    LayoutComponent
+    NavbarComponent
   ]
 })
 export class LayoutModule { }
