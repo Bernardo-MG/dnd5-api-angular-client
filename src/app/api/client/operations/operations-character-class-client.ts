@@ -14,23 +14,23 @@ export class OperationsCharacterClassClient implements CharacterClassClient {
   private multiclassingUrl = '/multi-classing';
 
   constructor(
-    private operations: ReadOperations,
+    private getOperations: () => ReadOperations,
     private index: string
   ) { }
 
   public get(): Observable<Charclass> {
     const url = this.getRootUrl();
-    return this.operations.fetchOne(url);
+    return this.getOperations().fetchOne(url);
   }
 
   public getSpellCasting(): Observable<Spellcasting> {
     const url = `${this.getRootUrl()}/${this.spellcastingUrl}`;
-    return this.operations.fetchOne(url);
+    return this.getOperations().fetchOne(url);
   }
 
   public getMultiClassing(): Observable<Multiclassing> {
     const url = `${this.getRootUrl()}/${this.multiclassingUrl}`;
-    return this.operations.fetchOne(url);
+    return this.getOperations().fetchOne(url);
   }
 
   private getRootUrl() {

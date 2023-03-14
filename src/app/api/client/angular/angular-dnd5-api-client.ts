@@ -13,16 +13,16 @@ export class AngularDnd5ApiClient implements Dnd5ApiClient {
 
   private rootUrl: string = 'http://www.dnd5eapi.co/api';
 
-  private operations: ReadOperations;
-
   constructor(
-    http: HttpClient
-  ) {
-    this.operations = new AngularReadOperations(http, this.rootUrl);
-  }
+    private http: HttpClient
+  ) { }
 
   getCharacterClass(index: string): CharacterClassClient {
-    return new OperationsCharacterClassClient(this.operations, index);
+    return new OperationsCharacterClassClient(this.getOperations.bind(this), index);
+  }
+
+  private getOperations(): ReadOperations {
+    return new AngularReadOperations(this.http, this.rootUrl);
   }
 
 }
