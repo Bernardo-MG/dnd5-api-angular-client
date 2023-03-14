@@ -16,7 +16,7 @@ export class CharacterClass {
   }
 
   public index(index: string): CharacterClassByIndex {
-    throw new CharacterClassByIndex(this.getOperations, index);
+    return new CharacterClassByIndex(this.getOperations, index);
   }
 
 }

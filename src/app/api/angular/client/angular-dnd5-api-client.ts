@@ -4,7 +4,6 @@ import { AngularReadOperations } from "@app/api/angular/operations/angular-read-
 import { ReadOperations } from "@app/api/operations/read-operations";
 import { CharacterClass } from "../../client/query/charclass/character-class";
 import { Dnd5ApiClient } from "../../client/dnd5-api-client";
-import { OperationsCharacterClassClient } from "../../client/query/charclass/character-class-by-index";
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +17,7 @@ export class AngularDnd5ApiClient implements Dnd5ApiClient {
   ) { }
 
   characterClass(): CharacterClass {
-    return new OperationsCharacterClassClient(this.getOperations.bind(this));
+    return new CharacterClass(this.getOperations.bind(this));
   }
 
   private getOperations(): ReadOperations {
