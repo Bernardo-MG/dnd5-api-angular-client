@@ -1,8 +1,8 @@
+import { SpellComponents } from "../enums/spell-components";
+import { Reference } from "../info/reference";
 import { AreaOfEffect } from "./area-of-effect";
 import { DamageAtLevel } from "./damage-at-level";
 import { DamageAtSlot } from "./damage-at-slot";
-import { Reference } from "./info/reference";
-import { SpellComponents } from "./enums/spell-components";
 
 export class Spell {
     index: string = '';

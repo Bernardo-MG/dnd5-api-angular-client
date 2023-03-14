@@ -11,7 +11,7 @@ import { ClassSpecificLevelsSorcerer } from "./class-specific-level-sorcerer";
 import { ClassSpecificLevelWarlock } from "./class-specific-level-warlock";
 import { ClassSpecificLevelWizard } from "./class-specific-level-wizard";
 import { Reference } from "../info/reference";
-import { SpellcastingLevels } from "../spellcasting-levels";
+import { SpellcastingLevels } from "./spellcasting-levels";
 
 export class Level {
     index: string = '';
