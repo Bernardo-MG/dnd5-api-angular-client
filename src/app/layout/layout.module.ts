@@ -1,15 +1,16 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavigationMenuComponent } from './navigation-menu/navigation-menu.component';
-
+import { NgModule } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
+import { LayoutRoutingModule } from './layout-routing.module';
 
 @NgModule({
   declarations: [
     NavigationMenuComponent
   ],
   imports: [
+    LayoutRoutingModule,
     CommonModule,
     NoopAnimationsModule,
     RouterModule,
@@ -18,4 +19,4 @@ import { RouterModule } from '@angular/router';
     NavigationMenuComponent
   ]
 })
-export class NavigationModule { }
+export class LayoutModule { }
