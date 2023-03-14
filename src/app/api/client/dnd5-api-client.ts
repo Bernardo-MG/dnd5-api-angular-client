@@ -1,4 +1,4 @@
-import { CharacterClass } from "./dsl/charclass/character-class";
+import { CharacterClass } from "./query/charclass/character-class";
 
 export interface Dnd5ApiClient {
   
