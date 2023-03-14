@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MenuLink } from './layout/model/menu-link';
+import { MenuLink } from './layout/models/menu-link';
 
 @Component({
   selector: 'dnd5-root',
