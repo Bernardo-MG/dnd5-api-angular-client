@@ -16,7 +16,7 @@ export class OperationsCharacterClassClient implements CharacterClassClient {
   constructor(
     private operations: ReadOperations,
     private index: string
-    ) {}
+  ) { }
 
   public get(): Observable<Charclass> {
     const url = this.getRootUrl();

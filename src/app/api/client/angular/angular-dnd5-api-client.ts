@@ -11,12 +11,14 @@ import { OperationsCharacterClassClient } from "../operations/operations-charact
 })
 export class AngularDnd5ApiClient implements Dnd5ApiClient {
 
+  private rootUrl: string = 'http://www.dnd5eapi.co/api';
+
   private operations: ReadOperations;
 
   constructor(
     http: HttpClient
   ) {
-    this.operations = new AngularReadOperations(http);
+    this.operations = new AngularReadOperations(http, this.rootUrl);
   }
 
   getCharacterClass(index: string): CharacterClassClient {

@@ -11,18 +11,21 @@ export class AngularReadOperations implements ReadOperations {
   } = {};
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private rootUrl: string
   ) { }
 
   public fetch<T>(url: string): Observable<ApiResponse<T[]>> {
-    return this.http.get<ApiResponse<T[]>>(url, this.options)
+    const finalUrl = this.getFinalUrl(url);
+    return this.http.get<ApiResponse<T[]>>(finalUrl, this.options)
       .pipe(
         catchError(this.handleError())
       );
   }
 
   public fetchOne<T>(url: string): Observable<T> {
-    return this.http.get<T>(url, this.options)
+    const finalUrl = this.getFinalUrl(url);
+    return this.http.get<T>(finalUrl, this.options)
       .pipe(
         catchError(this.handleError())
       );
@@ -60,6 +63,10 @@ export class AngularReadOperations implements ReadOperations {
 
       throw new Error(error.message);
     };
+  }
+
+  private getFinalUrl(url: string) {
+    return `${this.rootUrl}/${url}`;
   }
 
 }
