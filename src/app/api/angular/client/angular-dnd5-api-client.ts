@@ -2,9 +2,9 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { AngularReadOperations } from "@app/api/angular/operations/angular-read-operations";
 import { ReadOperations } from "@app/api/operations/read-operations";
-import { CharacterClassClient } from "../../client/character-class-client";
+import { CharacterClass } from "../../client/dsl/charclass/character-class";
 import { Dnd5ApiClient } from "../../client/dnd5-api-client";
-import { OperationsCharacterClassClient } from "../../client/operations-character-class-client";
+import { OperationsCharacterClassClient } from "../../client/dsl/charclass/operations-character-class-by-index";
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ export class AngularDnd5ApiClient implements Dnd5ApiClient {
     private http: HttpClient
   ) { }
 
-  characterClass(): CharacterClassClient {
+  characterClass(): CharacterClass {
     return new OperationsCharacterClassClient(this.getOperations.bind(this));
   }
 

@@ -3,7 +3,7 @@ import { Level } from "@app/dnd5/models/charclass/level";
 import { Spell } from "@app/dnd5/models/charclass/spell";
 import { Observable } from "rxjs";
 
-export interface CharacterClassLevelClient {
+export interface CharacterClassLevel {
 
   getAll(): Observable<Level[]>;
 

@@ -20,7 +20,7 @@ export class CharclassService {
   }
 
   getCharacterClass(id: string): Observable<Charclass> {
-    return this.client.characterClass().getOne(id);
+    return this.client.characterClass().index(id).getOne();
   }
 
 }

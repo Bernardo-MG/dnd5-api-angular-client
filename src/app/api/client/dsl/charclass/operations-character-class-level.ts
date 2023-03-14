@@ -3,12 +3,13 @@ import { Feature } from "@app/dnd5/models/charclass/feature";
 import { Level } from "@app/dnd5/models/charclass/level";
 import { Spell } from "@app/dnd5/models/charclass/spell";
 import { Observable } from "rxjs";
-import { CharacterClassLevelClient } from "./character-class-level-client";
+import { CharacterClassLevel } from "./character-class-level";
 
-export class OperationsCharacterClassLevelClient implements CharacterClassLevelClient {
+export class OperationsCharacterClassLevel implements CharacterClassLevel {
 
   constructor(
-    private getOperations: () => ReadOperations
+    private getOperations: () => ReadOperations,
+    private classname: string
   ) { }
 
   public getAll(): Observable<Level[]> {
