@@ -5,11 +5,15 @@ import { Spell } from "@app/dnd5/models/charclass/spell";
 import { Observable } from "rxjs";
 
 export class CharacterClassLevel {
+  
+
+  private levelRoute = '/level';
 
   constructor(
-    private getOperations: () => ReadOperations,
-    private classname: string
-  ) { }
+    private operations: ReadOperations
+  ) {
+    this.operations.appendRoute(`/${this.levelRoute}`);
+  }
 
   public getAll(): Observable<Level[]> {
     throw new Error("Method not implemented.");

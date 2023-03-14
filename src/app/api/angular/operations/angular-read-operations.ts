@@ -42,6 +42,12 @@ export class AngularReadOperations implements ReadOperations {
     return this;
   }
 
+  public appendRoute(route: string): ReadOperations {
+    this._route = `${this._route}/${route}`;
+
+    return this;
+  }
+
   private getHttpParams(): HttpParams {
     let params: HttpParams;
 
