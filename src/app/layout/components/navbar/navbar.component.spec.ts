@@ -1,16 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-
 import { RouterTestingModule } from '@angular/router/testing';
-import { NavigationMenuComponent } from './navigation-menu.component';
+import { NavbarComponent } from './navbar.component';
 
-describe('NavigationMenuComponent', () => {
-  let component: NavigationMenuComponent;
-  let fixture: ComponentFixture<NavigationMenuComponent>;
+describe('NavbarComponent', () => {
+  let component: NavbarComponent;
+  let fixture: ComponentFixture<NavbarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NavigationMenuComponent],
+      declarations: [NavbarComponent],
       imports: [
         NoopAnimationsModule,
         RouterTestingModule
@@ -19,7 +18,7 @@ describe('NavigationMenuComponent', () => {
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NavigationMenuComponent);
+    fixture = TestBed.createComponent(NavbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

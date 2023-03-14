@@ -2,11 +2,11 @@ import { Component, Input } from '@angular/core';
 import { MenuLink } from '../../models/menu-link';
 
 @Component({
-  selector: 'dnd5-navigation-menu',
-  templateUrl: './navigation-menu.component.html',
-  styleUrls: ['./navigation-menu.component.sass']
+  selector: 'dnd5-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.sass']
 })
-export class NavigationMenuComponent {
+export class NavbarComponent {
 
   @Input() links: MenuLink[] = [];
 
