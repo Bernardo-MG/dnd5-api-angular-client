@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CharclassViewComponent } from './components/charclass-view/charclass-view.component';
+import { CharclassDetailViewComponent } from './components/charclass-detail-view/charclass-detail-view.component';
+import { CharclassListViewComponent } from './components/charclass-list-view/charclass-list-view.component';
 import { HomeViewComponent } from './components/home-view/home-view.component';
 
 
@@ -12,8 +13,8 @@ const routes: Routes = [
             {
                 path: 'classes',
                 children: [
-                    { path: '', component: CharclassViewComponent },
-                    { path: ':id', component: CharclassViewComponent }
+                    { path: '', component: CharclassListViewComponent },
+                    { path: ':id', component: CharclassDetailViewComponent }
                 ]
             }
         ]

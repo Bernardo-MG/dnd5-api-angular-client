@@ -2,18 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CharclassService } from '@app/dnd5/charclass/services/charclass.service';
 import { Charclass } from '@app/dnd5/models/charclass/charclass';
-import { Reference } from '@app/dnd5/models/info/reference';
 
 @Component({
-  selector: 'dnd5-charclass-view',
-  templateUrl: './charclass-view.component.html',
-  styleUrls: ['./charclass-view.component.sass']
+  selector: 'app-charclass-detail-view',
+  templateUrl: './charclass-detail-view.component.html',
+  styleUrls: ['./charclass-detail-view.component.sass']
 })
-export class CharclassViewComponent implements OnInit {
-
-  charclasses: Reference[] = [];
+export class CharclassDetailViewComponent implements OnInit {
   
-  charclass!: Charclass;
+  charclass: Charclass = new Charclass();
 
   constructor(
     private route: ActivatedRoute,
@@ -21,9 +18,6 @@ export class CharclassViewComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // Loads character classes
-    this.charclassService.getCharacterClasses().subscribe(charclasses => this.charclasses = charclasses);
-
     // Loads selected character class
     this.route.paramMap.subscribe(params => {
       this.getCharClass(params.get('id'));

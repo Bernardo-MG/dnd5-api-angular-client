@@ -17,7 +17,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
   imports: [
     CommonModule,
     NoopAnimationsModule,
-    RouterModule,
+    RouterModule
   ],
   exports: [
     LayoutComponent
