@@ -5,12 +5,14 @@ import { RouterModule } from '@angular/router';
 import { DropdownMenuComponent } from './components/dropdown-menu/dropdown-menu.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LayoutComponent } from './components/header-layout/header-layout.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
     NavbarComponent,
     LayoutComponent,
-    DropdownMenuComponent
+    DropdownMenuComponent,
+    SidenavComponent
   ],
   imports: [
     CommonModule,
