@@ -5,16 +5,9 @@
     <main>
         <div class="container-fluid">
             <div class="row">
-                <nav class="col-md-3 col-lg-2 d-md-block navbar-light bg-light collapse vh-100 border-end"
-                    id="sidebarMenu">
-                    <div class="position-sticky pt-3 sidebar-sticky">
-                        <ul class="nav flex-column">
-                            <li class="nav-item" *ngFor="let link of links">
-                                <a routerLink="{{link.path}}" class="nav-link" title="{{link.name}}">{{link.name}}</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+                <div class="col-md-3 col-lg-2 ">
+                    <dnd5-sidenav [links]="links"></dnd5-sidenav>
+                </div>
                 <div class="ms-sm-auto col-md-9 col-lg-10">
                     <section id="main-section" class="container flex-grow-1 pt-4">
                         <ng-content></ng-content>
