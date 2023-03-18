@@ -1,9 +1,9 @@
 <nav class="d-md-block navbar-light bg-light collapse rounded border-secondary mt-2" id="sidebarMenu">
-    <div class="position-sticky pt-3 sidebar-sticky">
-        <ul class="nav flex-column">
-            <li class="nav-item" *ngFor="let link of links">
-                <a routerLink="{{link.path}}" class="nav-link" title="{{link.name}}">{{link.name}}</a>
-            </li>
-        </ul>
-    </div>
+    <p class="px-3 pt-3 mb-1 fw-bold text-uppercase border-bottom">
+       sections</p>
+    <ul class="nav flex-column">
+        <li class="nav-item" *ngFor="let link of links">
+            <a routerLink="{{link.path}}" class="nav-link" title="{{link.name}}">{{link.name}}</a>
+        </li>
+    </ul>
 </nav>
