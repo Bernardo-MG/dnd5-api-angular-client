@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CharclassService } from '@app/dnd5/charclass/services/charclass.service';
 import { Reference } from '@app/dnd5/models/info/reference';
-import { MenuLink } from '@app/layout/models/menu-link';
+import { MenuLink } from '@app/components/models/menu-link';
 
 @Component({
   selector: 'app-charclass-list-view',

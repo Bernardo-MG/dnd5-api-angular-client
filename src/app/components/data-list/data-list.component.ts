@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { MenuLink } from '@app/layout/models/menu-link';
+import { MenuLink } from '@app/components/models/menu-link';
 
 @Component({
   selector: 'dnd5-data-list',

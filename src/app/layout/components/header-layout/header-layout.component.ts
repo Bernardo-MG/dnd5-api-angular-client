@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Menu } from '@app/layout/models/menu';
+import { Menu } from '@app/components/models/menu';
 
 @Component({
   selector: 'dnd5-header-layout',
