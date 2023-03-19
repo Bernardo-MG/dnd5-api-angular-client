@@ -1,20 +1,3 @@
-<div class="card">
-    <div class="card-body">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">
-                        <button type="button" class="btn btn-default" aria-label="Edit">
-                            <i class="fa-solid fa-sort"></i>
-                        </button>Name
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let link of links">
-                    <td><a routerLink="{{link.path}}" class="nav-link" title="{{link.name}}">{{link.name}}</a></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+<div class="list-group text-center">
+   <a *ngFor="let link of links" routerLink="{{link.path}}" class="list-group-item list-group-item-action" title="{{link.name}}">{{link.name}}</a>
 </div>
