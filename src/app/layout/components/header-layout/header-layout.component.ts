@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { MenuLink } from '@app/layout/models/menu-link';
+import { Menu } from '@app/layout/models/menu';
 
 @Component({
   selector: 'dnd5-header-layout',
@@ -8,7 +8,7 @@ import { MenuLink } from '@app/layout/models/menu-link';
 })
 export class LayoutComponent {
 
-  @Input() public links: MenuLink[] = [];
+  @Input() public menus: Menu[] = [];
 
   @Input() public title: string = '';
 

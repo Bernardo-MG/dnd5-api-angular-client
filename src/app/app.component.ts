@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MenuLink } from './layout/models/menu-link';
+import { Menu } from './layout/models/menu';
 
 @Component({
   selector: 'dnd5-root',
@@ -8,7 +8,7 @@ import { MenuLink } from './layout/models/menu-link';
 })
 export class AppComponent {
 
-  links: MenuLink[] = [{ title: 'Classes', path: '/classes' }];
+  menus: Menu[] = [{ title: 'Character', links: [{ title: 'Classes', path: '/classes' }] }];
 
   title: string = 'dnd5-api-angular-client';
 

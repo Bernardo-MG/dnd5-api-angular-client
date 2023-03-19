@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { MenuLink } from '@app/layout/models/menu-link';
+import { Menu } from '@app/layout/models/menu';
 
 @Component({
   selector: 'dnd5-sidenav',
@@ -10,7 +10,7 @@ export class SidenavComponent {
   
   @Input() id: string = '';
 
-  @Input() links: MenuLink[] = [];
+  @Input() menus: Menu[] = [];
 
   constructor() { }
 
