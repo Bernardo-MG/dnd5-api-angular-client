@@ -2,11 +2,11 @@ import { Component, Input } from '@angular/core';
 import { faBackward, faForward } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'dnd5-navigation-template',
-  templateUrl: './navigation-template.component.html',
-  styleUrls: ['./navigation-template.component.sass']
+  selector: 'dnd5-pagination-template',
+  templateUrl: './pagination-template.component.html',
+  styleUrls: ['./pagination-template.component.sass']
 })
-export class NavigationTemplateComponent {
+export class PaginationTemplateComponent {
 
   public backwardIcon = faBackward;
 

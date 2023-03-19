@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DataListComponent } from './data-list/data-list.component';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { MenuComponent } from './menu/menu.component';
-import { NavigationComponent } from './navigation/navigation.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NavigationTemplateComponent } from './navigation-template/navigation-template.component';
+import { DataListComponent } from './data-list/data-list.component';
+import { MenuComponent } from './menu/menu.component';
+import { PaginationTemplateComponent } from './pagination-template/pagination-template.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 
 
@@ -13,8 +13,8 @@ import { NavigationTemplateComponent } from './navigation-template/navigation-te
   declarations: [
     DataListComponent,
     MenuComponent,
-    NavigationComponent,
-    NavigationTemplateComponent
+    PaginationComponent,
+    PaginationTemplateComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +24,7 @@ import { NavigationTemplateComponent } from './navigation-template/navigation-te
   exports: [
     DataListComponent,
     MenuComponent,
-    NavigationComponent
+    PaginationComponent
   ]
 })
 export class ComponentsModule { }

@@ -2,11 +2,11 @@ import { Component, Input } from '@angular/core';
 import { PaginationDetails } from '../models/pagination-details';
 
 @Component({
-  selector: 'dnd5-navigation',
-  templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.sass']
+  selector: 'dnd5-pagination',
+  templateUrl: './pagination.component.html',
+  styleUrls: ['./pagination.component.sass']
 })
-export class NavigationComponent {
+export class PaginationComponent {
 
   @Input() public pagination = new PaginationDetails();
   
