@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { faBackward, faForward } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -6,15 +6,22 @@ import { faBackward, faForward } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.sass']
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent {
 
   public backwardIcon = faBackward;
 
   public forwardIcon = faForward;
 
-  constructor() { }
+  @Input() public first = true;
+  
+  @Input() public last = true;
+  
+  @Input() public current = 0;
+  
+  @Input() public firstHalf: number[] = [];
+  
+  @Input() public secondHalf: number[] = [];
 
-  ngOnInit(): void {
-  }
+  constructor() { }
 
 }

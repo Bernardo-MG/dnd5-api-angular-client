@@ -10,9 +10,19 @@ import { MenuLink } from '@app/components/models/menu-link';
 })
 export class CharclassListViewComponent implements OnInit {
 
-  charclasses: Reference[] = [];
+  public charclasses: Reference[] = [];
 
-  links: MenuLink[] = [];
+  public links: MenuLink[] = [];
+
+  public first = true;
+
+  public last = false;
+
+  public current = 2;
+
+  public firstHalf: number[] = [1,2,3];
+
+  public secondHalf: number[] = [10];
 
   constructor(
     private charclassService: CharclassService
@@ -21,7 +31,7 @@ export class CharclassListViewComponent implements OnInit {
   ngOnInit(): void {
     // Loads character classes
     this.charclassService.getCharacterClasses().subscribe(charclasses => this.links = charclasses.map(c => {
-      return {title: c.name, path: `/classes/${c.index}`};
+      return { title: c.name, path: `/classes/${c.index}` };
     }));
   }
 
