@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SidenavComponent } from './sidenav.component';
+import { SidenavComponent } from './menu.component';
 
 describe('SidenavComponent', () => {
   let component: SidenavComponent;

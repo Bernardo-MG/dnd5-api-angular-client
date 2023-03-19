@@ -2,11 +2,11 @@ import { Component, Input } from '@angular/core';
 import { Menu } from '@app/layout/models/menu';
 
 @Component({
-  selector: 'dnd5-sidenav',
-  templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.sass']
+  selector: 'dnd5-menu',
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.sass']
 })
-export class SidenavComponent {
+export class MenuComponent {
   
   @Input() id: string = '';
 

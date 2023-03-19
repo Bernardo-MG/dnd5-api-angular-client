@@ -2,20 +2,20 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { ComponentsModule } from '@app/components/components.module';
 import { LayoutComponent } from './components/header-layout/header-layout.component';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    LayoutComponent,
-    SidenavComponent
+    LayoutComponent
   ],
   imports: [
     CommonModule,
     NoopAnimationsModule,
-    RouterModule
+    RouterModule,
+    ComponentsModule
   ],
   exports: [
     LayoutComponent
