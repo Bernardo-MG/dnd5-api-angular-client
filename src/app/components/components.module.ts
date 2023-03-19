@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { MenuComponent } from './menu/menu.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NavigationTemplateComponent } from './navigation-template/navigation-template.component';
 
 
 
@@ -12,7 +13,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   declarations: [
     DataListComponent,
     MenuComponent,
-    NavigationComponent
+    NavigationComponent,
+    NavigationTemplateComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,22 @@
+<nav aria-label="Page navigation">
+    <ul class="pagination pagination-sm">
+        <li class="page-item" [class.disabled]="first" [attr.aria-disabled]="first">
+            <button type="button" class="page-link" aria-label="Previous page">
+                <fa-icon [icon]="backwardIcon"></fa-icon>
+            </button>
+        </li>
+        <li *ngFor="let page of firstHalf" class="page-item" [class.active]="page===current"
+            [attr.aria-current]="page === current ? 'page' : ''" aria-current="page"><a class="page-link"
+                href="#">{{page}}</a></li>
+        <li *ngIf="secondHalf.length" class="page-item disabled" aria-disabled="true"><span class="page-link">...</span>
+        </li>
+        <li *ngFor="let page of secondHalf" class="page-item" [class.active]="page===current"
+            [attr.aria-current]="page === current ? 'page' : ''" aria-current="page"><a class="page-link"
+                href="#">{{page}}</a></li>
+        <li class="page-item" [class.disabled]="last" [attr.aria-disabled]="last">
+            <button type="button" class="page-link" aria-label="Next page">
+                <fa-icon [icon]="forwardIcon"></fa-icon>
+            </button>
+        </li>
+    </ul>
+</nav>

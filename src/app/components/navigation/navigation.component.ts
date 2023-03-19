@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { faBackward, faForward } from '@fortawesome/free-solid-svg-icons';
+import { PaginationDetails } from '../models/pagination-details';
 
 @Component({
   selector: 'dnd5-navigation',
@@ -8,20 +8,8 @@ import { faBackward, faForward } from '@fortawesome/free-solid-svg-icons';
 })
 export class NavigationComponent {
 
-  public backwardIcon = faBackward;
-
-  public forwardIcon = faForward;
-
-  @Input() public first = true;
+  @Input() public pagination = new PaginationDetails();
   
-  @Input() public last = true;
-  
-  @Input() public current = 0;
-  
-  @Input() public firstHalf: number[] = [];
-  
-  @Input() public secondHalf: number[] = [];
-
   constructor() { }
 
 }
