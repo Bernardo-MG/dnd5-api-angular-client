@@ -8,7 +8,7 @@ import { MenuLink } from './layout/models/menu-link';
 })
 export class AppComponent {
 
-  links: MenuLink[] = [{ name: 'Classes', path: '/classes' }];
+  links: MenuLink[] = [{ title: 'Classes', path: '/classes' }];
 
   title: string = 'dnd5-api-angular-client';
 

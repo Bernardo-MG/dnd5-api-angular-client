@@ -21,7 +21,7 @@ export class CharclassListViewComponent implements OnInit {
   ngOnInit(): void {
     // Loads character classes
     this.charclassService.getCharacterClasses().subscribe(charclasses => this.links = charclasses.map(c => {
-      return {name: c.name, path: `/classes/${c.index}`};
+      return {title: c.name, path: `/classes/${c.index}`};
     }));
   }
 

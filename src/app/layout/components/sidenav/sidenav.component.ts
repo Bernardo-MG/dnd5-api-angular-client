@@ -7,6 +7,8 @@ import { MenuLink } from '@app/layout/models/menu-link';
   styleUrls: ['./sidenav.component.sass']
 })
 export class SidenavComponent {
+  
+  @Input() id: string = '';
 
   @Input() links: MenuLink[] = [];
 
