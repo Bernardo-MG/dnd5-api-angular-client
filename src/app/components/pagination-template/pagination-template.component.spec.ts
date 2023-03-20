@@ -70,4 +70,46 @@ describe('PaginationTemplateComponent', () => {
     expect(button.disabled).toEqual(false);
   });
 
+  // Disable status
+
+  it('should disable the backward button when the component is disabled', () => {
+    component.first = false;
+    component.last = false;
+    component.disabled = true;
+    fixture.detectChanges();
+
+    const button = fixture.nativeElement.querySelectorAll('button')[0];
+    expect(button.disabled).toEqual(true);
+  });
+
+  it('should enable the backward button when the component is enabled', () => {
+    component.first = false;
+    component.last = false;
+    component.disabled = false;
+    fixture.detectChanges();
+
+    const button = fixture.nativeElement.querySelectorAll('button')[0];
+    expect(button.disabled).toEqual(false);
+  });
+
+  it('should disable the forward button when the component is disabled', () => {
+    component.first = false;
+    component.last = false;
+    component.disabled = true;
+    fixture.detectChanges();
+
+    const button = fixture.nativeElement.querySelectorAll('button')[1];
+    expect(button.disabled).toEqual(true);
+  });
+
+  it('should enable the forward button when the component is enabled', () => {
+    component.first = false;
+    component.last = false;
+    component.disabled = false;
+    fixture.detectChanges();
+
+    const button = fixture.nativeElement.querySelectorAll('button')[1];
+    expect(button.disabled).toEqual(false);
+  });
+
 });

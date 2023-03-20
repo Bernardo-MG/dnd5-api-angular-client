@@ -12,6 +12,8 @@ export class PaginationTemplateComponent {
 
   public forwardIcon = faForward;
 
+  @Input() public disabled = false;
+
   @Input() public first = true;
 
   @Input() public last = true;
@@ -36,6 +38,14 @@ export class PaginationTemplateComponent {
 
   public onGoTo(page: number) {
     this.goTo.emit(page);
+  }
+
+  public isBackwardDisabled(): boolean {
+    return (this.first) || (this.disabled);
+  }
+
+  public isForwardDisabled(): boolean {
+    return (this.last) || (this.disabled);
   }
 
 }
