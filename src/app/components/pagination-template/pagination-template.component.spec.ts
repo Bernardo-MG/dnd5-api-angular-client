@@ -8,9 +8,9 @@ describe('PaginationTemplateComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PaginationTemplateComponent ]
+      declarations: [PaginationTemplateComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(PaginationTemplateComponent);
     component = fixture.componentInstance;

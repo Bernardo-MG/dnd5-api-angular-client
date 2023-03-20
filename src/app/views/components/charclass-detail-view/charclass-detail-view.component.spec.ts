@@ -1,5 +1,7 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterTestingModule } from '@angular/router/testing';
+import { CharclassService } from '@app/dnd5/charclass/services/charclass.service';
 import { CharclassDetailViewComponent } from './charclass-detail-view.component';
 
 describe('CharclassDetailViewComponent', () => {
@@ -8,9 +10,18 @@ describe('CharclassDetailViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CharclassDetailViewComponent ]
+      imports: [
+        RouterTestingModule,
+        HttpClientTestingModule
+      ],
+      declarations: [
+        CharclassDetailViewComponent
+      ],
+      providers: [
+        CharclassService
+      ]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(CharclassDetailViewComponent);
     component = fixture.componentInstance;
