@@ -2,10 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MenuLink } from '@app/components/models/menu-link';
 import { Pagination } from '@app/components/models/pagination';
 import { CharclassService } from '@app/dnd5/charclass/services/charclass.service';
-import { Reference } from '@app/dnd5/models/info/reference';
 
 @Component({
-  selector: 'app-charclass-list-view',
+  selector: 'dnd5-charclass-list-view',
   templateUrl: './charclass-list-view.component.html',
   styleUrls: ['./charclass-list-view.component.sass']
 })

@@ -4,7 +4,7 @@ import { CharclassService } from '@app/dnd5/charclass/services/charclass.service
 import { Charclass } from '@app/dnd5/models/charclass/charclass';
 
 @Component({
-  selector: 'app-charclass-detail-view',
+  selector: 'dnd5-charclass-detail-view',
   templateUrl: './charclass-detail-view.component.html',
   styleUrls: ['./charclass-detail-view.component.sass']
 })
