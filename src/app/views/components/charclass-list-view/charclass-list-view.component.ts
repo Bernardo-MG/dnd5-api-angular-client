@@ -11,8 +11,8 @@ import { Reference } from '@app/dnd5/models/info/reference';
 })
 export class CharclassListViewComponent implements OnInit {
 
-  public charclasses: Reference[] = [];
-
+  public data: MenuLink[] = [];
+  
   public links: MenuLink[] = [];
 
   public pagination = new Pagination();
@@ -24,20 +24,22 @@ export class CharclassListViewComponent implements OnInit {
   ngOnInit(): void {
     // Loads character classes
     this.charclassService.getCharacterClasses().subscribe(charclasses => {
-      this.pagination = this.loadPagination(charclasses);
+      this.pagination = this.loadPagination(charclasses.length);
 
-      this.links = charclasses.map(c => {
+      this.data = charclasses.map(c => {
         return { title: c.name, path: `/classes/${c.index}` };
-      })
+      });
+
+      this.links = this.data.slice(0, this.pagination.size);
     });
   }
 
-  private loadPagination(values: Reference[]): Pagination {
+  private loadPagination(total: number): Pagination {
     const page = new Pagination();
     page.page = 1;
     page.size = 5;
-    page.totalElements = values.length;
-    page.totalPages = page.totalElements % page.size;
+    page.totalElements = total;
+    page.totalPages = Math.ceil(page.totalElements / page.size);
     page.first = (page.page === 1);
     page.last = (page.page === page.totalPages);
 
