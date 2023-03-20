@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuLink } from '@app/components/models/menu-link';
+import { Pagination } from '@app/components/models/pagination';
 import { CharclassService } from '@app/dnd5/charclass/services/charclass.service';
 import { Reference } from '@app/dnd5/models/info/reference';
-import { MenuLink } from '@app/components/models/menu-link';
-import { PaginationDetails } from '@app/components/models/pagination-details';
 
 @Component({
   selector: 'app-charclass-list-view',
@@ -15,24 +15,33 @@ export class CharclassListViewComponent implements OnInit {
 
   public links: MenuLink[] = [];
 
-  public pagination = new PaginationDetails();
+  public pagination = new Pagination();
 
   constructor(
     private charclassService: CharclassService
   ) { }
 
   ngOnInit(): void {
-    // Set up pagination
-    this.pagination.first = true;
-    this.pagination.last = false;
-    this.pagination.current = 2;
-    this.pagination.firstHalf = [1, 2, 3];
-    this.pagination.secondHalf = [10];
-
     // Loads character classes
-    this.charclassService.getCharacterClasses().subscribe(charclasses => this.links = charclasses.map(c => {
-      return { title: c.name, path: `/classes/${c.index}` };
-    }));
+    this.charclassService.getCharacterClasses().subscribe(charclasses => {
+      this.pagination = this.loadPagination(charclasses);
+
+      this.links = charclasses.map(c => {
+        return { title: c.name, path: `/classes/${c.index}` };
+      })
+    });
+  }
+
+  private loadPagination(values: Reference[]): Pagination {
+    const page = new Pagination();
+    page.page = 1;
+    page.size = 5;
+    page.totalElements = values.length;
+    page.totalPages = page.totalElements % page.size;
+    page.first = (page.page === 1);
+    page.last = (page.page === page.totalPages);
+
+    return page;
   }
 
 }
