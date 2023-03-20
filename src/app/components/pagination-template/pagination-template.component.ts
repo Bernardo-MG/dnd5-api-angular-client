@@ -13,15 +13,27 @@ export class PaginationTemplateComponent {
   public forwardIcon = faForward;
 
   @Input() public first = true;
-  
+
   @Input() public last = true;
-  
+
   @Input() public current = 0;
-  
+
   @Input() public firstHalf: number[] = [];
-  
+
   @Input() public secondHalf: number[] = [];
 
   constructor() { }
+
+  public onBackward() {
+
+  }
+
+  public onForward() {
+
+  }
+
+  public onGoTo(page: number) {
+
+  }
 
 }
