@@ -2,8 +2,16 @@
     <h1>classes</h1>
 </header>
 <div class="offset-3 col-6">
-    <dnd5-data-list [links]="links"></dnd5-data-list>
-    <div class="d-flex justify-content-center mt-1">
-        <dnd5-pagination [pagination]="pagination"></dnd5-pagination>
-    </div>
+    <div *ngIf="waiting; then placeholder else data"></div>
+    <ng-template #placeholder>
+        <div class="d-flex justify-content-center" aria-hidden="true">
+            <dnd5-waiting></dnd5-waiting>
+        </div>
+    </ng-template>
+    <ng-template #data>
+        <dnd5-data-list [links]="links"></dnd5-data-list>
+        <div class="d-flex justify-content-center mt-1">
+            <dnd5-pagination [pagination]="pagination"></dnd5-pagination>
+        </div>
+    </ng-template>
 </div>

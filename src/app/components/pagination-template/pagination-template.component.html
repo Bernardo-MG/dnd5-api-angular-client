@@ -7,14 +7,14 @@
         </li>
         <li *ngFor="let page of firstHalf" class="page-item" [class.active]="page===current"
             [attr.aria-current]="page === current ? 'page' : ''" aria-current="page">
-            <button type="button" (click)="onGoTo(page)" class="page-link" aria-label="Previous page">
+            <button type="button" (click)="onGoTo(page)" class="page-link" aria-label="Go to page">
                 {{page}}
             </button>
         <li *ngIf="secondHalf.length" class="page-item disabled" aria-disabled="true"><span class="page-link">...</span>
         </li>
         <li *ngFor="let page of secondHalf" class="page-item" [class.active]="page===current"
             [attr.aria-current]="page === current ? 'page' : ''" aria-current="page">
-            <button type="button" (click)="onGoTo(page)" class="page-link" aria-label="Previous page">
+            <button type="button" (click)="onGoTo(page)" class="page-link" aria-label="Go to page">
                 {{page}}
             </button>
         </li>

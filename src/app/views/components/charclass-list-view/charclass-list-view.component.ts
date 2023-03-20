@@ -10,8 +10,10 @@ import { CharclassService } from '@app/dnd5/charclass/services/charclass.service
 })
 export class CharclassListViewComponent implements OnInit {
 
+  public waiting: boolean = false;
+
   public data: MenuLink[] = [];
-  
+
   public links: MenuLink[] = [];
 
   public pagination = new Pagination();
@@ -21,6 +23,8 @@ export class CharclassListViewComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.waiting = true;
+
     // Loads character classes
     this.charclassService.getCharacterClasses().subscribe(charclasses => {
       this.pagination = this.loadPagination(charclasses.length);
@@ -30,6 +34,8 @@ export class CharclassListViewComponent implements OnInit {
       });
 
       this.links = this.data.slice(0, this.pagination.size);
+
+      this.waiting = false;
     });
   }
 
