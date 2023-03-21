@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ButtonComponent } from '../button/button.component';
+import { ButtonComponent } from '../../button/button.component';
 import { PaginationTemplateComponent } from './pagination-template.component';
 
 describe('PaginationTemplateComponent', () => {

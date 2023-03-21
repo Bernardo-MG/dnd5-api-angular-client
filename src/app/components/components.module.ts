@@ -5,10 +5,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ButtonComponent } from './button/button.component';
 import { DataListComponent } from './data-list/data-list.component';
 import { MenuComponent } from './menu/menu.component';
-import { PaginationTemplateComponent } from './pagination-template/pagination-template.component';
+import { PaginationTemplateComponent } from './pagination/pagination-template/pagination-template.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { WaitingWrapperComponent } from './waiting-wrapper/waiting-wrapper.component';
 import { WaitingComponent } from './waiting/waiting.component';
+import { BackwardIconComponent } from './icons/backward-icon/backward-icon.component';
+import { ForwardIconComponent } from './icons/forward-icon/forward-icon.component';
 
 
 
@@ -20,7 +22,9 @@ import { WaitingComponent } from './waiting/waiting.component';
     PaginationComponent,
     PaginationTemplateComponent,
     WaitingComponent,
-    WaitingWrapperComponent
+    WaitingWrapperComponent,
+    BackwardIconComponent,
+    ForwardIconComponent
   ],
   imports: [
     CommonModule,

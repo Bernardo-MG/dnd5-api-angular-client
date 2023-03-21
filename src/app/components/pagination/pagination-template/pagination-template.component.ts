@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { faBackward, faForward } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'dnd5-pagination-template',
@@ -7,10 +6,6 @@ import { faBackward, faForward } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./pagination-template.component.sass']
 })
 export class PaginationTemplateComponent {
-
-  public backwardIcon = faBackward;
-
-  public forwardIcon = faForward;
 
   @Input() public disabled = false;
 

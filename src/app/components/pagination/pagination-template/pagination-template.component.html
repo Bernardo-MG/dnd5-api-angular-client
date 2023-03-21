@@ -2,7 +2,7 @@
     <ul class="pagination pagination-sm">
         <li class="page-item" [class.disabled]="isBackwardDisabled()" [attr.aria-disabled]="isBackwardDisabled()">
             <dnd5-button (click)="onBackward()" [disabled]="isBackwardDisabled()" aria-label="Previous page">
-                <fa-icon [icon]="backwardIcon"></fa-icon>
+                <dnd5-backward-icon></dnd5-backward-icon>
             </dnd5-button>
         </li>
         <li *ngFor="let page of firstHalf" class="page-item" [class.active]="isCurrent(page)"
@@ -24,7 +24,7 @@
         </ng-container>
         <li class="page-item" [class.disabled]="isForwardDisabled()" [attr.aria-disabled]="isForwardDisabled()">
             <dnd5-button (click)="onForward()" [disabled]="isForwardDisabled()" aria-label="Next page">
-                <fa-icon [icon]="forwardIcon"></fa-icon>
+                <dnd5-forward-icon></dnd5-forward-icon>
             </dnd5-button>
         </li>
     </ul>

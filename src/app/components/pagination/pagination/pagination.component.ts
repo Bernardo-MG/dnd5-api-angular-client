@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { Pagination } from '../models/pagination';
+import { Pagination } from '@app/components/models/pagination';
 
 @Component({
   selector: 'dnd5-pagination',
