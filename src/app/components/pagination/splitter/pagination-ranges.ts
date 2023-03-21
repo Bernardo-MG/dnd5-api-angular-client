@@ -38,13 +38,11 @@ export class PaginationRanges {
 
     private getLeftRange(pages: number): number[] {
         const range: number[] = [];
-        let lower;
-        let upper;
 
-        lower = 1;
+        const lower = 1;
 
         // Valid page with highest value
-        upper = this.step + 1;
+        let upper = this.step + 1;
         if (upper > pages) {
             upper = pages;
         }
@@ -85,16 +83,14 @@ export class PaginationRanges {
     private getRightRange(pages: number): number[] {
         const range: number[] = [];
         const offset = (this.step * 2);
-        let lower;
-        let upper;
 
         // Valid page with lowest value
-        lower = pages - this.step;
+        let lower = pages - this.step;
         if (lower < offset) {
             lower = offset;
         }
 
-        upper = pages;
+        const upper = pages;
 
         for (let i = lower; i <= upper; i++) {
             range.push(i);
