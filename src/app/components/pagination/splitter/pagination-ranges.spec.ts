@@ -86,4 +86,54 @@ describe('PaginationRanges', () => {
         expect(ranges.right).withContext('Right range should be empty').toEqual([]);
     });
 
+    it('should merge left and center when they overlap', () => {
+        const ranges = new PaginationRanges(6, 20);
+
+        expect(ranges.left).withContext('Left range should contain the merged range').toEqual([1, 2, 3, 4, 5, 6, 7, 8]);
+        expect(ranges.center).withContext('Center range should be empty').toEqual([]);
+        expect(ranges.right).withContext('Right range should contain the last pages').toEqual([18, 19, 20]);
+    });
+
+    it('should merge center and right when they overlap', () => {
+        const ranges = new PaginationRanges(15, 20);
+
+        expect(ranges.left).withContext('Left range should contain the first pages').toEqual([1, 2, 3]);
+        expect(ranges.center).withContext('Center range should be empty').toEqual([]);
+        expect(ranges.right).withContext('Right range contain the merged range').toEqual([13, 14, 15, 16, 17, 18, 19, 20]);
+    });
+
+    // Moving around extremes
+
+    it('should extend the left range when pointing to the second page', () => {
+        const ranges = new PaginationRanges(2, 10);
+
+        expect(ranges.left).withContext('Left range should contain the additional pages').toEqual([1, 2, 3, 4]);
+        expect(ranges.center).withContext('Center range should be empty').toEqual([]);
+        expect(ranges.right).withContext('Right range should contain the last pages').toEqual([8, 9, 10]);
+    });
+
+    it('should extend the left range when pointing to the third page', () => {
+        const ranges = new PaginationRanges(3, 10);
+
+        expect(ranges.left).withContext('Left range should contain the additional pages').toEqual([1, 2, 3, 4, 5]);
+        expect(ranges.center).withContext('Center range should be empty').toEqual([]);
+        expect(ranges.right).withContext('Right range should contain the last pages').toEqual([8, 9, 10]);
+    });
+
+    it('should extend the right range when pointing to the n-1 page', () => {
+        const ranges = new PaginationRanges(9, 10);
+
+        expect(ranges.left).withContext('Left range should contain the first pages').toEqual([1, 2, 3]);
+        expect(ranges.center).withContext('Center range should be empty').toEqual([]);
+        expect(ranges.right).withContext('Right range should contain the additional pages').toEqual([7, 8, 9, 10]);
+    });
+
+    it('should extend the right range when pointing to the n-2 page', () => {
+        const ranges = new PaginationRanges(8, 10);
+
+        expect(ranges.left).withContext('Left range should contain the first pages').toEqual([1, 2, 3]);
+        expect(ranges.center).withContext('Center range should be empty').toEqual([]);
+        expect(ranges.right).withContext('Right range should contain the additional pages').toEqual([6, 7, 8, 9, 10]);
+    });
+
 });
