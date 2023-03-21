@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ButtonComponent } from '../button/button.component';
 import { PaginationTemplateComponent } from './pagination-template.component';
 
 describe('PaginationTemplateComponent', () => {
@@ -8,7 +8,10 @@ describe('PaginationTemplateComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PaginationTemplateComponent]
+      declarations: [
+        ButtonComponent,
+        PaginationTemplateComponent
+      ]
     })
       .compileComponents();
 
@@ -190,6 +193,23 @@ describe('PaginationTemplateComponent', () => {
 
     const button = fixture.nativeElement.querySelectorAll('button')[1];
     expect(button.disabled).toEqual(false);
+  });
+
+  it('should disable the page buttons when the component is disabled', () => {
+    component.first = false;
+    component.last = false;
+    component.disabled = true;
+    component.firstHalf = [1];
+    component.secondHalf = [5];
+    fixture.detectChanges();
+
+    // Page button for the first half
+    var button = fixture.nativeElement.querySelectorAll('button')[1];
+    expect(button.disabled).toEqual(true);
+
+    // Page button for the second half
+    button = fixture.nativeElement.querySelectorAll('button')[2];
+    expect(button.disabled).toEqual(true);
   });
 
 });
