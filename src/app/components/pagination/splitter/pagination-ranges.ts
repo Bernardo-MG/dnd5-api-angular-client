@@ -1,4 +1,3 @@
-import { Pagination } from "@app/components/models/pagination";
 
 export class PaginationRanges {
 
@@ -11,9 +10,6 @@ export class PaginationRanges {
     private step = 2;
 
     constructor(page: number, pages: number) {
-        let lowest;
-        let highest;
-
         if (pages > 0) {
             // Can't build info for empty pages
 
