@@ -6,6 +6,7 @@ import { DataListComponent } from './data-list/data-list.component';
 import { MenuComponent } from './menu/menu.component';
 import { PaginationTemplateComponent } from './pagination-template/pagination-template.component';
 import { PaginationComponent } from './pagination/pagination.component';
+import { WaitingWrapperComponent } from './waiting-wrapper/waiting-wrapper.component';
 import { WaitingComponent } from './waiting/waiting.component';
 
 
@@ -16,7 +17,8 @@ import { WaitingComponent } from './waiting/waiting.component';
     MenuComponent,
     PaginationComponent,
     PaginationTemplateComponent,
-    WaitingComponent
+    WaitingComponent,
+    WaitingWrapperComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +29,8 @@ import { WaitingComponent } from './waiting/waiting.component';
     DataListComponent,
     MenuComponent,
     PaginationComponent,
-    WaitingComponent
+    WaitingComponent,
+    WaitingWrapperComponent
   ]
 })
 export class ComponentsModule { }
