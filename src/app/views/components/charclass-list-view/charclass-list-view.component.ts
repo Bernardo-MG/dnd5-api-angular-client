@@ -26,10 +26,10 @@ export class CharclassListViewComponent implements OnInit {
     this.waiting = true;
 
     // Loads character classes
-    this.charclassService.getCharacterClasses().subscribe(charclasses => {
-      this.pagination = this.loadPagination(charclasses.length);
+    this.charclassService.getCharacterClasses().subscribe(data => {
+      this.pagination = this.loadPagination(data.length);
 
-      this.data = charclasses.map(c => {
+      this.data = data.map(c => {
         return { title: c.name, path: `/classes/${c.index}` };
       });
 

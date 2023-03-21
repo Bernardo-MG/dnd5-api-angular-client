@@ -9,8 +9,10 @@ import { Charclass } from '@app/dnd5/models/charclass/charclass';
   styleUrls: ['./charclass-detail-view.component.sass']
 })
 export class CharclassDetailViewComponent implements OnInit {
-  
-  charclass: Charclass = new Charclass();
+
+  public waiting: boolean = false;
+
+  public charclass: Charclass = new Charclass();
 
   constructor(
     private route: ActivatedRoute,
@@ -18,17 +20,21 @@ export class CharclassDetailViewComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.waiting = true;
+
     // Loads selected character class
     this.route.paramMap.subscribe(params => {
-      this.getCharClass(params.get('id'));
-    });
-  }
+      const id = params.get('id');
 
-  getCharClass(id: string | null): void {
-    if (id) {
-      this.charclassService.getCharacterClass(id)
-        .subscribe(charclass => this.charclass = charclass);
-    }
+      if (id) {
+        this.charclassService.getCharacterClass(id)
+          .subscribe(data => {
+            this.charclass = data;
+
+            this.waiting = false;
+          });
+      }
+    });
   }
 
 }

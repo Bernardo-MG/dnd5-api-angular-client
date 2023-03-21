@@ -3,6 +3,8 @@
 </header>
 <div class="card">
     <div class="card-body">
-        <dnd5-charclass-detail [charclass]="charclass"></dnd5-charclass-detail>
+        <dnd5-waiting-wrapper [waiting]="waiting">
+            <dnd5-charclass-detail [charclass]="charclass"></dnd5-charclass-detail>
+        </dnd5-waiting-wrapper>
     </div>
 </div>
