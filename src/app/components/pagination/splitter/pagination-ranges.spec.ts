@@ -48,8 +48,42 @@ describe('PaginationRanges', () => {
         const ranges = new PaginationRanges(10, 20);
 
         expect(ranges.left).withContext('Left range should contain the first pages').toEqual([1, 2, 3]);
-        expect(ranges.center).withContext('Center range should be empty').toEqual([8, 9, 10, 11, 12]);
+        expect(ranges.center).withContext('Center range should contain the middle pages').toEqual([8, 9, 10, 11, 12]);
         expect(ranges.right).withContext('Right range should contain the last pages').toEqual([18, 19, 20]);
+    });
+
+    it('should create all ranges when pointing before the middle page', () => {
+        const ranges = new PaginationRanges(9, 20);
+
+        expect(ranges.left).withContext('Left range should contain the first pages').toEqual([1, 2, 3]);
+        expect(ranges.center).withContext('Center range should contain the middle pages').toEqual([7, 8, 9, 10, 11]);
+        expect(ranges.right).withContext('Right range should contain the last pages').toEqual([18, 19, 20]);
+    });
+
+    it('should create all ranges when pointing after the middle page', () => {
+        const ranges = new PaginationRanges(11, 20);
+
+        expect(ranges.left).withContext('Left range should contain the first pages').toEqual([1, 2, 3]);
+        expect(ranges.center).withContext('Center range should contain the middle pages').toEqual([9, 10, 11, 12, 13]);
+        expect(ranges.right).withContext('Right range should contain the last pages').toEqual([18, 19, 20]);
+    });
+
+    // Merging ranges
+
+    it('should create a single range when pointing to the middle page and all the ranges overlap', () => {
+        const ranges = new PaginationRanges(5, 10);
+
+        expect(ranges.left).withContext('Left range should contain the full range').toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+        expect(ranges.center).withContext('Center range should be empty').toEqual([]);
+        expect(ranges.right).withContext('Right range should be empty').toEqual([]);
+    });
+
+    it('should create a single range when the extremes overlap', () => {
+        const ranges = new PaginationRanges(1, 6);
+
+        expect(ranges.left).withContext('Left range should contain the full range').toEqual([1, 2, 3, 4, 5, 6]);
+        expect(ranges.center).withContext('Center range should be empty').toEqual([]);
+        expect(ranges.right).withContext('Right range should be empty').toEqual([]);
     });
 
 });

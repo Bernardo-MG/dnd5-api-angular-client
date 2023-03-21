@@ -30,6 +30,9 @@ export class PaginationRanges {
             // Left range
             // From (total pages - step) up to total pages
             this.right = this.getRightRange(pages);
+
+            // Merge ranges if needed
+            this.merge();
         }
     }
 
@@ -56,7 +59,7 @@ export class PaginationRanges {
 
     private getCenterRange(page: number, pages: number): number[] {
         const range: number[] = [];
-        const offset = this.step;
+        const offset = (this.step + 2);
         let lower;
         let upper;
 
@@ -81,7 +84,7 @@ export class PaginationRanges {
 
     private getRightRange(pages: number): number[] {
         const range: number[] = [];
-        const offset = (this.step * 2 + 1);
+        const offset = (this.step * 2);
         let lower;
         let upper;
 
@@ -98,6 +101,31 @@ export class PaginationRanges {
         }
 
         return range;
+    }
+
+    private merge() {
+        let leftLimit;
+        let rightLimit;
+
+        if (this.center.length > 0) {
+            leftLimit = this.left[this.left.length - 1];
+            rightLimit = this.center[0];
+
+            if ((leftLimit + 1) >= rightLimit) {
+                this.left = this.left.concat(this.center);
+                this.center = [];
+            }
+        }
+
+        if (this.right.length > 0) {
+            leftLimit = this.left[this.left.length - 1];
+            rightLimit = this.right[0];
+
+            if ((leftLimit + 1) >= rightLimit) {
+                this.left = this.left.concat(this.right);
+                this.right = [];
+            }
+        }
     }
 
 }
