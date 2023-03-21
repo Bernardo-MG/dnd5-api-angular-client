@@ -4,10 +4,7 @@ on: [push, pull_request]
 
 jobs:
   tests:
-    name: Tests with node ${{ matrix.node }}
-    strategy:
-      matrix:
-        node: [ 19 ]
+    name: Tests with node 19
     uses: Bernardo-MG/github-workflow-angular/.github/workflows/testing.yml@v1
     with:
-      node: ${{ matrix.node }}
+      node: 19
