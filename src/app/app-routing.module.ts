@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './views/home/home.component';
+import { RouterModule, Routes } from '@angular/router';
 
 const charsModule = () => import('@app/dnd5/charclass/charclass.module').then(x => x.CharclassModule);
+const viewsModule = () => import('@app/views/views.module').then(x => x.ViewsModule);
 
 const routes: Routes = [
   {
     path: '',
     children: [
-      { path: '', component: HomeComponent },
+      { path: '', loadChildren: viewsModule },
       { path: 'classes', loadChildren: charsModule }
     ]
   },

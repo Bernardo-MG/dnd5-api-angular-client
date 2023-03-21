@@ -1,0 +1,19 @@
+<body class="d-flex flex-column">
+    <header>
+        <dnd5-navbar title={{title}}></dnd5-navbar>
+    </header>
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3 col-lg-2">
+                    <dnd5-menu [menus]="menus" id="sidebarMenu"></dnd5-menu>
+                </div>
+                <div class="ms-sm-auto col-md-9 col-lg-10">
+                    <section id="main-section" class="container flex-grow-1 pt-4 mb-1">
+                        <ng-content></ng-content>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>

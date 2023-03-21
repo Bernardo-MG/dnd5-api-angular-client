@@ -1,5 +1,3 @@
-<header>
-    <dnd5-navigation-menu title={{title}} [links]="links">
-    </dnd5-navigation-menu>
-</header>
-<router-outlet></router-outlet>
+<dnd5-header-layout title={{title}} [menus]="menus">
+    <router-outlet></router-outlet>
+</dnd5-header-layout>
