@@ -103,6 +103,18 @@ export class PaginationRanges {
         let leftLimit;
         let rightLimit;
 
+        // Merge center to right
+        if (this.right.length > 0) {
+            leftLimit = this.center[this.center.length - 1];
+            rightLimit = this.right[0];
+
+            if ((leftLimit + 1) >= rightLimit) {
+                this.right = this.center.concat(this.right);
+                this.center = [];
+            }
+        }
+
+        // Merge left to center
         if (this.center.length > 0) {
             leftLimit = this.left[this.left.length - 1];
             rightLimit = this.center[0];
@@ -113,6 +125,7 @@ export class PaginationRanges {
             }
         }
 
+        // Merge left to right
         if (this.right.length > 0) {
             leftLimit = this.left[this.left.length - 1];
             rightLimit = this.right[0];

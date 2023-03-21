@@ -99,7 +99,7 @@ describe('PaginationRanges', () => {
 
         expect(ranges.left).withContext('Left range should contain the first pages').toEqual([1, 2, 3]);
         expect(ranges.center).withContext('Center range should be empty').toEqual([]);
-        expect(ranges.right).withContext('Right range contain the merged range').toEqual([13, 14, 15, 16, 17, 18, 19, 20]);
+        expect(ranges.right).withContext('Right range should contain the merged range').toEqual([13, 14, 15, 16, 17, 18, 19, 20]);
     });
 
     // Moving around extremes
