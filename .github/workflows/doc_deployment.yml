@@ -1,32 +1,66 @@
-name: Artifact deployment
+name: Doc deployment
 
-on:
-  push:
-    branches:
-      - master
+on: [push, pull_request]
 
 jobs:
-  buid-deploy:
+  deploy_develop_docs:
+    name: Deploy docs for develop
+    strategy:
+      matrix:
+        node: [ 19 ]
+    environment: deployment_site
+    concurrency:
+      group: deploy-ssh-${{ github.ref }}
+      cancel-in-progress: true
+    if: ${{ github.ref == format('refs/heads/{0}', 'develop') }}
     runs-on: ubuntu-latest
+
     steps:
     - name: Check-out
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
+      with:
+        persist-credentials: false
     - name: Set up Node.js ${{ matrix.node }}
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node }}
         cache: 'npm'
     - name: Install dependencies
       run: npm ci
-    - name: Install Angular CLI
-      run: npm install -g @angular/cli
-    - name: Build
-      run: npm run build-production
-      env:
-          API_URL: ${{ secrets.API_URL }}
-    - uses: FirebaseExtended/action-hosting-deploy@v0
+    - name: Build project
+      run: npm run build
+    - name: Move to build folder
+      run: cd target
+    - name: Deploy build folder
+      run: sshpass -p ${{ secrets.DEPLOY_DOCS_DEVELOP_PASSWORD }} scp -oStrictHostKeyChecking=no -oHostKeyAlgorithms=+ssh-dss -P ${{ secrets.DEPLOY_DOCS_PORT }} -r ./* ${{ secrets.DEPLOY_DOCS_DEVELOP_USER }}'@'${{ secrets.DEPLOY_DOCS_HOST }}':'${{ secrets.DEPLOY_DOCS_DEVELOP_PATH }};
+
+  deploy_master_docs:
+    name: Deploy docs for master
+    strategy:
+      matrix:
+        node: [ 19 ]
+    environment: deployment_site
+    concurrency:
+      group: deploy-ssh-${{ github.ref }}
+      cancel-in-progress: true
+    if: ${{ github.ref == format('refs/heads/{0}', 'master') }}
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check-out
+      uses: actions/checkout@v3
       with:
-        repoToken: '${{ secrets.GITHUB_TOKEN }}'
-        firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_ASSOCIATION_APP_FRONTEND }}'
-        channelId: live
-        projectId: association-app-frontend
+        persist-credentials: false
+    - name: Set up Node.js ${{ matrix.node }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node }}
+        cache: 'npm'
+    - name: Install dependencies
+      run: npm ci
+    - name: Build project
+      run: npm run build
+    - name: Move to build folder
+      run: cd target
+    - name: Deploy build folder
+      run: sshpass -p ${{ secrets.DEPLOY_DOCS_PASSWORD }} scp -oStrictHostKeyChecking=no -oHostKeyAlgorithms=+ssh-dss -P ${{ secrets.DEPLOY_DOCS_PORT }} -r ./* ${{ secrets.DEPLOY_DOCS_USER }}'@'${{ secrets.DEPLOY_DOCS_HOST }}':'${{ secrets.DEPLOY_DOCS_PATH }};
