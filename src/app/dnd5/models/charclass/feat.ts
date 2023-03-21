@@ -1,9 +1,9 @@
 import { Prerequisite } from "./prerequisite";
 
 export class Feat {
-    index: string = '';
-    name: string = '';
-    url: string = '';
+    index = '';
+    name = '';
+    url = '';
     desc: string[] = [];
     prerequisites: Prerequisite[] = [];
 }

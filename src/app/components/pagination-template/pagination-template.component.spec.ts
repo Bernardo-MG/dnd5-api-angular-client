@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { PaginationTemplateComponent } from './pagination-template.component';
 
@@ -8,7 +9,12 @@ describe('PaginationTemplateComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PaginationTemplateComponent]
+      imports: [
+        FontAwesomeModule
+      ],
+      declarations: [
+        PaginationTemplateComponent
+      ]
     })
       .compileComponents();
 

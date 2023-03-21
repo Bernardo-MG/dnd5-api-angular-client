@@ -7,8 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class WaitingWrapperComponent {
 
-  @Input() public waiting: boolean = false;
-
-  constructor() { }
+  @Input() public waiting = false;
 
 }

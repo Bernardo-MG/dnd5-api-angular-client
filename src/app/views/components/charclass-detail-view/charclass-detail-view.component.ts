@@ -10,7 +10,7 @@ import { Charclass } from '@app/dnd5/models/charclass/charclass';
 })
 export class CharclassDetailViewComponent implements OnInit {
 
-  public waiting: boolean = false;
+  public waiting = false;
 
   public charclass: Charclass = new Charclass();
 

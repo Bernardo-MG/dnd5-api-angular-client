@@ -1,9 +1,9 @@
 export class Pagination {
-    page: number = 0;
-    size: number = 0;
-    elementsInPage: number = 0;
-    totalElements: number = 0;
-    totalPages: number = 0;
-    first: boolean = false;
-    last: boolean = false;
+    page = 0;
+    size = 0;
+    elementsInPage = 0;
+    totalElements = 0;
+    totalPages = 0;
+    first = false;
+    last = false;
 }

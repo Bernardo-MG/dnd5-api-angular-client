@@ -1,7 +1,7 @@
 
 export class DescriptionReference {
-    index: string = '';
-    name: string = '';
-    url: string = '';
+    index = '';
+    name = '';
+    url = '';
     desc: string[] = [];
 }

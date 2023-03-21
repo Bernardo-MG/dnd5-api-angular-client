@@ -11,6 +11,6 @@ import { OptionSetOf } from './option-set-of';
 import { OptionSetString } from './option-set-string';
 
 export class OptionSetOptionArray {
-    option_set_type: string = '';
+    option_set_type = '';
     options: OptionSetItem | OptionSetAction | OptionSetItems | OptionSetChoice | OptionSetString | OptionSetAlignment | OptionSetOf | OptionSetAbility | OptionSetAbilityBonus | OptionSetBreath | OptionSetDamage = new OptionSetItem();
 }

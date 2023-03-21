@@ -5,14 +5,14 @@ import { Spellcasting } from './spellcasting';
 import { StartingEquipment } from '../equipment/starting-equipment';
 
 export class Charclass {
-    index: string = '';
-    name: string = '';
-    url: string = '';
-    hit_die: number = 0;
-    class_levels: string = '';
-    multi_classing: Multiclassing = new Multiclassing();
-    spellcasting: Spellcasting = new Spellcasting();
-    spells: string = '';
+    index = '';
+    name = '';
+    url = '';
+    hit_die = 0;
+    class_levels = '';
+    multi_classing = new Multiclassing();
+    spellcasting = new Spellcasting();
+    spells = '';
     starting_equipment: StartingEquipment[] = [];
     starting_equipment_options: Choice[] = [];
     proficiency_choices: Choice[] = [];

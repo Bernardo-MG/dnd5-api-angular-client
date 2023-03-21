@@ -10,8 +10,6 @@ export class CharclassDetailComponent {
 
   @Input() charclass: Charclass = new Charclass();
 
-  constructor() { }
-
   asNameList(data: any[]): string {
     let result;
 

@@ -4,14 +4,14 @@ import { FeaturePrerequisiteLevel } from "./feature-prerequisite-level";
 import { FeaturePrerequisiteSpell } from "./feature-prerequisite-spell";
 
 export class Feature {
-    index: string = '';
-    name: string = '';
-    url: string = '';
+    index = '';
+    name = '';
+    url = '';
     desc: string[] = [];
-    level: number = 0;
-    class: Reference = new Reference();
-    subclass: Reference = new Reference();
-    parent: Reference = new Reference();
+    level = 0;
+    class = new Reference();
+    subclass = new Reference();
+    parent = new Reference();
     prerequisites: (FeaturePrerequisiteFeature | FeaturePrerequisiteLevel | FeaturePrerequisiteSpell)[] = [];
     feature_specific: any;
 }

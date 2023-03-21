@@ -26,8 +26,6 @@ export class PaginationTemplateComponent {
 
   @Output() public goTo = new EventEmitter<number>();
 
-  constructor() { }
-
   public onBackward() {
     this.goTo.emit(this.current - 1);
   }

@@ -1,9 +1,9 @@
-import { ArmorTypes } from "./enums/armor-types";
-import { Reference } from "./reference";
+import { ArmorTypes } from "../enums/armor-types";
+import { Reference } from "../info/reference";
 
 export class ArmorConditionSpell {
-    type: ArmorTypes = ArmorTypes.condition;
-    value: number = 0;
-    condition: Reference = new Reference();
-    desc: string = '';
+    type = ArmorTypes.condition;
+    value = 0;
+    condition = new Reference();
+    desc = '';
 }

@@ -1,7 +1,7 @@
 import { Reference } from "../info/reference";
 
 export class Dc {
-    dc_type: Reference = new Reference();
-    dc_value: number = 0;
-    success_type: string = '';
+    dc_type = new Reference();
+    dc_value = 0;
+    success_type = '';
 }

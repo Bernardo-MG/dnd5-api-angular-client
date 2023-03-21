@@ -1,6 +1,6 @@
 
 export class MonsterSpell {
-    name: string = '';
-    level: number = 0;
-    url: string = '';
+    name = '';
+    level = 0;
+    url = '';
 }

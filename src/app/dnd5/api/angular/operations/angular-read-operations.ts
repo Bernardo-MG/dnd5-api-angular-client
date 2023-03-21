@@ -5,7 +5,7 @@ import { ReadOperations } from '../../operations/read-operations';
 
 export class AngularReadOperations implements ReadOperations {
 
-  private _route: string = '';
+  private _route = '';
 
   protected options: {
     params?: HttpParams

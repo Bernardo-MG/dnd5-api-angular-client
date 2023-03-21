@@ -10,6 +10,4 @@ export class DataListComponent {
 
   @Input() links: MenuLink[] = [];
 
-  constructor() { }
-
 }
