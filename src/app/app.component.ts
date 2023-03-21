@@ -10,6 +10,6 @@ export class AppComponent {
 
   menus: Menu[] = [{ title: 'Character', links: [{ title: 'Classes', path: '/classes' }] }];
 
-  title: string = 'dnd5-api-angular-client';
+  title = 'dnd5-api-angular-client';
 
 }

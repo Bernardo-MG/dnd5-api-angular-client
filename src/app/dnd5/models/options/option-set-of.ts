@@ -1,7 +1,7 @@
 import { Reference } from "../info/reference";
 
 export class OptionSetOf {
-    option_type: string = '';
-    count: number = 0;
-    of: Reference = new Reference();
+    option_type = '';
+    count = 0;
+    of = new Reference();
 }

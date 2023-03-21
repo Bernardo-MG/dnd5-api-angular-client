@@ -10,8 +10,6 @@ export class LayoutComponent {
 
   @Input() public menus: Menu[] = [];
 
-  @Input() public title: string = '';
-
-  constructor() { }
+  @Input() public title = '';
 
 }

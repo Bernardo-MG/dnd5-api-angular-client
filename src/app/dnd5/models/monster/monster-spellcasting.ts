@@ -2,11 +2,11 @@ import { AbilityUsage } from "./ability-usage";
 import { Reference } from "../info/reference";
 
 export class MonsterSpellcasting {
-    ability: Reference = new Reference();
-    dc: number = 0;
-    modifier: number = 0;
+    ability = new Reference();
+    dc = 0;
+    modifier = 0;
     components_required: string[] = [];
-    school: string = '';
+    school = '';
     slots: any;
     spells: AbilityUsage[] = [];
 }

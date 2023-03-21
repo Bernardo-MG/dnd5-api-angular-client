@@ -2,15 +2,15 @@ import { Cost } from "./cost";
 import { Reference } from "../info/reference";
 
 export class Armor {
-    index: string = '';
-    name: string = '';
-    url: string = '';
+    index = '';
+    name = '';
+    url = '';
     desc: string[] = [];
-    equipment_category: Reference = new Reference();
-    armor_category: string = '';
+    equipment_category = new Reference();
+    armor_category = '';
     armor_class: any = undefined;
-    str_minimum: number = 0;
-    stealth_disadvantage: boolean = false;
-    cost: Cost = new Cost();
-    weight: number = 0;
+    str_minimum = 0;
+    stealth_disadvantage = false;
+    cost = new Cost();
+    weight = 0;
 }

@@ -16,11 +16,9 @@ export class PaginationComponent implements OnChanges {
 
   private step = 2;
 
-  constructor() { }
-
   ngOnChanges(changes: SimpleChanges): void {
-    var lowest;
-    var highest;
+    let lowest;
+    let highest;
 
     lowest = this.pagination.page - this.step;
     if (lowest < 1) {
@@ -36,18 +34,18 @@ export class PaginationComponent implements OnChanges {
     this.secondHalf = [];
     if ((highest - lowest) < this.step) {
       // No splitting required
-      for (var i = lowest; i <= highest; i++) {
+      for (let i = lowest; i <= highest; i++) {
         this.firstHalf.push(i);
       }
     } else {
       // Split page numbers
       const top = lowest + this.step;
-      for (var i = lowest; i <= top; i++) {
+      for (let i = lowest; i <= top; i++) {
         this.firstHalf.push(i);
       }
 
       const bottom = highest - this.step;
-      for (var i = bottom; i <= highest; i++) {
+      for (let i = bottom; i <= highest; i++) {
         this.secondHalf.push(i);
       }
     }

@@ -8,10 +8,8 @@ import { Menu } from '@app/components/models/menu';
 })
 export class MenuComponent {
   
-  @Input() id: string = '';
+  @Input() id = '';
 
   @Input() menus: Menu[] = [];
-
-  constructor() { }
 
 }

@@ -10,7 +10,7 @@ import { CharclassService } from '@app/dnd5/charclass/services/charclass.service
 })
 export class CharclassListViewComponent implements OnInit {
 
-  public waiting: boolean = false;
+  public waiting = false;
 
   public data: MenuLink[] = [];
 

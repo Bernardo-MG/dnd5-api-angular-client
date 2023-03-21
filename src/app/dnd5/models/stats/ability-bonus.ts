@@ -1,6 +1,6 @@
 import { Reference } from "../info/reference";
 
 export class AbilityBonus {
-    bonus: number = 0;
-    ability_score: Reference = new Reference();
+    bonus = 0;
+    ability_score = new Reference();
 }
