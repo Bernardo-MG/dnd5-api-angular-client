@@ -5,18 +5,19 @@
                 <fa-icon [icon]="backwardIcon"></fa-icon>
             </dnd5-button>
         </li>
-        <li *ngFor="let page of firstHalf" class="page-item" [class.active]="page===current"
+        <li *ngFor="let page of firstHalf" class="page-item" [class.active]="isCurrent(page)"
             [class.disabled]="isGoToDisabled()" [attr.aria-disabled]="isGoToDisabled()"
-            [attr.aria-current]="page === current ? 'page' : ''" aria-current="page">
+            [attr.aria-current]="getCurrentLabel(page)" [attr.aria-disabled]="isGoToDisabled()">
             <dnd5-button (click)="onGoTo(page)" [disabled]="isGoToDisabled()" aria-label="Go to page">
                 {{page}}
             </dnd5-button>
         </li>
         <ng-container *ngIf="isAbleToDrawSecondHalf()">
             <li class="page-item disabled" aria-disabled="true"><span class="page-link">...</span>
-            <li *ngFor="let page of secondHalf" [class.active]="page===current" class="page-item"
-                [attr.aria-current]="page === current ? 'page' : ''" aria-current="page">
-                <dnd5-button (click)="onGoTo(page)" [disabled]="isGoToDisabled()" aria-label="Go to page">
+            <li *ngFor="let page of secondHalf" [class.active]="isCurrent(page)" class="page-item"
+                [attr.aria-current]="getCurrentLabel(page)" [attr.aria-disabled]="isGoToDisabled()">
+                <dnd5-button (click)="onGoTo(page)" [disabled]="isGoToDisabled()"
+                    [attr.aria-disabled]="isGoToDisabled()" aria-label="Go to page">
                     {{page}}
                 </dnd5-button>
             </li>

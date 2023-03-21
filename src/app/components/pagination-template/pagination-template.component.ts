@@ -56,4 +56,22 @@ export class PaginationTemplateComponent {
     return (this.firstHalf.length > 0) && (this.secondHalf.length > 0);
   }
 
+  public isCurrent(page: number){
+    return page === this.current;
+  }
+
+  public getCurrentLabel(page: number){
+    var label;
+
+    if(page === this.current) {
+      // Current page
+      label = 'page';
+    } else {
+      // Any other page
+      label = '';
+    }
+
+    return label;
+  }
+
 }
