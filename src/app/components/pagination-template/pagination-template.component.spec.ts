@@ -112,4 +112,53 @@ describe('PaginationTemplateComponent', () => {
     expect(button.disabled).toEqual(false);
   });
 
+  // Page buttons
+
+  it('should create only two buttons by default (backward and forward)', () => {
+    const button = fixture.nativeElement.querySelectorAll('button');
+    expect(button.length).toEqual(2);
+  });
+
+  it('should add a button when receiving a page for the first half', () => {
+    component.firstHalf = [1];
+    fixture.detectChanges();
+
+    const button = fixture.nativeElement.querySelectorAll('button');
+    expect(button.length).toEqual(3);
+  });
+
+  it('should add multiple buttons when receiving multiple pages for the first half', () => {
+    component.firstHalf = [1, 2, 3];
+    fixture.detectChanges();
+
+    const button = fixture.nativeElement.querySelectorAll('button');
+    expect(button.length).toEqual(5);
+  });
+
+  it('should add no button when receiving a page for the second half when there is no first half', () => {
+    component.secondHalf = [5];
+    fixture.detectChanges();
+
+    const button = fixture.nativeElement.querySelectorAll('button');
+    expect(button.length).toEqual(2);
+  });
+
+  it('should add a button when receiving a page for the second half and there is a first half', () => {
+    component.firstHalf = [1];
+    component.secondHalf = [5];
+    fixture.detectChanges();
+
+    const button = fixture.nativeElement.querySelectorAll('button');
+    expect(button.length).toEqual(4);
+  });
+
+  it('should add multiple buttons when receiving multiple pages for both halves', () => {
+    component.firstHalf = [1, 2, 3];
+    component.secondHalf = [5, 6, 7];
+    fixture.detectChanges();
+
+    const button = fixture.nativeElement.querySelectorAll('button');
+    expect(button.length).toEqual(8);
+  });
+
 });

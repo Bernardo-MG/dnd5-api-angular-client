@@ -48,4 +48,8 @@ export class PaginationTemplateComponent {
     return (this.last) || (this.disabled);
   }
 
+  public isAbleToDrawSecondHalf() {
+    return (this.firstHalf.length > 0) && (this.secondHalf.length > 0);
+  }
+
 }
