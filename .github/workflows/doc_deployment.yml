@@ -27,10 +27,12 @@ jobs:
         cache: 'npm'
     - name: Install dependencies
       run: npm ci
+    - name: Install Angular CLI
+      run: npm install -g @angular/cli
     - name: Build project
-      run: npm run build
+      run: ng build --deploy-url=${{ secrets.DEPLOY_DOCS_URL_DEVELOP }}
     - name: Move to build folder
-      run: cd target
+      run: cd dist/dnd5-api-angular-client
     - name: Deploy build folder
       run: sshpass -p ${{ secrets.DEPLOY_DOCS_DEVELOP_PASSWORD }} scp -oStrictHostKeyChecking=no -oHostKeyAlgorithms=+ssh-dss -P ${{ secrets.DEPLOY_DOCS_PORT }} -r ./* ${{ secrets.DEPLOY_DOCS_DEVELOP_USER }}'@'${{ secrets.DEPLOY_DOCS_HOST }}':'${{ secrets.DEPLOY_DOCS_DEVELOP_PATH }};
 
@@ -58,9 +60,11 @@ jobs:
         cache: 'npm'
     - name: Install dependencies
       run: npm ci
+    - name: Install Angular CLI
+      run: npm install -g @angular/cli
     - name: Build project
-      run: npm run build
+      run: ng build --prod --deploy-url=${{ secrets.DEPLOY_DOCS_URL_RELEASE }}
     - name: Move to build folder
-      run: cd target
+      run: cd dist/dnd5-api-angular-client
     - name: Deploy build folder
       run: sshpass -p ${{ secrets.DEPLOY_DOCS_PASSWORD }} scp -oStrictHostKeyChecking=no -oHostKeyAlgorithms=+ssh-dss -P ${{ secrets.DEPLOY_DOCS_PORT }} -r ./* ${{ secrets.DEPLOY_DOCS_USER }}'@'${{ secrets.DEPLOY_DOCS_HOST }}':'${{ secrets.DEPLOY_DOCS_PATH }};
