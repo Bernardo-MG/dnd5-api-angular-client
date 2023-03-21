@@ -17,15 +17,9 @@ export class PaginationRanges {
             // From 1 up to (step + 1)
             this.left = this.getLeftRange(pages);
 
-            const lower = this.step + 1;
-            const upper = pages - this.step;
-
             // Left range
-            if ((lower < page) && (page < upper)) {
-                // From (current - step) up to (total pages - step)
-                // Only if current is between the outer ranges limits
-                this.center = this.getCenterRange(page, pages);
-            }
+            // From (current - step) up to (total pages - step)
+            this.center = this.getCenterRange(page, pages);
 
             // Left range
             // From (total pages - step) up to total pages
