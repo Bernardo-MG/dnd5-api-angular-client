@@ -2,12 +2,12 @@ import { Rarity } from "./rarity";
 import { Reference } from "../info/reference";
 
 export class MagicItem {
-    index: string = '';
-    name: string = '';
-    url: string = '';
+    index = '';
+    name = '';
+    url = '';
     desc: string[] = [];
-    equipment_category: Reference = new Reference();
-    rarity: Rarity = new Rarity();
+    equipment_category = new Reference();
+    rarity = new Rarity();
     variants: Reference[] = [];
-    variant: boolean = false;
+    variant = false;
 }

@@ -7,12 +7,10 @@ import { Component, Input } from '@angular/core';
 })
 export class ListItemComponent {
 
-  @Input() active: boolean = false;
+  @Input() active = false;
   
-  @Input() current: string = 'false';
+  @Input() current = 'false';
 
-  @Input() disabled: boolean = false;
-
-  constructor() { }
+  @Input() disabled = false;
 
 }

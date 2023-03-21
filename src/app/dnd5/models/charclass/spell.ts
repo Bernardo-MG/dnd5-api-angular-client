@@ -5,23 +5,23 @@ import { DamageAtLevel } from "./damage-at-level";
 import { DamageAtSlot } from "./damage-at-slot";
 
 export class Spell {
-    index: string = '';
-    name: string = '';
-    url: string = '';
+    index = '';
+    name = '';
+    url = '';
     desc: string[] = [];
     higher_level: string[] = [];
-    range: string = '';
+    range = '';
     components: SpellComponents[] = [];
-    material: string = '';
-    area_of_effect: AreaOfEffect = new AreaOfEffect();
-    ritual: boolean = false;
-    duration: string = '';
-    concentration: boolean = false;
-    casting_time: string = '';
-    level: number = 0;
-    attack_type: string = '';
+    material = '';
+    area_of_effect = new AreaOfEffect();
+    ritual = false;
+    duration = '';
+    concentration = false;
+    casting_time = '';
+    level = 0;
+    attack_type = '';
     damage: DamageAtLevel | DamageAtSlot = new DamageAtLevel();
-    school: Reference = new Reference();
+    school = new Reference();
     classes: Reference[] = [];
     subclasses: Reference[] = [];
 }

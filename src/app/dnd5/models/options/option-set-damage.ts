@@ -1,8 +1,8 @@
 import { Reference } from "../info/reference";
 
 export class OptionSetDamage {
-    option_type: string = '';
-    damage_type: Reference = new Reference();
-    damage_dice: string = '';
-    notes: string = '';
+    option_type = '';
+    damage_type = new Reference();
+    damage_dice = '';
+    notes = '';
 }

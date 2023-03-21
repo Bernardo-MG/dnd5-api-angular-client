@@ -1,8 +1,8 @@
 
 export class Senses {
-    passive_perception: number = 0;
-    blindsight: string = '';
-    darkvision: string = '';
-    tremorsense: string = '';
-    truesight: string = '';
+    passive_perception = 0;
+    blindsight = '';
+    darkvision = '';
+    tremorsense = '';
+    truesight = '';
 }

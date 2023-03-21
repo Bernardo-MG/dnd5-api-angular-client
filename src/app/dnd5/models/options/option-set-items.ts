@@ -1,6 +1,6 @@
 import { Option } from './option';
 
 export class OptionSetItems {
-    option_type: string = '';
+    option_type = '';
     items: Option[] = [];
 }

@@ -1,13 +1,13 @@
+import { Reference } from "../info/reference";
 import { Cost } from "./cost";
-import { Reference } from "./info/reference";
 
 export class EquipmentPack {
-    index: string = '';
-    name: string = '';
-    url: string = '';
+    index = '';
+    name = '';
+    url = '';
     desc: string[] = [];
-    equipment_category: Reference = new Reference();
-    gear_category: Reference = new Reference();
-    cost: Cost = new Cost();
+    equipment_category = new Reference();
+    gear_category = new Reference();
+    cost = new Cost();
     contents: Reference[] = [];
 }

@@ -10,6 +10,4 @@ export class ForwardIconComponent {
 
   public icon = faForward;
 
-  constructor() { }
-
 }

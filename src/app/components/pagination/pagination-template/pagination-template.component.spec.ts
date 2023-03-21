@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ButtonComponent } from '@app/components/button/button.component';
+import { BackwardIconComponent } from '@app/components/icons/backward-icon/backward-icon.component';
+import { ForwardIconComponent } from '@app/components/icons/forward-icon/forward-icon.component';
 import { ListItemComponent } from '@app/components/lists/list-item/list-item.component';
-import { ButtonComponent } from '../../button/button.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PaginationTemplateComponent } from './pagination-template.component';
 
 describe('PaginationTemplateComponent', () => {
@@ -9,10 +12,15 @@ describe('PaginationTemplateComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [
+        FontAwesomeModule
+      ],
       declarations: [
+        PaginationTemplateComponent,
         ButtonComponent,
         ListItemComponent,
-        PaginationTemplateComponent
+        BackwardIconComponent,
+        ForwardIconComponent
       ]
     })
       .compileComponents();
@@ -206,7 +214,7 @@ describe('PaginationTemplateComponent', () => {
     fixture.detectChanges();
 
     // Page button for the first half
-    var button = fixture.nativeElement.querySelectorAll('button')[1];
+    let button = fixture.nativeElement.querySelectorAll('button')[1];
     expect(button.disabled).toEqual(true);
 
     // Page button for the second half

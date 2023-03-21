@@ -10,7 +10,7 @@ import { AngularReadOperations } from "../operations/angular-read-operations";
 })
 export class AngularDnd5ApiClient implements Dnd5ApiClient {
 
-  private rootUrl: string = 'http://www.dnd5eapi.co/api';
+  private rootUrl = 'http://www.dnd5eapi.co/api';
 
   constructor(
     private http: HttpClient

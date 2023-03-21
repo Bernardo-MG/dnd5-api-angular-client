@@ -10,6 +10,4 @@ export class BackwardIconComponent {
 
   public icon = faBackward;
 
-  constructor() { }
-
 }

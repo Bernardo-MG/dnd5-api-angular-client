@@ -1,18 +1,20 @@
 import { TestBed } from '@angular/core/testing';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { ComponentsModule } from './components/components.module';
+import { LayoutModule } from './layout/layout.module';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule,
+        LayoutModule,
+        ComponentsModule
+      ],
       declarations: [
         AppComponent
       ],
-      imports: [
-        NoopAnimationsModule,
-        RouterTestingModule
-      ]
     }).compileComponents();
   });
 
@@ -27,11 +29,4 @@ describe('AppComponent', () => {
     const app = fixture.componentInstance;
     expect(app.title).toEqual('dnd5-api-angular-client');
   });
-
-  // it('should render title', () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.nativeElement;
-  //   expect(compiled.querySelector('.content span').textContent).toContain('dnd5-api-angular-client app is running!');
-  // });
 });

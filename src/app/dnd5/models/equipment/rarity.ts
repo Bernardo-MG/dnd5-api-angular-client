@@ -1,5 +1,5 @@
-import { ItemRarities } from "./enums/item-rarities";
+import { ItemRarities } from "../enums/item-rarities";
 
 export class Rarity {
-    name: ItemRarities = ItemRarities.Common;
+    name = ItemRarities.Common;
 }

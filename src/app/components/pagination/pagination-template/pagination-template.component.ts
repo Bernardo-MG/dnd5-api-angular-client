@@ -21,8 +21,6 @@ export class PaginationTemplateComponent {
 
   @Output() public goTo = new EventEmitter<number>();
 
-  constructor() { }
-
   public onBackward() {
     this.goTo.emit(this.current - 1);
   }
@@ -56,7 +54,7 @@ export class PaginationTemplateComponent {
   }
 
   public getCurrentLabel(page: number){
-    var label;
+    let label;
 
     if(page === this.current) {
       // Current page

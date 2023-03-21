@@ -2,8 +2,8 @@ import { Damage } from '../stats/damage';
 import { Dc } from '../stats/dc';
 
 export class OptionSetBreath {
-    option_type: string = '';
-    name: string='';
-    dc: Dc = new Dc();
+    option_type = '';
+    name = '';
+    dc = new Dc();
     damage: Damage[] = [];
 }

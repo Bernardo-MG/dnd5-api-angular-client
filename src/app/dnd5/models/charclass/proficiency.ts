@@ -1,11 +1,11 @@
 import { Reference } from "../info/reference";
 
 export class Proficiency {
-    index: string = '';
-    name: string = '';
-    url: string = '';
-    type: string = '';
+    index = '';
+    name = '';
+    url = '';
+    type = '';
     classes: Reference[] = [];
     races: Reference[] = [];
-    reference: Reference = new Reference();
+    reference = new Reference();
 }

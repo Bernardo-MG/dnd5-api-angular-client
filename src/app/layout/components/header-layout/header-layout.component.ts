@@ -6,12 +6,10 @@ import { Menu } from '@app/components/models/menu';
   templateUrl: './header-layout.component.html',
   styleUrls: ['./header-layout.component.sass']
 })
-export class LayoutComponent {
+export class HeaderLayoutComponent {
 
   @Input() public menus: Menu[] = [];
 
-  @Input() public title: string = '';
-
-  constructor() { }
+  @Input() public title = '';
 
 }

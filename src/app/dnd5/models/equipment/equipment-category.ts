@@ -1,8 +1,8 @@
-import { Reference } from "./info/reference";
+import { Reference } from "../info/reference";
 
 export class EquipmentCategory {
-    index: string = '';
-    name: string = '';
-    url: string = '';
+    index = '';
+    name = '';
+    url = '';
     equipment: Reference[] = [];
 }

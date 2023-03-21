@@ -1,21 +1,21 @@
-import { Cost } from "./cost";
-import { Damage } from "../stats/damage";
-import { Range } from "./range";
 import { Reference } from "../info/reference";
+import { Damage } from "../stats/damage";
+import { Cost } from "./cost";
+import { Range } from "./range";
 
 export class Weapon {
-    index: string = '';
-    name: string = '';
-    url: string = '';
+    index = '';
+    name = '';
+    url = '';
     desc: string[] = [];
-    equipment_category: Reference = new Reference();
-    weapon_category: string = '';
-    weapon_range: string = '';
-    category_range: string = '';
-    range: Range = new Range();
-    damage: Damage = new Damage();
-    two_handed_damage: Damage = new Damage();
+    equipment_category = new Reference();
+    weapon_category = '';
+    weapon_range = '';
+    category_range = '';
+    range = new Range();
+    damage = new Damage();
+    two_handed_damage = new Damage();
     properties: Reference[] = [];
-    cost: Cost = new Cost();
-    weight: number = 0;
+    cost = new Cost();
+    weight = 0;
 }

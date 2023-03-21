@@ -1,9 +1,9 @@
 import { Reference } from "../info/reference";
 
 export class Skill {
-    index: string = '';
-    name: string = '';
-    url: string = '';
+    index = '';
+    name = '';
+    url = '';
     desc: string[] = [];
-    ability_score: Reference = new Reference();
+    ability_score = new Reference();
 }

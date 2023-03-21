@@ -1,13 +1,13 @@
 <nav aria-label="Page navigation">
     <ul class="pagination pagination-sm">
         <dnd5-list-item [disabled]="isBackwardDisabled()">
-            <dnd5-button (click)="onBackward()" [disabled]="isBackwardDisabled()" aria-label="Previous page">
+            <dnd5-button (action)="onBackward()" [disabled]="isBackwardDisabled()" aria-label="Previous page">
                 <dnd5-backward-icon></dnd5-backward-icon>
             </dnd5-button>
         </dnd5-list-item>
         <dnd5-list-item *ngFor="let page of firstHalf" [disabled]="isGoToDisabled()" [active]="isCurrent(page)"
             [current]="getCurrentLabel(page)">
-            <dnd5-button (click)="onGoTo(page)" [disabled]="isGoToDisabled()" aria-label="Go to page">
+            <dnd5-button (action)="onGoTo(page)" [disabled]="isGoToDisabled()" aria-label="Go to page">
                 {{page}}
             </dnd5-button>
         </dnd5-list-item>
@@ -17,14 +17,14 @@
             </dnd5-list-item>
             <dnd5-list-item *ngFor="let page of secondHalf" [disabled]="isGoToDisabled()" [active]="isCurrent(page)"
                 [current]="getCurrentLabel(page)">
-                <dnd5-button (click)="onGoTo(page)" [disabled]="isGoToDisabled()"
+                <dnd5-button (action)="onGoTo(page)" [disabled]="isGoToDisabled()"
                     [attr.aria-disabled]="isGoToDisabled()" aria-label="Go to page">
                     {{page}}
                 </dnd5-button>
             </dnd5-list-item>
         </ng-container>
         <li class="page-item" [class.disabled]="isForwardDisabled()" [attr.aria-disabled]="isForwardDisabled()">
-            <dnd5-button (click)="onForward()" [disabled]="isForwardDisabled()" aria-label="Next page">
+            <dnd5-button (action)="onForward()" [disabled]="isForwardDisabled()" aria-label="Next page">
                 <dnd5-forward-icon></dnd5-forward-icon>
             </dnd5-button>
         </li>

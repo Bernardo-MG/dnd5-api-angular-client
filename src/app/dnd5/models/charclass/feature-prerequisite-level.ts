@@ -1,5 +1,5 @@
 
 export class FeaturePrerequisiteLevel {
-    type: string = '';
-    level: number = 0;
+    type = '';
+    level = 0;
 }

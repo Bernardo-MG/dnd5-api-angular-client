@@ -1,6 +1,6 @@
 import { Reference } from "../info/reference";
 
 export class StartingEquipment {
-    quantity: number = 0;
-    equipment: Reference = new Reference();
+    quantity = 0;
+    equipment = new Reference();
 }
