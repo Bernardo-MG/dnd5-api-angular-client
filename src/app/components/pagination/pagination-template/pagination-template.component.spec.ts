@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ListItemComponent } from '@app/components/lists/list-item/list-item.component';
 import { ButtonComponent } from '../../button/button.component';
 import { PaginationTemplateComponent } from './pagination-template.component';
 
@@ -10,6 +11,7 @@ describe('PaginationTemplateComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [
         ButtonComponent,
+        ListItemComponent,
         PaginationTemplateComponent
       ]
     })

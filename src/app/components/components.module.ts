@@ -6,11 +6,12 @@ import { ButtonComponent } from './button/button.component';
 import { DataListComponent } from './data-list/data-list.component';
 import { MenuComponent } from './menu/menu.component';
 import { PaginationTemplateComponent } from './pagination/pagination-template/pagination-template.component';
-import { PaginationComponent } from './pagination/pagination.component';
 import { WaitingWrapperComponent } from './waiting-wrapper/waiting-wrapper.component';
 import { WaitingComponent } from './waiting/waiting.component';
 import { BackwardIconComponent } from './icons/backward-icon/backward-icon.component';
 import { ForwardIconComponent } from './icons/forward-icon/forward-icon.component';
+import { ListItemComponent } from './lists/list-item/list-item.component';
+import { PaginationComponent } from './pagination/pagination/pagination.component';
 
 
 
@@ -24,7 +25,8 @@ import { ForwardIconComponent } from './icons/forward-icon/forward-icon.componen
     WaitingComponent,
     WaitingWrapperComponent,
     BackwardIconComponent,
-    ForwardIconComponent
+    ForwardIconComponent,
+    ListItemComponent
   ],
   imports: [
     CommonModule,
