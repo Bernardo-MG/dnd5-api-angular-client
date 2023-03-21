@@ -51,20 +51,21 @@ export class PaginationRanges {
 
     private getCenterRange(page: number, pages: number): number[] {
         const range: number[] = [];
-        const offset = (this.step + 2);
+        const lowerOffset = (this.step + 2);
+        const upperOffset = (pages - this.step - 1);
         let lower;
         let upper;
 
         // Valid page with lowest value
         lower = page - this.step;
-        if (lower < offset) {
-            lower = offset;
+        if (lower < lowerOffset) {
+            lower = lowerOffset;
         }
 
         // Valid page with highest value
         upper = page + this.step;
-        if (upper > pages) {
-            upper = pages;
+        if (upper > upperOffset) {
+            upper = upperOffset;
         }
 
         for (let i = lower; i <= upper; i++) {
