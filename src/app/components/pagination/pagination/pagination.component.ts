@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Pagination } from '@app/components/models/pagination';
+import { PaginationRanges } from '../splitter/pagination-ranges';
 
 @Component({
   selector: 'dnd5-pagination',
@@ -8,47 +9,29 @@ import { Pagination } from '@app/components/models/pagination';
 })
 export class PaginationComponent implements OnChanges {
 
-  @Input() public pagination = new Pagination();
+  @Input() public page = 0;
 
-  public firstHalf: number[] = [];
+  @Input() public pages = 0;
 
-  public secondHalf: number[] = [];
+  public left: number[] = [];
 
-  private step = 2;
+  public center: number[] = [];
+
+  public right: number[] = [];
 
   ngOnChanges(changes: SimpleChanges): void {
-    let lowest;
-    let highest;
+    const ranges = new PaginationRanges(this.page, this.pages);
+    this.left = ranges.left;
+    this.center = ranges.center;
+    this.right = ranges.right;
+  }
 
-    lowest = this.pagination.page - this.step;
-    if (lowest < 1) {
-      lowest = this.pagination.page;
-    }
+  public isFirst() {
+    return this.page === 1;
+  }
 
-    highest = this.pagination.page + this.step;
-    if (highest > this.pagination.totalPages) {
-      highest = this.pagination.totalPages;
-    }
-
-    this.firstHalf = [];
-    this.secondHalf = [];
-    if ((highest - lowest) < this.step) {
-      // No splitting required
-      for (let i = lowest; i <= highest; i++) {
-        this.firstHalf.push(i);
-      }
-    } else {
-      // Split page numbers
-      const top = lowest + this.step;
-      for (let i = lowest; i <= top; i++) {
-        this.firstHalf.push(i);
-      }
-
-      const bottom = highest - this.step;
-      for (let i = bottom; i <= highest; i++) {
-        this.secondHalf.push(i);
-      }
-    }
+  public isLast() {
+    return this.page === this.pages;
   }
 
 }

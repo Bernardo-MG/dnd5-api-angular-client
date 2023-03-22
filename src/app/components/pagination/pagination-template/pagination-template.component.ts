@@ -13,20 +13,22 @@ export class PaginationTemplateComponent {
 
   @Input() public last = true;
 
-  @Input() public current = 0;
+  @Input() public page = 0;
 
-  @Input() public firstHalf: number[] = [];
+  @Input() public left: number[] = [];
 
-  @Input() public secondHalf: number[] = [];
+  @Input() public center: number[] = [];
+
+  @Input() public right: number[] = [];
 
   @Output() public goTo = new EventEmitter<number>();
 
   public onBackward() {
-    this.goTo.emit(this.current - 1);
+    this.goTo.emit(this.page - 1);
   }
 
   public onForward() {
-    this.goTo.emit(this.current + 1);
+    this.goTo.emit(this.page + 1);
   }
 
   public onGoTo(page: number) {
@@ -45,18 +47,22 @@ export class PaginationTemplateComponent {
     return (this.disabled);
   }
 
-  public isAbleToDrawSecondHalf() {
-    return (this.firstHalf.length > 0) && (this.secondHalf.length > 0);
+  public isAbleToDrawCenterRange() {
+    return (this.left.length > 0) && (this.center.length > 0);
+  }
+
+  public isAbleToDrawRightRange() {
+    return (this.left.length > 0) && (this.right.length > 0);
   }
 
   public isCurrent(page: number){
-    return page === this.current;
+    return page === this.page;
   }
 
   public getCurrentLabel(page: number){
     let label;
 
-    if(page === this.current) {
+    if(page === this.page) {
       // Current page
       label = 'page';
     } else {
