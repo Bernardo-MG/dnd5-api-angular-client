@@ -42,7 +42,7 @@ describe('PaginationTemplateComponent', () => {
   });
 
   it('should add a list item when receiving a page for the first half', () => {
-    component.firstHalf = [1];
+    component.left = [1];
     fixture.detectChanges();
 
     const items = fixture.nativeElement.querySelectorAll('li');
@@ -50,8 +50,8 @@ describe('PaginationTemplateComponent', () => {
   });
 
   it('should add list items, including separator, when receiving a page for the second half and there is a first half', () => {
-    component.firstHalf = [1];
-    component.secondHalf = [5];
+    component.left = [1];
+    component.right = [5];
     fixture.detectChanges();
 
     const items = fixture.nativeElement.querySelectorAll('li');
@@ -59,7 +59,7 @@ describe('PaginationTemplateComponent', () => {
   });
 
   it('should add no list items when receiving a page for the second half when there is no first half', () => {
-    component.secondHalf = [5];
+    component.right = [5];
     fixture.detectChanges();
 
     const items = fixture.nativeElement.querySelectorAll('li');
@@ -76,7 +76,7 @@ describe('PaginationTemplateComponent', () => {
   // Page buttons
 
   it('should add a button when receiving a page for the first half', () => {
-    component.firstHalf = [1];
+    component.left = [1];
     fixture.detectChanges();
 
     const button = fixture.nativeElement.querySelectorAll('button');
@@ -84,7 +84,7 @@ describe('PaginationTemplateComponent', () => {
   });
 
   it('should add multiple buttons when receiving multiple pages for the first half', () => {
-    component.firstHalf = [1, 2, 3];
+    component.left = [1, 2, 3];
     fixture.detectChanges();
 
     const button = fixture.nativeElement.querySelectorAll('button');
@@ -92,7 +92,7 @@ describe('PaginationTemplateComponent', () => {
   });
 
   it('should add no button when receiving a page for the second half when there is no first half', () => {
-    component.secondHalf = [5];
+    component.right = [5];
     fixture.detectChanges();
 
     const button = fixture.nativeElement.querySelectorAll('button');
@@ -100,8 +100,8 @@ describe('PaginationTemplateComponent', () => {
   });
 
   it('should add a button when receiving a page for the second half and there is a first half', () => {
-    component.firstHalf = [1];
-    component.secondHalf = [5];
+    component.left = [1];
+    component.right = [5];
     fixture.detectChanges();
 
     const button = fixture.nativeElement.querySelectorAll('button');
@@ -109,8 +109,8 @@ describe('PaginationTemplateComponent', () => {
   });
 
   it('should add multiple buttons when receiving multiple pages for both halves', () => {
-    component.firstHalf = [1, 2, 3];
-    component.secondHalf = [5, 6, 7];
+    component.left = [1, 2, 3];
+    component.right = [5, 6, 7];
     fixture.detectChanges();
 
     const button = fixture.nativeElement.querySelectorAll('button');
@@ -209,8 +209,8 @@ describe('PaginationTemplateComponent', () => {
     component.first = false;
     component.last = false;
     component.disabled = true;
-    component.firstHalf = [1];
-    component.secondHalf = [5];
+    component.left = [1];
+    component.right = [5];
     fixture.detectChanges();
 
     // Page button for the first half
