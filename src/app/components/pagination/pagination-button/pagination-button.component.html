@@ -1,0 +1,5 @@
+<dnd5-list-item [disabled]="disabled" [active]="current" [current]="getCurrentLabel()">
+    <dnd5-button (action)="onClick()" [disabled]="disabled" [attr.aria-disabled]="disabled" aria-label="Go to page">
+        <ng-content></ng-content>
+    </dnd5-button>
+</dnd5-list-item>

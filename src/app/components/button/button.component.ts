@@ -8,6 +8,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ButtonComponent {
 
   @Input() disabled = false;
+  
+  @Input() current = false;
 
   @Output() public action = new EventEmitter<number>();
 

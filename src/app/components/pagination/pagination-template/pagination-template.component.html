@@ -6,35 +6,30 @@
                 <dnd5-backward-icon></dnd5-backward-icon>
             </dnd5-button>
         </dnd5-list-item>
-        <dnd5-list-item *ngFor="let page of left" [disabled]="isGoToDisabled()" [active]="isCurrent(page)"
-            [current]="getCurrentLabel(page)">
-            <dnd5-button (action)="onGoTo(page)" [disabled]="isGoToDisabled()" aria-label="Go to page">
-                {{page}}
-            </dnd5-button>
-        </dnd5-list-item>
+        <!-- Left range -->
+        <dnd5-pagination-button *ngFor="let page of left" [disabled]="isGoToDisabled()" [current]="isCurrent(page)"
+            (action)="onGoTo(page)">
+            {{page}}
+        </dnd5-pagination-button>
+        <!-- Center range -->
         <ng-container *ngIf="isAbleToDrawCenterRange()">
             <dnd5-list-item [disabled]="true">
                 <span class="page-link">...</span>
             </dnd5-list-item>
-            <dnd5-list-item *ngFor="let page of center" [disabled]="isGoToDisabled()" [active]="isCurrent(page)"
-                [current]="getCurrentLabel(page)">
-                <dnd5-button (action)="onGoTo(page)" [disabled]="isGoToDisabled()"
-                    [attr.aria-disabled]="isGoToDisabled()" aria-label="Go to page">
-                    {{page}}
-                </dnd5-button>
-            </dnd5-list-item>
+            <dnd5-pagination-button *ngFor="let page of left" [disabled]="isGoToDisabled()" [current]="isCurrent(page)"
+                (action)="onGoTo(page)">
+                {{page}}
+            </dnd5-pagination-button>
         </ng-container>
+        <!-- Right range -->
         <ng-container *ngIf="isAbleToDrawRightRange()">
             <dnd5-list-item [disabled]="true">
                 <span class="page-link">...</span>
             </dnd5-list-item>
-            <dnd5-list-item *ngFor="let page of right" [disabled]="isGoToDisabled()" [active]="isCurrent(page)"
-                [current]="getCurrentLabel(page)">
-                <dnd5-button (action)="onGoTo(page)" [disabled]="isGoToDisabled()"
-                    [attr.aria-disabled]="isGoToDisabled()" aria-label="Go to page">
-                    {{page}}
-                </dnd5-button>
-            </dnd5-list-item>
+            <dnd5-pagination-button *ngFor="let page of left" [disabled]="isGoToDisabled()" [current]="isCurrent(page)"
+                (action)="onGoTo(page)">
+                {{page}}
+            </dnd5-pagination-button>
         </ng-container>
         <!-- Forward button -->
         <li class="page-item" [class.disabled]="isForwardDisabled()" [attr.aria-disabled]="isForwardDisabled()">

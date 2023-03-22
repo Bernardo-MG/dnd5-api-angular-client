@@ -12,6 +12,7 @@ import { BackwardIconComponent } from './icons/backward-icon/backward-icon.compo
 import { ForwardIconComponent } from './icons/forward-icon/forward-icon.component';
 import { ListItemComponent } from './lists/list-item/list-item.component';
 import { PaginationComponent } from './pagination/pagination/pagination.component';
+import { PaginationButtonComponent } from './pagination/pagination-button/pagination-button.component';
 
 
 
@@ -26,7 +27,8 @@ import { PaginationComponent } from './pagination/pagination/pagination.componen
     WaitingWrapperComponent,
     BackwardIconComponent,
     ForwardIconComponent,
-    ListItemComponent
+    ListItemComponent,
+    PaginationButtonComponent
   ],
   imports: [
     CommonModule,
