@@ -3,10 +3,10 @@
 </header>
 <div class="offset-3 col-6">
     <dnd5-waiting-wrapper [waiting]="waiting">
-        <dnd5-data-list [links]="links"></dnd5-data-list>
         <div class="d-flex justify-content-center mt-1">
             <dnd5-pagination [page]="pagination.page" [pages]="pagination.totalPages"
                 (goTo)="onGoToPage($event)"></dnd5-pagination>
         </div>
+        <dnd5-data-list [links]="links"></dnd5-data-list>
     </dnd5-waiting-wrapper>
 </div>
