@@ -47,15 +47,15 @@ export class CharclassListViewComponent implements OnInit {
   }
 
   private loadPagination(total: number): Pagination {
-    const pagination = new Pagination();
-    pagination.page = 1;
-    pagination.size = 5;
-    pagination.totalElements = total;
-    pagination.totalPages = Math.ceil(pagination.totalElements / pagination.size);
-    pagination.first = (pagination.page === 1);
-    pagination.last = (pagination.page === pagination.totalPages);
+    const page = new Pagination();
+    page.page = 1;
+    page.size = 5;
+    page.totalElements = total;
+    page.totalPages = Math.ceil(page.totalElements / page.size);
+    page.first = (page.page === 1);
+    page.last = (page.page === page.totalPages);
 
-    return pagination;
+    return page;
   }
 
 }

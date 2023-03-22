@@ -1,11 +1,11 @@
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'dnd5-pagination-template',
   templateUrl: './pagination-template.component.html',
   styleUrls: ['./pagination-template.component.sass']
 })
-export class PaginationTemplateComponent implements OnChanges {
+export class PaginationTemplateComponent {
 
   @Input() public disabled = false;
 
@@ -23,22 +23,6 @@ export class PaginationTemplateComponent implements OnChanges {
 
   @Output() public goTo = new EventEmitter<number>();
 
-  public backwardDisabled = false;
-
-  public forwardDisabled = false;
-
-  public drawCenter = false;
-
-  public drawRight = false;
-
-  ngOnChanges(changes: SimpleChanges): void {
-    this.backwardDisabled = ((this.first) || (this.disabled));
-    this.forwardDisabled = ((this.last) || (this.disabled));
-
-    this.drawCenter = ((this.left.length > 0) && (this.center.length > 0));
-    this.drawRight = ((this.left.length > 0) && (this.right.length > 0));
-  }
-
   public onBackward() {
     this.goTo.emit(this.page - 1);
   }
@@ -52,11 +36,11 @@ export class PaginationTemplateComponent implements OnChanges {
   }
 
   public isBackwardDisabled(): boolean {
-    return this.backwardDisabled;
+    return ((this.first) || (this.disabled));
   }
 
   public isForwardDisabled(): boolean {
-    return this.forwardDisabled;
+    return ((this.last) || (this.disabled));
   }
 
   public isGoToDisabled(): boolean {
@@ -64,11 +48,11 @@ export class PaginationTemplateComponent implements OnChanges {
   }
 
   public isAbleToDrawCenterRange() {
-    return this.drawCenter;
+    return ((this.left.length > 0) && (this.center.length > 0));
   }
 
   public isAbleToDrawRightRange() {
-    return this.drawRight;
+    return ((this.left.length > 0) && (this.right.length > 0));
   }
 
   public isCurrent(page: number) {
