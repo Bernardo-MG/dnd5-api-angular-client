@@ -39,6 +39,12 @@ export class CharclassListViewComponent implements OnInit {
     });
   }
 
+  public onGoToPage(page: number) {
+    const lower = (page - 1) * this.pagination.size;
+    const upper = page * this.pagination.size;
+    this.links = this.data.slice(lower, upper);
+  }
+
   private loadPagination(total: number): Pagination {
     const page = new Pagination();
     page.page = 1;
