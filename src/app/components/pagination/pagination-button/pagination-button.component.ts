@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class PaginationButtonComponent {
 
-  @Input() public current = false;
+  @Input() public active = false;
 
   @Input() public disabled = false;
 
@@ -20,7 +20,7 @@ export class PaginationButtonComponent {
   public getCurrentLabel() {
     let label;
 
-    if (this.current) {
+    if (this.active) {
       // Current page
       label = 'page';
     } else {

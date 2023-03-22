@@ -1,32 +1,32 @@
 <nav aria-label="Page navigation">
     <ul class="pagination pagination-sm">
         <!-- Backward button -->
-        <dnd5-list-item [disabled]="isBackwardDisabled()">
+        <li class="page-item" [class.disabled]="isBackwardDisabled()" [attr.aria-disabled]="isBackwardDisabled()">
             <dnd5-button (action)="onBackward()" [disabled]="isBackwardDisabled()" aria-label="Previous page">
                 <dnd5-backward-icon></dnd5-backward-icon>
             </dnd5-button>
-        </dnd5-list-item>
+        </li>
         <!-- Left range -->
-        <dnd5-pagination-button *ngFor="let page of left" [disabled]="isGoToDisabled()" [current]="isCurrent(page)"
+        <dnd5-pagination-button *ngFor="let page of left" [disabled]="isGoToDisabled()" [active]="isCurrent(page)"
             (action)="onGoTo(page)">
             {{page}}
         </dnd5-pagination-button>
         <!-- Center range -->
         <ng-container *ngIf="isAbleToDrawCenterRange()">
-            <dnd5-list-item [disabled]="true">
+            <li class="page-item disabled" aria-disabled="true">
                 <span class="page-link">...</span>
-            </dnd5-list-item>
-            <dnd5-pagination-button *ngFor="let page of left" [disabled]="isGoToDisabled()" [current]="isCurrent(page)"
+            </li>
+            <dnd5-pagination-button *ngFor="let page of left" [disabled]="isGoToDisabled()" [active]="isCurrent(page)"
                 (action)="onGoTo(page)">
                 {{page}}
             </dnd5-pagination-button>
         </ng-container>
         <!-- Right range -->
         <ng-container *ngIf="isAbleToDrawRightRange()">
-            <dnd5-list-item [disabled]="true">
+            <li class="page-item disabled" aria-disabled="true">
                 <span class="page-link">...</span>
-            </dnd5-list-item>
-            <dnd5-pagination-button *ngFor="let page of left" [disabled]="isGoToDisabled()" [current]="isCurrent(page)"
+            </li>
+            <dnd5-pagination-button *ngFor="let page of left" [disabled]="isGoToDisabled()" [active]="isCurrent(page)"
                 (action)="onGoTo(page)">
                 {{page}}
             </dnd5-pagination-button>

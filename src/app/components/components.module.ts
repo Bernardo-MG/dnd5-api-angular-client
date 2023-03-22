@@ -10,7 +10,6 @@ import { WaitingWrapperComponent } from './waiting-wrapper/waiting-wrapper.compo
 import { WaitingComponent } from './waiting/waiting.component';
 import { BackwardIconComponent } from './icons/backward-icon/backward-icon.component';
 import { ForwardIconComponent } from './icons/forward-icon/forward-icon.component';
-import { ListItemComponent } from './lists/list-item/list-item.component';
 import { PaginationComponent } from './pagination/pagination/pagination.component';
 import { PaginationButtonComponent } from './pagination/pagination-button/pagination-button.component';
 
@@ -27,7 +26,6 @@ import { PaginationButtonComponent } from './pagination/pagination-button/pagina
     WaitingWrapperComponent,
     BackwardIconComponent,
     ForwardIconComponent,
-    ListItemComponent,
     PaginationButtonComponent
   ],
   imports: [
