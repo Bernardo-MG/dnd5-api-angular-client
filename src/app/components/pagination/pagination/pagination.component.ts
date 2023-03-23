@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { Pagination } from '@app/components/models/pagination';
-import { PaginationRanges } from '../splitter/pagination-ranges';
+import { PaginationRanges } from '../models/range/pagination-ranges';
 
 @Component({
   selector: 'dnd5-pagination',
