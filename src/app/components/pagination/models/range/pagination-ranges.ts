@@ -1,4 +1,6 @@
-
+/**
+ * Numeric arrays used to build the pagination component buttons.
+ */
 export class PaginationRanges {
 
     public left: number[] = [];
@@ -30,6 +32,12 @@ export class PaginationRanges {
         }
     }
 
+    /**
+     * Builds the left pages range.
+     * 
+     * @param pages total number of pages
+     * @returns  the left pages range
+     */
     private getLeftRange(pages: number): number[] {
         const range: number[] = [];
 
@@ -48,7 +56,12 @@ export class PaginationRanges {
         return range;
     }
 
-
+    /**
+     * Builds the center pages range.
+     * 
+     * @param pages total number of pages
+     * @returns  the center pages range
+     */
     private getCenterRange(page: number, pages: number): number[] {
         const range: number[] = [];
         const lowerOffset = (this.step + 2);
@@ -75,6 +88,12 @@ export class PaginationRanges {
         return range;
     }
 
+    /**
+     * Builds the right pages range.
+     * 
+     * @param pages total number of pages
+     * @returns  the right pages range
+     */
     private getRightRange(pages: number): number[] {
         const range: number[] = [];
         const offset = (this.step * 2);
@@ -94,6 +113,9 @@ export class PaginationRanges {
         return range;
     }
 
+    /**
+     * Merge the ranges. So if they overlap or continue each other, there will be no gaps in the component.
+     */
     private merge() {
         let leftLimit;
         let rightLimit;
