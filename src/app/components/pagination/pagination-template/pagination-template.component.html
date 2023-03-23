@@ -2,7 +2,7 @@
     <ul class="pagination pagination-sm">
         <!-- Backward buttons -->
         <li class="page-item" [class.disabled]="isBackwardDisabled()" [attr.aria-disabled]="isBackwardDisabled()">
-            <dnd5-button class="page-link" [disabled]="isBackwardDisabled()" (action)="onBackward()" aria-label="Previous page">
+            <dnd5-button class="page-link" [disabled]="isBackwardDisabled()" (action)="onGoToFirst()" aria-label="Previous page">
                 <dnd5-fast-backward-icon></dnd5-fast-backward-icon>
             </dnd5-button>
         </li>
@@ -43,7 +43,7 @@
             </dnd5-button>
         </li>
         <li class="page-item" [class.disabled]="isForwardDisabled()" [attr.aria-disabled]="isForwardDisabled()">
-            <dnd5-button class="page-link" [disabled]="isForwardDisabled()" (action)="onForward()" aria-label="Last page">
+            <dnd5-button class="page-link" [disabled]="isForwardDisabled()" (action)="onGoToLast()" aria-label="Last page">
                 <dnd5-fast-forward-icon></dnd5-fast-forward-icon>
             </dnd5-button>
         </li>

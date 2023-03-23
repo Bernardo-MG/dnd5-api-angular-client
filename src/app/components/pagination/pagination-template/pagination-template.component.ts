@@ -17,9 +17,19 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class PaginationTemplateComponent {
 
   /**
-   * Current page.
+   * Current page number. This is the pointer to move around the pagination.
    */
-  @Input() public current = 0;
+  @Input() public current = 1;
+
+  /**
+   * First page number.
+   */
+  @Input() public first = 1;
+
+  /**
+   * Last page number.
+   */
+  @Input() public last = 1;
 
   /**
    * Disabled flag. To disable all the inner components.
@@ -57,10 +67,24 @@ export class PaginationTemplateComponent {
   @Output() public goTo = new EventEmitter<number>();
 
   /**
+   * Sends a "go to page" event for the first page.
+   */
+  public onGoToFirst() {
+    this.goTo.emit(this.first);
+  }
+
+  /**
    * Sends a "go to page" event for the previous page.
    */
   public onBackward() {
     this.goTo.emit(this.current - 1);
+  }
+
+  /**
+   * Sends a "go to page" event for the last page.
+   */
+  public onGoToLast() {
+    this.goTo.emit(this.last);
   }
 
   /**
