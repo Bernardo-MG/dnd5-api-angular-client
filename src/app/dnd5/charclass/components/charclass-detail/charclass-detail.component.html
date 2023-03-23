@@ -1,8 +1,12 @@
-<div>hit_die: {{charclass.hit_die}}</div>
-<div>sub_classes: {{asNameList(charclass.subclasses)}}</div>
+<h2>hit_die</h2>
+<div><span class="fw-bold">hit_die:</span> {{charclass.hit_die}}</div>
 <h2>proficiencies</h2>
+<dnd5-proficiencies [proficiencies]="charclass.proficiencies"></dnd5-proficiencies>
+<h2>proficiency choices</h2>
+<dnd5-proficiency-choices [choices]="charclass.proficiency_choices"></dnd5-proficiency-choices>
+<h2>sub_classes</h2>
+<div><span class="fw-bold">sub_classes:</span>: {{asNameList(charclass.subclasses)}}</div>
 <div>saving_throws: {{asNameList(charclass.saving_throws)}}</div>
-<div>proficiencies: {{asNameList(charclass.proficiencies)}}</div>
 <h3>picks</h3>
 <div *ngFor="let choice of charclass.proficiency_choices;let index=index">
   <!--<div>pick {{choice.choose}} of {{asNameList(choice.from.options)}}</div>-->
