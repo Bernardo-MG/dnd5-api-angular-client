@@ -41,7 +41,7 @@ describe('PaginationTemplateComponent', () => {
     expect(items.length).toEqual(2);
   });
 
-  it('should add a list item when receiving a page for the first half', () => {
+  it('should add a list item when receiving a page for the left range', () => {
     component.left = [1];
     fixture.detectChanges();
 
@@ -49,7 +49,7 @@ describe('PaginationTemplateComponent', () => {
     expect(items.length).toEqual(3);
   });
 
-  it('should add list items, including separator, when receiving a page for the second half and there is a first half', () => {
+  it('should add list items, including separator, when receiving a page for the right range and there is a left range', () => {
     component.left = [1];
     component.right = [5];
     fixture.detectChanges();
@@ -58,7 +58,7 @@ describe('PaginationTemplateComponent', () => {
     expect(items.length).toEqual(5);
   });
 
-  it('should add no list items when receiving a page for the second half when there is no first half', () => {
+  it('should add no list items when receiving a page for the right range when there is no left range', () => {
     component.right = [5];
     fixture.detectChanges();
 
@@ -75,46 +75,101 @@ describe('PaginationTemplateComponent', () => {
 
   // Page buttons
 
-  it('should add a button when receiving a page for the first half', () => {
+  it('should add a page button when receiving a page for the left range', () => {
     component.left = [1];
     fixture.detectChanges();
 
-    const button = fixture.nativeElement.querySelectorAll('button');
-    expect(button.length).toEqual(3);
+    const button = fixture.nativeElement.querySelectorAll('a.btn');
+    expect(button.length).toEqual(1);
   });
 
-  it('should add multiple buttons when receiving multiple pages for the first half', () => {
+  it('should add multiple page buttons when receiving multiple pages for the left range', () => {
     component.left = [1, 2, 3];
     fixture.detectChanges();
 
-    const button = fixture.nativeElement.querySelectorAll('button');
-    expect(button.length).toEqual(5);
+    const button = fixture.nativeElement.querySelectorAll('a.btn');
+    expect(button.length).toEqual(3);
   });
 
-  it('should add no button when receiving a page for the second half when there is no first half', () => {
+  it('should add no page button when receiving a page for the right range when there is no left range', () => {
     component.right = [5];
     fixture.detectChanges();
 
-    const button = fixture.nativeElement.querySelectorAll('button');
-    expect(button.length).toEqual(2);
+    const button = fixture.nativeElement.querySelectorAll('a.btn');
+    expect(button.length).toEqual(0);
   });
 
-  it('should add a button when receiving a page for the second half and there is a first half', () => {
+  it('should add a page button when receiving a page for the right range and there is a left range', () => {
     component.left = [1];
     component.right = [5];
     fixture.detectChanges();
 
-    const button = fixture.nativeElement.querySelectorAll('button');
-    expect(button.length).toEqual(4);
+    const button = fixture.nativeElement.querySelectorAll('a.btn');
+    expect(button.length).toEqual(2);
   });
 
-  it('should add multiple buttons when receiving multiple pages for both halves', () => {
+  it('should add multiple page buttons when receiving multiple pages for left and right ranges', () => {
     component.left = [1, 2, 3];
     component.right = [5, 6, 7];
     fixture.detectChanges();
 
-    const button = fixture.nativeElement.querySelectorAll('button');
-    expect(button.length).toEqual(8);
+    const button = fixture.nativeElement.querySelectorAll('a.btn');
+    expect(button.length).toEqual(6);
+  });
+
+  it('should add no page button when receiving a page for the center range when there is no left range', () => {
+    component.center = [5];
+    fixture.detectChanges();
+
+    const button = fixture.nativeElement.querySelectorAll('a.btn');
+    expect(button.length).toEqual(0);
+  });
+
+  it('should add a page button when receiving a page for the center range and there is a left range', () => {
+    component.left = [1];
+    component.center = [5];
+    fixture.detectChanges();
+
+    const button = fixture.nativeElement.querySelectorAll('a.btn');
+    expect(button.length).toEqual(2);
+  });
+
+  it('should add multiple page buttons when receiving multiple pages for left and center ranges', () => {
+    component.left = [1, 2, 3];
+    component.center = [5, 6, 7];
+    fixture.detectChanges();
+
+    const button = fixture.nativeElement.querySelectorAll('a.btn');
+    expect(button.length).toEqual(6);
+  });
+
+  it('should add no page button when receiving pages for the center and right ranges when there is no left range', () => {
+    component.center = [5];
+    component.right = [10];
+    fixture.detectChanges();
+
+    const button = fixture.nativeElement.querySelectorAll('a.btn');
+    expect(button.length).toEqual(0);
+  });
+
+  it('should add multiple page buttons when receiving a page for each ranges', () => {
+    component.left = [1];
+    component.center = [5];
+    component.right = [10];
+    fixture.detectChanges();
+
+    const button = fixture.nativeElement.querySelectorAll('a.btn');
+    expect(button.length).toEqual(3);
+  });
+
+  it('should add multiple page buttons when receiving multiple pages for each ranges', () => {
+    component.left = [1, 2, 3];
+    component.center = [5, 6, 7];
+    component.right = [10, 11, 12];
+    fixture.detectChanges();
+
+    const button = fixture.nativeElement.querySelectorAll('a.btn');
+    expect(button.length).toEqual(9);
   });
 
   // List structure
@@ -210,15 +265,20 @@ describe('PaginationTemplateComponent', () => {
     component.last = false;
     component.disabled = true;
     component.left = [1];
+    component.center = [3];
     component.right = [5];
     fixture.detectChanges();
 
-    // Page button for the first half
-    let button = fixture.nativeElement.querySelectorAll('button')[1];
+    // Page button for the left range
+    let button = fixture.nativeElement.querySelectorAll('a.btn')[0];
     expect(button.disabled).toEqual(true);
 
-    // Page button for the second half
-    button = fixture.nativeElement.querySelectorAll('button')[2];
+    // Page button for the center half
+    button = fixture.nativeElement.querySelectorAll('a.btn')[1];
+    expect(button.disabled).toEqual(true);
+
+    // Page button for the right range
+    button = fixture.nativeElement.querySelectorAll('a.btn')[2];
     expect(button.disabled).toEqual(true);
   });
 
