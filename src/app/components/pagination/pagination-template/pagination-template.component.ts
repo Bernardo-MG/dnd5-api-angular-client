@@ -1,11 +1,25 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
+/**
+ * Pagination component template.
+ * 
+ * Contains only the display logic, and will draw a pagination navigation based on three page ranges: one for the
+ * left, center and right.
+ * 
+ * These are split by ellipsis, so having a left range as [1, 2, 3], center as [5, 6, 7] and right as [9, 10 ,11]
+ * this will show a list of pages like "1, 2, 3 ... 5, 6, 7 ... 9, 10, 11".
+ */
 @Component({
   selector: 'dnd5-pagination-template',
   templateUrl: './pagination-template.component.html',
   styleUrls: ['./pagination-template.component.sass']
 })
 export class PaginationTemplateComponent {
+
+  /**
+   * Current page.
+   */
+  @Input() public current = 0;
 
   /**
    * Disabled flag. To disable all the inner components.
@@ -23,11 +37,6 @@ export class PaginationTemplateComponent {
   @Input() public disableForward = true;
 
   /**
-   * Current page.
-   */
-  @Input() public current = 0;
-
-  /**
    * Left page range.
    */
   @Input() public left: number[] = [];
@@ -42,6 +51,9 @@ export class PaginationTemplateComponent {
    */
   @Input() public right: number[] = [];
 
+  /**
+   * "Go to page" event emitter.
+   */
   @Output() public goTo = new EventEmitter<number>();
 
   /**
