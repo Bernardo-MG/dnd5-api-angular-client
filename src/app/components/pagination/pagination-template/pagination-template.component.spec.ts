@@ -30,11 +30,17 @@ describe('PaginationTemplateComponent', () => {
     fixture.detectChanges();
   });
 
+  // **************************************************************************
+  // General tests
+  // **************************************************************************
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
+  // **************************************************************************
   // List structure
+  // **************************************************************************
 
   it('by default only the backward and forward list items exist', () => {
     const items = fixture.nativeElement.querySelectorAll('li');
@@ -49,6 +55,14 @@ describe('PaginationTemplateComponent', () => {
     expect(items.length).toEqual(3);
   });
 
+  it('should add no list items when receiving a page for the right range when there is no left range', () => {
+    component.right = [5];
+    fixture.detectChanges();
+
+    const items = fixture.nativeElement.querySelectorAll('li');
+    expect(items.length).toEqual(2);
+  });
+
   it('should add list items, including separator, when receiving a page for the right range and there is a left range', () => {
     component.left = [1];
     component.right = [5];
@@ -58,22 +72,45 @@ describe('PaginationTemplateComponent', () => {
     expect(items.length).toEqual(5);
   });
 
-  it('should add no list items when receiving a page for the right range when there is no left range', () => {
-    component.right = [5];
+  it('should add no list items when receiving a page for the center range when there is no left range', () => {
+    component.center = [5];
     fixture.detectChanges();
 
     const items = fixture.nativeElement.querySelectorAll('li');
     expect(items.length).toEqual(2);
   });
 
-  // Movement buttons
+  it('should add list items, including separator, when receiving a page for the center range and there is a left range', () => {
+    component.left = [1];
+    component.center = [5];
+    fixture.detectChanges();
 
-  it('by default only the backward and forward buttons exist', () => {
-    const buttons = fixture.nativeElement.querySelectorAll('button');
-    expect(buttons.length).toEqual(2);
+    const items = fixture.nativeElement.querySelectorAll('li');
+    expect(items.length).toEqual(5);
   });
 
+  it('should add no list items when receiving a page for the center and right ranges when there is no left range', () => {
+    component.center = [5];
+    component.right = [10];
+    fixture.detectChanges();
+
+    const items = fixture.nativeElement.querySelectorAll('li');
+    expect(items.length).toEqual(2);
+  });
+
+  it('should add list items, including separator, when receiving a page for the center and right ranges and there is a left range', () => {
+    component.left = [1];
+    component.center = [5];
+    component.right = [10];
+    fixture.detectChanges();
+
+    const items = fixture.nativeElement.querySelectorAll('li');
+    expect(items.length).toEqual(7);
+  });
+
+  // **************************************************************************
   // Page buttons
+  // **************************************************************************
 
   it('should add a page button when receiving a page for the left range', () => {
     component.left = [1];
@@ -172,9 +209,9 @@ describe('PaginationTemplateComponent', () => {
     expect(button.length).toEqual(9);
   });
 
-  // List structure
-
-  // Disable based on status flags
+  // **************************************************************************
+  // Disable based on first and last flags
+  // **************************************************************************
 
   it('should disable the backward button by default', () => {
     const button = fixture.nativeElement.querySelectorAll('button')[0];
@@ -218,7 +255,9 @@ describe('PaginationTemplateComponent', () => {
     expect(button.disabled).toEqual(false);
   });
 
-  // Disable status
+  // **************************************************************************
+  // Disable based on disable flag
+  // **************************************************************************
 
   it('should disable the backward button when the component is disabled', () => {
     component.first = false;
