@@ -1,19 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ButtonComponent } from './button/button.component';
 import { DataListComponent } from './data-list/data-list.component';
+import { IconsModule } from './icons/icons.module';
 import { MenuComponent } from './menu/menu.component';
+import { PageButtonComponent } from './pagination/page-button/page-button.component';
 import { PaginationTemplateComponent } from './pagination/pagination-template/pagination-template.component';
+import { PaginationComponent } from './pagination/pagination/pagination.component';
 import { WaitingWrapperComponent } from './waiting-wrapper/waiting-wrapper.component';
 import { WaitingComponent } from './waiting/waiting.component';
-import { BackwardIconComponent } from './icons/backward-icon/backward-icon.component';
-import { ForwardIconComponent } from './icons/forward-icon/forward-icon.component';
-import { PaginationComponent } from './pagination/pagination/pagination.component';
-import { PageButtonComponent } from './pagination/page-button/page-button.component';
-import { FastBackwardIconComponent } from './icons/fast-backward-icon/fast-backward-icon.component';
-import { FastForwardIconComponent } from './icons/fast-forward-icon/fast-forward-icon.component';
 
 
 
@@ -26,16 +22,12 @@ import { FastForwardIconComponent } from './icons/fast-forward-icon/fast-forward
     PaginationTemplateComponent,
     WaitingComponent,
     WaitingWrapperComponent,
-    BackwardIconComponent,
-    ForwardIconComponent,
-    PageButtonComponent,
-    FastBackwardIconComponent,
-    FastForwardIconComponent
+    PageButtonComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
-    FontAwesomeModule
+    IconsModule
   ],
   exports: [
     DataListComponent,
