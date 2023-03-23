@@ -59,18 +59,4 @@ export class PaginationTemplateComponent {
     return page === this.page;
   }
 
-  public getCurrentLabel(page: number) {
-    let label;
-
-    if (page === this.page) {
-      // Current page
-      label = 'page';
-    } else {
-      // Any other page
-      label = '';
-    }
-
-    return label;
-  }
-
 }
