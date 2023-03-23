@@ -10,6 +10,8 @@ export class ButtonComponent {
   @Input() disabled = false;
   
   @Input() current = false;
+  
+  @Input() class = '';
 
   @Output() public action = new EventEmitter<number>();
 

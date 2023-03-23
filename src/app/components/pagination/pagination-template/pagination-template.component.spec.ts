@@ -3,7 +3,7 @@ import { ButtonComponent } from '@app/components/button/button.component';
 import { BackwardIconComponent } from '@app/components/icons/backward-icon/backward-icon.component';
 import { ForwardIconComponent } from '@app/components/icons/forward-icon/forward-icon.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { PaginationButtonComponent } from '../pagination-button/pagination-button.component';
+import { PageButtonComponent } from '../page-button/page-button.component';
 import { PaginationTemplateComponent } from './pagination-template.component';
 
 describe('PaginationTemplateComponent', () => {
@@ -17,7 +17,7 @@ describe('PaginationTemplateComponent', () => {
       ],
       declarations: [
         PaginationTemplateComponent,
-        PaginationButtonComponent,
+        PageButtonComponent,
         ButtonComponent,
         BackwardIconComponent,
         ForwardIconComponent

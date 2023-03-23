@@ -11,7 +11,7 @@ import { WaitingComponent } from './waiting/waiting.component';
 import { BackwardIconComponent } from './icons/backward-icon/backward-icon.component';
 import { ForwardIconComponent } from './icons/forward-icon/forward-icon.component';
 import { PaginationComponent } from './pagination/pagination/pagination.component';
-import { PaginationButtonComponent } from './pagination/pagination-button/pagination-button.component';
+import { PageButtonComponent } from './pagination/page-button/page-button.component';
 import { FastBackwardIconComponent } from './icons/fast-backward-icon/fast-backward-icon.component';
 import { FastForwardIconComponent } from './icons/fast-forward-icon/fast-forward-icon.component';
 
@@ -28,7 +28,7 @@ import { FastForwardIconComponent } from './icons/fast-forward-icon/fast-forward
     WaitingWrapperComponent,
     BackwardIconComponent,
     ForwardIconComponent,
-    PaginationButtonComponent,
+    PageButtonComponent,
     FastBackwardIconComponent,
     FastForwardIconComponent
   ],

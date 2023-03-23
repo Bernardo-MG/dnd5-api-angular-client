@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'dnd5-pagination-button',
-  templateUrl: './pagination-button.component.html',
-  styleUrls: ['./pagination-button.component.sass']
+  selector: 'dnd5-page-button',
+  templateUrl: './page-button.component.html',
+  styleUrls: ['./page-button.component.sass']
 })
-export class PaginationButtonComponent {
+export class PageButtonComponent {
 
   @Input() public active = false;
 
