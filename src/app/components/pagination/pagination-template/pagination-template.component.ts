@@ -7,11 +7,14 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class PaginationTemplateComponent {
 
+  /**
+   * Disabled flag. To disable all the inner components.
+   */
   @Input() public disabled = false;
 
-  @Input() public first = true;
+  @Input() public disableBackward = true;
 
-  @Input() public last = true;
+  @Input() public disableForward = true;
 
   @Input() public page = 0;
 
@@ -36,11 +39,11 @@ export class PaginationTemplateComponent {
   }
 
   public isBackwardDisabled(): boolean {
-    return ((this.first) || (this.disabled));
+    return ((this.disableBackward) || (this.disabled));
   }
 
   public isForwardDisabled(): boolean {
-    return ((this.last) || (this.disabled));
+    return ((this.disableForward) || (this.disabled));
   }
 
   public isGoToDisabled(): boolean {

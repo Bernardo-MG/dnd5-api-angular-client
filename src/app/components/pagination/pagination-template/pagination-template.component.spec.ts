@@ -223,32 +223,32 @@ describe('PaginationTemplateComponent', () => {
     expect(button.disabled).toEqual(true);
   });
 
-  it('should disable the backward button when it is the first page', () => {
-    component.first = true;
+  it('should disable the backward button when its disable flag is set', () => {
+    component.disableBackward = true;
     fixture.detectChanges();
 
     const button = fixture.nativeElement.querySelectorAll('button')[0];
     expect(button.disabled).toEqual(true);
   });
 
-  it('should enable the backward button when it is not the first page', () => {
-    component.first = false;
+  it('should enable the backward button when its disable flag is not set', () => {
+    component.disableBackward = false;
     fixture.detectChanges();
 
     const button = fixture.nativeElement.querySelectorAll('button')[0];
     expect(button.disabled).toEqual(false);
   });
 
-  it('should disable the forward button when it is the last page', () => {
-    component.last = true;
+  it('should disable the forward button when its disable flag is set', () => {
+    component.disableForward = true;
     fixture.detectChanges();
 
     const button = fixture.nativeElement.querySelectorAll('button')[1];
     expect(button.disabled).toEqual(true);
   });
 
-  it('should enable the forward button when it is not the last page', () => {
-    component.last = false;
+  it('should enable the forward button when its disable flag is not set', () => {
+    component.disableForward = false;
     fixture.detectChanges();
 
     const button = fixture.nativeElement.querySelectorAll('button')[1];
@@ -260,8 +260,8 @@ describe('PaginationTemplateComponent', () => {
   // **************************************************************************
 
   it('should disable the backward button when the component is disabled', () => {
-    component.first = false;
-    component.last = false;
+    component.disableBackward = false;
+    component.disableForward = false;
     component.disabled = true;
     fixture.detectChanges();
 
@@ -270,8 +270,8 @@ describe('PaginationTemplateComponent', () => {
   });
 
   it('should enable the backward button when the component is enabled', () => {
-    component.first = false;
-    component.last = false;
+    component.disableBackward = false;
+    component.disableForward = false;
     component.disabled = false;
     fixture.detectChanges();
 
@@ -280,8 +280,8 @@ describe('PaginationTemplateComponent', () => {
   });
 
   it('should disable the forward button when the component is disabled', () => {
-    component.first = false;
-    component.last = false;
+    component.disableBackward = false;
+    component.disableForward = false;
     component.disabled = true;
     fixture.detectChanges();
 
@@ -290,8 +290,8 @@ describe('PaginationTemplateComponent', () => {
   });
 
   it('should enable the forward button when the component is enabled', () => {
-    component.first = false;
-    component.last = false;
+    component.disableBackward = false;
+    component.disableForward = false;
     component.disabled = false;
     fixture.detectChanges();
 
@@ -300,8 +300,8 @@ describe('PaginationTemplateComponent', () => {
   });
 
   it('should disable the page buttons when the component is disabled', () => {
-    component.first = false;
-    component.last = false;
+    component.disableBackward = false;
+    component.disableForward = false;
     component.disabled = true;
     component.left = [1];
     component.center = [3];
