@@ -5,9 +5,7 @@ import { ButtonComponent } from './button/button.component';
 import { DataListComponent } from './data-list/data-list.component';
 import { IconsModule } from './icons/icons.module';
 import { MenuComponent } from './menu/menu.component';
-import { PageButtonComponent } from './pagination/page-button/page-button.component';
-import { PaginationTemplateComponent } from './pagination/pagination-template/pagination-template.component';
-import { PaginationComponent } from './pagination/pagination/pagination.component';
+import { PaginationModule } from './pagination/pagination.module';
 import { WaitingWrapperComponent } from './waiting-wrapper/waiting-wrapper.component';
 import { WaitingComponent } from './waiting/waiting.component';
 
@@ -18,23 +16,22 @@ import { WaitingComponent } from './waiting/waiting.component';
     ButtonComponent,
     DataListComponent,
     MenuComponent,
-    PaginationComponent,
-    PaginationTemplateComponent,
     WaitingComponent,
-    WaitingWrapperComponent,
-    PageButtonComponent
+    WaitingWrapperComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
-    IconsModule
+    IconsModule,
+    PaginationModule
   ],
   exports: [
     DataListComponent,
     MenuComponent,
-    PaginationComponent,
     WaitingComponent,
-    WaitingWrapperComponent
+    WaitingWrapperComponent,
+    IconsModule,
+    PaginationModule
   ]
 })
 export class ComponentsModule { }

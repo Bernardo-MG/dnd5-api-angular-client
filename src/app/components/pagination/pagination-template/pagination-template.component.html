@@ -2,14 +2,17 @@
     <ul class="pagination pagination-sm">
         <!-- Backward buttons -->
         <li class="page-item" [class.disabled]="isBackwardDisabled()" [attr.aria-disabled]="isBackwardDisabled()">
-            <dnd5-button class="page-link" [disabled]="isBackwardDisabled()" (action)="onGoToFirst()" aria-label="Previous page">
+            <button type="button" class="page-link" (click)="onGoToFirst()" [class.disabled]="isBackwardDisabled()"
+                [disabled]="isBackwardDisabled()" [attr.aria-disabled]="isBackwardDisabled()"
+                aria-label="Previous page">
                 <dnd5-fast-backward-icon></dnd5-fast-backward-icon>
-            </dnd5-button>
+            </button>
         </li>
         <li class="page-item" [class.disabled]="isBackwardDisabled()" [attr.aria-disabled]="isBackwardDisabled()">
-            <dnd5-button class="page-link" [disabled]="isBackwardDisabled()" (action)="onBackward()" aria-label="First page">
+            <button type="button" class="page-link" (click)="onBackward()" [class.disabled]="isBackwardDisabled()"
+                [disabled]="isBackwardDisabled()" [attr.aria-disabled]="isBackwardDisabled()" aria-label="First page">
                 <dnd5-backward-icon></dnd5-backward-icon>
-            </dnd5-button>
+            </button>
         </li>
         <!-- Left range -->
         <dnd5-page-button *ngFor="let page of left" [disabled]="disabled" [active]="isCurrent(page)"
@@ -38,14 +41,16 @@
         </ng-container>
         <!-- Forward buttons -->
         <li class="page-item" [class.disabled]="isForwardDisabled()" [attr.aria-disabled]="isForwardDisabled()">
-            <dnd5-button class="page-link" [disabled]="isForwardDisabled()" (action)="onForward()" aria-label="Next page">
+            <button type="button" class="page-link" (click)="onForward()" [class.disabled]="isForwardDisabled()"
+                [disabled]="isForwardDisabled()" [attr.aria-disabled]="isForwardDisabled()" aria-label="Next page">
                 <dnd5-forward-icon></dnd5-forward-icon>
-            </dnd5-button>
+            </button>
         </li>
         <li class="page-item" [class.disabled]="isForwardDisabled()" [attr.aria-disabled]="isForwardDisabled()">
-            <dnd5-button class="page-link" [disabled]="isForwardDisabled()" (action)="onGoToLast()" aria-label="Last page">
+            <button type="button" class="page-link" (click)="onGoToLast()" [class.disabled]="isForwardDisabled()"
+                [disabled]="isForwardDisabled()" [attr.aria-disabled]="isForwardDisabled()" aria-label="Last page">
                 <dnd5-fast-forward-icon></dnd5-fast-forward-icon>
-            </dnd5-button>
+            </button>
         </li>
     </ul>
 </nav>
