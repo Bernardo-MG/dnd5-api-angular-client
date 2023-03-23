@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faBackward } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'dnd5-backward-icon',
@@ -8,6 +8,6 @@ import { faBackward } from '@fortawesome/free-solid-svg-icons';
 })
 export class BackwardIconComponent {
 
-  public icon = faBackward;
+  public icon = faChevronLeft;
 
 }

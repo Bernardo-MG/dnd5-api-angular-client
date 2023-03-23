@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faForward } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'dnd5-forward-icon',
@@ -8,6 +8,6 @@ import { faForward } from '@fortawesome/free-solid-svg-icons';
 })
 export class ForwardIconComponent {
 
-  public icon = faForward;
+  public icon = faChevronRight;
 
 }

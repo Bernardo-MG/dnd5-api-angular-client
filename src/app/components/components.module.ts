@@ -12,6 +12,8 @@ import { BackwardIconComponent } from './icons/backward-icon/backward-icon.compo
 import { ForwardIconComponent } from './icons/forward-icon/forward-icon.component';
 import { PaginationComponent } from './pagination/pagination/pagination.component';
 import { PaginationButtonComponent } from './pagination/pagination-button/pagination-button.component';
+import { FastBackwardIconComponent } from './icons/fast-backward-icon/fast-backward-icon.component';
+import { FastForwardIconComponent } from './icons/fast-forward-icon/fast-forward-icon.component';
 
 
 
@@ -26,7 +28,9 @@ import { PaginationButtonComponent } from './pagination/pagination-button/pagina
     WaitingWrapperComponent,
     BackwardIconComponent,
     ForwardIconComponent,
-    PaginationButtonComponent
+    PaginationButtonComponent,
+    FastBackwardIconComponent,
+    FastForwardIconComponent
   ],
   imports: [
     CommonModule,
