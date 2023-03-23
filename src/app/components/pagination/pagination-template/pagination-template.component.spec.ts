@@ -269,17 +269,8 @@ describe('PaginationTemplateComponent', () => {
     component.right = [5];
     fixture.detectChanges();
 
-    // Page button for the left range
-    let button = fixture.nativeElement.querySelectorAll('a.btn')[0];
-    expect(button.disabled).toEqual(true);
-
-    // Page button for the center half
-    button = fixture.nativeElement.querySelectorAll('a.btn')[1];
-    expect(button.disabled).toEqual(true);
-
-    // Page button for the right range
-    button = fixture.nativeElement.querySelectorAll('a.btn')[2];
-    expect(button.disabled).toEqual(true);
+    const buttons = fixture.nativeElement.querySelectorAll('a.btn.disabled');
+    expect(buttons.length).toEqual(3);
   });
 
 });
