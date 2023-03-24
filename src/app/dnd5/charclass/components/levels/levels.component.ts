@@ -15,4 +15,16 @@ export class LevelsComponent {
     return features.map(f => f.name).join(', ');
   }
 
+  public isSpellcaster(): boolean{
+    let spellcaster;
+
+    if(this.levels.length > 0){
+      spellcaster = ('spellcasting' in this.levels[0]);
+    } else {
+      spellcaster = false;
+    }
+
+    return spellcaster;
+  }
+
 }

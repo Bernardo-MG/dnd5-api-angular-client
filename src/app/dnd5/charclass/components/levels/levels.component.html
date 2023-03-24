@@ -4,6 +4,19 @@
             <th scope="col">level</th>
             <th scope="col">proficiency_bonus</th>
             <th scope="col">features</th>
+            <ng-container *ngIf="isSpellcaster()">
+                <th scope="col">spells</th>
+                <th scope="col">cantrips</th>
+                <th scope="col">1st</th>
+                <th scope="col">2nd</th>
+                <th scope="col">3rd</th>
+                <th scope="col">4th</th>
+                <th scope="col">5th</th>
+                <th scope="col">6th</th>
+                <th scope="col">7th</th>
+                <th scope="col">8th</th>
+                <th scope="col">9th</th>
+            </ng-container>
         </tr>
     </thead>
     <tbody>
@@ -11,6 +24,19 @@
             <th scope="row">{{level.level}}</th>
             <th scope="row">{{level.prof_bonus}}</th>
             <th scope="row">{{getFeatures(level.features)}}</th>
+            <ng-container *ngIf="isSpellcaster()">
+                <th scope="row">{{level.spellcasting.spells_known}}</th>
+                <th scope="row">{{level.spellcasting.cantrips_known}}</th>
+                <th scope="row">{{level.spellcasting.spell_slots_level_1}}</th>
+                <th scope="row">{{level.spellcasting.spell_slots_level_2}}</th>
+                <th scope="row">{{level.spellcasting.spell_slots_level_3}}</th>
+                <th scope="row">{{level.spellcasting.spell_slots_level_4}}</th>
+                <th scope="row">{{level.spellcasting.spell_slots_level_5}}</th>
+                <th scope="row">{{level.spellcasting.spell_slots_level_6}}</th>
+                <th scope="row">{{level.spellcasting.spell_slots_level_7}}</th>
+                <th scope="row">{{level.spellcasting.spell_slots_level_8}}</th>
+                <th scope="row">{{level.spellcasting.spell_slots_level_9}}</th>
+            </ng-container>
         </tr>
     </tbody>
 </table>
