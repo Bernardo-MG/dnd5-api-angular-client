@@ -1,0 +1,16 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">level</th>
+            <th scope="col">proficiency_bonus</th>
+            <th scope="col">features</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let level of levels">
+            <th scope="row">{{level.level}}</th>
+            <th scope="row">{{level.prof_bonus}}</th>
+            <th scope="row">{{getFeatures(level.features)}}</th>
+        </tr>
+    </tbody>
+</table>

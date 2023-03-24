@@ -4,11 +4,13 @@ import { RouterModule } from '@angular/router';
 import { ProficienciesComponent } from './components/proficiencies/proficiencies.component';
 import { ProficiencyChoicesComponent } from './components/proficiency-choices/proficiency-choices.component';
 import { CharclassService } from './services/charclass.service';
+import { LevelsComponent } from './components/levels/levels.component';
 
 @NgModule({
   declarations: [
     ProficienciesComponent,
-    ProficiencyChoicesComponent
+    ProficiencyChoicesComponent,
+    LevelsComponent
   ],
   providers: [
     CharclassService
@@ -19,7 +21,8 @@ import { CharclassService } from './services/charclass.service';
   ],
   exports: [
     ProficienciesComponent,
-    ProficiencyChoicesComponent
+    ProficiencyChoicesComponent,
+    LevelsComponent
   ]
 })
 export class CharclassModule { }

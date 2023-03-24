@@ -5,12 +5,12 @@ import { CharacterClassQueryLevelByNumber } from "./character-class-query-level-
 
 export class CharacterClassQueryLevel {
   
-  private levelRoute = '/level';
+  private levelRoute = '/levels';
 
   constructor(
     private operations: ReadOperations
   ) {
-    this.operations.appendRoute(`/${this.levelRoute}`);
+    this.operations.appendRoute(this.levelRoute);
   }
 
   public getAll(): Observable<Level[]> {

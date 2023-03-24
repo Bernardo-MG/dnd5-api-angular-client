@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CharclassService } from '@app/dnd5/charclass/services/charclass.service';
 import { Charclass } from '@app/dnd5/models/charclass/charclass';
+import { Level } from '@app/dnd5/models/charclass/level';
 import { Proficiency } from '@app/dnd5/models/charclass/proficiency';
 
 @Component({
@@ -16,6 +17,8 @@ export class CharclassDetailViewComponent implements OnInit {
   public charclass = new Charclass();
 
   public proficiencies: Proficiency[] = [];
+
+  public levels: Level[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -35,6 +38,7 @@ export class CharclassDetailViewComponent implements OnInit {
             this.charclass = data;
 
             this.charclassService.getProficiencies(this.charclass.proficiencies).subscribe(p => this.proficiencies = p);
+            this.charclassService.getLevels(id).subscribe(l => this.levels = l);
 
             this.waiting = false;
           });
