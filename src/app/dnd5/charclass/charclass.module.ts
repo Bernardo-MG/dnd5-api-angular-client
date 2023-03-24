@@ -1,14 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { CharclassDetailComponent } from './components/charclass-detail/charclass-detail.component';
-import { CharclassService } from './services/charclass.service';
 import { ProficienciesComponent } from './components/proficiencies/proficiencies.component';
 import { ProficiencyChoicesComponent } from './components/proficiency-choices/proficiency-choices.component';
+import { CharclassService } from './services/charclass.service';
 
 @NgModule({
   declarations: [
-    CharclassDetailComponent,
     ProficienciesComponent,
     ProficiencyChoicesComponent
   ],
@@ -20,7 +18,8 @@ import { ProficiencyChoicesComponent } from './components/proficiency-choices/pr
     RouterModule
   ],
   exports: [
-    CharclassDetailComponent
+    ProficienciesComponent,
+    ProficiencyChoicesComponent
   ]
 })
 export class CharclassModule { }
