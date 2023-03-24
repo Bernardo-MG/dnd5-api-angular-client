@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Reference } from '@app/dnd5/models/info/reference';
+import { Proficiency } from '@app/dnd5/models/charclass/proficiency';
 
 @Component({
   selector: 'dnd5-proficiencies',
@@ -8,6 +8,6 @@ import { Reference } from '@app/dnd5/models/info/reference';
 })
 export class ProficienciesComponent {
 
-  @Input() public proficiencies: Reference[] = [];
+  @Input() public proficiencies: Proficiency[] = [];
 
 }

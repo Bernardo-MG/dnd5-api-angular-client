@@ -1,9 +1,9 @@
 import { ReadOperations } from "@app/dnd5/api/operations/read-operations";
 import { Level } from "@app/dnd5/models/charclass/level";
 import { Observable } from "rxjs";
-import { CharacterClassLevelByNumber } from "./character-class-level-by-number";
+import { CharacterClassQueryLevelByNumber } from "./character-class-query-level-by-number";
 
-export class CharacterClassLevel {
+export class CharacterClassQueryLevel {
   
   private levelRoute = '/level';
 
@@ -19,7 +19,7 @@ export class CharacterClassLevel {
 
   public level(level: number) {
     this.operations.appendRoute(`/${level}`);
-    return new CharacterClassLevelByNumber(this.operations);
+    return new CharacterClassQueryLevelByNumber(this.operations);
   }
 
 }

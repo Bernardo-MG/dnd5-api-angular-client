@@ -4,9 +4,9 @@ import { Multiclassing } from "@app/dnd5/models/charclass/multiclassing";
 import { Spellcasting } from "@app/dnd5/models/charclass/spellcasting";
 import { Reference } from "@app/dnd5/models/info/reference";
 import { Observable } from "rxjs";
-import { CharacterClassLevel } from "./character-class-level";
+import { CharacterClassQueryLevel } from "./character-class-query-level";
 
-export class CharacterClassDetails {
+export class CharacterClassQueryByIndex {
 
   private spellcastingRoute = '/spellcasting';
 
@@ -52,8 +52,8 @@ export class CharacterClassDetails {
     return this.operations.appendRoute(this.proficienciesRoute).fetch();
   }
 
-  public levels(): CharacterClassLevel {
-    return new CharacterClassLevel(this.operations);
+  public levels(): CharacterClassQueryLevel {
+    return new CharacterClassQueryLevel(this.operations);
   }
 
 }

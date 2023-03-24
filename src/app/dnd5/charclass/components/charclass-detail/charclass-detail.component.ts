@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Charclass } from '@app/dnd5/models/charclass/charclass';
+import { Proficiency } from '@app/dnd5/models/charclass/proficiency';
 
 @Component({
   selector: 'dnd5-charclass-detail',
@@ -8,7 +9,9 @@ import { Charclass } from '@app/dnd5/models/charclass/charclass';
 })
 export class CharclassDetailComponent {
 
-  @Input() charclass: Charclass = new Charclass();
+  @Input() public charclass: Charclass = new Charclass();
+
+  @Input() public proficiencies: Proficiency[] = [];
 
   asNameList(data: any[]): string {
     let result;

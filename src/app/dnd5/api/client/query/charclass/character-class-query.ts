@@ -1,11 +1,11 @@
 import { ReadOperations } from "@app/dnd5/api/operations/read-operations";
 import { ReferenceList } from "@app/dnd5/api/models/reference-list";
 import { Observable } from "rxjs";
-import { CharacterClassDetails } from "./character-class-by-index";
+import { CharacterClassQueryByIndex } from "./character-class-query-by-index";
 
-export class CharacterClass {
+export class CharacterClassQuery {
 
-  private classRoute = 'classes';
+  private classRoute = '/classes';
 
   constructor(
     private operations: ReadOperations
@@ -17,9 +17,9 @@ export class CharacterClass {
     return this.operations.fetch();
   }
 
-  public index(index: string): CharacterClassDetails {
+  public index(index: string): CharacterClassQueryByIndex {
     this.operations.appendRoute(`/${index}`);
-    return new CharacterClassDetails(this.operations);
+    return new CharacterClassQueryByIndex(this.operations);
   }
 
 }

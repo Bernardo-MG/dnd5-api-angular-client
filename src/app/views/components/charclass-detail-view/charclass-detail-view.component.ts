@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CharclassService } from '@app/dnd5/charclass/services/charclass.service';
 import { Charclass } from '@app/dnd5/models/charclass/charclass';
+import { Proficiency } from '@app/dnd5/models/charclass/proficiency';
 
 @Component({
   selector: 'dnd5-charclass-detail-view',
@@ -12,7 +13,9 @@ export class CharclassDetailViewComponent implements OnInit {
 
   public waiting = false;
 
-  public charclass: Charclass = new Charclass();
+  public charclass = new Charclass();
+
+  public proficiencies: Proficiency[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -31,8 +34,11 @@ export class CharclassDetailViewComponent implements OnInit {
           .subscribe(data => {
             this.charclass = data;
 
+            this.charclassService.getProficiencies(this.charclass.proficiencies).subscribe(p => this.proficiencies = p);
+
             this.waiting = false;
           });
+
       }
     });
   }

@@ -4,7 +4,7 @@ import { Level } from "@app/dnd5/models/charclass/level";
 import { Spell } from "@app/dnd5/models/charclass/spell";
 import { Observable } from "rxjs";
 
-export class CharacterClassLevelByNumber {
+export class CharacterClassQueryLevelByNumber {
 
   private featureRoute = '/features';
 
