@@ -5,7 +5,7 @@
     {{getCount()}} x {{getOf().name}}
 </ng-container>
 <ng-container *ngIf="option.option_type === 'multiple'">
-    all_of
+    All of
     <ul>
         <li *ngFor="let innerOption of getItems()">
             <dnd5-option-set-node [option]="innerOption"></dnd5-option-set-node>
@@ -13,6 +13,6 @@
     </ul>
 </ng-container>
 <ng-container *ngIf="option.option_type === 'choice'">
-    one_of
+    One of
     <dnd5-choice [choice]="getChoice()"></dnd5-choice>
 </ng-container>

@@ -2,17 +2,17 @@
     <h1>{{this.charclass.name}}</h1>
 </header>
 <dnd5-waiting-wrapper [waiting]="waiting">
-    <h2>levels</h2>
+    <h2>Levels</h2>
     <dnd5-levels [levels]="levels"></dnd5-levels>
-    <h2>hit_die</h2>
-    <div><span class="fw-bold">hit_die:</span> {{charclass.hit_die}}</div>
-    <h2>proficiencies</h2>
+    <h2>Hit die</h2>
+    <div><span class="fw-bold">Hit die:</span> {{charclass.hit_die}}</div>
+    <h2>Proficiencies</h2>
     <dnd5-proficiencies [proficiencies]="proficiencies"></dnd5-proficiencies>
-    <h2>proficiency choices</h2>
+    <h2>Proficiency choices</h2>
     <div *ngFor="let choice of charclass.proficiency_choices">
         <dnd5-choice [choice]="choice"></dnd5-choice>
     </div>
-    <h2>initial equipment</h2>
+    <h2>Initial equipment</h2>
     <dnd5-initial-equipment [equipment]="charclass.starting_equipment"></dnd5-initial-equipment>
     <div *ngFor="let choice of charclass.starting_equipment_options">
         <dnd5-choice [choice]="choice"></dnd5-choice>
