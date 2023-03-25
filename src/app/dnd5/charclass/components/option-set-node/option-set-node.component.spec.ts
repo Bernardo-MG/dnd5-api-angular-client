@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChoicesComponent } from './choices.component';
+import { OptionSetNodeComponent } from './option-set-node.component';
 
-describe('ChoicesComponent', () => {
-  let component: ChoicesComponent;
-  let fixture: ComponentFixture<ChoicesComponent>;
+describe('OptionSetNodeComponent', () => {
+  let component: OptionSetNodeComponent;
+  let fixture: ComponentFixture<OptionSetNodeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ChoicesComponent ]
+      declarations: [ OptionSetNodeComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ChoicesComponent);
+    fixture = TestBed.createComponent(OptionSetNodeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

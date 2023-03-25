@@ -1,0 +1,18 @@
+<ng-container *ngIf="option.option_type === 'reference'">
+    {{getItem().name}}
+</ng-container>
+<ng-container *ngIf="option.option_type === 'counted_reference'">
+    {{getCount()}} x {{getOf().name}}
+</ng-container>
+<ng-container *ngIf="option.option_type === 'multiple'">
+    all_of
+    <ul>
+        <li *ngFor="let innerOption of getItems()">
+            <dnd5-option-set-node [option]="innerOption"></dnd5-option-set-node>
+        </li>
+    </ul>
+</ng-container>
+<ng-container *ngIf="option.option_type === 'choice'">
+    one_of
+    <dnd5-choice [choice]="getChoice()"></dnd5-choice>
+</ng-container>

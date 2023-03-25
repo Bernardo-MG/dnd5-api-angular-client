@@ -9,5 +9,12 @@
     <h2>proficiencies</h2>
     <dnd5-proficiencies [proficiencies]="proficiencies"></dnd5-proficiencies>
     <h2>proficiency choices</h2>
-    <dnd5-choices [choices]="charclass.proficiency_choices"></dnd5-choices>
+    <div *ngFor="let choice of charclass.proficiency_choices">
+        <dnd5-choice [choice]="choice"></dnd5-choice>
+    </div>
+    <h2>initial equipment</h2>
+    <dnd5-initial-equipment [equipment]="charclass.starting_equipment"></dnd5-initial-equipment>
+    <div *ngFor="let choice of charclass.starting_equipment_options">
+        <dnd5-choice [choice]="choice"></dnd5-choice>
+    </div>
 </dnd5-waiting-wrapper>

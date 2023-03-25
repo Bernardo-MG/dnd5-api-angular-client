@@ -1,9 +1,12 @@
 <ng-container *ngIf="isOptionArray()">
     <ul>
         <li *ngFor="let option of getOptions()">
-            <ng-container *ngIf="option.option_type === 'reference'">
-                {{getReference(option).name}}
-            </ng-container>
+            <dnd5-option-set-node [option]="option"></dnd5-option-set-node>
         </li>
+    </ul>
+</ng-container>
+<ng-container *ngIf="isEquipment()">
+    <ul>
+        <li>{{getEquipment().name}}</li>
     </ul>
 </ng-container>

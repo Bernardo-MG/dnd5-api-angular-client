@@ -1,6 +1,6 @@
 import { Option } from './option';
 
-export class OptionSetItems {
-    option_type = '';
+export class OptionSetMultiple {
+    option_type = 'multiple';
     items: Option[] = [];
 }

@@ -4,15 +4,19 @@ import { RouterModule } from '@angular/router';
 import { ProficienciesComponent } from './components/proficiencies/proficiencies.component';
 import { CharclassService } from './services/charclass.service';
 import { LevelsComponent } from './components/levels/levels.component';
-import { ChoicesComponent } from './components/choices/choices.component';
 import { OptionSetComponent } from './components/option-set/option-set.component';
+import { InitialEquipmentComponent } from './components/initial-equipment/initial-equipment.component';
+import { OptionSetNodeComponent } from './components/option-set-node/option-set-node.component';
+import { ChoiceComponent } from './components/choice/choice.component';
 
 @NgModule({
   declarations: [
     ProficienciesComponent,
     LevelsComponent,
-    ChoicesComponent,
-    OptionSetComponent
+    OptionSetComponent,
+    InitialEquipmentComponent,
+    OptionSetNodeComponent,
+    ChoiceComponent
   ],
   providers: [
     CharclassService
@@ -24,7 +28,8 @@ import { OptionSetComponent } from './components/option-set/option-set.component
   exports: [
     ProficienciesComponent,
     LevelsComponent,
-    ChoicesComponent
+    InitialEquipmentComponent,
+    ChoiceComponent
   ]
 })
 export class CharclassModule { }
