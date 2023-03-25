@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { OptionSetComponent } from '../option-set/option-set.component';
 import { ChoiceComponent } from './choice.component';
 
 describe('ChoiceComponent', () => {
@@ -8,7 +8,10 @@ describe('ChoiceComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ChoiceComponent ]
+      declarations: [ 
+        ChoiceComponent,
+        OptionSetComponent
+       ]
     })
     .compileComponents();
 
