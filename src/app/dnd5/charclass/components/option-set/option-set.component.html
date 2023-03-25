@@ -1,0 +1,9 @@
+<ng-container *ngIf="isOptionArray()">
+    <ul>
+        <li *ngFor="let option of getOptions()">
+            <ng-container *ngIf="option.option_type === 'reference'">
+                {{getReference(option).name}}
+            </ng-container>
+        </li>
+    </ul>
+</ng-container>

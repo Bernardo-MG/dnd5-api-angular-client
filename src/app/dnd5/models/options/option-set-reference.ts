@@ -1,6 +1,6 @@
 import { Reference } from "../info/reference";
 
-export class OptionSetItem {
-    option_type = '';
+export class OptionSetReference {
+    option_type = 'reference';
     item = new Reference();
 }
