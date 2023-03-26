@@ -43,7 +43,7 @@ export class AngularReadOperations implements ReadOperations {
   }
 
   public appendRoute(route: string): ReadOperations {
-    this._route = `${this._route}/${route}`;
+    this._route = `${this._route}${route}`;
 
     return this;
   }
@@ -71,7 +71,7 @@ export class AngularReadOperations implements ReadOperations {
   }
 
   private getFinalUrl(route: string) {
-    return `${this.rootUrl}/${route}`;
+    return `${this.rootUrl}${route}`;
   }
 
 }

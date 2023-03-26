@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CharclassService } from '@app/dnd5/charclass/services/charclass.service';
 import { Charclass } from '@app/dnd5/models/charclass/charclass';
+import { Level } from '@app/dnd5/models/charclass/level';
+import { Proficiency } from '@app/dnd5/models/charclass/proficiency';
 
 @Component({
   selector: 'dnd5-charclass-detail-view',
@@ -12,7 +14,15 @@ export class CharclassDetailViewComponent implements OnInit {
 
   public waiting = false;
 
-  public charclass: Charclass = new Charclass();
+  public charclass = new Charclass();
+
+  public proficiencies: Proficiency[] = [];
+
+  public levels: Level[] = [];
+
+  private waitingProficiencies = false;
+
+  private waitingLevels = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -21,6 +31,8 @@ export class CharclassDetailViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.waiting = true;
+    this.waitingProficiencies = true;
+    this.waitingLevels = true;
 
     // Loads selected character class
     this.route.paramMap.subscribe(params => {
@@ -31,10 +43,24 @@ export class CharclassDetailViewComponent implements OnInit {
           .subscribe(data => {
             this.charclass = data;
 
-            this.waiting = false;
+            this.charclassService.getProficiencies(this.charclass.proficiencies).subscribe(p => {
+              this.proficiencies = p;
+              this.waitingProficiencies = false;
+              this.checkWaiting();
+            });
+            this.charclassService.getLevels(id).subscribe(l => {
+              this.levels = l;
+              this.waitingLevels = false;
+              this.checkWaiting();
+            });
           });
+
       }
     });
+  }
+
+  private checkWaiting() {
+    this.waiting = (this.waitingProficiencies || this.waitingLevels);
   }
 
 }
