@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { ComponentsModule } from './components/components.module';
-import { LayoutModule } from './layout/layout.module';
+import { LayoutModule } from './core/layout/layout.module';
+import { SharedModule } from './shared/shared.module';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -10,7 +10,7 @@ describe('AppComponent', () => {
       imports: [
         RouterTestingModule,
         LayoutModule,
-        ComponentsModule
+        SharedModule
       ],
       declarations: [
         AppComponent

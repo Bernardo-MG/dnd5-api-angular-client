@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Menu } from './components/models/menu';
+import { Menu } from './shared/models/menu';
 
 @Component({
   selector: 'dnd5-root',

@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ComponentsModule } from '@app/components/components.module';
+import { SharedModule } from '@app/shared/shared.module';
 import { NavbarComponent } from '../navbar/navbar.component';
-
 import { HeaderLayoutComponent } from './header-layout.component';
 
 describe('HeaderLayoutComponent', () => {
@@ -11,7 +10,7 @@ describe('HeaderLayoutComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        ComponentsModule
+        SharedModule
       ],
       declarations: [
         HeaderLayoutComponent,

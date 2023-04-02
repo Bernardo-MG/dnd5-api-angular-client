@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ComponentsModule } from '@app/components/components.module';
+import { SharedModule } from '@app/shared/shared.module';
 import { CharclassRoutingModule } from './charclass-routing.module';
 import { ChoiceComponent } from './components/choice/choice.component';
 import { InitialEquipmentComponent } from './components/initial-equipment/initial-equipment.component';
@@ -31,7 +31,7 @@ import { CharclassListViewComponent } from './views/charclass-list-view/charclas
     CharclassRoutingModule,
     CommonModule,
     RouterModule,
-    ComponentsModule
+    SharedModule
   ],
   exports: [
     ProficienciesComponent,
