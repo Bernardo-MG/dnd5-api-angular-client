@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Menu } from './shared/models/menu';
+import { Menu } from '@app/shared/models/menu';
 
 @Component({
   selector: 'dnd5-root',
@@ -8,8 +8,8 @@ import { Menu } from './shared/models/menu';
 })
 export class AppComponent {
 
-  menus: Menu[] = [{ title: 'Character', links: [{ title: 'Classes', path: '/classes' }] }];
+  public menus: Menu[] = [{ title: 'Character', links: [{ title: 'Classes', path: '/classes' }] }];
 
-  title = 'dnd5-api-angular-client';
+  public title = 'dnd5-api-angular-client';
 
 }

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const charsModule = () => import('@app/dnd5/charclass/charclass.module').then(x => x.CharclassModule);
-const homeModule = () => import('@app/core/home/home.module').then(x => x.ViewsModule);
+const homeModule = () => import('@app/core/home/home.module').then(x => x.HomeModule);
 
 const routes: Routes = [
   {
