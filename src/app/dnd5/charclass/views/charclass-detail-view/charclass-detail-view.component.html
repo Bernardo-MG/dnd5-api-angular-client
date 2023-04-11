@@ -1,17 +1,22 @@
 <shared-article [title]="this.charclass.name" [waiting]="waiting">
-    <h2>Levels</h2>
-    <dnd5-levels [levels]="levels"></dnd5-levels>
-    <h2>Hit die</h2>
-    <div><span class="fw-bold">Hit die:</span> {{charclass.hit_die}}</div>
-    <h2>Proficiencies</h2>
-    <dnd5-proficiencies [proficiencies]="proficiencies"></dnd5-proficiencies>
-    <h2>Proficiency choices</h2>
-    <div *ngFor="let choice of charclass.proficiency_choices">
-        <dnd5-choice [choice]="choice"></dnd5-choice>
-    </div>
-    <h2>Initial equipment</h2>
-    <dnd5-initial-equipment [equipment]="charclass.starting_equipment"></dnd5-initial-equipment>
-    <div *ngFor="let choice of charclass.starting_equipment_options">
-        <dnd5-choice [choice]="choice"></dnd5-choice>
-    </div>
+    <shared-article-section title="Levels">
+        <dnd5-levels [levels]="levels"></dnd5-levels>
+    </shared-article-section>
+    <shared-article-section title="Hit die">
+        <div><span class="fw-bold">Hit die:</span> {{charclass.hit_die}}</div>
+    </shared-article-section>
+    <shared-article-section title="Proficiencies">
+        <dnd5-proficiencies [proficiencies]="proficiencies"></dnd5-proficiencies>
+    </shared-article-section>
+    <shared-article-section title="Proficiency choices">
+        <div *ngFor="let choice of charclass.proficiency_choices">
+            <dnd5-choice [choice]="choice"></dnd5-choice>
+        </div>
+    </shared-article-section>
+    <shared-article-section title="Initial equipment">
+        <dnd5-initial-equipment [equipment]="charclass.starting_equipment"></dnd5-initial-equipment>
+        <div *ngFor="let choice of charclass.starting_equipment_options">
+            <dnd5-choice [choice]="choice"></dnd5-choice>
+        </div>
+    </shared-article-section>
 </shared-article>
