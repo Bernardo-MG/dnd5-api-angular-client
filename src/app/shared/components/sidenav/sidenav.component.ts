@@ -2,11 +2,11 @@ import { Component, Input } from '@angular/core';
 import { Menu } from '@app/shared/models/menu';
 
 @Component({
-  selector: 'shared-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.sass']
+  selector: 'shared-sidenav',
+  templateUrl: './sidenav.component.html',
+  styleUrls: ['./sidenav.component.sass']
 })
-export class MenuComponent {
+export class SidenavComponent {
   
   @Input() id = '';
 

@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LinkListComponent } from './link-list.component';
 
-describe('DataListComponent', () => {
+describe('LinkListComponent', () => {
   let component: LinkListComponent;
   let fixture: ComponentFixture<LinkListComponent>;
 
