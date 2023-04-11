@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'dnd5-page-button',
+  selector: 'shared-page-button',
   templateUrl: './page-button.component.html',
   styleUrls: ['./page-button.component.sass']
 })

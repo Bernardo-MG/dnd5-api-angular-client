@@ -1,7 +1,7 @@
 <header class="pb-2 mb-2 border-bottom">
     <h1>{{this.charclass.name}}</h1>
 </header>
-<dnd5-waiting-wrapper [waiting]="waiting">
+<shared-waiting-wrapper [waiting]="waiting">
     <h2>Levels</h2>
     <dnd5-levels [levels]="levels"></dnd5-levels>
     <h2>Hit die</h2>
@@ -17,4 +17,4 @@
     <div *ngFor="let choice of charclass.starting_equipment_options">
         <dnd5-choice [choice]="choice"></dnd5-choice>
     </div>
-</dnd5-waiting-wrapper>
+</shared-waiting-wrapper>

@@ -2,11 +2,11 @@
     <h1>Classes</h1>
 </header>
 <div class="offset-3 col-6">
-    <dnd5-waiting-wrapper [waiting]="waiting">
+    <shared-waiting-wrapper [waiting]="waiting">
         <div class="d-flex justify-content-center mt-1">
-            <dnd5-pagination [current]="pagination.page" [pages]="pagination.totalPages"
-                (goTo)="onGoToPage($event)"></dnd5-pagination>
+            <shared-pagination [current]="pagination.page" [pages]="pagination.totalPages"
+                (goTo)="onGoToPage($event)"></shared-pagination>
         </div>
-        <dnd5-data-list [links]="links"></dnd5-data-list>
-    </dnd5-waiting-wrapper>
+        <shared-data-list [links]="links"></shared-data-list>
+    </shared-waiting-wrapper>
 </div>

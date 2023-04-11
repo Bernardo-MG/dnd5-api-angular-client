@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
-import { PaginationRanges } from '../models/range/pagination-ranges';
+import { PaginationRanges } from '../../models/range/pagination-ranges';
 
 /**
  * Pagination component. Wraps the generic pagination template, and makes use of PaginationRanges to build the ranges.
  */
 @Component({
-  selector: 'dnd5-pagination',
+  selector: 'shared-pagination',
   templateUrl: './pagination.component.html',
   styleUrls: ['./pagination.component.sass']
 })

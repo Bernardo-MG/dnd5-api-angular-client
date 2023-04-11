@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'dnd5-waiting-wrapper',
+  selector: 'shared-waiting-wrapper',
   templateUrl: './waiting-wrapper.component.html',
   styleUrls: ['./waiting-wrapper.component.sass']
 })

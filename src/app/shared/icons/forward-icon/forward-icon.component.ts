@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'dnd5-forward-icon',
+  selector: 'shared-forward-icon',
   templateUrl: './forward-icon.component.html',
   styleUrls: ['./forward-icon.component.sass']
 })

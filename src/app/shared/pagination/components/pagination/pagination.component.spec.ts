@@ -1,9 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ButtonComponent } from '../../button/button.component';
-import { BackwardIconComponent } from '../../icons/backward-icon/backward-icon.component';
-import { ForwardIconComponent } from '../../icons/forward-icon/forward-icon.component';
-import { IconsModule } from '../../icons/icons.module';
+import { BackwardIconComponent } from '../../../icons/backward-icon/backward-icon.component';
+import { ForwardIconComponent } from '../../../icons/forward-icon/forward-icon.component';
+import { IconsModule } from '../../../icons/icons.module';
 import { PaginationTemplateComponent } from '../pagination-template/pagination-template.component';
 import { PaginationComponent } from './pagination.component';
 
