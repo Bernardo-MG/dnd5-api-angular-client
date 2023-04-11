@@ -1,14 +1,14 @@
 <shared-article [title]="this.charclass.name" [waiting]="waiting">
     <!-- General info -->
-    <shared-article-section title="Features">
+    <shared-article-section heading="Features">
         <div><span class="fw-bold">Hit die:</span> {{charclass.hit_die}}</div>
     </shared-article-section>
     <!-- Levels -->
-    <shared-article-section title="Levels">
+    <shared-article-section heading="Levels">
         <dnd5-levels [levels]="levels"></dnd5-levels>
     </shared-article-section>
     <!-- Proficiencies -->
-    <shared-article-section title="Proficiencies">
+    <shared-article-section heading="Proficiencies">
         <div class="row">
             <div class="col-md-6">
                 <h3>Initial</h3>
@@ -23,7 +23,7 @@
         </div>
     </shared-article-section>
     <!-- Equipment -->
-    <shared-article-section title="Initial equipment">
+    <shared-article-section heading="Initial equipment">
         <dnd5-initial-equipment [equipment]="charclass.starting_equipment"></dnd5-initial-equipment>
         <div *ngFor="let choice of charclass.starting_equipment_options">
             <dnd5-choice [choice]="choice"></dnd5-choice>

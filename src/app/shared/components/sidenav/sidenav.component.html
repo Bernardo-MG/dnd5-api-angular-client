@@ -4,7 +4,7 @@
             {{menu.title}}</p>
         <ul class="nav flex-column">
             <li class="nav-item" *ngFor="let link of menu.links">
-                <a routerLink="{{link.route}}" class="nav-link" title="{{link.title}}">{{link.title}}</a>
+                <a routerLink="{{link.route}}" class="nav-link">{{link.title}}</a>
             </li>
         </ul>
     </ng-template>

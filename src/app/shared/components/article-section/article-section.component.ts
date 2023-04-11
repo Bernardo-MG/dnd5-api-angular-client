@@ -8,8 +8,8 @@ import { Component, Input } from '@angular/core';
 export class ArticleSectionComponent {
 
   /**
-   * Article title, to be shown on the heading.
+   * Article heading text.
    */
-  @Input() public title = '';
+  @Input() public heading = '';
 
 }
