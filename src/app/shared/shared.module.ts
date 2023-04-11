@@ -10,6 +10,7 @@ import { WaitingWrapperComponent } from './components/waiting-wrapper/waiting-wr
 import { WaitingComponent } from './components/waiting/waiting.component';
 import { IconsModule } from './icons/icons.module';
 import { PaginationModule } from './pagination/pagination.module';
+import { ArticleComponent } from './components/article/article.component';
 
 
 
@@ -21,7 +22,8 @@ import { PaginationModule } from './pagination/pagination.module';
     WaitingWrapperComponent,
     HeadingComponent,
     NavbarComponent,
-    SidenavLayoutComponent
+    SidenavLayoutComponent,
+    ArticleComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +40,8 @@ import { PaginationModule } from './pagination/pagination.module';
     PaginationModule,
     HeadingComponent,
     NavbarComponent,
-    SidenavLayoutComponent
+    SidenavLayoutComponent,
+    ArticleComponent
   ]
 })
 export class SharedModule { }
