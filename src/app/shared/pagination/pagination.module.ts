@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PaginationTemplateComponent } from './components/pagination-template/pagination-template.component';
-import { PaginationComponent } from './components/pagination/pagination.component';
+import { PaginationNavigationTemplateComponent } from './components/pagination-navigation-template/pagination-navigation-template.component';
+import { PaginationNavigationComponent } from './components/pagination-navigation/pagination-navigation.component';
 import { IconsModule } from '../icons/icons.module';
 
 
 
 @NgModule({
   declarations: [
-    PaginationComponent,
-    PaginationTemplateComponent,
+    PaginationNavigationComponent,
+    PaginationNavigationTemplateComponent,
   ],
   imports: [
     CommonModule,
     IconsModule
   ],
   exports: [
-    PaginationComponent
+    PaginationNavigationComponent
   ]
 })
 export class PaginationModule { }

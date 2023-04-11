@@ -10,11 +10,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
  * this will show a list of pages like "1, 2, 3 ... 5, 6, 7 ... 9, 10, 11".
  */
 @Component({
-  selector: 'shared-pagination-template',
-  templateUrl: './pagination-template.component.html',
-  styleUrls: ['./pagination-template.component.sass']
+  selector: 'shared-pagination-navigation-template',
+  templateUrl: './pagination-navigation-template.component.html',
+  styleUrls: ['./pagination-navigation-template.component.sass']
 })
-export class PaginationTemplateComponent {
+export class PaginationNavigationTemplateComponent {
 
   /**
    * Current page number. This is the pointer to move around the pagination.
