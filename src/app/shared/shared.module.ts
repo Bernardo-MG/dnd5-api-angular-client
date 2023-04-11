@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { DataListComponent } from './components/data-list/data-list.component';
 import { HeadingComponent } from './components/heading/heading.component';
+import { LinkListComponent } from './components/link-list/link-list.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SideMenuLayoutComponent } from './components/side-menu-layout/side-menu-layout.component';
@@ -15,7 +15,7 @@ import { PaginationModule } from './pagination/pagination.module';
 
 @NgModule({
   declarations: [
-    DataListComponent,
+    LinkListComponent,
     MenuComponent,
     WaitingComponent,
     WaitingWrapperComponent,
@@ -30,7 +30,7 @@ import { PaginationModule } from './pagination/pagination.module';
     PaginationModule
   ],
   exports: [
-    DataListComponent,
+    LinkListComponent,
     MenuComponent,
     WaitingComponent,
     WaitingWrapperComponent,
