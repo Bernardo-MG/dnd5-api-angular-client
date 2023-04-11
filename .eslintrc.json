@@ -19,7 +19,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "dnd5",
+            "prefix": ["core", "shared", "dnd5"],
             "style": "camelCase"
           }
         ],
@@ -27,7 +27,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "dnd5",
+            "prefix": ["core", "shared", "dnd5"],
             "style": "kebab-case"
           }
         ]
