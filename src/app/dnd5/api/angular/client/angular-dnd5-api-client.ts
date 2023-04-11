@@ -25,6 +25,10 @@ export class AngularDnd5ApiClient implements Dnd5ApiClient {
     return new ProficiencyQuery(this.getOperations());
   }
 
+  public spell(): CharacterClassQuery {
+    return new SpellQuery(this.getOperations());
+  }
+
   private getOperations(): ReadOperations {
     return new AngularReadOperations(this.http, this.rootUrl);
   }
