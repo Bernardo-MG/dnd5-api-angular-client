@@ -7,7 +7,7 @@ jobs:
     name: Deploy docs for develop
     strategy:
       matrix:
-        node: [ 19 ]
+        node: [ 18 ]
     environment: deployment_site
     concurrency:
       group: deploy-ssh-${{ github.ref }}
@@ -40,7 +40,7 @@ jobs:
     name: Deploy docs for master
     strategy:
       matrix:
-        node: [ 19 ]
+        node: [ 18 ]
     environment: deployment_site
     concurrency:
       group: deploy-ssh-${{ github.ref }}
