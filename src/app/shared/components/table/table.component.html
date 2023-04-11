@@ -1,0 +1,18 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <!-- Headers -->
+            <th *ngFor="let cell of header" scope="col">
+                {{cell}}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Rows -->
+        <tr *ngFor="let row of rows">
+            <td *ngFor="let cell of row">
+                {{cell}}
+            </td>
+        </tr>
+    </tbody>
+</table>

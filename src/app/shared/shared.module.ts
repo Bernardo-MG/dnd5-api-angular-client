@@ -11,6 +11,7 @@ import { WaitingCueComponent } from './components/waiting-cue/waiting-cue.compon
 import { WaitingWrapperComponent } from './components/waiting-wrapper/waiting-wrapper.component';
 import { IconsModule } from './icons/icons.module';
 import { PaginationModule } from './pagination/pagination.module';
+import { TableComponent } from './components/table/table.component';
 
 
 
@@ -23,7 +24,8 @@ import { PaginationModule } from './pagination/pagination.module';
     NavbarComponent,
     SidenavLayoutComponent,
     ArticleComponent,
-    ArticleSectionComponent
+    ArticleSectionComponent,
+    TableComponent
   ],
   imports: [
     CommonModule,
@@ -41,7 +43,8 @@ import { PaginationModule } from './pagination/pagination.module';
     NavbarComponent,
     SidenavLayoutComponent,
     ArticleComponent,
-    ArticleSectionComponent
+    ArticleSectionComponent,
+    TableComponent
   ]
 })
 export class SharedModule { }
