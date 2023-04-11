@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { SharedModule } from '@app/shared/shared.module';
 import { ArticleComponent } from './article.component';
 
 describe('ArticleComponent', () => {
@@ -8,9 +8,14 @@ describe('ArticleComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ArticleComponent ]
+      imports: [
+        SharedModule
+      ],
+      declarations: [
+        ArticleComponent
+      ]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ArticleComponent);
     component = fixture.componentInstance;

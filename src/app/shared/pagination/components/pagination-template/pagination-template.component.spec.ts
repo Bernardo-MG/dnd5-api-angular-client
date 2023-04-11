@@ -1,9 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { BackwardIconComponent } from '../../../icons/backward-icon/backward-icon.component';
-import { ForwardIconComponent } from '../../../icons/forward-icon/forward-icon.component';
-import { IconsModule } from '../../../icons/icons.module';
-import { PageButtonComponent } from '../page-button/page-button.component';
 import { PaginationTemplateComponent } from './pagination-template.component';
 
 describe('PaginationTemplateComponent', () => {
@@ -12,15 +7,8 @@ describe('PaginationTemplateComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        FontAwesomeModule,
-        IconsModule
-      ],
       declarations: [
-        PaginationTemplateComponent,
-        PageButtonComponent,
-        BackwardIconComponent,
-        ForwardIconComponent
+        PaginationTemplateComponent
       ]
     })
       .compileComponents();
@@ -116,7 +104,7 @@ describe('PaginationTemplateComponent', () => {
     component.left = [1];
     fixture.detectChanges();
 
-    const button = fixture.nativeElement.querySelectorAll('shared-page-button button');
+    const button = fixture.nativeElement.querySelectorAll('.page-item-number button');
     expect(button.length).toEqual(1);
   });
 
@@ -124,7 +112,7 @@ describe('PaginationTemplateComponent', () => {
     component.left = [1, 2, 3];
     fixture.detectChanges();
 
-    const button = fixture.nativeElement.querySelectorAll('shared-page-button button');
+    const button = fixture.nativeElement.querySelectorAll('.page-item-number button');
     expect(button.length).toEqual(3);
   });
 
@@ -132,7 +120,7 @@ describe('PaginationTemplateComponent', () => {
     component.right = [5];
     fixture.detectChanges();
 
-    const button = fixture.nativeElement.querySelectorAll('shared-page-button button');
+    const button = fixture.nativeElement.querySelectorAll('.page-item-number button');
     expect(button.length).toEqual(0);
   });
 
@@ -141,7 +129,7 @@ describe('PaginationTemplateComponent', () => {
     component.right = [5];
     fixture.detectChanges();
 
-    const button = fixture.nativeElement.querySelectorAll('shared-page-button button');
+    const button = fixture.nativeElement.querySelectorAll('.page-item-number button');
     expect(button.length).toEqual(2);
   });
 
@@ -150,7 +138,7 @@ describe('PaginationTemplateComponent', () => {
     component.right = [5, 6, 7];
     fixture.detectChanges();
 
-    const button = fixture.nativeElement.querySelectorAll('shared-page-button button');
+    const button = fixture.nativeElement.querySelectorAll('.page-item-number button');
     expect(button.length).toEqual(6);
   });
 
@@ -158,7 +146,7 @@ describe('PaginationTemplateComponent', () => {
     component.center = [5];
     fixture.detectChanges();
 
-    const button = fixture.nativeElement.querySelectorAll('shared-page-button button');
+    const button = fixture.nativeElement.querySelectorAll('.page-item-number button');
     expect(button.length).toEqual(0);
   });
 
@@ -167,7 +155,7 @@ describe('PaginationTemplateComponent', () => {
     component.center = [5];
     fixture.detectChanges();
 
-    const button = fixture.nativeElement.querySelectorAll('shared-page-button button');
+    const button = fixture.nativeElement.querySelectorAll('.page-item-number button');
     expect(button.length).toEqual(2);
   });
 
@@ -176,7 +164,7 @@ describe('PaginationTemplateComponent', () => {
     component.center = [5, 6, 7];
     fixture.detectChanges();
 
-    const button = fixture.nativeElement.querySelectorAll('shared-page-button button');
+    const button = fixture.nativeElement.querySelectorAll('.page-item-number button');
     expect(button.length).toEqual(6);
   });
 
@@ -185,7 +173,7 @@ describe('PaginationTemplateComponent', () => {
     component.right = [10];
     fixture.detectChanges();
 
-    const button = fixture.nativeElement.querySelectorAll('shared-page-button button');
+    const button = fixture.nativeElement.querySelectorAll('.page-item-number button');
     expect(button.length).toEqual(0);
   });
 
@@ -195,7 +183,7 @@ describe('PaginationTemplateComponent', () => {
     component.right = [10];
     fixture.detectChanges();
 
-    const button = fixture.nativeElement.querySelectorAll('shared-page-button button');
+    const button = fixture.nativeElement.querySelectorAll('.page-item-number button');
     expect(button.length).toEqual(3);
   });
 
@@ -205,7 +193,7 @@ describe('PaginationTemplateComponent', () => {
     component.right = [10, 11, 12];
     fixture.detectChanges();
 
-    const button = fixture.nativeElement.querySelectorAll('shared-page-button button');
+    const button = fixture.nativeElement.querySelectorAll('.page-item-number button');
     expect(button.length).toEqual(9);
   });
 
@@ -350,7 +338,7 @@ describe('PaginationTemplateComponent', () => {
     component.right = [5];
     fixture.detectChanges();
 
-    const buttons = fixture.nativeElement.querySelectorAll('shared-page-button button.disabled');
+    const buttons = fixture.nativeElement.querySelectorAll('.page-item-number button.disabled');
     expect(buttons.length).toEqual(3);
   });
 

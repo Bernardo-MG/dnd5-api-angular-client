@@ -1,8 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { BackwardIconComponent } from '../../../icons/backward-icon/backward-icon.component';
-import { ForwardIconComponent } from '../../../icons/forward-icon/forward-icon.component';
-import { IconsModule } from '../../../icons/icons.module';
 import { PaginationTemplateComponent } from '../pagination-template/pagination-template.component';
 import { PaginationComponent } from './pagination.component';
 
@@ -12,15 +8,9 @@ describe('PaginationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        FontAwesomeModule,
-        IconsModule
-      ],
       declarations: [
         PaginationComponent,
-        PaginationTemplateComponent,
-        BackwardIconComponent,
-        ForwardIconComponent
+        PaginationTemplateComponent
       ]
     })
       .compileComponents();
