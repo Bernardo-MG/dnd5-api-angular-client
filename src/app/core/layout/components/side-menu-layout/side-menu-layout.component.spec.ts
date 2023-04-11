@@ -1,11 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SharedModule } from '@app/shared/shared.module';
 import { NavbarComponent } from '../navbar/navbar.component';
-import { HeaderLayoutComponent } from './header-layout.component';
+import { SideMenuLayoutComponent } from './side-menu-layout.component';
 
 describe('HeaderLayoutComponent', () => {
-  let component: HeaderLayoutComponent;
-  let fixture: ComponentFixture<HeaderLayoutComponent>;
+  let component: SideMenuLayoutComponent;
+  let fixture: ComponentFixture<SideMenuLayoutComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -13,13 +13,13 @@ describe('HeaderLayoutComponent', () => {
         SharedModule
       ],
       declarations: [
-        HeaderLayoutComponent,
+        SideMenuLayoutComponent,
         NavbarComponent
       ]
     })
       .compileComponents();
 
-    fixture = TestBed.createComponent(HeaderLayoutComponent);
+    fixture = TestBed.createComponent(SideMenuLayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

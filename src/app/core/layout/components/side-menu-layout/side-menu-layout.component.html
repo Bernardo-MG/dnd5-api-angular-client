@@ -1,13 +1,18 @@
 <body class="d-flex flex-column">
+    <!-- Header with main bar -->
     <header>
         <core-navbar [title]="title" [github]="github"></core-navbar>
     </header>
+    <!-- Main section -->
     <main>
         <div class="container-fluid">
             <div class="row">
+                <!-- Left side menu -->
                 <div class="col-md-3 col-lg-2">
                     <shared-menu [menus]="menus" id="sidebarMenu"></shared-menu>
                 </div>
+                <!-- Main content -->
+                <!-- This is wrapped by the layout -->
                 <div class="ms-sm-auto col-md-9 col-lg-10">
                     <section id="main-section" class="container flex-grow-1 pt-4 mb-1">
                         <ng-content></ng-content>

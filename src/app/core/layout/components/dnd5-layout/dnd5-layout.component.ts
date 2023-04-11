@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Menu } from '@app/shared/models/menu';
 
 @Component({
-  selector: 'app-main-layout',
-  templateUrl: './main-layout.component.html',
-  styleUrls: ['./main-layout.component.sass']
+  selector: 'core-dnd5-layout',
+  templateUrl: './dnd5-layout.component.html',
+  styleUrls: ['./dnd5-layout.component.sass']
 })
-export class MainLayoutComponent {
+export class Dnd5LayoutComponent {
 
   public menus: Menu[] = [{ title: 'Character', links: [{ title: 'Classes', path: '/classes' }] }];
 
