@@ -5,6 +5,7 @@ import { FastBackwardIconComponent } from './fast-backward-icon/fast-backward-ic
 import { FastForwardIconComponent } from './fast-forward-icon/fast-forward-icon.component';
 import { ForwardIconComponent } from './forward-icon/forward-icon.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { GithubIconComponent } from './github-icon/github-icon.component';
 
 
 
@@ -13,7 +14,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BackwardIconComponent,
     ForwardIconComponent,
     FastBackwardIconComponent,
-    FastForwardIconComponent
+    FastForwardIconComponent,
+    GithubIconComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BackwardIconComponent,
     ForwardIconComponent,
     FastBackwardIconComponent,
-    FastForwardIconComponent
+    FastForwardIconComponent,
+    GithubIconComponent
   ]
 })
 export class IconsModule { }

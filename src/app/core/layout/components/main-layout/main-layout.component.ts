@@ -12,4 +12,6 @@ export class MainLayoutComponent {
 
   public title = 'dnd5-api-angular-client';
 
+  public github = 'https://github.com/Bernardo-MG/dnd5-api-angular-client';
+
 }

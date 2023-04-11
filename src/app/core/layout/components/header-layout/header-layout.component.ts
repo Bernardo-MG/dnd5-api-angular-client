@@ -12,4 +12,6 @@ export class HeaderLayoutComponent {
 
   @Input() public title = '';
 
+  @Input() public github = '';
+
 }

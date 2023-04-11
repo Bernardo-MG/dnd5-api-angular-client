@@ -9,4 +9,6 @@ export class NavbarComponent {
 
   @Input() title = '';
 
+  @Input() public github = '';
+
 }
