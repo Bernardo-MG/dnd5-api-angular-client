@@ -8,7 +8,7 @@ import { Menu } from '@app/shared/models/menu';
 })
 export class Dnd5LayoutComponent {
 
-  public menus: Menu[] = [{ title: 'Character', links: [{ title: 'Classes', path: '/classes' }] }];
+  public menus: Menu[] = [{ title: 'Character', links: [{ title: 'Classes', route: '/classes' }] }];
 
   public title = 'dnd5-api-angular-client';
 

@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { WaitingWrapperComponent } from './waiting-wrapper.component';
 
 describe('WaitingWrapperComponent', () => {

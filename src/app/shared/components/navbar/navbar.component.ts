@@ -1,5 +1,8 @@
 import { Component, Input } from '@angular/core';
 
+/**
+ * Navigation bar component.
+ */
 @Component({
   selector: 'shared-navbar',
   templateUrl: './navbar.component.html',
@@ -7,8 +10,14 @@ import { Component, Input } from '@angular/core';
 })
 export class NavbarComponent {
 
+  /**
+   * Navbar title.
+   */
   @Input() title = '';
 
+  /**
+   * Github icon.
+   */
   @Input() public github = '';
 
 }

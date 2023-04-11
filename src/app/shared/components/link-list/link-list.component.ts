@@ -1,6 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { MenuLink } from '@app/shared/models/menu-link';
+import { Link } from '@app/shared/models/link';
 
+/**
+ * List of links component. They will be shown in the same order as received.
+ */
 @Component({
   selector: 'shared-link-list',
   templateUrl: './link-list.component.html',
@@ -8,6 +11,9 @@ import { MenuLink } from '@app/shared/models/menu-link';
 })
 export class LinkListComponent {
 
-  @Input() links: MenuLink[] = [];
+  /**
+   * Links to show in the list.
+   */
+  @Input() links: Link[] = [];
 
 }

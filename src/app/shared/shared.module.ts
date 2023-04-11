@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HeadingComponent } from './components/article-heading/article-heading.component';
+import { HeaderComponent } from './components/article-header/article-header.component';
 import { LinkListComponent } from './components/link-list/link-list.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidenavLayoutComponent } from './components/sidenav-layout/side-menu-layout.component';
 import { WaitingWrapperComponent } from './components/waiting-wrapper/waiting-wrapper.component';
-import { WaitingComponent } from './components/waiting/waiting.component';
+import { WaitingCueComponent } from './components/waiting-cue/waiting-cue.component';
 import { IconsModule } from './icons/icons.module';
 import { PaginationModule } from './pagination/pagination.module';
 import { ArticleComponent } from './components/article/article.component';
@@ -18,9 +18,9 @@ import { ArticleComponent } from './components/article/article.component';
   declarations: [
     LinkListComponent,
     SidenavComponent,
-    WaitingComponent,
+    WaitingCueComponent,
     WaitingWrapperComponent,
-    HeadingComponent,
+    HeaderComponent,
     NavbarComponent,
     SidenavLayoutComponent,
     ArticleComponent
@@ -34,7 +34,7 @@ import { ArticleComponent } from './components/article/article.component';
   exports: [
     LinkListComponent,
     SidenavComponent,
-    WaitingComponent,
+    WaitingCueComponent,
     WaitingWrapperComponent,
     IconsModule,
     PaginationModule,
