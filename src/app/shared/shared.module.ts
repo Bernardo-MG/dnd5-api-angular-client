@@ -2,12 +2,14 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { DataListComponent } from './components/data-list/data-list.component';
+import { HeadingComponent } from './components/heading/heading.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SideMenuLayoutComponent } from './components/side-menu-layout/side-menu-layout.component';
 import { WaitingWrapperComponent } from './components/waiting-wrapper/waiting-wrapper.component';
 import { WaitingComponent } from './components/waiting/waiting.component';
 import { IconsModule } from './icons/icons.module';
 import { PaginationModule } from './pagination/pagination.module';
-import { HeadingComponent } from './components/heading/heading.component';
 
 
 
@@ -17,7 +19,9 @@ import { HeadingComponent } from './components/heading/heading.component';
     MenuComponent,
     WaitingComponent,
     WaitingWrapperComponent,
-    HeadingComponent
+    HeadingComponent,
+    NavbarComponent,
+    SideMenuLayoutComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +36,9 @@ import { HeadingComponent } from './components/heading/heading.component';
     WaitingWrapperComponent,
     IconsModule,
     PaginationModule,
-    HeadingComponent
+    HeadingComponent,
+    NavbarComponent,
+    SideMenuLayoutComponent
   ]
 })
 export class SharedModule { }
