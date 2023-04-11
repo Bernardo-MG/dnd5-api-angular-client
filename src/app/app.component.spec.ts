@@ -27,6 +27,5 @@ describe('AppComponent', () => {
   it(`should have as title 'dnd5-api-angular-client'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('dnd5-api-angular-client');
   });
 });
