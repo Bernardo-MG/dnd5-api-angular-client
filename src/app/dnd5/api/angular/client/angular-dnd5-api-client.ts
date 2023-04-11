@@ -5,6 +5,7 @@ import { CharacterClassQuery } from "../../client/query/charclass/character-clas
 import { Dnd5ApiClient } from "../../client/dnd5-api-client";
 import { AngularReadOperations } from "../operations/angular-read-operations";
 import { ProficiencyQuery } from "../../client/query/charclass/proficiency-query";
+import { SpellQuery } from "../../client/query/charclass/spell-query";
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +26,7 @@ export class AngularDnd5ApiClient implements Dnd5ApiClient {
     return new ProficiencyQuery(this.getOperations());
   }
 
-  public spell(): CharacterClassQuery {
+  public spell(): SpellQuery {
     return new SpellQuery(this.getOperations());
   }
 

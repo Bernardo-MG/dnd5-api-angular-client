@@ -8,9 +8,14 @@ import { Menu } from '@app/shared/models/menu';
 })
 export class Dnd5LayoutComponent {
 
-  public menus: Menu[] = [{ title: 'Character', links: [{ title: 'Classes', route: '/classes' }] }];
+  public menus: Menu[] = [{
+    title: 'Character', links: [
+      { title: 'Classes', route: '/classes' },
+      { title: 'Spells', route: '/spells' }
+    ]
+  }];
 
-  public title = 'dnd5-api-angular-client';
+  public title = 'DND5 API Angular Client';
 
   public github = 'https://github.com/Bernardo-MG/dnd5-api-angular-client';
 
