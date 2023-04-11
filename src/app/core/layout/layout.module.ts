@@ -5,11 +5,13 @@ import { RouterModule } from '@angular/router';
 import { HeaderLayoutComponent } from './components/header-layout/header-layout.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SharedModule } from '@app/shared/shared.module';
+import { MainLayoutComponent } from './components/main-layout/main-layout.component';
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    HeaderLayoutComponent
+    HeaderLayoutComponent,
+    MainLayoutComponent
   ],
   imports: [
     CommonModule,
