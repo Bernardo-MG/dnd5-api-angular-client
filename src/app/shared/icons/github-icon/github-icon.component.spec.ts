@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { GithubIconComponent } from './github-icon.component';
 
 describe('GithubIconComponent', () => {
@@ -8,9 +8,14 @@ describe('GithubIconComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GithubIconComponent ]
+      imports: [
+        FontAwesomeModule
+      ],
+      declarations: [
+        GithubIconComponent
+      ]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(GithubIconComponent);
     component = fixture.componentInstance;

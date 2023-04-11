@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { SharedModule } from '@app/shared/shared.module';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { SidenavLayoutComponent } from './side-menu-layout.component';
@@ -10,7 +11,8 @@ describe('SidenavLayoutComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        SharedModule
+        SharedModule,
+        RouterTestingModule
       ],
       declarations: [
         SidenavLayoutComponent,
