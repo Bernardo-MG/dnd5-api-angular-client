@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HeadingComponent } from './components/heading/heading.component';
+import { HeadingComponent } from './components/article-heading/article-heading.component';
 import { LinkListComponent } from './components/link-list/link-list.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -38,7 +38,6 @@ import { ArticleComponent } from './components/article/article.component';
     WaitingWrapperComponent,
     IconsModule,
     PaginationModule,
-    HeadingComponent,
     NavbarComponent,
     SidenavLayoutComponent,
     ArticleComponent
