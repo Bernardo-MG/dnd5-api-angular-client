@@ -7,6 +7,7 @@ import { WaitingWrapperComponent } from './components/waiting-wrapper/waiting-wr
 import { WaitingComponent } from './components/waiting/waiting.component';
 import { IconsModule } from './icons/icons.module';
 import { PaginationModule } from './pagination/pagination.module';
+import { HeadingComponent } from './components/heading/heading.component';
 
 
 
@@ -15,7 +16,8 @@ import { PaginationModule } from './pagination/pagination.module';
     DataListComponent,
     MenuComponent,
     WaitingComponent,
-    WaitingWrapperComponent
+    WaitingWrapperComponent,
+    HeadingComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +31,8 @@ import { PaginationModule } from './pagination/pagination.module';
     WaitingComponent,
     WaitingWrapperComponent,
     IconsModule,
-    PaginationModule
+    PaginationModule,
+    HeadingComponent
   ]
 })
 export class SharedModule { }
