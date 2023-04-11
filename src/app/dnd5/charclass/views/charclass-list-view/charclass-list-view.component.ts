@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CharclassService } from '@app/dnd5/charclass/services/charclass.service';
-import { MenuLink } from '@app/shared/models/menu-link';
+import { Link } from '@app/shared/models/link';
 import { Pagination } from '@app/shared/models/pagination';
 
 @Component({
@@ -12,9 +12,9 @@ export class CharclassListViewComponent implements OnInit {
 
   public waiting = false;
 
-  public data: MenuLink[] = [];
+  public data: Link[] = [];
 
-  public links: MenuLink[] = [];
+  public links: Link[] = [];
 
   public pagination = new Pagination();
 
@@ -30,7 +30,7 @@ export class CharclassListViewComponent implements OnInit {
       this.pagination = this.loadPagination(data.length);
 
       this.data = data.map(c => {
-        return { title: c.name, path: `/classes/${c.index}` };
+        return { title: c.name, route: `/classes/${c.index}` };
       });
 
       this.links = this.data.slice(0, this.pagination.size);

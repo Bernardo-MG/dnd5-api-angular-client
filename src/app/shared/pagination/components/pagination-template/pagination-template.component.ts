@@ -146,5 +146,20 @@ export class PaginationTemplateComponent {
   public isCurrent(page: number) {
     return page === this.current;
   }
+  
+
+  public getLabel(page: number) {
+    let label;
+
+    if (this.isCurrent(page)) {
+      // Current page
+      label = 'page';
+    } else {
+      // Any other page
+      label = '';
+    }
+
+    return label;
+  }
 
 }

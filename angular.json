@@ -33,7 +33,7 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/bootswatch/dist/lux/bootstrap.min.css"
+              "./node_modules/bootswatch/dist/materia/bootstrap.min.css"
             ],
             "scripts": [
               "./node_modules/@popperjs/core/dist/umd/popper.min.js",

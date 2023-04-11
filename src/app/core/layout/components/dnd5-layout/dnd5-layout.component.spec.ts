@@ -1,25 +1,25 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { SharedModule } from '@app/shared/shared.module';
-import { HomeViewComponent } from './home-view.component';
+import { Dnd5LayoutComponent } from './dnd5-layout.component';
 
-describe('HomeViewComponent', () => {
-  let component: HomeViewComponent;
-  let fixture: ComponentFixture<HomeViewComponent>;
+describe('Dnd5LayoutComponent', () => {
+  let component: Dnd5LayoutComponent;
+  let fixture: ComponentFixture<Dnd5LayoutComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        SharedModule
+        SharedModule,
+        RouterTestingModule
       ],
       declarations: [
-        HomeViewComponent
+        Dnd5LayoutComponent
       ]
     })
       .compileComponents();
-  });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(HomeViewComponent);
+    fixture = TestBed.createComponent(Dnd5LayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

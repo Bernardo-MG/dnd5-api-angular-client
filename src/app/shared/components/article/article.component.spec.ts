@@ -1,23 +1,23 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { GithubIconComponent } from './github-icon.component';
+import { SharedModule } from '@app/shared/shared.module';
+import { ArticleComponent } from './article.component';
 
-describe('GithubIconComponent', () => {
-  let component: GithubIconComponent;
-  let fixture: ComponentFixture<GithubIconComponent>;
+describe('ArticleComponent', () => {
+  let component: ArticleComponent;
+  let fixture: ComponentFixture<ArticleComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        FontAwesomeModule
+        SharedModule
       ],
       declarations: [
-        GithubIconComponent
+        ArticleComponent
       ]
     })
       .compileComponents();
 
-    fixture = TestBed.createComponent(GithubIconComponent);
+    fixture = TestBed.createComponent(ArticleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

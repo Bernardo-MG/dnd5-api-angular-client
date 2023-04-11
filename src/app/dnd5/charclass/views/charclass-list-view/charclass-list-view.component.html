@@ -1,12 +1,9 @@
-<header class="pb-2 mb-2 border-bottom">
-    <h1>Classes</h1>
-</header>
-<div class="offset-3 col-6">
-    <shared-waiting-wrapper [waiting]="waiting">
+<shared-article title="Classes" [waiting]="waiting">
+    <div class="offset-3 col-6">
         <div class="d-flex justify-content-center mt-1">
             <shared-pagination [current]="pagination.page" [pages]="pagination.totalPages"
                 (goTo)="onGoToPage($event)"></shared-pagination>
         </div>
-        <shared-data-list [links]="links"></shared-data-list>
-    </shared-waiting-wrapper>
-</div>
+        <shared-link-list [links]="links"></shared-link-list>
+    </div>
+</shared-article>

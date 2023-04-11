@@ -2,16 +2,12 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { HeaderLayoutComponent } from './components/header-layout/header-layout.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { SharedModule } from '@app/shared/shared.module';
-import { MainLayoutComponent } from './components/main-layout/main-layout.component';
+import { Dnd5LayoutComponent } from './components/dnd5-layout/dnd5-layout.component';
 
 @NgModule({
   declarations: [
-    NavbarComponent,
-    HeaderLayoutComponent,
-    MainLayoutComponent
+    Dnd5LayoutComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +16,7 @@ import { MainLayoutComponent } from './components/main-layout/main-layout.compon
     SharedModule
   ],
   exports: [
-    HeaderLayoutComponent
+    Dnd5LayoutComponent
   ]
 })
 export class LayoutModule { }

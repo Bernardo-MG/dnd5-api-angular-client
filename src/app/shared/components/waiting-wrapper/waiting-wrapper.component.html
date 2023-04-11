@@ -1,7 +1,7 @@
 <div *ngIf="waiting; then wait else wrapped"></div>
 <ng-template #wait>
     <div class="d-flex justify-content-center" aria-hidden="true">
-        <shared-waiting></shared-waiting>
+        <shared-waiting-cue></shared-waiting-cue>
     </div>
 </ng-template>
 <ng-template #wrapped>

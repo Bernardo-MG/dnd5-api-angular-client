@@ -1,6 +1,6 @@
-import { MenuLink } from "./menu-link";
+import { Link } from "./link";
 
 export interface Menu {
     title: string;
-    links: MenuLink[];
+    links: Link[];
 }

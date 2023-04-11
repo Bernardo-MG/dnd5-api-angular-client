@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { WaitingWrapperComponent } from './waiting-wrapper.component';
+import { SidenavComponent } from './sidenav.component';
 
-describe('WaitingWrapperComponent', () => {
-  let component: WaitingWrapperComponent;
-  let fixture: ComponentFixture<WaitingWrapperComponent>;
+describe('SidenavComponent', () => {
+  let component: SidenavComponent;
+  let fixture: ComponentFixture<SidenavComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WaitingWrapperComponent ]
+      declarations: [ SidenavComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(WaitingWrapperComponent);
+    fixture = TestBed.createComponent(SidenavComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

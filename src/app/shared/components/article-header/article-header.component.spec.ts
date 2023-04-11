@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { WaitingWrapperComponent } from './waiting-wrapper.component';
 
-describe('WaitingWrapperComponent', () => {
-  let component: WaitingWrapperComponent;
-  let fixture: ComponentFixture<WaitingWrapperComponent>;
+import { HeaderComponent } from './article-header.component';
+
+describe('HeaderComponent', () => {
+  let component: HeaderComponent;
+  let fixture: ComponentFixture<HeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WaitingWrapperComponent ]
+      declarations: [ HeaderComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(WaitingWrapperComponent);
+    fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

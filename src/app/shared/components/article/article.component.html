@@ -1,0 +1,6 @@
+<shared-article-header *ngIf="title.length">
+    {{title}}
+</shared-article-header>
+<shared-waiting-wrapper [waiting]="waiting">
+    <ng-content></ng-content>
+</shared-waiting-wrapper>
