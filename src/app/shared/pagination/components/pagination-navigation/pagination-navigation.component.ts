@@ -22,6 +22,11 @@ export class PaginationNavigationComponent implements OnChanges {
   @Input() public pages = 0;
 
   /**
+   * Disabled flag. To disable all the inner components.
+   */
+  @Input() public disabled = false;
+
+  /**
    * "Go to page" event emitter. Repeats the wrapped component event.
    */
   @Output() public goTo = new EventEmitter<number>();

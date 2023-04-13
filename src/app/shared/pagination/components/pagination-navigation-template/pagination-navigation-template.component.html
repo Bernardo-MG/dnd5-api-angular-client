@@ -16,7 +16,7 @@
         </li>
         <!-- Left range -->
         <li *ngFor="let page of left" class="page-item page-item-number" [class.active]="isCurrent(page)" [class.disabled]="disabled" [attr.aria-disabled]="disabled"
-            [attr.aria-current]="getLabel(page)">
+            [attr.aria-current]="getCurrentLabel(page)">
             <button type="button" class="page-link" (click)="onGoTo(page)" [disabled]="disabled"
                 [class.disabled]="disabled" [attr.aria-disabled]="disabled" aria-label="Go to page">
                 {{page}}
@@ -28,7 +28,7 @@
                 <span class="page-link">...</span>
             </li>
             <li *ngFor="let page of center" class="page-item page-item-number" [class.active]="isCurrent(page)" [class.disabled]="disabled" [attr.aria-disabled]="disabled"
-                [attr.aria-current]="getLabel(page)">
+                [attr.aria-current]="getCurrentLabel(page)">
                 <button type="button" class="page-link" (click)="onGoTo(page)" [disabled]="disabled"
                     [class.disabled]="disabled" [attr.aria-disabled]="disabled" aria-label="Go to page">
                     {{page}}
@@ -41,7 +41,7 @@
                 <span class="page-link">...</span>
             </li>
             <li *ngFor="let page of right" class="page-item page-item-number" [class.active]="isCurrent(page)" [class.disabled]="disabled" [attr.aria-disabled]="disabled"
-                [attr.aria-current]="getLabel(page)">
+                [attr.aria-current]="getCurrentLabel(page)">
                 <button type="button" class="page-link" (click)="onGoTo(page)" [disabled]="disabled"
                     [class.disabled]="disabled" [attr.aria-disabled]="disabled" aria-label="Go to page">
                     {{page}}
