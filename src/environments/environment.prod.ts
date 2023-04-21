@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://www.dnd5eapi.co/api/classes'
+  apiUrl: 'http://www.dnd5eapi.co/api'
 };
