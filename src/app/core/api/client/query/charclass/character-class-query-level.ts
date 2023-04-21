@@ -1,4 +1,4 @@
-import { ReadOperations } from "@app/dnd5/api/operations/read-operations";
+import { ReadOperations } from "@app/core/api/client/read-operations";
 import { Level } from "@app/dnd5/models/charclass/level";
 import { Observable } from "rxjs";
 import { CharacterClassQueryLevelByNumber } from "./character-class-query-level-by-number";

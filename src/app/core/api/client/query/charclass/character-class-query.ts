@@ -1,5 +1,5 @@
-import { ReadOperations } from "@app/dnd5/api/operations/read-operations";
-import { ReferenceList } from "@app/dnd5/api/models/reference-list";
+import { ReadOperations } from "@app/core/api/client/read-operations";
+import { ReferenceList } from "@app/core/api/models/reference-list";
 import { Observable } from "rxjs";
 import { CharacterClassQueryByIndex } from "./character-class-query-by-index";
 

@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { ReadOperations } from '../../operations/read-operations';
+import { ReadOperations } from './read-operations';
 
 export class AngularReadOperations implements ReadOperations {
 

@@ -1,4 +1,4 @@
-import { ReadOperations } from "@app/dnd5/api/operations/read-operations";
+import { ReadOperations } from "@app/core/api/client/read-operations";
 import { Proficiency } from "@app/dnd5/models/charclass/proficiency";
 import { Observable } from "rxjs";
 
