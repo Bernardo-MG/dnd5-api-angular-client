@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-spells-detail-view',
+  selector: 'dnd5-spells-detail-view',
   templateUrl: './spells-detail-view.component.html',
   styleUrls: ['./spells-detail-view.component.sass']
 })
