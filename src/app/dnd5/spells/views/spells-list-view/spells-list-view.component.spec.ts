@@ -1,5 +1,7 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { SharedModule } from '@app/shared/shared.module';
+import { SpellsService } from '../../services/spells.service';
 import { SpellsListViewComponent } from './spells-list-view.component';
 
 describe('SpellsListViewComponent', () => {
@@ -8,7 +10,16 @@ describe('SpellsListViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SpellsListViewComponent ]
+      imports: [
+        HttpClientTestingModule,
+        SharedModule
+      ],
+      declarations: [
+         SpellsListViewComponent
+      ],
+      providers: [
+        SpellsService
+      ]
     })
     .compileComponents();
 
