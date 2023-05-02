@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://www.dnd5eapi.co/api/classes'
+  apiUrl: 'http://www.dnd5eapi.co/api'
 };
 
 /*

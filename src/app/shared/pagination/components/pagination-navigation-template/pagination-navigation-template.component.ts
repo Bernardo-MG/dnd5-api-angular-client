@@ -146,9 +146,14 @@ export class PaginationNavigationTemplateComponent {
   public isCurrent(page: number) {
     return page === this.current;
   }
-  
 
-  public getLabel(page: number) {
+  /**
+   * Returns the current page aria label, if the received page is the current one.
+   * 
+   * @param page page to check
+   * @returns the current page aria label
+   */
+  public getCurrentLabel(page: number) {
     let label;
 
     if (this.isCurrent(page)) {

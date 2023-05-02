@@ -22,6 +22,11 @@ export class PaginationNavigationComponent implements OnChanges {
   @Input() public pages = 0;
 
   /**
+   * Disabled flag. To disable all the inner components.
+   */
+  @Input() public disabled = false;
+
+  /**
    * "Go to page" event emitter. Repeats the wrapped component event.
    */
   @Output() public goTo = new EventEmitter<number>();
@@ -61,7 +66,7 @@ export class PaginationNavigationComponent implements OnChanges {
    * @returns true if the backward button should be disabled, false otherwise
    */
   public isBackwardDisabled(): boolean {
-    return this.current === 1;
+    return (this.current <= 1);
   }
 
   /**
@@ -70,7 +75,7 @@ export class PaginationNavigationComponent implements OnChanges {
    * @returns true if the forward button should be disabled, false otherwise
    */
   public isForwardDisabled(): boolean {
-    return this.current === this.pages;
+    return (this.current >= this.pages);
   }
 
 }

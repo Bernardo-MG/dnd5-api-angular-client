@@ -12,7 +12,7 @@ import { SpellQuery } from "../../client/query/charclass/spell-query";
 })
 export class AngularDnd5ApiClient implements Dnd5ApiClient {
 
-  private rootUrl = 'http://www.dnd5eapi.co/api';
+  private rootUrl = environment.apiUrl;
 
   constructor(
     private http: HttpClient
