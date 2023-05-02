@@ -1,4 +1,4 @@
-import { ReadOperations } from "@app/dnd5/api/operations/read-operations";
+import { ReadOperations } from "../../read-operations";
 
 export class SpellQueryByIndex {
 

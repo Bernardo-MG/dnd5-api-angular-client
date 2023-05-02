@@ -1,6 +1,6 @@
-import { ReferenceList } from "@app/dnd5/api/models/reference-list";
-import { ReadOperations } from "@app/dnd5/api/operations/read-operations";
+import { ReferenceList } from "@app/core/api/models/reference-list";
 import { Observable } from "rxjs";
+import { ReadOperations } from "../../read-operations";
 import { SpellQueryByIndex } from "./spell-query-by-index";
 
 export class SpellQuery {

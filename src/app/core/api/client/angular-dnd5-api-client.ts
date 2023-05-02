@@ -1,11 +1,12 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { ReadOperations } from "@app/dnd5/api/operations/read-operations";
-import { CharacterClassQuery } from "../../client/query/charclass/character-class-query";
-import { Dnd5ApiClient } from "../../client/dnd5-api-client";
-import { AngularReadOperations } from "../operations/angular-read-operations";
-import { ProficiencyQuery } from "../../client/query/charclass/proficiency-query";
-import { SpellQuery } from "../../client/query/charclass/spell-query";
+import { environment } from "environments/environment";
+import { AngularReadOperations } from "./angular-read-operations";
+import { Dnd5ApiClient } from "./dnd5-api-client";
+import { CharacterClassQuery } from "./query/charclass/character-class-query";
+import { ProficiencyQuery } from "./query/charclass/proficiency-query";
+import { SpellQuery } from "./query/charclass/spell-query";
+import { ReadOperations } from "./read-operations";
 
 @Injectable({
   providedIn: 'root'
