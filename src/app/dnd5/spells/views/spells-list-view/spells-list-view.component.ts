@@ -4,7 +4,7 @@ import { Pagination } from '@app/shared/models/pagination';
 import { SpellsService } from '../../services/spells.service';
 
 @Component({
-  selector: 'app-spells-list-view',
+  selector: 'dnd5-spells-list-view',
   templateUrl: './spells-list-view.component.html',
   styleUrls: ['./spells-list-view.component.sass']
 })
