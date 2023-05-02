@@ -1,0 +1,31 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th colspan="3" scope="col">
+            </th>
+            <ng-template [ngIf]="isSpellcaster()">
+                <th *ngIf="hasSpells()" colspan="1" scope="col">
+                </th>
+                <th *ngIf="hasCantrips()" colspan="1" scope="col">
+                </th>
+                <th colspan="11" scope="col">
+                    Spell slots
+                </th>
+            </ng-template>
+        </tr>
+        <tr>
+            <!-- Headers -->
+            <th *ngFor="let cell of header" scope="col">
+                {{cell}}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Rows -->
+        <tr *ngFor="let row of rows">
+            <td *ngFor="let cell of row">
+                {{cell}}
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,9 @@
+<shared-article title="Classes" [waiting]="waiting">
+    <div class="offset-3 col-6">
+        <div class="d-flex justify-content-center mt-1">
+            <shared-pagination-navigation [current]="pagination.page" [pages]="pagination.totalPages"
+                (goTo)="onGoToPage($event)"></shared-pagination-navigation>
+        </div>
+        <shared-link-list [links]="links"></shared-link-list>
+    </div>
+</shared-article>

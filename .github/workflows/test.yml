@@ -1,0 +1,10 @@
+name: Testing and validation
+
+on: [push, pull_request]
+
+jobs:
+  tests:
+    name: Tests with node 18
+    uses: Bernardo-MG/github-workflow-angular/.github/workflows/testing.yml@v1
+    with:
+      node: 18
