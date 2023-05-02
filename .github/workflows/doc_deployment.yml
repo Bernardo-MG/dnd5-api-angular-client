@@ -30,7 +30,7 @@ jobs:
     - name: Install Angular CLI
       run: npm install -g @angular/cli
     - name: Build project
-      run: ng build --deploy-url=${{ secrets.DEPLOY_DOCS_URL_DEVELOP }}
+      run: ng build --configuration development --deploy-url=${{ secrets.DEPLOY_DOCS_URL_DEVELOP }}
     - name: Move to build folder
       run: cd dist/dnd5-api-angular-client
     - name: Deploy build folder
@@ -63,7 +63,7 @@ jobs:
     - name: Install Angular CLI
       run: npm install -g @angular/cli
     - name: Build project
-      run: ng build --prod --deploy-url=${{ secrets.DEPLOY_DOCS_URL_RELEASE }}
+      run: ng build --deploy-url=${{ secrets.DEPLOY_DOCS_URL_RELEASE }}
     - name: Move to build folder
       run: cd dist/dnd5-api-angular-client
     - name: Deploy build folder
