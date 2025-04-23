@@ -1,75 +1,59 @@
-# DnD5 API Angular Client
+# Dnd5ApiAngularClient
 
-An example REST client made with Angular. Using the [DnD5e API][dnd5api].
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.8.
 
-## Features
+## Development server
 
-- Angular
-- REST queries
-- Bootstrap 5
+To start a local development server, run:
 
-## Check it
-
-There is an [online demo site][demo-site] which always reflects the latest version, taken from the master branch.
-
-And a [development demo site][demo-site-development], taken from the development branch.
-
-## Usage
-
-### Prerequisites
-
-- Angular
-
-### Building the project
-
-This builds the development version:
-
-```
-npm run build
+```bash
+ng serve
 ```
 
-### Running tests
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-To run the unit tests:
+## Code scaffolding
 
-```
-npm test
-```
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-## Deploying locally
-
-The project can be deployed locally for testing:
-
-```
-npm start
+```bash
+ng generate component component-name
 ```
 
-It will be available on `http://localhost:4200/`. Changes will be reloaded automatically.
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-## Collaborate
+```bash
+ng generate --help
+```
 
-Any kind of help with the project will be well received, and there are two main ways to give such help:
+## Building
 
-- Reporting errors and asking for extensions through the issues management
-- or forking the repository and extending the project
+To build the project run:
 
-### Issues management
+```bash
+ng build
+```
 
-Issues are managed at the GitHub [project issues tracker][issues], where any Github user may report bugs or ask for new features.
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-### Getting the code
+## Running unit tests
 
-If you wish to fork or modify the code, visit the [GitHub project page][scm], where the latest versions are always kept. Check the 'master' branch for the latest release, and the 'develop' for the current, and stable, development version.
+To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
 
-## License
+```bash
+ng test
+```
 
-The project has been released under the [MIT License][license].
+## Running end-to-end tests
 
-[issues]: https://github.com/Bernardo-MG/dnd5-api-angular-client/issues
-[license]: http://www.opensource.org/licenses/mit-license.php
-[scm]: https://github.com/Bernardo-MG/dnd5-api-angular-client
+For end-to-end (e2e) testing, run:
 
-[dnd5api]: http://www.dnd5eapi.co/
+```bash
+ng e2e
+```
 
-[demo-site]: https://docs.bernardomg.com/dnd5-api-angular-client
-[demo-site-development]: https://docs.bernardomg.com/development/dnd5-api-angular-client
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## Additional Resources
+
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
