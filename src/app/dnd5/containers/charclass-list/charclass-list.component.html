@@ -1,1 +1,19 @@
-<p>charclass-list works!</p>
+<div class="grid grid-cols-4 gap-4">
+  <div class="col-span-3 p-4">
+    content
+  </div>
+  <div class="col-span-1 p-4">
+    <p-table [value]="data">
+      <ng-template #header>
+        <tr>
+          <th>Charclass</th>
+        </tr>
+      </ng-template>
+      <ng-template #body let-charclass>
+        <tr>
+          <td>{{ charclass.title }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

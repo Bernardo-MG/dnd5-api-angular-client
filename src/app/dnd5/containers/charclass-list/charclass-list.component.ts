@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { TableModule } from 'primeng/table';
 import { Pagination } from '../../../core/api/models/pagination';
 import { Link } from '../../../shared/model/link';
 import { CharclassService } from '../../services/charclass.service';
 
 @Component({
   selector: 'app-charclass-list',
-  imports: [],
+  imports: [TableModule],
   templateUrl: './charclass-list.component.html',
   styleUrl: './charclass-list.component.scss'
 })
