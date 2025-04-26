@@ -6,7 +6,7 @@
   </ng-template>
   <ng-template #body let-link>
     <tr>
-      <td>{{ link.title }}</td>
+      <td><a routerLink="{{link.route}}" class="list-group-item list-group-item-action">{{link.title}}</a></td>
     </tr>
   </ng-template>
 </p-table>
