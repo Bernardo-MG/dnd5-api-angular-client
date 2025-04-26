@@ -1,12 +1,17 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Charclass } from '@app/dnd5/models/charclass/charclass';
 import { LinkListComponent } from '@app/shared/components/link-list/link-list.component';
 import { Pagination } from '../../../core/api/models/pagination';
 import { Link } from '../../../shared/model/link';
 import { CharclassService } from '../../services/charclass.service';
+import { ActivatedRoute } from '@angular/router';
+import { Level } from '@app/dnd5/models/charclass/level';
+import { Proficiency } from '@app/dnd5/models/charclass/proficiency';
 
 @Component({
   selector: 'app-charclass-list',
-  imports: [LinkListComponent],
+  imports: [CommonModule, LinkListComponent],
   templateUrl: './charclass-list.component.html',
   styleUrl: './charclass-list.component.scss'
 })
@@ -20,8 +25,19 @@ export class CharclassListComponent {
 
   public pagination = new Pagination();
 
+  public charclass: Charclass | undefined;
+
+  public proficiencies: Proficiency[] = [];
+
+  public levels: Level[] = [];
+
+  private waitingProficiencies = false;
+
+  private waitingLevels = false;
+
   constructor(
-    private charclassService: CharclassService
+    private readonly charclassService: CharclassService,
+    private readonly route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -38,6 +54,31 @@ export class CharclassListComponent {
       this.links = this.data.slice(0, this.pagination.size);
 
       this.waiting = false;
+    });
+
+    this.route.paramMap.subscribe(params => {
+      const id = params.get('id');
+
+      if (id) {
+        this.waitingProficiencies = true;
+        this.waitingLevels = true;
+        this.charclassService.getCharacterClass(id)
+          .subscribe(data => {
+            this.charclass = data;
+
+            this.charclassService.getProficiencies(this.charclass.proficiencies).subscribe(p => {
+              this.proficiencies = p;
+              this.waitingProficiencies = false;
+              this.checkWaiting();
+            });
+            this.charclassService.getLevels(id).subscribe(l => {
+              this.levels = l;
+              this.waitingLevels = false;
+              this.checkWaiting();
+            });
+          });
+
+      }
     });
   }
 
@@ -58,6 +99,10 @@ export class CharclassListComponent {
     page.last = (page.page === page.totalPages);
 
     return page;
+  }
+
+  private checkWaiting() {
+    this.waiting = (this.waitingProficiencies || this.waitingLevels);
   }
 
 }
