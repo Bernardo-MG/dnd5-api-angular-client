@@ -1,19 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Charclass } from '@app/dnd5/models/charclass/charclass';
+import { Level } from '@app/dnd5/models/charclass/level';
+import { Proficiency } from '@app/dnd5/models/charclass/proficiency';
 import { LinkListComponent } from '@app/shared/components/link-list/link-list.component';
 import { Pagination } from '../../../core/api/models/pagination';
 import { Link } from '../../../shared/model/link';
 import { CharclassService } from '../../services/charclass.service';
-import { ActivatedRoute } from '@angular/router';
-import { Level } from '@app/dnd5/models/charclass/level';
-import { Proficiency } from '@app/dnd5/models/charclass/proficiency';
 
 @Component({
   selector: 'app-charclass-list',
   imports: [CommonModule, LinkListComponent],
-  templateUrl: './charclass-list.component.html',
-  styleUrl: './charclass-list.component.scss'
+  templateUrl: './charclass-list.component.html'
 })
 export class CharclassListComponent {
 
@@ -56,6 +55,7 @@ export class CharclassListComponent {
       this.waiting = false;
     });
 
+    // TODO: the class should contain everything, the service should take care of it
     this.route.paramMap.subscribe(params => {
       const id = params.get('id');
 
