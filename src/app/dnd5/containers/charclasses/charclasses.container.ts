@@ -10,11 +10,11 @@ import { Link } from '../../../shared/model/link';
 import { CharclassService } from '../../services/charclass.service';
 
 @Component({
-  selector: 'app-charclass-list',
+  selector: 'app-charclasses',
   imports: [CommonModule, LinkListComponent],
-  templateUrl: './charclass-list.component.html'
+  templateUrl: './charclasses.container.html'
 })
-export class CharclassListComponent {
+export class CharclassesComponent {
 
   public waiting = false;
 

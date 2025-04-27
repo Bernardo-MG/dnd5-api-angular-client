@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { CharclassListComponent } from './containers/charclass-list/charclass-list.component';
+import { CharclassesComponent } from './containers/charclasses/charclasses.container';
 
 export default [
-  { path: 'classes', component: CharclassListComponent },
-  { path: 'classes/:id', component: CharclassListComponent }
+  { path: 'classes', component: CharclassesComponent },
+  { path: 'classes/:id', component: CharclassesComponent }
 ] as Routes;
