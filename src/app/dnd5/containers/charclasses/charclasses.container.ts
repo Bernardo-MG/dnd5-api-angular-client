@@ -35,15 +35,13 @@ export class CharclassesComponent {
   private waitingLevels = false;
 
   constructor(
-    private readonly charclassService: CharclassService,
-    private readonly route: ActivatedRoute
-  ) { }
-
-  ngOnInit(): void {
+    charclassService: CharclassService,
+    route: ActivatedRoute
+  ) {
     this.waiting = true;
 
     // Loads character classes
-    this.charclassService.getCharacterClasses().subscribe(data => {
+    charclassService.getCharacterClasses().subscribe(data => {
       this.pagination = this.loadPagination(data.length);
 
       this.data = data.map(c => {
@@ -56,22 +54,22 @@ export class CharclassesComponent {
     });
 
     // TODO: the class should contain everything, the service should take care of it
-    this.route.paramMap.subscribe(params => {
+    route.paramMap.subscribe(params => {
       const id = params.get('id');
 
       if (id) {
         this.waitingProficiencies = true;
         this.waitingLevels = true;
-        this.charclassService.getCharacterClass(id)
+        charclassService.getCharacterClass(id)
           .subscribe(data => {
             this.charclass = data;
 
-            this.charclassService.getProficiencies(this.charclass.proficiencies).subscribe(p => {
+            charclassService.getProficiencies(this.charclass.proficiencies).subscribe(p => {
               this.proficiencies = p;
               this.waitingProficiencies = false;
               this.checkWaiting();
             });
-            this.charclassService.getLevels(id).subscribe(l => {
+            charclassService.getLevels(id).subscribe(l => {
               this.levels = l;
               this.waitingLevels = false;
               this.checkWaiting();
