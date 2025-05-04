@@ -1,18 +1,45 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Level } from '@app/dnd5/models/charclass/level';
 import { Reference } from '@app/dnd5/models/info/reference';
+import { TableModule } from 'primeng/table';
 
 @Component({
   selector: 'dnd5-levels',
-  imports: [CommonModule],
+  imports: [CommonModule, TableModule],
   templateUrl: './levels.component.html'
 })
-export class LevelsComponent implements OnChanges {
+export class LevelsComponent {
 
-  @Input() public levels: Level[] = [];
+  private _levels: Level[] = [];
 
-  public header: string[] = [];
+  @Input() public set levels(data: Level[]) {
+    this._levels = data;
+    this.headers = [...this.commonHeader];
+
+    if ((this.hasSpells()) && (this.hasCantrips())) {
+      this.headers.push(...this.mageHeader);
+      this.headers.push(...this.clericHeader);
+      this.headers.push(...this.spellsHeader);
+      this.rows = this.levels.map(d => this.toSpellcasterRow(d));
+    } else if (this.hasSpells()) {
+      this.headers.push(...this.mageHeader);
+      this.headers.push(...this.spellsHeader);
+      this.rows = this.levels.map(d => this.toSpellsRow(d));
+    } else if (this.hasCantrips()) {
+      this.headers.push(...this.clericHeader);
+      this.headers.push(...this.spellsHeader);
+      this.rows = this.levels.map(d => this.toCantripsRow(d));
+    } else {
+      this.rows = this.levels.map(d => this.toRow(d));
+    }
+  }
+
+  public get levels(): Level[] {
+    return this._levels;
+  }
+
+  public headers: string[] = [];
 
   public rows: any[][] = [];
 
@@ -23,27 +50,6 @@ export class LevelsComponent implements OnChanges {
   private mageHeader = ['Spells'];
 
   private clericHeader = ['Cantrips'];
-
-  ngOnChanges(changes: SimpleChanges): void {
-    this.header = this.commonHeader;
-
-    if ((this.hasSpells()) && (this.hasCantrips())) {
-      this.header.push(...this.mageHeader);
-      this.header.push(...this.clericHeader);
-      this.header.push(...this.spellsHeader);
-      this.rows = this.levels.map(d => this.toSpellcasterRow(d));
-    } else if (this.hasSpells()) {
-      this.header.push(...this.mageHeader);
-      this.header.push(...this.spellsHeader);
-      this.rows = this.levels.map(d => this.toSpellsRow(d));
-    } else if (this.hasCantrips()) {
-      this.header.push(...this.clericHeader);
-      this.header.push(...this.spellsHeader);
-      this.rows = this.levels.map(d => this.toCantripsRow(d));
-    } else {
-      this.rows = this.levels.map(d => this.toRow(d));
-    }
-  }
 
   private toRow(level: Level): any[] {
     return [level.level, level.prof_bonus, this.getFeatures(level.features)];
