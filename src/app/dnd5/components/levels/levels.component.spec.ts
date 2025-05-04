@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CharclassInfoComponent } from './charclass-info.component';
+import { LevelsComponent } from './levels.component';
 
-describe('CharclassInfoComponent', () => {
-  let component: CharclassInfoComponent;
-  let fixture: ComponentFixture<CharclassInfoComponent>;
+describe('LevelsComponent', () => {
+  let component: LevelsComponent;
+  let fixture: ComponentFixture<LevelsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CharclassInfoComponent]
+      imports: [LevelsComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CharclassInfoComponent);
+    fixture = TestBed.createComponent(LevelsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

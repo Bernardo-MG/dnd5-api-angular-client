@@ -1,18 +1,22 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CharclassInfoComponent } from '@app/dnd5/components/charclass-info/charclass-info.component';
+import { ChoiceComponent } from '@app/dnd5/components/choice/choice.component';
+import { InitialEquipmentComponent } from '@app/dnd5/components/initial-equipment/initial-equipment.component';
+import { LevelsComponent } from '@app/dnd5/components/levels/levels.component';
+import { ProficienciesComponent } from '@app/dnd5/components/proficiencies/proficiencies.component';
 import { Charclass } from '@app/dnd5/models/charclass/charclass';
 import { Level } from '@app/dnd5/models/charclass/level';
 import { Proficiency } from '@app/dnd5/models/charclass/proficiency';
 import { LinkListComponent } from '@app/shared/components/link-list/link-list.component';
+import { CardModule } from 'primeng/card';
 import { Pagination } from '../../../core/api/models/pagination';
 import { Link } from '../../../shared/model/link';
 import { CharclassService } from '../../services/charclass.service';
 
 @Component({
   selector: 'app-charclasses',
-  imports: [CommonModule, CharclassInfoComponent, LinkListComponent],
+  imports: [CommonModule, LinkListComponent, CardModule, LevelsComponent, ChoiceComponent, ProficienciesComponent, InitialEquipmentComponent],
   templateUrl: './charclasses.container.html'
 })
 export class CharclassesComponent {
