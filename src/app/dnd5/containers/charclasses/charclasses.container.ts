@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CharclassInfoComponent } from '@app/dnd5/components/charclass-info/charclass-info.component';
 import { Charclass } from '@app/dnd5/models/charclass/charclass';
 import { Level } from '@app/dnd5/models/charclass/level';
 import { Proficiency } from '@app/dnd5/models/charclass/proficiency';
@@ -11,7 +12,7 @@ import { CharclassService } from '../../services/charclass.service';
 
 @Component({
   selector: 'app-charclasses',
-  imports: [CommonModule, LinkListComponent],
+  imports: [CommonModule, CharclassInfoComponent, LinkListComponent],
   templateUrl: './charclasses.container.html'
 })
 export class CharclassesComponent {
