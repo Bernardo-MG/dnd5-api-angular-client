@@ -1,8 +1,8 @@
 
 export class Alignment {
-    index = '';
-    name = '';
-    url = '';
-    desc = '';
-    abbreviation = '';
+  index = '';
+  name = '';
+  url = '';
+  desc = '';
+  abbreviation = '';
 }

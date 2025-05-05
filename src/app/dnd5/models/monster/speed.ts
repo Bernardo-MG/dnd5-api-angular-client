@@ -1,8 +1,8 @@
 
 export class Speed {
-    walk = '';
-    burrow = '';
-    climb = '';
-    fly = '';
-    swim = '';
+  walk = '';
+  burrow = '';
+  climb = '';
+  fly = '';
+  swim = '';
 }

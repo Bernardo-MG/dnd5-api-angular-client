@@ -1,6 +1,5 @@
-
 export enum SpellComponents {
-    M,
-    S,
-    V
+  M,
+  S,
+  V
 }

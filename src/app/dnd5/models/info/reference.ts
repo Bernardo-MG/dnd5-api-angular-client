@@ -1,5 +1,5 @@
 export class Reference {
-    index = '';
-    name = '';
-    url = '';
+  index = '';
+  name = '';
+  url = '';
 }

@@ -1,8 +1,7 @@
-
 export enum ArmorTypes {
-    armor,
-    condition,
-    dex,
-    natural,
-    spell
+  armor,
+  condition,
+  dex,
+  natural,
+  spell
 }

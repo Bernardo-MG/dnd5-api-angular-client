@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { StyleClassModule } from 'primeng/styleclass';
 import { LayoutService } from '../../services/layout.service';
@@ -7,13 +7,10 @@ import { LayoutService } from '../../services/layout.service';
 @Component({
   selector: 'app-topbar',
   imports: [CommonModule, StyleClassModule],
-  templateUrl: './app.topbar.component.html',
-  styleUrl: './app.topbar.component.scss'
+  templateUrl: './app.topbar.component.html'
 })
 export class AppTopbarComponent {
 
-  items!: MenuItem[];
-
-  constructor(public layoutService: LayoutService) { }
+  public layoutService = inject(LayoutService);
 
 }

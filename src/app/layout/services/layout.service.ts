@@ -5,9 +5,9 @@ import { Injectable, signal } from '@angular/core';
 })
 export class LayoutService {
 
-  menuActive = signal<boolean>(false);
+  public menuActive = signal<boolean>(false);
 
-  toggleMenu() {
+  public toggleMenu() {
     this.menuActive.set(!this.menuActive());
   }
 

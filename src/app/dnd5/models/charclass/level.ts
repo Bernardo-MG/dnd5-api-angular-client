@@ -14,12 +14,12 @@ import { ClassSpecificLevelWizard } from "./class-specific-level-wizard";
 import { SpellcastingLevels } from "./spellcasting-levels";
 
 export class Level {
-    index = '';
-    url = '';
-    level = 0;
-    ability_score_bonuses = 0;
-    prof_bonus = 0;
-    features: Reference[] = [];
-    spellcasting = new SpellcastingLevels();
-    class_specific: ClassSpecificLevelBarbarian | ClassSpecificLevelBard | ClassSpecificLevelCleric | ClassSpecificLevelDruid | ClassSpecificLevelFighter | ClassSpecificLevelMonk | ClassSpecificLevelPaladin | ClassSpecificLevelRanger | ClassSpecificLevelRogue | ClassSpecificLevelsSorcerer | ClassSpecificLevelWarlock | ClassSpecificLevelWizard = new ClassSpecificLevelBarbarian();
+  index = '';
+  url = '';
+  level = 0;
+  ability_score_bonuses = 0;
+  prof_bonus = 0;
+  features: Reference[] = [];
+  spellcasting = new SpellcastingLevels();
+  class_specific: ClassSpecificLevelBarbarian | ClassSpecificLevelBard | ClassSpecificLevelCleric | ClassSpecificLevelDruid | ClassSpecificLevelFighter | ClassSpecificLevelMonk | ClassSpecificLevelPaladin | ClassSpecificLevelRanger | ClassSpecificLevelRogue | ClassSpecificLevelsSorcerer | ClassSpecificLevelWarlock | ClassSpecificLevelWizard = new ClassSpecificLevelBarbarian();
 }

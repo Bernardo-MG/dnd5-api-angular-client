@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { AppLayoutComponent } from './app.layout.component';
 
 describe('AppLayoutComponent', () => {

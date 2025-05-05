@@ -1,5 +1,4 @@
-
 export class FeaturePrerequisiteFeature {
-    type = '';
-    feature = '';
+  type = '';
+  feature = '';
 }

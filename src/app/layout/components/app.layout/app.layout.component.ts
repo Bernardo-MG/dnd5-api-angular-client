@@ -6,8 +6,7 @@ import { AppTopbarComponent } from '../app.topbar/app.topbar.component';
 @Component({
   selector: 'app-layout',
   imports: [RouterOutlet, AppTopbarComponent, AppSidebarComponent],
-  templateUrl: './app.layout.component.html',
-  styleUrl: './app.layout.component.scss'
+  templateUrl: './app.layout.component.html'
 })
 export class AppLayoutComponent {
 

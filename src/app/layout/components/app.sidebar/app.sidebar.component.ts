@@ -1,6 +1,6 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
-import { Component, OnChanges } from '@angular/core';
+import { Component, inject, OnChanges } from '@angular/core';
 import { LayoutService } from '../../services/layout.service';
 import { AppMenuComponent } from '../app.menu/app.menu.component';
 
@@ -28,9 +28,9 @@ import { AppMenuComponent } from '../app.menu/app.menu.component';
 })
 export class AppSidebarComponent implements OnChanges {
 
-  constructor(public layoutService: LayoutService) { }
+  public layoutService = inject(LayoutService);
 
-  ngOnChanges() {
+  public ngOnChanges() {
     if (this.layoutService.menuActive()) {
       document.body.classList.add('sideMenuActive');
     } else {

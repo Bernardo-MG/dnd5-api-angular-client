@@ -10,6 +10,9 @@ import { MenuItem } from 'primeng/api';
   templateUrl: './app.menuitem.component.html'
 })
 export class AppMenuitemComponent {
-  @Input() item!: MenuItem;
-  @Input() index!: number;
+
+  @Input() public item!: MenuItem;
+
+  @Input() public index!: number;
+
 }

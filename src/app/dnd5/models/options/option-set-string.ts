@@ -1,5 +1,5 @@
 
 export class OptionSetString {
-    option_type = '';
-    string = '';
+  option_type = '';
+  string = '';
 }

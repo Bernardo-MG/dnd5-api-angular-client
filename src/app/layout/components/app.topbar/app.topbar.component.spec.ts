@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { AppTopbarComponent } from './app.topbar.component';
 
 describe('AppTopbarComponent', () => {

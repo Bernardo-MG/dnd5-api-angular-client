@@ -1,4 +1,3 @@
-
 export class ClassSpecificLevelPaladin {
-    aura_range = 0;
+  aura_range = 0;
 }

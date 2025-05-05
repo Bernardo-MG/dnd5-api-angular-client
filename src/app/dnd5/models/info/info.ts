@@ -1,5 +1,4 @@
-
 export class Info {
-    name = '';
-    desc: string[] = [];
+  name = '';
+  desc: string[] = [];
 }

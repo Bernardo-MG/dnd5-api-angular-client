@@ -1,9 +1,8 @@
-
 export enum Sizes {
-    Gargantuan,
-    Huge,
-    Large,
-    Medium,
-    Small,
-    Tiny
+  Gargantuan,
+  Huge,
+  Large,
+  Medium,
+  Small,
+  Tiny
 }
