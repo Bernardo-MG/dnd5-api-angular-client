@@ -18,7 +18,10 @@ module.exports = tseslint.config(
         "error",
         {
           type: "attribute",
-          prefix: "app",
+          prefix: [
+            "app",
+            "dnd5"
+          ],
           style: "camelCase",
         },
       ],
@@ -26,10 +29,14 @@ module.exports = tseslint.config(
         "error",
         {
           type: "element",
-          prefix: "app",
+          prefix: [
+            "app",
+            "dnd5"
+          ],
           style: "kebab-case",
         },
       ],
+      "@typescript-eslint/no-explicit-any": "warn",
     },
   },
   {

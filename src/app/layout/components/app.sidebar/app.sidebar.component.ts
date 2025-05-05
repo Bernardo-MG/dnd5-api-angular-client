@@ -1,15 +1,14 @@
-import { Component } from '@angular/core';
-import { AppMenuComponent } from '../app.menu/app.menu.component';
-import { LayoutService } from '../../services/layout.service';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import { Component, OnChanges } from '@angular/core';
+import { LayoutService } from '../../services/layout.service';
+import { AppMenuComponent } from '../app.menu/app.menu.component';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
   imports: [CommonModule, AppMenuComponent],
   templateUrl: './app.sidebar.component.html',
-  styleUrl: './app.sidebar.component.scss',
   animations: [
     trigger('slideInOut', [
       state('hidden', style({
@@ -27,8 +26,9 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     ])
   ]
 })
-export class AppSidebarComponent {
-  constructor(public layoutService: LayoutService) {}
+export class AppSidebarComponent implements OnChanges {
+
+  constructor(public layoutService: LayoutService) { }
 
   ngOnChanges() {
     if (this.layoutService.menuActive()) {
@@ -37,4 +37,5 @@ export class AppSidebarComponent {
       document.body.classList.remove('sideMenuActive');
     }
   }
+
 }
