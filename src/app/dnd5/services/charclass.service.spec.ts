@@ -1,3 +1,4 @@
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { CharclassService } from './charclass.service';
@@ -8,6 +9,7 @@ describe('CharclassService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
+        provideHttpClient(withInterceptorsFromDi()),
         provideHttpClientTesting() 
       ]
     });
