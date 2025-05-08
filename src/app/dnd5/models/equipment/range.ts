@@ -1,5 +1,4 @@
-
 export class Range {
-    normal = 0;
-    long = 0;
+  normal = 0;
+  long = 0;
 }

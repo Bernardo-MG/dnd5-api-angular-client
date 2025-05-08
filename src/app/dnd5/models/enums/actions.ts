@@ -1,7 +1,6 @@
-
 export enum Actions {
-    ability,
-    magic,
-    melee,
-    ranged
+  ability,
+  magic,
+  melee,
+  ranged
 }

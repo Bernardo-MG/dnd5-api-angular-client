@@ -1,5 +1,4 @@
-
 export class FeaturePrerequisiteSpell {
-    type = '';
-    spell = '';
+  type = '';
+  spell = '';
 }

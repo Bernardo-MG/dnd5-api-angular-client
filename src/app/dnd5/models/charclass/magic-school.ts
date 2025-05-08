@@ -1,7 +1,6 @@
-
 export class MagicSchool {
-    index = '';
-    name = '';
-    url = '';
-    desc = '';
+  index = '';
+  name = '';
+  url = '';
+  desc = '';
 }

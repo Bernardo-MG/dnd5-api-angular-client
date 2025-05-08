@@ -1,7 +1,6 @@
-
 export class SpellPrerequisite {
-    index = '';
-    name = '';
-    url = '';
-    type = '';
+  index = '';
+  name = '';
+  url = '';
+  type = '';
 }

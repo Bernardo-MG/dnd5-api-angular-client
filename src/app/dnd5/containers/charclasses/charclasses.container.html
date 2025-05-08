@@ -1,0 +1,50 @@
+<div class="grid grid-cols-4 gap-4">
+  <div class="col-span-3 p-4">
+    <ng-container *ngIf="charclass">
+      <header>
+        <h2>{{charclass.name}}</h2>
+      </header>
+      <div class="mb-2">
+        <p-card header="Features">
+          <div><span class="font-bold">Hit die:</span> {{charclass.hit_die}}</div>
+        </p-card>
+      </div>
+      <div class="grid grid-cols-4 gap-4">
+        <div class="col-span-3">
+          <div class="mb-2">
+            <p-card header="Level advances">
+              <dnd5-levels [levels]="levels"></dnd5-levels>
+            </p-card>
+          </div>
+        </div>
+        <div class="col-span-1">
+          <div class="mb-2">
+            <p-card header="Initial proficiencies">
+              <dnd5-proficiencies [proficiencies]="proficiencies"></dnd5-proficiencies>
+            </p-card>
+          </div>
+          <div class="mb-2">
+            <p-card header="Proficiency choices">
+              <div *ngFor="let choice of charclass.proficiency_choices">
+                <dnd5-choice [choice]="choice"></dnd5-choice>
+              </div>
+            </p-card>
+          </div>
+          <div class="mb-2">
+            <p-card header="Initial equipment">
+              <dnd5-initial-equipment [equipment]="charclass.starting_equipment"></dnd5-initial-equipment>
+              <div *ngFor="let choice of charclass.starting_equipment_options">
+                <dnd5-choice [choice]="choice"></dnd5-choice>
+              </div>
+            </p-card>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="col-span-1 p-4">
+    <p-card>
+      <app-link-list title="Classes" [links]="data"></app-link-list>
+    </p-card>
+  </div>
+</div>

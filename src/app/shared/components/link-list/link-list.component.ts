@@ -1,19 +1,18 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { Link } from '@app/shared/models/link';
+import { RouterLink } from '@angular/router';
+import { Link } from '@app/shared/model/link';
+import { TableModule } from 'primeng/table';
 
-/**
- * List of links component. They will be shown in the same order as received.
- */
 @Component({
-  selector: 'shared-link-list',
-  templateUrl: './link-list.component.html',
-  styleUrls: ['./link-list.component.sass']
+  selector: 'app-link-list',
+  imports: [CommonModule, RouterLink, TableModule],
+  templateUrl: './link-list.component.html'
 })
 export class LinkListComponent {
 
-  /**
-   * Links to show in the list.
-   */
-  @Input() links: Link[] = [];
+  @Input() public title = '';
+
+  @Input() public links: Link[] = [];
 
 }

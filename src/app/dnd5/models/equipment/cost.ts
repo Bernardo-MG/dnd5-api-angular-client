@@ -1,5 +1,4 @@
-
 export class Cost {
-    quantity = 0;
-    unit = '';
+  quantity = 0;
+  unit = '';
 }

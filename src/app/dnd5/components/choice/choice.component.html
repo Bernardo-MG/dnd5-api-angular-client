@@ -1,0 +1,47 @@
+<!-- Top-level Choice block -->
+<ng-container *ngIf="isChoice()">
+  <div class="mb-2">
+    <strong>Pick {{ getChoice().choose }} from:</strong>
+    <em *ngIf="getChoice().desc">({{ getChoice().desc }})</em>
+  </div>
+  <dnd5-choice [option]="getChoice().from"></dnd5-choice>
+</ng-container>
+
+<!-- Option Array -->
+<ng-container *ngIf="isOptionArray()">
+  <ul>
+    <li *ngFor="let opt of getOptions()">
+      <dnd5-choice [option]="opt"></dnd5-choice>
+    </li>
+  </ul>
+</ng-container>
+
+<!-- Equipment Category -->
+<ng-container *ngIf="isEquipment()">
+  <div><strong>Equipment Category:</strong> {{ getEquipmentName() }}</div>
+</ng-container>
+
+<!-- Resource List -->
+<ng-container *ngIf="isResourceList()">
+  <div><strong>Resource List:</strong> {{ getResourceList() }}</div>
+</ng-container>
+
+<!-- Reference Option -->
+<ng-container *ngIf="isReference()">
+  <div>{{ getItemName() }}</div>
+</ng-container>
+
+<!-- Counted Reference Option -->
+<ng-container *ngIf="isCounted()">
+  <div>{{ getCount() }} x {{ getOfName() }}</div>
+</ng-container>
+
+<!-- Multiple Option -->
+<ng-container *ngIf="isMultiple()">
+  <div>All of:</div>
+  <ul>
+    <li *ngFor="let inner of getItems()">
+      <dnd5-choice [option]="inner"></dnd5-choice>
+    </li>
+  </ul>
+</ng-container>

@@ -1,3 +1,12 @@
-<div class="list-group text-center">
-   <a *ngFor="let link of links" routerLink="{{link.route}}" class="list-group-item list-group-item-action">{{link.title}}</a>
-</div>
+<p-table [value]="links">
+  <ng-template #header>
+    <tr>
+      <th>{{title}}</th>
+    </tr>
+  </ng-template>
+  <ng-template #body let-link>
+    <tr>
+      <td><a routerLink="{{link.route}}" class="list-group-item list-group-item-action">{{link.title}}</a></td>
+    </tr>
+  </ng-template>
+</p-table>

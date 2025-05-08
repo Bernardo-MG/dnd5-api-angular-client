@@ -1,6 +1,6 @@
 export class RuleSection {
-    index = '';
-    name = '';
-    url = '';
-    desc = '';
+  index = '';
+  name = '';
+  url = '';
+  desc = '';
 }

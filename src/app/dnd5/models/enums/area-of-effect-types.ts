@@ -1,8 +1,7 @@
-
 export enum AreaOfEffectTypes {
-    cone,
-    cube,
-    cylinder,
-    line,
-    sphere
+  cone,
+  cube,
+  cylinder,
+  line,
+  sphere
 }

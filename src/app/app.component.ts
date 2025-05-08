@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'dnd5-root',
+  selector: 'app-root',
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
-
+  title = 'dnd5-api-angular-client';
 }
