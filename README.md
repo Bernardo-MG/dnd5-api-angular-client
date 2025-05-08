@@ -10,41 +10,13 @@ An example REST client made with Angular. Using the [DnD5e API][dnd5api].
 
 ## Check it
 
-There is an [online demo site][demo-site] which always reflects the latest version, taken from the master branch.
-
-And a [development demo site][demo-site-development], taken from the development branch.
-
-## Usage
-
-### Prerequisites
-
-- Angular
-
-### Building the project
-
-This builds the development version:
-
-```
-npm run build
-```
-
-### Running tests
-
-To run the unit tests:
-
-```
-npm test
-```
-
-## Deploying locally
-
-The project can be deployed locally for testing:
+Just run it:
 
 ```
 npm start
 ```
 
-It will be available on `http://localhost:4200/`. Changes will be reloaded automatically.
+Then the app will be available at `http://localhost:4200/`. Changes will be reloaded automatically.
 
 ## Collaborate
 
@@ -70,6 +42,3 @@ The project has been released under the [MIT License][license].
 [scm]: https://github.com/Bernardo-MG/dnd5-api-angular-client
 
 [dnd5api]: http://www.dnd5eapi.co/
-
-[demo-site]: https://docs.bernardomg.com/dnd5-api-angular-client
-[demo-site-development]: https://docs.bernardomg.com/development/dnd5-api-angular-client
