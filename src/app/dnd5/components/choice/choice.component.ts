@@ -5,7 +5,7 @@ import { Choice } from '@app/dnd5/models/options/choice';
 @Component({
   selector: 'dnd5-choice',
   standalone: true,
-  imports: [CommonModule, /* recursive import */],
+  imports: [CommonModule],
   templateUrl: './choice.component.html'
 })
 export class ChoiceComponent {
