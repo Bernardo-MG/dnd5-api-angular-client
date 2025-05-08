@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
+import { MenuItem } from 'primeng/api';
 import { AppMenuitemComponent } from './app.menuitem.component';
 
 describe('AppMenuitemComponent', () => {
@@ -7,12 +9,23 @@ describe('AppMenuitemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppMenuitemComponent]
-    })
-    .compileComponents();
+      providers: [
+        provideRouter([])
+      ],
+      imports: [
+        AppMenuitemComponent
+      ]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AppMenuitemComponent);
     component = fixture.componentInstance;
+
+    component.item = {
+      label: 'Test',
+      routerLink: ['/test']
+    } as MenuItem;
+    component.index = 0;
+
     fixture.detectChanges();
   });
 
