@@ -1,8 +1,8 @@
 import { ReadClient } from "@app/core/api/client/read-client";
-import { Charclass } from "@app/dnd5/models/charclass/charclass";
-import { Multiclassing } from "@app/dnd5/models/charclass/multiclassing";
-import { Spellcasting } from "@app/dnd5/models/charclass/spellcasting";
-import { Reference } from "@app/dnd5/models/info/reference";
+import { Charclass } from "@app/core/api/models/charclass/charclass";
+import { Multiclassing } from "@app/core/api/models/charclass/multiclassing";
+import { Spellcasting } from "@app/core/api/models/charclass/spellcasting";
+import { Reference } from "@app/core/api/models/info/reference";
 import { Observable } from "rxjs";
 import { CharacterClassQueryLevel } from "./character-class-query-level";
 

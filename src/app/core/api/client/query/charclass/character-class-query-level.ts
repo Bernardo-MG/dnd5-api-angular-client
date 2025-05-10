@@ -1,5 +1,5 @@
 import { ReadClient } from "@app/core/api/client/read-client";
-import { Level } from "@app/dnd5/models/charclass/level";
+import { Level } from "@app/core/api/models/charclass/level";
 import { Observable } from "rxjs";
 import { CharacterClassQueryLevelByNumber } from "./character-class-query-level-by-number";
 

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { Choice } from '@app/dnd5/models/options/choice';
+import { Choice } from '@app/core/api/models/options/choice';
 
 @Component({
   selector: 'dnd5-choice',

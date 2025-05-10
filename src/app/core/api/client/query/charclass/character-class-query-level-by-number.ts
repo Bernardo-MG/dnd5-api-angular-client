@@ -1,7 +1,7 @@
 import { ReadClient } from "@app/core/api/client/read-client";
-import { Feature } from "@app/dnd5/models/charclass/feature";
-import { Level } from "@app/dnd5/models/charclass/level";
-import { Spell } from "@app/dnd5/models/charclass/spell";
+import { Feature } from "@app/core/api/models/charclass/feature";
+import { Level } from "@app/core/api/models/charclass/level";
+import { Spell } from "@app/core/api/models/charclass/spell";
 import { Observable } from "rxjs";
 
 export class CharacterClassQueryLevelByNumber {

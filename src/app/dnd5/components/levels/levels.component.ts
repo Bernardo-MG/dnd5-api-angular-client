@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { Level } from '@app/dnd5/models/charclass/level';
-import { Reference } from '@app/dnd5/models/info/reference';
+import { Level } from '@app/core/api/models/charclass/level';
+import { Reference } from '@app/core/api/models/info/reference';
 import { TableModule } from 'primeng/table';
 
 @Component({
