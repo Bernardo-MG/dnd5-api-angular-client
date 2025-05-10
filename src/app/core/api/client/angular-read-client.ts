@@ -1,9 +1,9 @@
 import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { ReadOperations } from './read-operations';
+import { ReadClient } from './read-client';
 
-export class AngularReadOperations implements ReadOperations {
+export class AngularReadClient implements ReadClient {
 
   private _route = '';
 
@@ -16,7 +16,7 @@ export class AngularReadOperations implements ReadOperations {
     private rootUrl: string
   ) { }
 
-  public fetch<T>(): Observable<T> {
+  public read<T>(): Observable<T> {
     const finalUrl = this.getFinalUrl(this._route);
     return this.http.get<T>(finalUrl, this.options)
       .pipe(
@@ -24,13 +24,13 @@ export class AngularReadOperations implements ReadOperations {
       );
   }
 
-  public route(route: string): ReadOperations {
+  public route(route: string): ReadClient {
     this._route = route;
 
     return this;
   }
 
-  public parameter(name: string, value: any): ReadOperations {
+  public parameter(name: string, value: any): ReadClient {
     let params: HttpParams;
 
     params = this.getHttpParams();
@@ -42,7 +42,7 @@ export class AngularReadOperations implements ReadOperations {
     return this;
   }
 
-  public appendRoute(route: string): ReadOperations {
+  public appendRoute(route: string): ReadClient {
     this._route = `${this._route}${route}`;
 
     return this;

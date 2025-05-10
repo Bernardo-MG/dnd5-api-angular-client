@@ -1,4 +1,4 @@
-import { ReadOperations } from "@app/core/api/client/read-operations";
+import { ReadClient } from "@app/core/api/client/read-client";
 import { Charclass } from "@app/dnd5/models/charclass/charclass";
 import { Multiclassing } from "@app/dnd5/models/charclass/multiclassing";
 import { Spellcasting } from "@app/dnd5/models/charclass/spellcasting";
@@ -21,35 +21,35 @@ export class CharacterClassQueryByIndex {
   private proficienciesRoute = '/proficiencies';
 
   constructor(
-    private operations: ReadOperations
+    private operations: ReadClient
   ) {  }
 
   public getOne(): Observable<Charclass> {
-    return this.operations.fetch();
+    return this.operations.read();
   }
 
   public getSpellCasting(): Observable<Spellcasting> {
-    return this.operations.appendRoute(this.spellcastingRoute).fetch();
+    return this.operations.appendRoute(this.spellcastingRoute).read();
   }
 
   public getMultiClassing(): Observable<Multiclassing> {
-    return this.operations.appendRoute(this.multiclassingRoute).fetch();
+    return this.operations.appendRoute(this.multiclassingRoute).read();
   }
 
   public getSubclasses(): Observable<Reference[]> {
-    return this.operations.appendRoute(this.subclassesRoute).fetch();
+    return this.operations.appendRoute(this.subclassesRoute).read();
   }
 
   public getSpells(): Observable<Reference[]> {
-    return this.operations.appendRoute(this.spellsRoute).fetch();
+    return this.operations.appendRoute(this.spellsRoute).read();
   }
 
   public getFeatures(): Observable<Reference[]> {
-    return this.operations.appendRoute(this.featuresRoute).fetch();
+    return this.operations.appendRoute(this.featuresRoute).read();
   }
 
   public getProficiencies(): Observable<Reference[]> {
-    return this.operations.appendRoute(this.proficienciesRoute).fetch();
+    return this.operations.appendRoute(this.proficienciesRoute).read();
   }
 
   public levels(): CharacterClassQueryLevel {

@@ -1,8 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { ReadOperations } from "@app/core/api/client/read-operations";
+import { ReadClient } from "@app/core/api/client/read-client";
 import { environment } from "environments/environment";
-import { AngularReadOperations } from "./angular-read-operations";
+import { AngularReadClient } from "./angular-read-client";
 import { Dnd5ApiClient } from "./dnd5-api-client";
 import { CharacterClassQuery } from "./query/charclass/character-class-query";
 import { ProficiencyQuery } from "./query/charclass/proficiency-query";
@@ -26,8 +26,8 @@ export class AngularDnd5ApiClient implements Dnd5ApiClient {
     return new ProficiencyQuery(this.getOperations());
   }
 
-  private getOperations(): ReadOperations {
-    return new AngularReadOperations(this.http, this.rootUrl);
+  private getOperations(): ReadClient {
+    return new AngularReadClient(this.http, this.rootUrl);
   }
 
 }
