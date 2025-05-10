@@ -20,16 +20,20 @@ export class CharacterClassQueryByIndex {
 
   private proficienciesRoute = '/proficiencies';
 
+  private readonly spellcastingClient;
+
   constructor(
     private client: ReadClient
-  ) {  }
+  ) {
+    this.spellcastingClient = this.client.appendRoute(this.spellcastingRoute);
+  }
 
   public getOne(): Observable<Charclass> {
     return this.client.read();
   }
 
   public getSpellCasting(): Observable<Spellcasting> {
-    return this.client.appendRoute(this.spellcastingRoute).read();
+    return this.spellcastingClient.read();
   }
 
   public getMultiClassing(): Observable<Multiclassing> {
