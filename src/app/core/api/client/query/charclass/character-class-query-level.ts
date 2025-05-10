@@ -10,7 +10,7 @@ export class CharacterClassQueryLevel {
   constructor(
     private client: ReadClient
   ) {
-    this.client.appendRoute(this.levelRoute);
+    this.client = this.client.appendRoute(this.levelRoute);
   }
 
   public getAll(): Observable<Level[]> {
