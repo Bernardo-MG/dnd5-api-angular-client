@@ -69,7 +69,8 @@ export class CharclassesComponent {
           .subscribe(data => {
             this.charclass = data;
 
-            charclassService.getProficiencies(this.charclass.proficiencies).subscribe(p => {
+            const ids = this.charclass.proficiencies.map(r => r.index);
+            charclassService.getProficiencies(ids).subscribe(p => {
               this.proficiencies = p;
               this.waitingProficiencies = false;
               this.checkWaiting();

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, forkJoin, map } from 'rxjs';
-import { AngularDnd5ApiClient } from '../../core/api/client/angular-dnd5-api-client';
+import { AngularDnd5ApiRepository } from '../../core/api/client/angular-dnd5-api-repository';
 import { ReferenceList } from '../../core/api/models/reference-list';
 import { Charclass } from '../models/charclass/charclass';
 import { Level } from '../models/charclass/level';
@@ -13,25 +13,25 @@ import { Reference } from '../models/info/reference';
 export class CharclassService {
 
   constructor(
-    private readonly client: AngularDnd5ApiClient
+    private readonly repository: AngularDnd5ApiRepository
   ) { }
 
   public getCharacterClasses(): Observable<Reference[]> {
-    return this.client.characterClass().getAll().pipe(
+    return this.repository.characterClass().getAll().pipe(
       map((response: ReferenceList) => { return response.results })
     );
   }
 
   public getCharacterClass(id: string): Observable<Charclass> {
-    return this.client.characterClass().index(id).getOne();
+    return this.repository.characterClass().index(id).getOne();
   }
 
   public getLevels(id: string): Observable<Level[]> {
-    return this.client.characterClass().index(id).levels().getAll();
+    return this.repository.characterClass().index(id).levels().getAll();
   }
 
-  public getProficiencies(refs: Reference[]): Observable<Proficiency[]> {
-    const observables = refs.map(r => this.client.proficiency().index(r.index).getOne());
+  public getProficiencies(ids: string[]): Observable<Proficiency[]> {
+    const observables = ids.map(i => this.repository.proficiency().index(i).getOne());
 
     return forkJoin(observables);
   }
