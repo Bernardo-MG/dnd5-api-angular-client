@@ -11,19 +11,19 @@ export class CharacterClassQueryLevelByNumber {
   private spellRoute = '/spells';
 
   constructor(
-    private operations: ReadClient
+    private client: ReadClient
   ) { }
 
   public getOne(): Observable<Level> {
-    return this.operations.read();
+    return this.client.read();
   }
 
   public getFeatures(): Observable<Feature> {
-    return this.operations.appendRoute(this.featureRoute).read();
+    return this.client.appendRoute(this.featureRoute).read();
   }
 
   public getSpells(): Observable<Spell> {
-    return this.operations.appendRoute(this.spellRoute).read();
+    return this.client.appendRoute(this.spellRoute).read();
   }
 
 }

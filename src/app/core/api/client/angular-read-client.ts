@@ -5,54 +5,35 @@ import { ReadClient } from './read-client';
 
 export class AngularReadClient implements ReadClient {
 
-  private _route = '';
-
-  protected options: {
-    params?: HttpParams
-  } = {};
-
   constructor(
-    private http: HttpClient,
-    private rootUrl: string
+    private readonly http: HttpClient,
+    private readonly route: string,
+    private readonly options: { params?: HttpParams } = {}
   ) { }
 
   public read<T>(): Observable<T> {
-    const finalUrl = this.getFinalUrl(this._route);
-    return this.http.get<T>(finalUrl, this.options)
+    return this.http.get<T>(this.route, this.options)
       .pipe(
         catchError(this.handleError())
       );
   }
 
-  public parameter(name: string, value: any): ReadClient {
-    let params: HttpParams;
+  public parameter(name: string, value: string | number | boolean | undefined): AngularReadClient {
+    let params = this.getHttpParams();
 
-    params = this.getHttpParams();
+    if (value !== undefined && value !== null) {
+      params = params.append(name, value);
+    }
 
-    params = params.append(name, value);
-
-    this.options = { params: params };
-
-    return this;
+    return new AngularReadClient(this.http, this.route, { ...this.options, params: params });
   }
 
-  public appendRoute(route: string): ReadClient {
-    this._route = `${this._route}${route}`;
-
-    return this;
+  public appendRoute(route: string): AngularReadClient {
+    return new AngularReadClient(this.http, `${this.route}${route}`, { ...this.options });
   }
 
   private getHttpParams(): HttpParams {
-    let params: HttpParams;
-
-    if (this.options.params) {
-      params = this.options.params;
-    } else {
-      params = new HttpParams();
-      this.options = { params: params };
-    }
-
-    return params;
+    return this.options.params || new HttpParams();
   }
 
   private handleError() {
@@ -62,10 +43,6 @@ export class AngularReadClient implements ReadClient {
 
       throw new Error(error.message);
     };
-  }
-
-  private getFinalUrl(route: string) {
-    return `${this.rootUrl}${route}`;
   }
 
 }

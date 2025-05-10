@@ -8,18 +8,17 @@ export class CharacterClassQuery {
   private classRoute = '/classes';
 
   constructor(
-    private operations: ReadClient
+    private client: ReadClient
   ) {
-    this.operations.appendRoute(this.classRoute);
+    this.client = this.client.appendRoute(this.classRoute);
   }
 
   public getAll(): Observable<ReferenceList> {
-    return this.operations.read();
+    return this.client.read();
   }
 
   public index(index: string): CharacterClassQueryByIndex {
-    this.operations.appendRoute(`/${index}`);
-    return new CharacterClassQueryByIndex(this.operations);
+    return new CharacterClassQueryByIndex(this.client.appendRoute(`/${index}`));
   }
 
 }

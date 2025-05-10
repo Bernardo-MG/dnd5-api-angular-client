@@ -21,39 +21,39 @@ export class CharacterClassQueryByIndex {
   private proficienciesRoute = '/proficiencies';
 
   constructor(
-    private operations: ReadClient
+    private client: ReadClient
   ) {  }
 
   public getOne(): Observable<Charclass> {
-    return this.operations.read();
+    return this.client.read();
   }
 
   public getSpellCasting(): Observable<Spellcasting> {
-    return this.operations.appendRoute(this.spellcastingRoute).read();
+    return this.client.appendRoute(this.spellcastingRoute).read();
   }
 
   public getMultiClassing(): Observable<Multiclassing> {
-    return this.operations.appendRoute(this.multiclassingRoute).read();
+    return this.client.appendRoute(this.multiclassingRoute).read();
   }
 
   public getSubclasses(): Observable<Reference[]> {
-    return this.operations.appendRoute(this.subclassesRoute).read();
+    return this.client.appendRoute(this.subclassesRoute).read();
   }
 
   public getSpells(): Observable<Reference[]> {
-    return this.operations.appendRoute(this.spellsRoute).read();
+    return this.client.appendRoute(this.spellsRoute).read();
   }
 
   public getFeatures(): Observable<Reference[]> {
-    return this.operations.appendRoute(this.featuresRoute).read();
+    return this.client.appendRoute(this.featuresRoute).read();
   }
 
   public getProficiencies(): Observable<Reference[]> {
-    return this.operations.appendRoute(this.proficienciesRoute).read();
+    return this.client.appendRoute(this.proficienciesRoute).read();
   }
 
   public levels(): CharacterClassQueryLevel {
-    return new CharacterClassQueryLevel(this.operations);
+    return new CharacterClassQueryLevel(this.client);
   }
 
 }

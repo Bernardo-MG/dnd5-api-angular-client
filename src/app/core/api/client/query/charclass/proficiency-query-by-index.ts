@@ -5,11 +5,11 @@ import { Observable } from "rxjs";
 export class ProficiencyQueryByIndex {
 
   constructor(
-    private operations: ReadClient
+    private client: ReadClient
   ) {  }
 
   public getOne(): Observable<Proficiency> {
-    return this.operations.read();
+    return this.client.read();
   }
 
 }

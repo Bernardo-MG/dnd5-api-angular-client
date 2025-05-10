@@ -8,18 +8,17 @@ export class ProficiencyQuery {
   private proficiencyRoute = '/proficiencies';
 
   constructor(
-    private operations: ReadClient
+    private client: ReadClient
   ) {
-    this.operations.appendRoute(this.proficiencyRoute);
+    this.client = this.client.appendRoute(this.proficiencyRoute);
   }
 
   public getAll(): Observable<ReferenceList> {
-    return this.operations.read();
+    return this.client.read();
   }
 
   public index(index: string): ProficiencyQueryByIndex {
-    this.operations.appendRoute(`/${index}`);
-    return new ProficiencyQueryByIndex(this.operations);
+    return new ProficiencyQueryByIndex(this.client.appendRoute(`/${index}`));
   }
 
 }
