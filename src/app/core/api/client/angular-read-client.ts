@@ -24,12 +24,6 @@ export class AngularReadClient implements ReadClient {
       );
   }
 
-  public route(route: string): ReadClient {
-    this._route = route;
-
-    return this;
-  }
-
   public parameter(name: string, value: any): ReadClient {
     let params: HttpParams;
 
