@@ -12,6 +12,7 @@ import { Reference } from "../models/info/reference";
 import { ReferenceList } from "../models/reference-list";
 import { AngularReadClient } from "./angular-read-client";
 import { ReadClient } from "./read-client";
+import { Proficiency } from "../models/charclass/proficiency";
 
 @Injectable({
   providedIn: 'root'
@@ -99,14 +100,14 @@ function createProficiencyQuery(base: ReadClient) {
 
   return {
     getAll: (): Observable<ReferenceList> => client.read(),
-    index: (index: string) => createProficiencyQueryByIndex(client.appendRoute(`/${index}`))
+    index: (index: string) => createProficiencyByIndexQuery(client.appendRoute(`/${index}`))
   };
 
 }
 
-function createProficiencyQueryByIndex(base: ReadClient) {
+function createProficiencyByIndexQuery(base: ReadClient) {
   return {
-    getOne: (): Observable<Level> => base.read()
+    getOne: (): Observable<Proficiency> => base.read()
   };
 
 }
