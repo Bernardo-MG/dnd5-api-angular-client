@@ -5,12 +5,10 @@ import { ProficiencyQueryByIndex } from "./proficiency-query-by-index";
 
 export class ProficiencyQuery {
 
-  private proficiencyRoute = '/proficiencies';
-
   constructor(
     private client: ReadClient
   ) {
-    this.client = this.client.appendRoute(this.proficiencyRoute);
+    this.client = this.client.appendRoute('/proficiencies');
   }
 
   public getAll(): Observable<ReferenceList> {

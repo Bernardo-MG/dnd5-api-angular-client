@@ -4,13 +4,11 @@ import { Observable } from "rxjs";
 import { CharacterClassQueryLevelByNumber } from "./character-class-query-level-by-number";
 
 export class CharacterClassQueryLevel {
-  
-  private levelRoute = '/levels';
 
   constructor(
     private client: ReadClient
   ) {
-    this.client = this.client.appendRoute(this.levelRoute);
+    this.client = this.client.appendRoute('/levels');
   }
 
   public getAll(): Observable<Level[]> {

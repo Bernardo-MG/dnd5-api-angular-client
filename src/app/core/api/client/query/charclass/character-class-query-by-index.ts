@@ -8,24 +8,31 @@ import { CharacterClassQueryLevel } from "./character-class-query-level";
 
 export class CharacterClassQueryByIndex {
 
-  private spellcastingRoute = '/spellcasting';
+  private readonly featuresClient;
 
-  private multiclassingRoute = '/multi-classing';
+  private readonly multiClassingClient;
 
-  private subclassesRoute = '/subclasses';
-
-  private spellsRoute = '/spells';
-
-  private featuresRoute = '/features';
-
-  private proficienciesRoute = '/proficiencies';
+  private readonly proficienciesClient;
 
   private readonly spellcastingClient;
+
+  private readonly spellsClient;
+
+  private readonly subclassesClient;
+
+  private readonly levelsQuery;
 
   constructor(
     private client: ReadClient
   ) {
-    this.spellcastingClient = this.client.appendRoute(this.spellcastingRoute);
+    this.featuresClient = this.client.appendRoute('/features');
+    this.multiClassingClient = this.client.appendRoute('/multi-classing');
+    this.proficienciesClient = this.client.appendRoute('/proficiencies');
+    this.spellcastingClient = this.client.appendRoute('/spellcasting');
+    this.spellsClient = this.client.appendRoute('/spells');
+    this.subclassesClient = this.client.appendRoute('/subclasses');
+
+    this.levelsQuery = new CharacterClassQueryLevel(this.client);
   }
 
   public getOne(): Observable<Charclass> {
@@ -37,27 +44,27 @@ export class CharacterClassQueryByIndex {
   }
 
   public getMultiClassing(): Observable<Multiclassing> {
-    return this.client.appendRoute(this.multiclassingRoute).read();
+    return this.multiClassingClient.read();
   }
 
   public getSubclasses(): Observable<Reference[]> {
-    return this.client.appendRoute(this.subclassesRoute).read();
+    return this.subclassesClient.read();
   }
 
   public getSpells(): Observable<Reference[]> {
-    return this.client.appendRoute(this.spellsRoute).read();
+    return this.spellsClient.read();
   }
 
   public getFeatures(): Observable<Reference[]> {
-    return this.client.appendRoute(this.featuresRoute).read();
+    return this.featuresClient.read();
   }
 
   public getProficiencies(): Observable<Reference[]> {
-    return this.client.appendRoute(this.proficienciesRoute).read();
+    return this.proficienciesClient.read();
   }
 
   public levels(): CharacterClassQueryLevel {
-    return new CharacterClassQueryLevel(this.client);
+    return this.levelsQuery;
   }
 
 }

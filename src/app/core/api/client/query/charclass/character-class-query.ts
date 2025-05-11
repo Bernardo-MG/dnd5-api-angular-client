@@ -5,12 +5,10 @@ import { CharacterClassQueryByIndex } from "./character-class-query-by-index";
 
 export class CharacterClassQuery {
 
-  private classRoute = '/classes';
-
   constructor(
     private client: ReadClient
   ) {
-    this.client = this.client.appendRoute(this.classRoute);
+    this.client = this.client.appendRoute('/classes');
   }
 
   public getAll(): Observable<ReferenceList> {

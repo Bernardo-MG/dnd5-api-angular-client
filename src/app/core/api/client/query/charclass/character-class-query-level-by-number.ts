@@ -6,24 +6,27 @@ import { Observable } from "rxjs";
 
 export class CharacterClassQueryLevelByNumber {
 
-  private featureRoute = '/features';
+  private readonly featuresClient;
 
-  private spellRoute = '/spells';
+  private readonly spellsClient;
 
   constructor(
     private client: ReadClient
-  ) { }
+  ) {
+    this.featuresClient = this.client.appendRoute('/features');
+    this.spellsClient = this.client.appendRoute('/spells');
+  }
 
   public getOne(): Observable<Level> {
     return this.client.read();
   }
 
   public getFeatures(): Observable<Feature> {
-    return this.client.appendRoute(this.featureRoute).read();
+    return this.featuresClient.read();
   }
 
   public getSpells(): Observable<Spell> {
-    return this.client.appendRoute(this.spellRoute).read();
+    return this.spellsClient.read();
   }
 
 }
