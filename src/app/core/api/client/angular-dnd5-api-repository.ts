@@ -12,14 +12,21 @@ export class AngularDnd5ApiRepository {
 
   private readonly client;
 
+  private readonly characterClassQuery;
+
+  private readonly proficiencyQuery;
+
   constructor(
     http: HttpClient
   ) {
     this.client = new AngularReadClient(http, environment.apiUrl);
+
+    this.characterClassQuery = new CharacterClassQuery(this.client);
+    this.proficiencyQuery = new ProficiencyQuery(this.client);
   }
 
-  public characterClass = () => new CharacterClassQuery(this.client);
+  public characterClass = () => this.characterClassQuery;
 
-  public proficiency = () => new ProficiencyQuery(this.client);
+  public proficiency = () => this.proficiencyQuery;
 
 }
