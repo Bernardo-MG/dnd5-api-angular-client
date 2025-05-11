@@ -8,8 +8,6 @@ export class ProficiencyQueryByIndex {
     private client: ReadClient
   ) {  }
 
-  public getOne(): Observable<Proficiency> {
-    return this.client.read();
-  }
+  public getOne = (): Observable<Proficiency> => this.client.read();
 
 }

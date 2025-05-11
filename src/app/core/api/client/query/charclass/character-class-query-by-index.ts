@@ -35,36 +35,20 @@ export class CharacterClassQueryByIndex {
     this.levelsQuery = new CharacterClassQueryLevel(this.client);
   }
 
-  public getOne(): Observable<Charclass> {
-    return this.client.read();
-  }
+  public getOne = (): Observable<Charclass> => this.client.read();
 
-  public getSpellCasting(): Observable<Spellcasting> {
-    return this.spellcastingClient.read();
-  }
+  public getSpellCasting = (): Observable<Spellcasting> => this.spellcastingClient.read();
 
-  public getMultiClassing(): Observable<Multiclassing> {
-    return this.multiClassingClient.read();
-  }
+  public getMultiClassing = (): Observable<Multiclassing> => this.multiClassingClient.read();
 
-  public getSubclasses(): Observable<Reference[]> {
-    return this.subclassesClient.read();
-  }
+  public getSubclasses = (): Observable<Reference> => this.subclassesClient.read();
 
-  public getSpells(): Observable<Reference[]> {
-    return this.spellsClient.read();
-  }
+  public getSpells = (): Observable<Reference> => this.spellsClient.read();
 
-  public getFeatures(): Observable<Reference[]> {
-    return this.featuresClient.read();
-  }
+  public getFeatures = (): Observable<Reference[]> => this.featuresClient.read();
 
-  public getProficiencies(): Observable<Reference[]> {
-    return this.proficienciesClient.read();
-  }
+  public getProficiencies = (): Observable<Reference[]> => this.proficienciesClient.read();
 
-  public levels(): CharacterClassQueryLevel {
-    return this.levelsQuery;
-  }
+  public levels = () => this.levelsQuery;
 
 }

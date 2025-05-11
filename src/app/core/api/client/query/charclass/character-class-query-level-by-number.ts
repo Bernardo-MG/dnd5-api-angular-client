@@ -17,16 +17,10 @@ export class CharacterClassQueryLevelByNumber {
     this.spellsClient = this.client.appendRoute('/spells');
   }
 
-  public getOne(): Observable<Level> {
-    return this.client.read();
-  }
+  public getOne = (): Observable<Level> => this.client.read();
 
-  public getFeatures(): Observable<Feature> {
-    return this.featuresClient.read();
-  }
+  public getFeatures = (): Observable<Feature> => this.featuresClient.read();
 
-  public getSpells(): Observable<Spell> {
-    return this.spellsClient.read();
-  }
+  public getSpells = (): Observable<Spell> => this.spellsClient.read();
 
 }

@@ -18,12 +18,8 @@ export class AngularDnd5ApiRepository {
     this.client = new AngularReadClient(http, environment.apiUrl);
   }
 
-  public characterClass(): CharacterClassQuery {
-    return new CharacterClassQuery(this.client);
-  }
+  public characterClass = () => new CharacterClassQuery(this.client);
 
-  public proficiency(): ProficiencyQuery {
-    return new ProficiencyQuery(this.client);
-  }
+  public proficiency = () => new ProficiencyQuery(this.client);
 
 }

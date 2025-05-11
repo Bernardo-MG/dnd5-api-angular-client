@@ -11,12 +11,8 @@ export class CharacterClassQueryLevel {
     this.client = this.client.appendRoute('/levels');
   }
 
-  public getAll(): Observable<Level[]> {
-    return this.client.read();
-  }
+  public getAll = (): Observable<Level[]> => this.client.read();
 
-  public level(level: number) {
-    return new CharacterClassQueryLevelByNumber(this.client.appendRoute(`/${level}`));
-  }
+  public level = (level: number) => new CharacterClassQueryLevelByNumber(this.client.appendRoute(`/${level}`));
 
 }
