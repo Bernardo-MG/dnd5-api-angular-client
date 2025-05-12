@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable, forkJoin, map } from 'rxjs';
 import { AngularDnd5ApiRepository } from '../../core/api/client/angular-dnd5-api-repository';
-import { Charclass } from '../../core/api/models/charclass/charclass';
 import { ReferenceList } from '../../core/api/models/reference-list';
 import { CharacterClassSummary } from '../models/character-class-summary';
 import { Proficiency } from '../models/proficiency';
 import { Level } from '../models/level';
 import { LevelFeature } from '../models/level-feature';
 import { SpellcastingLevels } from '../models/spellcasting-levels';
+import { Charclass } from '../models/charclass';
 
 @Injectable({
   providedIn: 'root'
@@ -25,11 +25,13 @@ export class CharclassService {
   }
 
   public getCharacterClass(id: string): Observable<Charclass> {
-    return this.repository.characterClass().index(id).getOne();
+    return this.repository.characterClass().index(id).getOne().pipe(
+      map(c => this.toCharclass(c))
+    );
   }
 
   public getLevels(id: string): Observable<Level[]> {
-    return this.repository.characterClass().index(id).levels().getAll().pipe(map(ls => ls.map(l => new Level(l.level, l.prof_bonus, l.features.map(f => new LevelFeature(f.name)), this.map(l.spellcasting)))));
+    return this.repository.characterClass().index(id).levels().getAll().pipe(map(ls => ls.map(l => new Level(l.level, l.prof_bonus, l.features.map(f => new LevelFeature(f.name)), this.toSpellcastingLevels(l.spellcasting)))));
   }
 
   public getProficiencies(ids: string[]): Observable<Proficiency[]> {
@@ -38,7 +40,7 @@ export class CharclassService {
     return forkJoin(observables).pipe(map(ps => ps.map(p => new Proficiency(p.reference.name, p.type))));
   }
 
-  private map(source: any): SpellcastingLevels | undefined {
+  private toSpellcastingLevels(source: any): SpellcastingLevels | undefined {
     let result: SpellcastingLevels | undefined;
 
     if (source) {
@@ -48,6 +50,16 @@ export class CharclassService {
     }
 
     return result;
+  }
+
+  private toCharclass(data: any): Charclass {
+    return new Charclass(
+      data.name,
+      data.hit_die,
+      data.starting_equipment,
+      data.starting_equipment_options,
+      data.proficiency_choices
+    );
   }
 
 }

@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Charclass } from '@app/core/api/models/charclass/charclass';
 import { ChoiceComponent } from '@app/dnd5/components/choice/choice.component';
 import { InitialEquipmentComponent } from '@app/dnd5/components/initial-equipment/initial-equipment.component';
 import { LevelsComponent } from '@app/dnd5/components/levels/levels.component';
 import { ProficienciesComponent } from '@app/dnd5/components/proficiencies/proficiencies.component';
+import { Charclass } from '@app/dnd5/models/charclass';
 import { Level } from '@app/dnd5/models/level';
 import { Proficiency } from '@app/dnd5/models/proficiency';
 import { LinkListComponent } from '@app/shared/components/link-list/link-list.component';
@@ -65,7 +65,7 @@ export class CharclassesComponent {
           .subscribe(data => {
             this.charclass = data;
 
-            const ids = this.charclass.proficiencies.map(r => r.index);
+            const ids = data.proficiencies.map(r => r.index);
             charclassService.getProficiencies(ids).subscribe(p => {
               this.proficiencies = p;
               this.waitingProficiencies = false;
