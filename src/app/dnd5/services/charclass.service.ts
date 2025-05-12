@@ -3,12 +3,11 @@ import { Observable, forkJoin, map, switchMap } from 'rxjs';
 import { AngularDnd5ApiRepository } from '../../core/api/client/angular-dnd5-api-repository';
 import { ReferenceList } from '../../core/api/models/reference-list';
 import { CharacterClassSummary } from '../models/character-class-summary';
-import { Proficiency } from '../models/proficiency';
+import { Charclass } from '../models/charclass';
 import { Level } from '../models/level';
 import { LevelFeature } from '../models/level-feature';
+import { Proficiency } from '../models/proficiency';
 import { SpellcastingLevels } from '../models/spellcasting-levels';
-import { Charclass } from '../models/charclass';
-import { Reference } from '@app/core/api/models/info/reference';
 
 @Injectable({
   providedIn: 'root'
