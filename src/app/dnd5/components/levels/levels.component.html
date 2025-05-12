@@ -1,12 +1,12 @@
 <p-table [value]="rows">
   <ng-template #header>
-    <ng-template [ngIf]="isSpellcaster()">
+    <ng-template [ngIf]="spellcaster">
       <tr>
         <th colspan="3" scope="col">
         </th>
-        <th *ngIf="hasSpells()" colspan="1" scope="col">
+        <th *ngIf="spells" colspan="1" scope="col">
         </th>
-        <th *ngIf="hasCantrips()" colspan="1" scope="col">
+        <th *ngIf="cantrips" colspan="1" scope="col">
         </th>
         <th colspan="11" scope="col">
           Spell slots

@@ -2,10 +2,12 @@ import { Injectable } from '@angular/core';
 import { Observable, forkJoin, map } from 'rxjs';
 import { AngularDnd5ApiRepository } from '../../core/api/client/angular-dnd5-api-repository';
 import { Charclass } from '../../core/api/models/charclass/charclass';
-import { Level } from '../../core/api/models/charclass/level';
 import { ReferenceList } from '../../core/api/models/reference-list';
 import { CharacterClassSummary } from '../models/character-class-summary';
 import { Proficiency } from '../models/proficiency';
+import { Level } from '../models/level';
+import { LevelFeature } from '../models/level-feature';
+import { SpellcastingLevels } from '../models/spellcasting-levels';
 
 @Injectable({
   providedIn: 'root'
@@ -27,13 +29,25 @@ export class CharclassService {
   }
 
   public getLevels(id: string): Observable<Level[]> {
-    return this.repository.characterClass().index(id).levels().getAll();
+    return this.repository.characterClass().index(id).levels().getAll().pipe(map(ls => ls.map(l => new Level(l.level, l.prof_bonus, l.features.map(f => new LevelFeature(f.name)), this.map(l.spellcasting)))));
   }
 
   public getProficiencies(ids: string[]): Observable<Proficiency[]> {
     const observables = ids.map(i => this.repository.proficiency().index(i).getOne());
 
     return forkJoin(observables).pipe(map(ps => ps.map(p => new Proficiency(p.reference.name, p.type))));
+  }
+
+  private map(source: any): SpellcastingLevels | undefined {
+    let result: SpellcastingLevels | undefined;
+
+    if (source) {
+      result = new SpellcastingLevels(source.cantrips_known, source.spells_known, source.spell_slots_level_1, source.spell_slots_level_2, source.spell_slots_level_3, source.spell_slots_level_4, source.spell_slots_level_5, source.spell_slots_level_6, source.spell_slots_level_7, source.spell_slots_level_8, source.spell_slots_level_9);
+    } else {
+      result = undefined;
+    }
+
+    return result;
   }
 
 }

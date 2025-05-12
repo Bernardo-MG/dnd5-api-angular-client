@@ -2,17 +2,17 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Charclass } from '@app/core/api/models/charclass/charclass';
-import { Level } from '@app/core/api/models/charclass/level';
 import { ChoiceComponent } from '@app/dnd5/components/choice/choice.component';
 import { InitialEquipmentComponent } from '@app/dnd5/components/initial-equipment/initial-equipment.component';
 import { LevelsComponent } from '@app/dnd5/components/levels/levels.component';
 import { ProficienciesComponent } from '@app/dnd5/components/proficiencies/proficiencies.component';
+import { Level } from '@app/dnd5/models/level';
+import { Proficiency } from '@app/dnd5/models/proficiency';
 import { LinkListComponent } from '@app/shared/components/link-list/link-list.component';
 import { CardModule } from 'primeng/card';
 import { Pagination } from '../../../core/api/models/pagination';
 import { Link } from '../../../shared/model/link';
 import { CharclassService } from '../../services/charclass.service';
-import { Proficiency } from '@app/dnd5/models/proficiency';
 
 @Component({
   selector: 'app-charclasses',
