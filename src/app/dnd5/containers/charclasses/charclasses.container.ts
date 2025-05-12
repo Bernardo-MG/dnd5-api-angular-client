@@ -23,9 +23,7 @@ export class CharclassesComponent {
 
   public waiting = false;
 
-  public data: Link[] = [];
-
-  public links: Link[] = [];
+  public classesLinks: Link[] = [];
 
   public pagination = new Pagination();
 
@@ -49,11 +47,9 @@ export class CharclassesComponent {
     charclassService.getCharacterClasses().subscribe(data => {
       this.pagination = this.loadPagination(data.length);
 
-      this.data = data.map(c => {
+      this.classesLinks = data.map(c => {
         return { title: c.name, route: `/classes/${c.index}` };
       });
-
-      this.links = this.data.slice(0, this.pagination.size);
 
       this.waiting = false;
     });
@@ -89,7 +85,6 @@ export class CharclassesComponent {
   public onGoToPage(page: number) {
     const lower = (page - 1) * this.pagination.size;
     const upper = page * this.pagination.size;
-    this.links = this.data.slice(lower, upper);
     this.pagination.page = page;
   }
 
