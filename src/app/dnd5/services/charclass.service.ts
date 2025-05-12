@@ -4,8 +4,8 @@ import { AngularDnd5ApiRepository } from '../../core/api/client/angular-dnd5-api
 import { ReferenceList } from '../../core/api/models/reference-list';
 import { Charclass } from '../../core/api/models/charclass/charclass';
 import { Level } from '../../core/api/models/charclass/level';
-import { Proficiency } from '../../core/api/models/charclass/proficiency';
 import { Reference } from '../../core/api/models/info/reference';
+import { Proficiency } from '../models/proficiency';
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +33,7 @@ export class CharclassService {
   public getProficiencies(ids: string[]): Observable<Proficiency[]> {
     const observables = ids.map(i => this.repository.proficiency().index(i).getOne());
 
-    return forkJoin(observables);
+    return forkJoin(observables).pipe(map(ps => ps.map(p => new Proficiency(p.reference.name, p.type))));
   }
 
 }
