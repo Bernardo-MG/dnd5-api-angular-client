@@ -44,7 +44,7 @@ export class CharclassesComponent {
     this.waiting = true;
 
     // Loads character classes
-    charclassService.getCharacterClasses().subscribe(data => {
+    charclassService.getCharacterClassList().subscribe(data => {
       this.pagination = this.loadPagination(data.length);
 
       this.classesLinks = data.map(c => {

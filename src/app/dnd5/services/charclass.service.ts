@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable, forkJoin, map } from 'rxjs';
 import { AngularDnd5ApiRepository } from '../../core/api/client/angular-dnd5-api-repository';
-import { ReferenceList } from '../../core/api/models/reference-list';
 import { Charclass } from '../../core/api/models/charclass/charclass';
 import { Level } from '../../core/api/models/charclass/level';
-import { Reference } from '../../core/api/models/info/reference';
+import { ReferenceList } from '../../core/api/models/reference-list';
+import { CharacterClassSummary } from '../models/character-class-summary';
 import { Proficiency } from '../models/proficiency';
 
 @Injectable({
@@ -16,9 +16,9 @@ export class CharclassService {
     private readonly repository: AngularDnd5ApiRepository
   ) { }
 
-  public getCharacterClasses(): Observable<Reference[]> {
+  public getCharacterClassList(): Observable<CharacterClassSummary[]> {
     return this.repository.characterClass().getAll().pipe(
-      map((response: ReferenceList) => { return response.results })
+      map((response: ReferenceList) => { return response.results.map(r => new CharacterClassSummary(r.index, r.name)) })
     );
   }
 
