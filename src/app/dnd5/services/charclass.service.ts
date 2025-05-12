@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, forkJoin, map } from 'rxjs';
+import { Observable, forkJoin, map, switchMap } from 'rxjs';
 import { AngularDnd5ApiRepository } from '../../core/api/client/angular-dnd5-api-repository';
 import { ReferenceList } from '../../core/api/models/reference-list';
 import { CharacterClassSummary } from '../models/character-class-summary';
@@ -8,6 +8,7 @@ import { Level } from '../models/level';
 import { LevelFeature } from '../models/level-feature';
 import { SpellcastingLevels } from '../models/spellcasting-levels';
 import { Charclass } from '../models/charclass';
+import { Reference } from '@app/core/api/models/info/reference';
 
 @Injectable({
   providedIn: 'root'
@@ -26,15 +27,28 @@ export class CharclassService {
 
   public getCharacterClass(id: string): Observable<Charclass> {
     return this.repository.characterClass().index(id).getOne().pipe(
-      map(c => this.toCharclass(c))
+      map(c => this.toCharclass(c)),
+      switchMap(charclass => {
+        const profIds = charclass.proficiencies.map(p => p.index);
+        return forkJoin({
+          proficiencies: this.getProficiencies(profIds),
+          levels: this.getLevels(id)
+        }).pipe(
+          map(({ proficiencies, levels }) => {
+            charclass.proficiencies = proficiencies;
+            charclass.levels = levels;
+            return charclass;
+          })
+        );
+      })
     );
   }
 
-  public getLevels(id: string): Observable<Level[]> {
+  private getLevels(id: string): Observable<Level[]> {
     return this.repository.characterClass().index(id).levels().getAll().pipe(map(ls => ls.map(l => new Level(l.level, l.prof_bonus, l.features.map(f => new LevelFeature(f.name)), this.toSpellcastingLevels(l.spellcasting)))));
   }
 
-  public getProficiencies(ids: string[]): Observable<Proficiency[]> {
+  private getProficiencies(ids: string[]): Observable<Proficiency[]> {
     const observables = ids.map(i => this.repository.proficiency().index(i).getOne());
 
     return forkJoin(observables).pipe(map(ps => ps.map(p => new Proficiency(p.reference.name, p.type))));
@@ -58,7 +72,8 @@ export class CharclassService {
       data.hit_die,
       data.starting_equipment,
       data.starting_equipment_options,
-      data.proficiency_choices
+      data.proficiency_choices,
+      data.proficiencies
     );
   }
 

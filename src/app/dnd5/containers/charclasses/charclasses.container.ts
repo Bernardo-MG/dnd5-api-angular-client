@@ -6,8 +6,6 @@ import { InitialEquipmentComponent } from '@app/dnd5/components/initial-equipmen
 import { LevelsComponent } from '@app/dnd5/components/levels/levels.component';
 import { ProficienciesComponent } from '@app/dnd5/components/proficiencies/proficiencies.component';
 import { Charclass } from '@app/dnd5/models/charclass';
-import { Level } from '@app/dnd5/models/level';
-import { Proficiency } from '@app/dnd5/models/proficiency';
 import { LinkListComponent } from '@app/shared/components/link-list/link-list.component';
 import { CardModule } from 'primeng/card';
 import { Pagination } from '../../../core/api/models/pagination';
@@ -28,14 +26,6 @@ export class CharclassesComponent {
   public pagination = new Pagination();
 
   public charclass: Charclass | undefined;
-
-  public proficiencies: Proficiency[] = [];
-
-  public levels: Level[] = [];
-
-  private waitingProficiencies = false;
-
-  private waitingLevels = false;
 
   constructor(
     charclassService: CharclassService,
@@ -59,23 +49,11 @@ export class CharclassesComponent {
       const id = params.get('id');
 
       if (id) {
-        this.waitingProficiencies = true;
-        this.waitingLevels = true;
+        this.waiting = true;
         charclassService.getCharacterClass(id)
           .subscribe(data => {
             this.charclass = data;
-
-            const ids = data.proficiencies.map(r => r.index);
-            charclassService.getProficiencies(ids).subscribe(p => {
-              this.proficiencies = p;
-              this.waitingProficiencies = false;
-              this.checkWaiting();
-            });
-            charclassService.getLevels(id).subscribe(l => {
-              this.levels = l;
-              this.waitingLevels = false;
-              this.checkWaiting();
-            });
+            this.waiting = false;
           });
 
       }
@@ -83,8 +61,6 @@ export class CharclassesComponent {
   }
 
   public onGoToPage(page: number) {
-    const lower = (page - 1) * this.pagination.size;
-    const upper = page * this.pagination.size;
     this.pagination.page = page;
   }
 
@@ -98,10 +74,6 @@ export class CharclassesComponent {
     page.last = (page.page === page.totalPages);
 
     return page;
-  }
-
-  private checkWaiting() {
-    this.waiting = (this.waitingProficiencies || this.waitingLevels);
   }
 
 }

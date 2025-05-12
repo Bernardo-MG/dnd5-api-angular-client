@@ -1,6 +1,7 @@
 import { StartingEquipment } from "@app/core/api/models/equipment/starting-equipment";
-import { Reference } from "@app/core/api/models/info/reference";
 import { Choice } from "@app/core/api/models/options/choice";
+import { Level } from "./level";
+import { Proficiency } from "./proficiency";
 
 export class Charclass {
   constructor(
@@ -9,6 +10,7 @@ export class Charclass {
     public starting_equipment: StartingEquipment[] = [],
     public starting_equipment_options: Choice[] = [],
     public proficiency_choices: Choice[] = [],
-    public proficiencies: Reference[] = []
+    public proficiencies: Proficiency[] = [],
+    public levels: Level[] = []
   ) { }
 }
