@@ -1,18 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Pagination } from '@app/core/api/models/pagination';
 import { ChoiceComponent } from '@app/dnd5/components/choice/choice.component';
 import { InitialEquipmentComponent } from '@app/dnd5/components/initial-equipment/initial-equipment.component';
 import { LevelsComponent } from '@app/dnd5/components/levels/levels.component';
 import { ProficienciesComponent } from '@app/dnd5/components/proficiencies/proficiencies.component';
-import { Charclass } from '@app/dnd5/models/charclass/charclass';
-import { Level } from '@app/dnd5/models/charclass/level';
-import { Proficiency } from '@app/dnd5/models/charclass/proficiency';
+import { Charclass } from '@app/dnd5/models/charclass';
+import { CharclassService } from '@app/dnd5/services/charclass.service';
 import { LinkListComponent } from '@app/shared/components/link-list/link-list.component';
+import { Link } from '@app/shared/model/link';
 import { CardModule } from 'primeng/card';
-import { Pagination } from '../../../core/api/models/pagination';
-import { Link } from '../../../shared/model/link';
-import { CharclassService } from '../../services/charclass.service';
 
 @Component({
   selector: 'app-charclasses',
@@ -23,21 +21,11 @@ export class CharclassesComponent {
 
   public waiting = false;
 
-  public data: Link[] = [];
-
-  public links: Link[] = [];
+  public classesLinks: Link[] = [];
 
   public pagination = new Pagination();
 
   public charclass: Charclass | undefined;
-
-  public proficiencies: Proficiency[] = [];
-
-  public levels: Level[] = [];
-
-  private waitingProficiencies = false;
-
-  private waitingLevels = false;
 
   constructor(
     charclassService: CharclassService,
@@ -46,14 +34,12 @@ export class CharclassesComponent {
     this.waiting = true;
 
     // Loads character classes
-    charclassService.getCharacterClasses().subscribe(data => {
+    charclassService.getCharacterClassList().subscribe(data => {
       this.pagination = this.loadPagination(data.length);
 
-      this.data = data.map(c => {
+      this.classesLinks = data.map(c => {
         return { title: c.name, route: `/classes/${c.index}` };
       });
-
-      this.links = this.data.slice(0, this.pagination.size);
 
       this.waiting = false;
     });
@@ -63,22 +49,11 @@ export class CharclassesComponent {
       const id = params.get('id');
 
       if (id) {
-        this.waitingProficiencies = true;
-        this.waitingLevels = true;
+        this.waiting = true;
         charclassService.getCharacterClass(id)
           .subscribe(data => {
             this.charclass = data;
-
-            charclassService.getProficiencies(this.charclass.proficiencies).subscribe(p => {
-              this.proficiencies = p;
-              this.waitingProficiencies = false;
-              this.checkWaiting();
-            });
-            charclassService.getLevels(id).subscribe(l => {
-              this.levels = l;
-              this.waitingLevels = false;
-              this.checkWaiting();
-            });
+            this.waiting = false;
           });
 
       }
@@ -86,9 +61,6 @@ export class CharclassesComponent {
   }
 
   public onGoToPage(page: number) {
-    const lower = (page - 1) * this.pagination.size;
-    const upper = page * this.pagination.size;
-    this.links = this.data.slice(lower, upper);
     this.pagination.page = page;
   }
 
@@ -102,10 +74,6 @@ export class CharclassesComponent {
     page.last = (page.page === page.totalPages);
 
     return page;
-  }
-
-  private checkWaiting() {
-    this.waiting = (this.waitingProficiencies || this.waitingLevels);
   }
 
 }

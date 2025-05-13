@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { StartingEquipment } from '@app/dnd5/models/equipment/starting-equipment';
+import { StartingEquipment } from '@app/core/api/models/equipment/starting-equipment';
 
 @Component({
   selector: 'dnd5-initial-equipment',

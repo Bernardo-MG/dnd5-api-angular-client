@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { Proficiency } from '@app/dnd5/models/charclass/proficiency';
+import { Proficiency } from '@app/dnd5/models/proficiency';
 
 @Component({
   selector: 'dnd5-proficiencies',

@@ -13,14 +13,14 @@
         <div class="col-span-3">
           <div class="mb-2">
             <p-card header="Level advances">
-              <dnd5-levels [levels]="levels"></dnd5-levels>
+              <dnd5-levels [levels]="charclass.levels"></dnd5-levels>
             </p-card>
           </div>
         </div>
         <div class="col-span-1">
           <div class="mb-2">
             <p-card header="Initial proficiencies">
-              <dnd5-proficiencies [proficiencies]="proficiencies"></dnd5-proficiencies>
+              <dnd5-proficiencies [proficiencies]="charclass.proficiencies"></dnd5-proficiencies>
             </p-card>
           </div>
           <div class="mb-2">
@@ -44,7 +44,7 @@
   </div>
   <div class="col-span-1 p-4">
     <p-card>
-      <app-link-list title="Classes" [links]="data"></app-link-list>
+      <app-link-list title="Classes" [links]="classesLinks"></app-link-list>
     </p-card>
   </div>
 </div>
