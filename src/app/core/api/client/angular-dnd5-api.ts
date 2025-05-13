@@ -6,18 +6,18 @@ import { Charclass } from "../models/charclass/charclass";
 import { Feature } from "../models/charclass/feature";
 import { Level } from "../models/charclass/level";
 import { Multiclassing } from "../models/charclass/multiclassing";
+import { Proficiency } from "../models/charclass/proficiency";
 import { Spell } from "../models/charclass/spell";
 import { Spellcasting } from "../models/charclass/spellcasting";
 import { Reference } from "../models/info/reference";
 import { ReferenceList } from "../models/reference-list";
 import { AngularReadClient } from "./angular-read-client";
 import { ReadClient } from "./read-client";
-import { Proficiency } from "../models/charclass/proficiency";
 
 @Injectable({
   providedIn: 'root'
 })
-export class AngularDnd5ApiRepository {
+export class AngularDnd5Api {
 
   private readonly client;
 

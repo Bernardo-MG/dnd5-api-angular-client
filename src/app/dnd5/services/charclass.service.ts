@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, forkJoin, map, switchMap } from 'rxjs';
-import { AngularDnd5ApiRepository } from '../../core/api/client/angular-dnd5-api-repository';
+import { AngularDnd5Api } from '../../core/api/client/angular-dnd5-api';
 import { ReferenceList } from '../../core/api/models/reference-list';
 import { CharacterClassSummary } from '../models/character-class-summary';
 import { Charclass } from '../models/charclass';
@@ -15,7 +15,7 @@ import { SpellcastingLevels } from '../models/spellcasting-levels';
 export class CharclassService {
 
   constructor(
-    private readonly repository: AngularDnd5ApiRepository
+    private readonly repository: AngularDnd5Api
   ) { }
 
   public getCharacterClassList(): Observable<CharacterClassSummary[]> {
