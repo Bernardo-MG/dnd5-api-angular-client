@@ -11,33 +11,38 @@ import { CharacterClassSummary } from '@app/dnd5/models/character-class-summary'
 import { Charclass } from '@app/dnd5/models/charclass';
 import { CharclassService } from '@app/dnd5/services/charclass.service';
 import { CardModule } from 'primeng/card';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 @Component({
   selector: 'app-charclasses',
-  imports: [CommonModule, CharclassListComponent, CardModule, LevelsComponent, ChoiceComponent, ProficienciesComponent, InitialEquipmentComponent],
+  imports: [CommonModule, ProgressSpinnerModule, CharclassListComponent, CardModule, LevelsComponent, ChoiceComponent, ProficienciesComponent, InitialEquipmentComponent],
   templateUrl: './charclasses.container.html'
 })
 export class CharclassesComponent {
 
-  public waiting = false;
+  public waitingClasses = false;
+
+  public waitingClass = false;
+
+  public loadedClass = false;
 
   public classes: CharacterClassSummary[] = [];
 
   public pagination = new Pagination();
 
-  public charclass: Charclass | undefined;
+  public charclass = new Charclass();
 
   constructor(
     charclassService: CharclassService,
     route: ActivatedRoute
   ) {
-    this.waiting = true;
+    this.waitingClasses = true;
 
     // Loads character classes
     charclassService.getCharacterClassList().subscribe(data => {
       this.pagination = this.loadPagination(data.length);
       this.classes = data;
-      this.waiting = false;
+      this.waitingClasses = false;
     });
 
     // TODO: the class should contain everything, the service should take care of it
@@ -45,11 +50,13 @@ export class CharclassesComponent {
       const id = params.get('id');
 
       if (id) {
-        this.waiting = true;
+        this.waitingClass = true;
+        this.loadedClass = false;
         charclassService.getCharacterClass(id)
           .subscribe(data => {
             this.charclass = data;
-            this.waiting = false;
+            this.waitingClass = false;
+            this.loadedClass = true;
           });
 
       }

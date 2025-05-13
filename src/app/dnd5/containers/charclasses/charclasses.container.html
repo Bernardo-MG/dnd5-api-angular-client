@@ -1,6 +1,11 @@
 <div class="grid grid-cols-4 gap-4">
   <div class="col-span-3 p-4">
-    <ng-container *ngIf="charclass">
+    <ng-container *ngIf="waitingClass">
+      <div class="flex justify-center">
+        <p-progress-spinner ariaLabel="loading" />
+      </div>
+    </ng-container>
+    <ng-container *ngIf="loadedClass">
       <header>
         <h2>{{charclass.name}}</h2>
       </header>
@@ -44,7 +49,14 @@
   </div>
   <div class="col-span-1 p-4">
     <p-card header="Classes">
-      <app-charclass-list [classes]="classes"></app-charclass-list>
+      <ng-container *ngIf="waitingClasses">
+        <div class="flex justify-center">
+          <p-progress-spinner ariaLabel="loading" />
+        </div>
+      </ng-container>
+      <ng-container *ngIf="!waitingClasses">
+        <app-charclass-list [classes]="classes"></app-charclass-list>
+      </ng-container>
     </p-card>
   </div>
 </div>
