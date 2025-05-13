@@ -1,18 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Link } from '@app/shared/model/link';
+import { CharacterClassSummary } from '@app/dnd5/models/character-class-summary';
 import { TableModule } from 'primeng/table';
 
 @Component({
-  selector: 'app-link-list',
+  selector: 'app-charclass-list',
   imports: [CommonModule, RouterLink, TableModule],
-  templateUrl: './link-list.component.html'
+  templateUrl: './charclass-list.component.html'
 })
-export class LinkListComponent {
+export class CharclassListComponent {
 
-  @Input() public title = '';
-
-  @Input() public links: Link[] = [];
+  @Input() public classes: CharacterClassSummary[] = [];
 
 }
