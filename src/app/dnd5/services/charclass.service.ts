@@ -50,7 +50,7 @@ export class CharclassService {
   private getProficiencies(ids: string[]): Observable<Proficiency[]> {
     const observables = ids.map(i => this.repository.proficiency().index(i).getOne());
 
-    return forkJoin(observables).pipe(map(ps => ps.map(p => new Proficiency(p.reference.name, p.type))));
+    return forkJoin(observables).pipe(map(ps => ps.map(p => new Proficiency(p.index, p.reference.name, p.type))));
   }
 
   private toSpellcastingLevels(source: any): SpellcastingLevels | undefined {
