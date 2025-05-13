@@ -90,8 +90,8 @@
   <div class="col-span-1 p-4">
     <p-card header="Classes">
       <ng-container *ngIf="waitingClasses">
-        <div class="flex justify-center">
-          <p-progress-spinner ariaLabel="loading" />
+        <div *ngFor="let item of [1,2,3,4,5]" class="mb-2">
+          <p-skeleton></p-skeleton>
         </div>
       </ng-container>
       <ng-container *ngIf="!waitingClasses">

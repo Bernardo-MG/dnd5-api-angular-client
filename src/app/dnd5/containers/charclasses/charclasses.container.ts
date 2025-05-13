@@ -11,12 +11,11 @@ import { CharacterClassSummary } from '@app/dnd5/models/character-class-summary'
 import { Charclass } from '@app/dnd5/models/charclass';
 import { CharclassService } from '@app/dnd5/services/charclass.service';
 import { CardModule } from 'primeng/card';
-import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { SkeletonModule } from 'primeng/skeleton';
 
 @Component({
   selector: 'app-charclasses',
-  imports: [CommonModule, ProgressSpinnerModule, SkeletonModule, CharclassListComponent, CardModule, LevelsComponent, ChoiceComponent, ProficienciesComponent, InitialEquipmentComponent],
+  imports: [CommonModule, SkeletonModule, CharclassListComponent, CardModule, LevelsComponent, ChoiceComponent, ProficienciesComponent, InitialEquipmentComponent],
   templateUrl: './charclasses.container.html'
 })
 export class CharclassesComponent {
