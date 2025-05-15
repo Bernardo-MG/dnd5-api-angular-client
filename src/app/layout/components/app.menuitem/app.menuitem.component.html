@@ -1,0 +1,16 @@
+<li *ngIf="item?.visible !== false">
+  <a *ngIf="item.routerLink; else externalLink" [routerLink]="item.routerLink">
+    <span>{{ item.label }}</span>
+  </a>
+  <ng-template #externalLink>
+    <a [href]="item.url">
+      <span>{{ item.label }}</span>
+    </a>
+  </ng-template>
+
+  <ul *ngIf="item.items?.length">
+    <ng-container *ngFor="let child of item.items; let i = index">
+      <app-menuitem [item]="child" [index]="i"></app-menuitem>
+    </ng-container>
+  </ul>
+</li>

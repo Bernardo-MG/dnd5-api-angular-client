@@ -1,4 +1,4 @@
-import { Reference } from "@app/dnd5/models/info/reference";
+import { Reference } from "@app/core/api/models/info/reference";
 
 
 export class ReferenceList {
